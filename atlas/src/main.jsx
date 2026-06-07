@@ -387,7 +387,9 @@ function App() {
     <main className="atlas-shell">
       <header className="atlas-header">
         <div className="brand-lockup">
-          <p className="eyebrow">static instrument</p>
+          <p className="eyebrow">
+            {selectedSource === SOURCE_LIVE ? "live local instrument" : "static instrument"}
+          </p>
           <h1>geogematria atlas</h1>
         </div>
         <div className="atlas-controls" aria-label="Atlas controls">
