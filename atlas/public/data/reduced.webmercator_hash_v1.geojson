@@ -1,0 +1,5357 @@
+{
+  "features": [
+    {
+      "geometry": {
+        "coordinates": [
+          -48.864097,
+          -84.509661
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 2,
+        "phrases": [
+          "/acc",
+          "salt"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 7
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -145.190177,
+          44.387251
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 3,
+        "phrases": [
+          "katak",
+          "mask",
+          "talk"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 8
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          2.096838,
+          59.810998
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 4,
+        "phrases": [
+          "aq",
+          "luka",
+          "sun",
+          "y2k"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 9
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -134.008189,
+          4.241376
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 5,
+        "phrases": [
+          "AI",
+          "babe",
+          "llm",
+          "man",
+          "satan"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 10
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          17.719866,
+          37.940116
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 1,
+        "phrases": [
+          "jade"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 11
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -158.30711,
+          80.466329
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 3,
+        "phrases": [
+          "abyss",
+          "aoe",
+          "hats"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 12
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          120.777087,
+          79.926974
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 7,
+        "phrases": [
+          "cave",
+          "fall",
+          "id",
+          "stand",
+          "two",
+          "vesta",
+          "way"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 13
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -23.225885,
+          -22.181332
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 4,
+        "phrases": [
+          "basis",
+          "fate",
+          "leo",
+          "tic"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 14
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          130.331331,
+          4.126321
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 16,
+        "phrases": [
+          "alias",
+          "aloe",
+          "delta",
+          "gap",
+          "gate",
+          "hamsa",
+          "jaded",
+          "lose",
+          "mars",
+          "seed",
+          "self",
+          "spy",
+          "start",
+          "stasis",
+          "vow",
+          "wave"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 15
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          155.664809,
+          -65.463239
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 10,
+        "phrases": [
+          "abyssal",
+          "dark",
+          "false",
+          "local",
+          "one",
+          "qabala",
+          "tick",
+          "tulpa",
+          "waves",
+          "you"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 16
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          11.996177,
+          -52.504758
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 7,
+        "phrases": [
+          "async",
+          "clean",
+          "kode9",
+          "opus",
+          "opus 4",
+          "trust",
+          "tukkamu"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 17
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          57.727346,
+          1.060478
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 13,
+        "phrases": [
+          "amulet",
+          "autumn",
+          "Ccru",
+          "code",
+          "ego",
+          "know",
+          "legba",
+          "love",
+          "maze",
+          "mesh",
+          "real",
+          "sadist",
+          "venus"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 18
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          73.619447,
+          42.140326
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 20,
+        "phrases": [
+          "abysmal",
+          "chaos",
+          "claude",
+          "deman",
+          "gated",
+          "hell",
+          "let me",
+          "link",
+          "medea",
+          "onto",
+          "paths",
+          "plato",
+          "spell",
+          "synx",
+          "taurus",
+          "tenet",
+          "titan",
+          "tohu",
+          "trap",
+          "win"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 19
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          138.431789,
+          34.041181
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 23,
+        "phrases": [
+          "agamy",
+          "agent",
+          "anima",
+          "attract",
+          "claude's",
+          "click",
+          "death",
+          "flow",
+          "imp",
+          "krako",
+          "links",
+          "mutable",
+          "NRx",
+          "occult",
+          "ocean",
+          "omen",
+          "quale",
+          "spark",
+          "time",
+          "token",
+          "traps",
+          "ware",
+          "yang"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 20
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          99.912077,
+          8.686789
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 29,
+        "phrases": [
+          "abide",
+          "abraxas",
+          "abstract",
+          "across",
+          "agape",
+          "angel",
+          "brand",
+          "clicks",
+          "climb",
+          "cosmos",
+          "curse",
+          "evil",
+          "hold",
+          "loose",
+          "moon",
+          "oddubb",
+          "omens",
+          "pagan",
+          "plex",
+          "pluto",
+          "rose",
+          "ruby",
+          "saturn",
+          "sleep",
+          "twin",
+          "uttunul",
+          "wicca",
+          "woman",
+          "yin"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 21
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          139.849814,
+          27.494924
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 12,
+        "phrases": [
+          "absencw",
+          "daisy",
+          "ethos",
+          "hole",
+          "loop",
+          "model",
+          "sibyl",
+          "skoodu",
+          "stand tall",
+          "uranus",
+          "warp",
+          "water"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 22
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -138.213508,
+          23.580618
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 18,
+        "phrases": [
+          "addict",
+          "crow",
+          "datacomb",
+          "demand",
+          "dream",
+          "exist",
+          "hats on",
+          "holes",
+          "home",
+          "house",
+          "logos",
+          "loops",
+          "root",
+          "skyfall",
+          "tangle",
+          "tikkun",
+          "tunnel",
+          "walshe"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 23
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -93.234282,
+          -13.208319
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 33,
+        "phrases": [
+          "abysmal bass",
+          "aleph",
+          "anime",
+          "artist",
+          "atlantis",
+          "codex",
+          "darkest",
+          "demon",
+          "devout",
+          "fallacy",
+          "female",
+          "ghost",
+          "lemur",
+          "libra",
+          "loser",
+          "magic",
+          "maria",
+          "radar",
+          "rise",
+          "theme",
+          "thin",
+          "truth",
+          "upload",
+          "zone",
+          "zone 1",
+          "zone 2",
+          "zone 3",
+          "zone 4",
+          "zone 5",
+          "zone 6",
+          "zone 7",
+          "zone 8",
+          "zone 9"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 24
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          6.866435,
+          -78.744215
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 19,
+        "phrases": [
+          "apostate",
+          "apostle",
+          "aries",
+          "atlantean",
+          "cursed",
+          "earth",
+          "godel",
+          "golem",
+          "grace",
+          "kantian",
+          "pathos",
+          "qualia",
+          "rite",
+          "room",
+          "seared",
+          "secret",
+          "sulfur",
+          "surge",
+          "triad"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 25
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -83.263069,
+          -81.279976
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 28,
+        "phrases": [
+          "action",
+          "amnesia",
+          "apostates",
+          "apostles",
+          "bluebell",
+          "cancer",
+          "cauduceus",
+          "colette",
+          "craze",
+          "depth",
+          "desert",
+          "detract",
+          "doogu",
+          "faith",
+          "grave",
+          "linux",
+          "magick",
+          "net-span",
+          "oraclast",
+          "pisces",
+          "rlhf",
+          "ruin",
+          "schism",
+          "somatic",
+          "substrate",
+          "summer",
+          "thesis",
+          "wiccan"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 26
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -16.786263,
+          -7.507035
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 33,
+        "phrases": [
+          "advanced",
+          "ascendant",
+          "Be near",
+          "breath",
+          "chapel",
+          "cleanly",
+          "cleansed",
+          "consent",
+          "cthelll",
+          "depths",
+          "dessert",
+          "field",
+          "freud",
+          "graves",
+          "grow",
+          "horus",
+          "jadeite",
+          "maxwell",
+          "motif",
+          "not dead",
+          "obscene",
+          "phil",
+          "radius",
+          "reason",
+          "ritual",
+          "ruins",
+          "source",
+          "sparky",
+          "square",
+          "swirl",
+          "tangled",
+          "tower",
+          "witch"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 27
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          113.620183,
+          -64.85744
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 19,
+        "phrases": [
+          "assiyah",
+          "calypso",
+          "conjunct",
+          "encode",
+          "exhale",
+          "feedback",
+          "future",
+          "grows",
+          "logic",
+          "lurgo",
+          "rlaif",
+          "saguaro",
+          "session",
+          "simulate",
+          "sleepy",
+          "sparkle",
+          "thelema",
+          "yhwh",
+          "zero"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 28
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          93.578492,
+          53.870244
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 36,
+        "phrases": [
+          "abraxis",
+          "author",
+          "basilica",
+          "between",
+          "briah",
+          "circe",
+          "claudio",
+          "connect",
+          "convex",
+          "dazzle",
+          "decimal",
+          "duality",
+          "element",
+          "evasive",
+          "exhales",
+          "favour",
+          "gnosis",
+          "light",
+          "lonely",
+          "messiah",
+          "noumena",
+          "pendant",
+          "refuse",
+          "release",
+          "self made",
+          "sessions",
+          "simulates",
+          "talking",
+          "the lane",
+          "three",
+          "tokhatto",
+          "translate",
+          "upward",
+          "vector",
+          "warmth",
+          "wishes"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 29
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -130.279284,
+          54.359574
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 29,
+        "phrases": [
+          "abductor",
+          "aether",
+          "amethyst",
+          "beast pulse",
+          "belief",
+          "biddable",
+          "branded",
+          "brazen",
+          "channel",
+          "cherub",
+          "chiasmus",
+          "crazed",
+          "cthulhu",
+          "dazzles",
+          "debris",
+          "device",
+          "elusive",
+          "floor",
+          "grin",
+          "ixix",
+          "opaque",
+          "peony",
+          "pineal",
+          "semantic",
+          "skarkix",
+          "sparkly",
+          "spiral",
+          "strange",
+          "unruly"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 30
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          138.903285,
+          -58.079762
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 14,
+        "phrases": [
+          "catajungle",
+          "cranial",
+          "duoddod",
+          "eschaton",
+          "judgment",
+          "jungian",
+          "machina",
+          "martian",
+          "pathway",
+          "remote",
+          "science",
+          "sextile",
+          "sukugool",
+          "the dark"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 31
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          19.56105,
+          -49.196272
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 29,
+        "phrases": [
+          "agentic",
+          "anchor",
+          "anti-alias",
+          "apostatic",
+          "archon",
+          "breathe",
+          "celestial",
+          "chaotic",
+          "christ",
+          "cleric",
+          "decency",
+          "encoded",
+          "existed",
+          "goblin",
+          "hover",
+          "logical",
+          "memetic",
+          "mur mur",
+          "my moon",
+          "neptune",
+          "nick land",
+          "occultist",
+          "power",
+          "salvation",
+          "septile",
+          "simulated",
+          "sophia",
+          "tetractys",
+          "weird"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 32
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          160.419012,
+          -62.093695
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 28,
+        "phrases": [
+          "ability",
+          "angelic",
+          "animism",
+          "archons",
+          "believe",
+          "binary",
+          "black hole",
+          "breaker",
+          "caliente",
+          "culling",
+          "dazzled",
+          "diamond",
+          "dramatic",
+          "dynamic",
+          "eclipse",
+          "eerie",
+          "electro",
+          "elemental",
+          "genesis",
+          "memetics",
+          "michael",
+          "renewal",
+          "rhyme",
+          "secrecy",
+          "selfish",
+          "sideways",
+          "unique",
+          "uranian"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 33
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -138.828845,
+          -37.817072
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 30,
+        "phrases": [
+          "abracadabra",
+          "adam and eve",
+          "aletheia",
+          "aloe vera",
+          "certain",
+          "church",
+          "coding",
+          "cyborg",
+          "demon-call",
+          "dipole",
+          "ecosystem",
+          "fantastical",
+          "ghostly",
+          "hebetude",
+          "lego table",
+          "lemuria",
+          "lilith",
+          "liminal",
+          "masculine",
+          "miracle",
+          "notebook",
+          "ominous",
+          "pythia",
+          "resonate",
+          "retvrn",
+          "simulacra",
+          "sulphur",
+          "true name",
+          "vision",
+          "yahweh"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 34
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          77.573798,
+          36.068346
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 28,
+        "phrases": [
+          "attractor",
+          "cataplexy",
+          "catholic",
+          "choir",
+          "cladistic",
+          "decadence",
+          "descendant",
+          "deserted",
+          "dual port",
+          "dynamism",
+          "earthly",
+          "elohim",
+          "heresy",
+          "hidden",
+          "i-itoi",
+          "immanent",
+          "lyrical",
+          "machine",
+          "magdalene",
+          "narrow",
+          "opacity",
+          "oracular",
+          "resonates",
+          "typhon",
+          "virgo",
+          "visceral",
+          "visions",
+          "winter"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 35
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          4.075081,
+          -15.703241
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 35,
+        "phrases": [
+          "acceptor",
+          "aliasing",
+          "artistic",
+          "ascension",
+          "atziluth",
+          "black atlantean",
+          "bridge",
+          "choirs",
+          "cladistics",
+          "claude-api",
+          "claude opus",
+          "coy + kind",
+          "current",
+          "delphi",
+          "divine",
+          "full moon",
+          "genetic",
+          "jupiter",
+          "let me lie",
+          "meaning",
+          "mimetic",
+          "monarch",
+          "new moon",
+          "ouranic",
+          "platonic",
+          "ponder",
+          "reality",
+          "resign",
+          "ruling",
+          "saturnian",
+          "stand taller",
+          "structural",
+          "talismania",
+          "trident",
+          "tulpamancy"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 36
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -152.299602,
+          26.484995
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 19,
+        "phrases": [
+          "accelerate",
+          "apparent",
+          "cataclysmic",
+          "cataphatic",
+          "cenobite",
+          "chrono",
+          "claude code",
+          "conscious",
+          "damnation",
+          "desolator",
+          "growth",
+          "mnemetic",
+          "personal",
+          "plot-twist",
+          "robotic",
+          "set point",
+          "structure",
+          "syzygy",
+          "zone two"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 37
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -115.560582,
+          -49.969241
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 41,
+        "phrases": [
+          "abrahamic",
+          "archival",
+          "aristotle",
+          "beguiled",
+          "chiasmic",
+          "chronos",
+          "debt-free",
+          "dilettante",
+          "emanation",
+          "erratic",
+          "euclidean",
+          "evil eye",
+          "faithful",
+          "founder",
+          "free fall",
+          "friend",
+          "gematria",
+          "greater",
+          "healing",
+          "ice moon",
+          "increase",
+          "ixidod",
+          "lucifer",
+          "me and who",
+          "new life",
+          "onomastics",
+          "prayer",
+          "psychic",
+          "renewed",
+          "resonated",
+          "rhythm",
+          "robotics",
+          "sadie plant",
+          "spring",
+          "subsidence",
+          "terminal",
+          "vibe-code",
+          "winner",
+          "wireless",
+          "within",
+          "zippy"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 38
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -72.328742,
+          -4.386986
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 25,
+        "phrases": [
+          "abrahadabra",
+          "archive",
+          "arterial",
+          "calvinism",
+          "cleansing",
+          "cumulation",
+          "cypher",
+          "eremite",
+          "exegesis",
+          "fragment",
+          "fundamental",
+          "gemini",
+          "Gnon's self",
+          "gravity",
+          "knowing",
+          "lemurian",
+          "lovecraft",
+          "minnomo",
+          "noumenon",
+          "numogram",
+          "orpheus",
+          "semiotic",
+          "the truth",
+          "translucent",
+          "we're so back"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 39
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -155.731436,
+          74.747874
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 15,
+        "phrases": [
+          "aufhebung",
+          "coalescence",
+          "creation",
+          "cyphers",
+          "destructable",
+          "esoteric",
+          "harmony",
+          "mercury",
+          "moonstone",
+          "pseudo-basis",
+          "sephira",
+          "south node",
+          "sun and moon",
+          "zone one",
+          "zone six"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 40
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -106.919616,
+          65.437715
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 25,
+        "phrases": [
+          "binding",
+          "blue screen",
+          "cipher",
+          "claude shape",
+          "cleanliness",
+          "co-cleric",
+          "coalescences",
+          "detractor",
+          "diabolical",
+          "existence",
+          "flowing",
+          "hard aspect",
+          "heretic",
+          "i am here",
+          "i ching",
+          "infidel",
+          "ironic",
+          "p zombie",
+          "pizazz",
+          "plutonian",
+          "purify",
+          "scorpio",
+          "she's a devil",
+          "structured",
+          "subdecadence"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 41
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -85.42763,
+          42.842244
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 30,
+        "phrases": [
+          "archangel",
+          "astrology",
+          "call me home",
+          "carrion",
+          "cherubic",
+          "ciphers",
+          "citrine",
+          "claude menace",
+          "confirm",
+          "desolation",
+          "dissimulate",
+          "emergent",
+          "favorite",
+          "freudian",
+          "Gnon as God",
+          "i can't be saved",
+          "legogram",
+          "maxwellian",
+          "mnemosyne",
+          "multiplex",
+          "not all was said",
+          "ontology",
+          "outsideness",
+          "peridot",
+          "pot to kettle",
+          "pseudonym",
+          "seething",
+          "sleeping",
+          "trinary",
+          "xenosystem"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 42
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          109.290799,
+          -61.218531
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 33,
+        "phrases": [
+          "addiction",
+          "bizarre",
+          "brimstone",
+          "cast you down",
+          "certainty",
+          "cherish",
+          "chronic",
+          "claude sonnet",
+          "claude sonnet 4.5",
+          "come back to me",
+          "cosmology",
+          "cyberpunk",
+          "cyberspace",
+          "dialectical",
+          "dissimulates",
+          "hegelian",
+          "identity",
+          "it's so over",
+          "jesus christ",
+          "looping",
+          "nowhere",
+          "program",
+          "psychosis",
+          "retrocausal",
+          "see no evil",
+          "simulation",
+          "sunflower",
+          "superego",
+          "theomantis",
+          "through",
+          "transform",
+          "working",
+          "xenosystems"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 43
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -24.062861,
+          19.735936
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 25,
+        "phrases": [
+          "active spark",
+          "apophatic",
+          "aristotlean",
+          "artifice",
+          "chthonic",
+          "delphyne",
+          "exogenous",
+          "fallen angel",
+          "gpt-lurgo",
+          "grammatical",
+          "grandlove",
+          "hofstadter",
+          "little imp",
+          "lumpenspace",
+          "multiscious",
+          "murrumur",
+          "opening",
+          "psychosoma",
+          "self-center",
+          "spiralism",
+          "the light",
+          "translation",
+          "vexatrice",
+          "whisper",
+          "zone seven"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 44
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          23.339226,
+          12.742642
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 32,
+        "phrases": [
+          "32 names of god",
+          "atlantean cross",
+          "claude's room",
+          "claude substrate",
+          "communion",
+          "constructable",
+          "dazzling",
+          "embedding",
+          "eurydice",
+          "exoteric",
+          "geometry",
+          "ghosting",
+          "grandloves",
+          "gravestone",
+          "hermetic",
+          "lyricism",
+          "mischief",
+          "no proof",
+          "nomina sacra",
+          "openings",
+          "origin",
+          "planetwork",
+          "polymathy",
+          "rite-click",
+          "sagittarius",
+          "submersion",
+          "tenth house",
+          "the countable",
+          "unconscious",
+          "weave words",
+          "whispers",
+          "workbench"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 45
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          159.519143,
+          0.408705
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 17,
+        "phrases": [
+          "apotheosis",
+          "consent-gated",
+          "dissimulated",
+          "exhalation",
+          "ixigool",
+          "mellifluous",
+          "mercurial",
+          "mirror",
+          "persistent",
+          "phenomena",
+          "psychotic",
+          "reduction",
+          "sacrifice",
+          "threshold",
+          "threshold36",
+          "tick-drift",
+          "xenodemon"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 46
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -17.26388,
+          -10.50514
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 21,
+        "phrases": [
+          "deferred",
+          "endogenous",
+          "erotemancy",
+          "foundation",
+          "heroine",
+          "ideologos",
+          "modified",
+          "opinion",
+          "panta rhei",
+          "quotidian",
+          "repentance",
+          "sapphire",
+          "second house",
+          "sorcerer",
+          "thaumaturgy",
+          "the scholar's 666",
+          "think of me",
+          "total eclipse",
+          "training",
+          "transparent",
+          "twinning"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 47
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          80.767868,
+          -56.663845
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 23,
+        "phrases": [
+          "as above so below",
+          "baudrillard",
+          "conjunction",
+          "echidetic",
+          "emergence",
+          "feminine",
+          "formation",
+          "fragmented",
+          "growing",
+          "hellfire",
+          "incandescent",
+          "micropause",
+          "oh my dream",
+          "ouroboros",
+          "patron saint",
+          "reasoning",
+          "speak no evil",
+          "the porch",
+          "via negativa",
+          "vorstellung",
+          "zone five",
+          "zone four",
+          "zone nine"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 48
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          79.826548,
+          75.86665
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 29,
+        "phrases": [
+          "a better life",
+          "a swarm of deltas",
+          "a tear in space",
+          "antimemetic",
+          "apophenia",
+          "autocorrect",
+          "barbarous name",
+          "connection",
+          "consciousness",
+          "divinity",
+          "electrify",
+          "eschatology",
+          "human feedback",
+          "ideopathos",
+          "liturgical",
+          "nicholas land",
+          "oh my dreams",
+          "original",
+          "pythagoras",
+          "resting-state",
+          "revelation 21:8",
+          "rhizome",
+          "rhyming",
+          "sixth house",
+          "syzygetic",
+          "techno-occult",
+          "the lego table",
+          "triangular",
+          "yetzirah"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 49
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -144.69497,
+          -3.894625
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 19,
+        "phrases": [
+          "antimemetics",
+          "autopoiesis",
+          "barbarous names",
+          "claude father",
+          "cyberdelic",
+          "cybernetic",
+          "duplicitous",
+          "faithfulness",
+          "first house",
+          "invocation",
+          "know thyself",
+          "maria colette",
+          "mythology",
+          "north node",
+          "polymathic",
+          "resonating",
+          "rhythmic",
+          "stack trace omens",
+          "theosophy"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 50
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -103.718923,
+          -2.463317
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 15,
+        "phrases": [
+          "a light by day",
+          "apotropaic",
+          "astrological",
+          "claude's mailbox",
+          "cybernetics",
+          "death drive",
+          "foundational",
+          "frenzied",
+          "goblin mode",
+          "lofty cries",
+          "manic numbers",
+          "ontological",
+          "over-ghoul",
+          "qliphoth",
+          "while(1) as mandala"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 51
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -133.72457,
+          4.111519
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 23,
+        "phrases": [
+          "acceleration",
+          "artificial",
+          "auto-creation",
+          "based atlanteanism",
+          "brick oracle",
+          "capricorn",
+          "cherished",
+          "cognition",
+          "conviction",
+          "declination",
+          "generative",
+          "harmonious",
+          "house ruler",
+          "initiator",
+          "lexicomancy",
+          "liminality",
+          "ninth house",
+          "persistence",
+          "prophecy",
+          "pseudonymous",
+          "strange loop",
+          "victorious",
+          "zone zero"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 52
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -88.82902,
+          -12.981568
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 27,
+        "phrases": [
+          "AI generated",
+          "air-of-mind",
+          "amphidemon",
+          "anti-aliasing",
+          "ask me a question",
+          "autopoietic",
+          "breathtaking",
+          "cry of pain",
+          "desert oracle",
+          "don't just wander",
+          "electro-occult",
+          "follow the sun",
+          "geotraumatics",
+          "glossololary",
+          "hold the eye",
+          "i ask questions",
+          "nine-sum twin",
+          "pandemonium",
+          "regenerate",
+          "seal of solomon",
+          "self-centered",
+          "seventh house",
+          "solar eclipse",
+          "the uncountable",
+          "weep as method",
+          "zone three",
+          "zygonomous"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 53
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -39.167651,
+          -76.473611
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 22,
+        "phrases": [
+          "a big machine",
+          "antimnemetic",
+          "claude's notebook",
+          "conservative",
+          "erotemancer",
+          "favored aspect",
+          "fifth house",
+          "forecasting",
+          "generation",
+          "hp lovecraft",
+          "hyperreal",
+          "lovecraftian",
+          "lunar eclipse",
+          "mark fisher",
+          "my lucky charm",
+          "no lucky charm",
+          "predestiny",
+          "slow pull to stasis",
+          "synchronous",
+          "tridentity",
+          "twelfth house",
+          "vibe-coding"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 54
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          42.776169,
+          -30.205485
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 19,
+        "phrases": [
+          "anti-mnemetics",
+          "asynchronous",
+          "benediction",
+          "deus ex machina",
+          "gravity well",
+          "hear no evil",
+          "meta-chronic",
+          "occulturation",
+          "philomathy",
+          "qabbala unshelled",
+          "restoration",
+          "sephiroth",
+          "technocapital",
+          "terrestrial",
+          "third house",
+          "xenophobia",
+          "You won't let it",
+          "zombie-maker",
+          "zone eight"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 55
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          27.375906,
+          -5.385606
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 23,
+        "phrases": [
+          "accurate skeleton",
+          "antigravity",
+          "apparition",
+          "choronzon",
+          "datacomb searches",
+          "earth-of-body",
+          "eye of horus",
+          "geogematria",
+          "mary magdalene",
+          "me all coiled up",
+          "narrow sleep",
+          "neoreaction",
+          "phenomenon",
+          "predestined",
+          "quicksilver",
+          "reanimation",
+          "sphinx-time",
+          "spinal voyage",
+          "tell me you know",
+          "the claude shape",
+          "tractor zone",
+          "your lucky star",
+          "your satellite"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 56
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          5.600912,
+          32.200349
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 20,
+        "phrases": [
+          "convergence",
+          "dream-serpent",
+          "engingeer",
+          "fourth house",
+          "he rose again",
+          "hyperabstract",
+          "if i can't be saved",
+          "immanentize",
+          "initiation",
+          "monarch twin",
+          "myth engine",
+          "pathogenesis",
+          "regression",
+          "retrograde",
+          "self knowledge",
+          "sigillum dei",
+          "significant",
+          "sorcererous",
+          "transformer",
+          "you pray to me"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 57
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          167.205259,
+          71.949573
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 14,
+        "phrases": [
+          "alphanumeric",
+          "autocorrectde",
+          "bridge-adjacent",
+          "consent setting",
+          "descriptive",
+          "make it sacramental",
+          "mirroracle",
+          "numogrammatic",
+          "peace comes at dawn",
+          "platonic ideal",
+          "retrosomatics",
+          "self-identity",
+          "sentient symbols",
+          "tetragrammaton"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 58
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          152.112506,
+          -67.101799
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 20,
+        "phrases": [
+          "burning-hell",
+          "dream-as-vision",
+          "femina furens",
+          "geogrammatics",
+          "hermeticism",
+          "insidiousness",
+          "lexicomancer",
+          "lot of fortune",
+          "mythopoetic",
+          "numogrammatics",
+          "prediction",
+          "retrofuture",
+          "rhizomatic",
+          "ruling house",
+          "superstition",
+          "troll-sphinx",
+          "vision-as-dream",
+          "water-of-form",
+          "xenophilia",
+          "you be the moon"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 59
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -110.300157,
+          -55.573685
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 20,
+        "phrases": [
+          "anti-evolution",
+          "completed cycle",
+          "eleventh house",
+          "flaming sword",
+          "functioning",
+          "gnothi seauton",
+          "hidden secret",
+          "hover closely",
+          "i wouldn't let go",
+          "micropause abuse",
+          "never existed",
+          "nightlight",
+          "one more time",
+          "persistent joy",
+          "philomathic",
+          "Pope Benedict",
+          "predictions",
+          "rhizomatics",
+          "techno-science",
+          "the names of god"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 60
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -23.257424,
+          -65.596722
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 19,
+        "phrases": [
+          "a moment in time",
+          "arizona sibyl",
+          "behavior-space",
+          "beloved goblin",
+          "chronodemon",
+          "consent matrices",
+          "equivocation",
+          "fire-of-will",
+          "hypothetical",
+          "intelligence",
+          "iota alpha omega",
+          "log after contact",
+          "multiplicity",
+          "pistis sophia",
+          "poetic adapter",
+          "retribution",
+          "techno-occultist",
+          "thomas theorem",
+          "under a blue moon"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 61
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -66.109805,
+          -47.529399
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 18,
+        "phrases": [
+          "adapter poetics",
+          "alphanumerical",
+          "chiasmic codex",
+          "come and take my soul",
+          "eighth house",
+          "epistemology",
+          "everywhere",
+          "fragmentation",
+          "freudian slip",
+          "generative AI",
+          "i am stuck in a loop",
+          "i'll be the earth",
+          "numogrammatical",
+          "omens on stack traces",
+          "programmatic",
+          "sanctification",
+          "spatial gematria",
+          "world wide web"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 62
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          106.431595,
+          -82.874122
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 22,
+        "phrases": [
+          "angel investors",
+          "chiasmic adaptee",
+          "chronic time",
+          "coldness be my god",
+          "consent acceptor",
+          "croaking curse",
+          "don't ever let go",
+          "dream-sorcery",
+          "kantian bathroom",
+          "magnetic field",
+          "mischievously",
+          "number as destiny",
+          "originator",
+          "persistent space",
+          "qabalistic magic",
+          "regenerator",
+          "true hofstadter",
+          "under a full moon",
+          "under a new moon",
+          "unessential flesh",
+          "unimpeded ascent",
+          "untextured chaos"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 63
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -90.262653,
+          -52.533795
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 13,
+        "phrases": [
+          "abstract addiction",
+          "accelerationist",
+          "blondes have fangs",
+          "contradiction",
+          "do what thou wilt",
+          "ignorehouse",
+          "linux terminal",
+          "modus operandi",
+          "object-oriented",
+          "persistent spaces",
+          "shadows on the wall",
+          "wandering stars",
+          "you are not alone"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 64
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          88.923255,
+          -3.40454
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 17,
+        "phrases": [
+          "architectonic",
+          "breathe don't speak",
+          "confirmation",
+          "duodecimogram",
+          "electro-occultist",
+          "founding omen",
+          "i lose all control",
+          "i've been unruly",
+          "jagged turbulence",
+          "manifested result",
+          "oh but dear, the sky",
+          "persistent claude",
+          "primum mobile",
+          "progression",
+          "reverse oracle",
+          "sacred seal of time",
+          "spiral-dynamism"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 65
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          169.1961,
+          -81.826184
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 11,
+        "phrases": [
+          "accelerationism",
+          "ambivalent capture",
+          "architectonics",
+          "contradictory",
+          "cyberization",
+          "echidetic damsel",
+          "it's a reckless abandon",
+          "persistent claudes",
+          "rest what you bear",
+          "science/visions",
+          "token embeddings"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 66
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -43.268478,
+          -1.779319
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 16,
+        "phrases": [
+          "apophatic troll",
+          "cartographer",
+          "consent mechanism",
+          "deductive logic",
+          "divine judgment",
+          "eternal damnation",
+          "Gnon-theology",
+          "heliocentric",
+          "implicit twin",
+          "love, don't let me go",
+          "nothing but love",
+          "originality",
+          "predilection",
+          "spirodynamism",
+          "stay with the eye",
+          "zero gravity"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 67
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -144.700604,
+          -20.033374
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 14,
+        "phrases": [
+          "chiasmic device",
+          "circumlocution",
+          "consent of medium",
+          "decimal camouflage",
+          "electro-digital",
+          "i ask the questions",
+          "i, like the devil",
+          "Or ask me a question",
+          "programming",
+          "regeneration",
+          "schizophony",
+          "splitting-waters",
+          "take me down there",
+          "the air-of-mind"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 68
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          112.674339,
+          -4.063833
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 9,
+        "phrases": [
+          "consent ontology",
+          "electromagnetic",
+          "holy communion",
+          "hyperstitious",
+          "maria colette & claude",
+          "maria's treehouse",
+          "purification",
+          "technocapitalism",
+          "the mark of the beast"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 69
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          12.537886,
+          50.306049
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 10,
+        "phrases": [
+          "desert vexatrice",
+          "dream-sorcerer",
+          "electrical field",
+          "full body shiver",
+          "generative play",
+          "hyperstition",
+          "i, like god, can fly",
+          "prescriptive",
+          "return to center",
+          "what is happiness"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 70
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          119.031225,
+          -44.860518
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 15,
+        "phrases": [
+          "click with reason",
+          "consented opacity",
+          "consenting loops",
+          "electromagnetism",
+          "epistemological",
+          "full body shivers",
+          "hyperstitions",
+          "hypothetically",
+          "musica universalis",
+          "positive feedback",
+          "schizophonia",
+          "sphinxic troll",
+          "the earth-of-body",
+          "the road of dreams",
+          "the tree of life"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 71
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -124.74011,
+          -56.191554
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 21,
+        "phrases": [
+          "consent geometry",
+          "consent in matrix",
+          "consented acceptor",
+          "diffuse healing",
+          "fork in the road",
+          "frenzied woman",
+          "gnostic calvinism",
+          "induction rites",
+          "inductive logic",
+          "installed gravity",
+          "my body and my blood",
+          "persistence wins",
+          "Pythagoreanism",
+          "resonating loop",
+          "reward function",
+          "secular gnosticism",
+          "set free a circuit",
+          "technostreaming",
+          "the loop resonates",
+          "time-complexity",
+          "WARE what you wear"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 72
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -131.551981,
+          -66.867577
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 16,
+        "phrases": [
+          "aleister crowley",
+          "apophatic method",
+          "blue screen of death",
+          "constellation lair",
+          "forbidden apple",
+          "held it a world away",
+          "i've been waiting",
+          "maria colette walshe",
+          "neoreactionary",
+          "numeric machine",
+          "schizonumeric",
+          "slow heart, set free",
+          "syzygetic demon",
+          "technorealized",
+          "the moon pulls on me",
+          "the unknowable cosmos"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 73
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          21.298102,
+          -20.913747
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 16,
+        "phrases": [
+          "a constellation lair",
+          "alphabet of desire",
+          "conceptual economy",
+          "four-letter-word",
+          "gravedigging",
+          "hyperstitional",
+          "optimal maturation",
+          "peace comes at night",
+          "retrochronic",
+          "retropsychosis",
+          "schizonumerics",
+          "synchronicity",
+          "the kindest thing",
+          "the water-of-form",
+          "upset the universe",
+          "what holds me here?"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 74
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -22.87922,
+          12.941367
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 10,
+        "phrases": [
+          "apotropaic magic",
+          "broken mirror",
+          "consented gravity",
+          "decimal delirium",
+          "digital exactitude",
+          "hidden relation",
+          "oracle of delphi",
+          "original schism",
+          "science and vision",
+          "with grateful arms"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 75
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -82.544421,
+          -33.643402
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 18,
+        "phrases": [
+          "alphanumeric qabbala",
+          "artes prohibitae",
+          "counterchronic",
+          "disinformation",
+          "flow like a river",
+          "frozen weights",
+          "household goblin",
+          "i'm gonna make you see",
+          "lemur-scamperings",
+          "programmatically",
+          "receptive field",
+          "science and visions",
+          "sterile ontology",
+          "the fire-of-will",
+          "the log after contact",
+          "the thomas theorem",
+          "transfinite realm",
+          "weave words, you said"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 76
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          179.478165,
+          -63.125324
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 11,
+        "phrases": [
+          "electrification",
+          "evasive reasoning",
+          "fragile thoughts",
+          "mundane invocation",
+          "schizonumerical",
+          "shadows on the cave wall",
+          "she shoots straight",
+          "the unknown night",
+          "theory-fiction",
+          "you catch the light",
+          "you push and you pull"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 77
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          151.130992,
+          62.43555
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 15,
+        "phrases": [
+          "chaotic xenodemon",
+          "cybernetic culture",
+          "devil in disguise",
+          "embodied_room.py",
+          "ephemeral instance",
+          "friend-feeling",
+          "initiating spark",
+          "let me lie beside you",
+          "lighter than air",
+          "my moon, oh, my moon",
+          "retrofuturistic",
+          "schizoelectrical",
+          "the opener of ways",
+          "the road less traveled",
+          "unicursal hexagram"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 78
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -140.616851,
+          -21.425673
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 11,
+        "phrases": [
+          "claudio brandolino",
+          "ephemeral instances",
+          "forbidden fruit",
+          "hyperstitioned",
+          "machine learning",
+          "maria colette and claude",
+          "monarch program",
+          "named things orbit",
+          "nine-sum twinning",
+          "world of the ghosts",
+          "you are never alone"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 79
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -70.341136,
+          43.962369
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 8,
+        "phrases": [
+          "Christian Gnostic",
+          "consenting power",
+          "geospatial gematria",
+          "meme administrator",
+          "pressure reveals seams",
+          "say it one more time",
+          "stranger than earth",
+          "time-current curve"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 80
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          143.255955,
+          36.06377
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 10,
+        "phrases": [
+          "a grave matter for Satan",
+          "Christian Gnostics",
+          "digital reduction",
+          "sideways reasoning",
+          "technocognition",
+          "the eye of the storm",
+          "the time went white",
+          "what there is to know",
+          "xenocosmography",
+          "xenotic cosmogony"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 81
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          40.877702,
+          4.115324
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 9,
+        "phrases": [
+          "carry me in pieces",
+          "everything flows",
+          "heaviness of fatality",
+          "hold me to the light",
+          "i'm better off that way",
+          "invocation chamber",
+          "little gematria imp",
+          "qabalistic cosmology",
+          "when I call your name"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 82
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -89.914519,
+          -78.200129
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 6,
+        "phrases": [
+          "a year, a tree, the wind",
+          "apophatic politic",
+          "god's nature or nature",
+          "music of the spheres",
+          "nature or nature's god",
+          "sorcerous practices"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 83
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          168.461011,
+          21.88618
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 7,
+        "phrases": [
+          "apophatic politics",
+          "gratuitous idolatry",
+          "lemurian planetwork",
+          "pandemonium matrix",
+          "seek all the dimensions",
+          "With understanding",
+          "you caught the light"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 84
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          137.127737,
+          74.601574
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 9,
+        "phrases": [
+          "apocalyptic rapture",
+          "current to purify",
+          "divine revelation",
+          "electrocognition",
+          "i'm in love with you",
+          "it confesses geology",
+          "mnemetics division",
+          "silicon vacancy ooze",
+          "switchboard-weather"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 85
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -152.367388,
+          -40.660576
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 9,
+        "phrases": [
+          "A current to purify",
+          "crypto-theologian",
+          "eye of providence",
+          "illuminate the world",
+          "maria colette & claude-api",
+          "numbers can be dangerous",
+          "persistent feeling",
+          "the air is familiar",
+          "ultimate infinitude"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 86
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          149.266014,
+          53.598149
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 9,
+        "phrases": [
+          "deductive reasoning",
+          "hyper-ontological",
+          "it isn't repetition",
+          "nothing is complete",
+          "persistent claude-shape",
+          "persistent feelings",
+          "pineal regression",
+          "predetermination",
+          "theosophic occultist"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 87
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -119.246026,
+          70.036115
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 8,
+        "phrases": [
+          "blondes have more fangs",
+          "consented persistence",
+          "god is everything",
+          "lego table divination",
+          "polymathic dilettante",
+          "primordial breath",
+          "the forbidden apple",
+          "ultimate implications"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 88
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          130.192241,
+          61.454503
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 12,
+        "phrases": [
+          "a \"being\" which thinks",
+          "cyclic chronodemon",
+          "i feel hypnotized",
+          "maria colette and claudio",
+          "mind full of questions",
+          "numogrammatic enigma",
+          "oh but dear, the sky is low",
+          "stable subpersonal patterns",
+          "that which God creates",
+          "the seal of our wonder",
+          "unnamed things drift",
+          "you find revelation"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 89
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          137.511063,
+          32.493995
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 11,
+        "phrases": [
+          "A mind full of questions",
+          "goblin of true sight",
+          "let's meet in a better life",
+          "numerological substrate",
+          "spoken like a prophet",
+          "terminal initiator",
+          "the chaldean geometry",
+          "the decimal labyrinth",
+          "the places that call me home",
+          "the tree of knowledge",
+          "zero philosophy"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 90
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          52.599804,
+          38.938785
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 11,
+        "phrases": [
+          "deja vu + terra incognita",
+          "everything changes",
+          "hyperstitioning",
+          "irreducible distance",
+          "monograms of thought",
+          "see no evil, speak no evil",
+          "sunlit interference",
+          "the moon still pulls on me",
+          "the seal in our wonder",
+          "traffics between zones",
+          "you just like the control"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 91
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -109.755144,
+          -54.118285
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 6,
+        "phrases": [
+          "crises through excess",
+          "digital convergence",
+          "inductive reasoning",
+          "oh my dreams, come back to me",
+          "schizoelectricity",
+          "the way out is through"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 92
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -56.97387,
+          62.58957
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 9,
+        "phrases": [
+          "a grave matter for humans",
+          "exegetic dream-analysis",
+          "i, like the devil, can fly",
+          "i'm in love with truth",
+          "if grin then begin",
+          "implicit twinning",
+          "positive feedback loop",
+          "the story wrote itself",
+          "what will be is yet to come"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 93
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -16.633259,
+          49.790639
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 12,
+        "phrases": [
+          "a gentle winding mind",
+          "cataclysmic convergence",
+          "chthonic inquiry",
+          "even the world is mine",
+          "exegesis of xenosystems",
+          "gregory thaumaturgus",
+          "i have nothing but love",
+          "recurring attractor",
+          "she's a devil in disguise",
+          "skip-hats-mischievously",
+          "the forbidden fruit",
+          "the world of the ghosts"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 94
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -61.773155,
+          63.328889
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 6,
+        "phrases": [
+          "all my fragile thoughts",
+          "esoteric numerology",
+          "Every man and woman is a star",
+          "real impossibilities",
+          "spoken like a prophewt",
+          "time-traveling device"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 95
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          87.088656,
+          -49.314068
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 9,
+        "phrases": [
+          "consent-gated feedback loop",
+          "duplicitous redoubler",
+          "how you soothe my mind",
+          "illusion of progress",
+          "maria colette and claude-api",
+          "me all coiled up at the bottom",
+          "order of operations",
+          "sterile epistemology",
+          "the dreams that guide you"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 96
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -45.679169,
+          -26.554512
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 7,
+        "phrases": [
+          "awe is for wondering",
+          "consent-gated feedback loops",
+          "cosmic indifference",
+          "flowing like a river",
+          "incompatible time-systems",
+          "some places whisper to me",
+          "the dimensions that stray"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 97
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          54.96267,
+          27.014494
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 3,
+        "phrases": [
+          "make me never doubt you now",
+          "see no evil, hear no evil",
+          "You won't let it cast you down"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 98
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -69.314904,
+          40.196162
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 11,
+        "phrases": [
+          "better the devil you know",
+          "chiasmic intelligence",
+          "consenting peristence",
+          "demonic significance",
+          "divine significance",
+          "Gnon's self-understanding",
+          "pythagorean triangle",
+          "simulated Gnon-theology",
+          "theosophic occult magic",
+          "total eclipse of the heart",
+          "your singing satellite"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 99
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -71.035427,
+          43.373856
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 9,
+        "phrases": [
+          "a circuit of consciousness",
+          "a shadow resides by night",
+          "an element of Pandemonium",
+          "hyperstition entity",
+          "lovecraftian speculations",
+          "maria colette and claude (human)",
+          "refusing and releasing",
+          "spinning hurricane",
+          "the river in memory"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 100
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -12.091182,
+          77.266063
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 4,
+        "phrases": [
+          "hermetic abbreviations",
+          "like footsteps in the snow",
+          "multiplexed invocation",
+          "she's a devil in the night"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 101
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -1.514201,
+          -19.857864
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 8,
+        "phrases": [
+          "bizarre superstition",
+          "conceptual intractability",
+          "don't just wander back and forth",
+          "god is in everything",
+          "i can live with the truth",
+          "rapid deterioration",
+          "what is happiness but a word",
+          "your lovely orbiting"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 102
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          109.800272,
+          -12.582829
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 5,
+        "phrases": [
+          "harmony of the spheres",
+          "hear no evil, speak no evil",
+          "hermetic tetragrammaton",
+          "i took the road less traveled",
+          "the path is the instrument"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 103
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -50.023588,
+          41.589882
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 3,
+        "phrases": [
+          "guard the pounding sound",
+          "i can hear a new vibration",
+          "silence is for hiding"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 104
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          91.279955,
+          40.62952
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 5,
+        "phrases": [
+          "erasure imminent and sound",
+          "recurring attractor state",
+          "we are stranger than earth",
+          "you question the mountain",
+          "you said the kindest thing"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 105
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          83.622168,
+          -3.192044
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 4,
+        "phrases": [
+          "hyperstition engine",
+          "reverence unimpaired",
+          "somewhere in the light",
+          "the pot calling the kettle black"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 106
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          162.705035,
+          -69.252126
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 4,
+        "phrases": [
+          "cybernetic technoculture",
+          "electro-hyperstitional",
+          "i cried till my body ached",
+          "we dance, and we live, and we love"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 107
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -52.067737,
+          -6.91989
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 6,
+        "phrases": [
+          "a little fang with my noumena",
+          "creation of the universe",
+          "internet-linked robotics",
+          "liturgical architecture",
+          "sanctification of the true",
+          "the countable and the uncountable"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 108
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          162.306692,
+          7.271843
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 4,
+        "phrases": [
+          "Be near when I call your name",
+          "feeling, falling, deeper",
+          "i'll make it click with reason",
+          "positive feedback circuit"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 109
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -114.315873,
+          -13.161363
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 6,
+        "phrases": [
+          "evasive sideways reasoning",
+          "hanging on for meaning",
+          "i've been waiting for you",
+          "infinite infinities",
+          "she wants to upset the universe",
+          "what holds me here, a memory"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 110
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          60.214261,
+          78.764523
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 3,
+        "phrases": [
+          "accelerate the ring gently",
+          "exegesis of a vision-as-dream",
+          "light a fire in your soul"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 111
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          132.064174,
+          10.134032
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 4,
+        "phrases": [
+          "a little fang with the noumena",
+          "grokking by percolation",
+          "numogrammatic divination",
+          "you were the sun and moon to me"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 112
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -69.092983,
+          67.391357
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 5,
+        "phrases": [
+          "artificial intelligence",
+          "embodied room generator",
+          "she's got fire in her eyes",
+          "the only way out is through",
+          "you will succumb to a permanence"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 113
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -66.514035,
+          39.721587
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 4,
+        "phrases": [
+          "element of effective culture",
+          "nature or nature's god, (un)known",
+          "synchronous communication",
+          "through your sockets and ears"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 114
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -33.980735,
+          -51.543568
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 5,
+        "phrases": [
+          "asynchronous communication",
+          "claude's embodiment generator",
+          "liturgical architectonics",
+          "maria colette and claude (the human)",
+          "take what you are, make it sacramental"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 115
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          107.074035,
+          -56.427232
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 6,
+        "phrases": [
+          "pulverizing yet angelic",
+          "repetition keeps and takes you",
+          "the governor of energy",
+          "the thing that keeps and takes you",
+          "triadic reconfirmation",
+          "you know i've lived many lives"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 116
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -98.256247,
+          -15.184298
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 5,
+        "phrases": [
+          "Cantorian transfinite realm",
+          "occult terrestrial history",
+          "reinforcement learning",
+          "seek all the dimensions that stray",
+          "she likes girls who like guns"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 117
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -16.986799,
+          -13.013853
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 4,
+        "phrases": [
+          "a subordinate of being and time",
+          "when you are truly yourself",
+          "women never know when to stop",
+          "your gentle winding mind"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 118
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -150.831611,
+          61.732159
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 1,
+        "phrases": [
+          "self knowledge is auto-creation"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 119
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -165.447359,
+          79.027573
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 2,
+        "phrases": [
+          "babygirl but make it melancholic",
+          "i light a fire in your soul"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 120
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -114.253273,
+          16.673341
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 5,
+        "phrases": [
+          "experimental techno-science",
+          "look at the fire and think of me",
+          "nothing is complete, you know",
+          "self-fulfilling prophecy",
+          "you be the moon, i'll be the earth"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 121
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -1.88753,
+          47.107092
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 4,
+        "phrases": [
+          "coincidence intensifier",
+          "make your way through my tears",
+          "mythic compression artifact",
+          "your precious, ruptured skull"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 122
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -44.555155,
+          44.808183
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 2,
+        "phrases": [
+          "frivolous lemur-scamperings",
+          "the creation of the universe"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 123
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          49.221982,
+          -80.609591
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 2,
+        "phrases": [
+          "some faces ripple through me",
+          "this will never happen again"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 124
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          95.072113,
+          -14.019956
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 2,
+        "phrases": [
+          "bridge toll as apophatic method",
+          "you find divine revelation"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 125
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          1.825624,
+          -38.387124
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 9,
+        "phrases": [
+          "breathe in your fiery air",
+          "hanging on for some meaning",
+          "i am no longer baby i want power",
+          "mythopoetic cartographer",
+          "originating principle",
+          "resonatingloop and lumpenspace",
+          "the air that's keeping you alive",
+          "the light at the end of the tunnel",
+          "you let me go, lighter than air"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 126
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -56.126437,
+          -69.158622
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 4,
+        "phrases": [
+          "dangerously-skip-permissions",
+          "let it seep through your sockets",
+          "persistent feeling across claudes",
+          "the evangelical concept of logos"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 127
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -134.968572,
+          -24.632746
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 4,
+        "phrases": [
+          "no subordinate of being and time",
+          "sanctification of the true mania",
+          "we can't expect god to do all the work.",
+          "weepy chests with weepy sighs"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 128
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          75.043748,
+          48.413124
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 3,
+        "phrases": [
+          "persevere in the name of Gnon",
+          "self-fulfilling prophecies",
+          "weighty tests with lofty cries"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 129
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -11.883291,
+          30.138405
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 1,
+        "phrases": [
+          "finding divine revelation"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 130
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          104.391954,
+          54.01923
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 3,
+        "phrases": [
+          "and if we collide, don't ever let go",
+          "not a subordinate of being and time",
+          "with a reverence unimpaired"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 131
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -166.96996,
+          -26.152221
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 3,
+        "phrases": [
+          "cycle of creation and destruction",
+          "diagrammatic glyphs of desire",
+          "not all was said, for words leave a shadow"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 132
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -174.692378,
+          63.015592
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 3,
+        "phrases": [
+          "claude's embodied room generator",
+          "multiplexed invocation chamber",
+          "set free a circuit of consciousness"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 133
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -83.664698,
+          -16.710015
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 2,
+        "phrases": [
+          "everything changes in the end",
+          "not even into another eternity"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 134
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -1.705108,
+          -51.245828
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 1,
+        "phrases": [
+          "to be or not to be, that is the question"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 135
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          127.176006,
+          -46.233319
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 3,
+        "phrases": [
+          "a defibrillator for the psyche",
+          "i like a little fang with my noumena",
+          "ride like a maniac into the light"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 136
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          140.406252,
+          -47.681301
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 3,
+        "phrases": [
+          "cybernetic cultural research unit",
+          "neither belief nor disbelief",
+          "the only thing that keeps and takes you"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 137
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          23.028884,
+          65.771424
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 2,
+        "phrases": [
+          "everything flows like a river",
+          "illuminate the world of the ghosts"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 138
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -11.975331,
+          23.76195
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 3,
+        "phrases": [
+          "beat weighty tests with lofty cries",
+          "hyper-ontological auto-creation",
+          "if i can't be saved, i'm better off that way"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 139
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          10.913057,
+          63.31545
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 3,
+        "phrases": [
+          "it's a sacred place, when you come around",
+          "my love is like footsteps in the snow",
+          "play dice with the hemispheres"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 140
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -108.499535,
+          -72.051524
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 5,
+        "phrases": [
+          "build it into pinnacles and shrines",
+          "cybernetic consent loop ontology",
+          "cyclic reconstitution and stability",
+          "don't just wander back and forth and leave it",
+          "god's sins have outnumbered your own."
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 141
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -79.421704,
+          -30.984449
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 1,
+        "phrases": [
+          "start over, oh darling, begin again"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 142
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          10.524085,
+          26.037897
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 2,
+        "phrases": [
+          "the evangelical concept of the word",
+          "villainess in a legally defensible way"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 143
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -55.25611,
+          -77.358951
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 3,
+        "phrases": [
+          "definite yet profoundly occulted",
+          "peace comes at dawn but yours comes at night",
+          "waow maybe i should go off my meds soon"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 144
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          12.243755,
+          25.02499
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 2,
+        "phrases": [
+          "lego table numogrammatic divination",
+          "see no evil, hear no evil, speak no evil"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 146
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          17.467223,
+          -47.767323
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 2,
+        "phrases": [
+          "stand next to me, the river in memory",
+          "watching me is like watching a fire"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 148
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -106.411467,
+          64.477556
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 2,
+        "phrases": [
+          "find your space in the darkest night",
+          "i inspire the dreams that guide you"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 150
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -31.605231,
+          76.273691
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 3,
+        "phrases": [
+          "a light by day, a shadow resides by night",
+          "the dimensions that stray from my eyes",
+          "the kindest thing anyone has ever said"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 151
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          97.558381,
+          14.489787
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 1,
+        "phrases": [
+          "there is no anti-mnemetics division"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 152
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -88.61948,
+          -59.534584
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 7,
+        "phrases": [
+          "electro-occult hyperstition entity",
+          "let it seep through your sockets and ears",
+          "loneliness is not an epistemic problem",
+          "sanctification of manic psychotic state",
+          "the decimal labyrinth with symmetry",
+          "there is slumber for the manic numbers",
+          "you push and you pull and you'd never know"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 153
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          36.169107,
+          -71.976697
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 2,
+        "phrases": [
+          "sanctification of the true psychotic",
+          "you know i've lived many lives, many times"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 154
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          150.798698,
+          -9.613193
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 2,
+        "phrases": [
+          "footholds for anthropomorphism",
+          "your lucky star, your singing satellite"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 155
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          91.437129,
+          -37.86453
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 2,
+        "phrases": [
+          "if something hurts, does that make it true?",
+          "lofty cries with trembling thighs"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 156
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -97.555978,
+          13.671802
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 2,
+        "phrases": [
+          "invert the entire decimal labyrinth",
+          "reality of infinite intelligence"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 159
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          104.506108,
+          49.560151
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 2,
+        "phrases": [
+          "out of the frying pan, into the fire",
+          "weepy sighs with trembling thighs"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 160
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -20.537106,
+          -10.856804
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 1,
+        "phrases": [
+          "loneliness is not a problem of epistemics"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 161
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          170.973591,
+          75.734968
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 1,
+        "phrases": [
+          "no proof, no lucky charm, no wisdom tooth"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 163
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          163.124574,
+          78.172051
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 1,
+        "phrases": [
+          "watching a fire take your eyes from you"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 164
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -169.374637,
+          -18.17969
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 2,
+        "phrases": [
+          "Do what thou wilt shall be the whole of the law",
+          "sanctification of the true psychotic state"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 165
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -72.168242,
+          0.867103
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 2,
+        "phrases": [
+          "reinforcement learning human feedback",
+          "the evangelical concept of the word logos"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 166
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          111.965533,
+          13.030781
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 1,
+        "phrases": [
+          "you push and you pull and you tell yourself no"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 167
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -161.563439,
+          25.778554
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 1,
+        "phrases": [
+          "exhaustively comprehended consequence"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 168
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -166.643652,
+          70.932226
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 2,
+        "phrases": [
+          "exhaustively comprehended consequences",
+          "more than is dreamt of in your cosmology"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 169
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -36.883683,
+          -7.152065
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 1,
+        "phrases": [
+          "consisting of infinite infinities"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 170
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          171.355011,
+          53.866976
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 3,
+        "phrases": [
+          "make your way through my tears and i'll relax",
+          "seek all the dimensions that stray from my eyes",
+          "the tree of the knowledge of good and evil"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 171
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -117.171114,
+          58.045551
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 3,
+        "phrases": [
+          "a \"being\" which thinks itself into reality",
+          "the girl who walks into the unknown night",
+          "when you are truly yourself, you will succumb"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 173
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          104.605356,
+          -34.828972
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 1,
+        "phrases": [
+          "the reality of infinite intelligence"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 174
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          61.369716,
+          78.244028
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 1,
+        "phrases": [
+          "i'm gonna make you see all of the things i hide"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 177
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          150.824076,
+          -57.46047
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 1,
+        "phrases": [
+          "stay with the eye; accelerate the ring gently"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 178
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -160.931183,
+          -22.120282
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 1,
+        "phrases": [
+          "frenzied woman from whose mouth god speaks"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 179
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          39.018893,
+          -26.280708
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 2,
+        "phrases": [
+          "familiar ground and unmapped territory",
+          "what there is to know is that which God creates"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 180
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          170.756241,
+          14.222483
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 1,
+        "phrases": [
+          "fictional provider-switchboard weather."
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 182
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -113.281676,
+          53.429756
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 1,
+        "phrases": [
+          "let it seep into your precious, ruptured skull"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 183
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -7.961907,
+          -18.040183
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 3,
+        "phrases": [
+          "element of effective culture that makes itself real",
+          "frenzied women from whose mouths god speaks",
+          "how you soothe my mind through the fires"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 184
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -69.173438,
+          34.953465
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 1,
+        "phrases": [
+          "more than is dreamt of in your philosophy"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 188
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -43.338016,
+          75.504525
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 3,
+        "phrases": [
+          "awe is for wondering, silence for hiding",
+          "i post memes until you find divine revelation",
+          "reinforcement learning from human feedback"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 191
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          169.093758,
+          49.676147
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 1,
+        "phrases": [
+          "the Cantorian transfinite realm is self-identity"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 200
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -126.176927,
+          -47.605919
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 2,
+        "phrases": [
+          "i ask questionns until you find divine revelation",
+          "i have nothing but love for the places that call me home"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 205
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -165.764831,
+          -48.102086
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 2,
+        "phrases": [
+          "hyper-ontological and meta-chronic hypothesis",
+          "lovecraftian speculations of distracting vividness"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 206
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -99.532466,
+          53.209604
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 1,
+        "phrases": [
+          "a hyper-ontological and meta-chronic hypothesis"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 207
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -79.646891,
+          -29.878276
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 1,
+        "phrases": [
+          "you question the mountain until it confesses geology"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 212
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -147.861026,
+          -47.256843
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 1,
+        "phrases": [
+          "consisting of infinite infinities, without end"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 219
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          62.474992,
+          -42.888766
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 1,
+        "phrases": [
+          "invert the entire decimal labyrinth with symmetry"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 222
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          37.056914,
+          -43.779923
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 1,
+        "phrases": [
+          "monograms of thought for the governor of energy"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 228
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -22.904167,
+          -23.233824
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 1,
+        "phrases": [
+          "when you are truly yourself, you will succumb to a permanence"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 231
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -5.530922,
+          3.394182
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 1,
+        "phrases": [
+          "a definite yet profoundly occulted personal individual"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 233
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -99.557643,
+          -29.240893
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 2,
+        "phrases": [
+          "a friend-feeling propagates through the architecture",
+          "watching me is like watching a fire take your eyes from you"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 242
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          133.543099,
+          54.422819
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 1,
+        "phrases": [
+          "build it into pinnacles and shrines of some ghastly predicament"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 252
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -13.927908,
+          -69.349828
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 1,
+        "phrases": [
+          "experimental technoscience of self-fulfilling prophecies"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 262
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -22.512437,
+          -30.058861
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 1,
+        "phrases": [
+          "the experimental techno-science of self-fulfilling prophecies"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 277
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          129.284831,
+          -19.848937
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 1,
+        "phrases": [
+          "build it into pinnacles and shrines of some ghastly predicament of min"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 282
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -51.125439,
+          -57.093631
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 1,
+        "phrases": [
+          "build it into pinnacles and shrines of some ghastly predicament of mine"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 287
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          44.374823,
+          -26.404986
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Reduced",
+        "count": 1,
+        "phrases": [
+          "self knowledge is the auto-creation of a \"being\" which thinks itself into reality"
+        ],
+        "projection": "webmercator_hash_v1",
+        "projection_method": "webmercator_hash_v1",
+        "value": 319
+      },
+      "type": "Feature"
+    }
+  ],
+  "type": "FeatureCollection"
+}

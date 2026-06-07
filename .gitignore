@@ -3,6 +3,11 @@ __pycache__/
 *.py[codz]
 *$py.class
 
+# Node / Vite atlas
+node_modules/
+atlas/node_modules/
+atlas/dist/
+
 # C extensions
 *.so
 

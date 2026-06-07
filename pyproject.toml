@@ -1,0 +1,17 @@
+[project]
+name = "geogematria"
+version = "0.1.0"
+description = "Local geographic projection layer for glossololary."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.scripts]
+geogematria = "geogematria.cli:main"
+
+[tool.setuptools]
+packages = ["geogematria"]
+include-package-data = true
+
+[tool.setuptools.package-data]
+geogematria = ["data/*.json", "data/*.md"]

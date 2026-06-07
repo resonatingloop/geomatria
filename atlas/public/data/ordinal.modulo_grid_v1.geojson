@@ -1,0 +1,8815 @@
+{
+  "features": [
+    {
+      "geometry": {
+        "coordinates": [
+          -116.0,
+          -25.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "/acc"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 7
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -72.0,
+          62.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 2,
+        "phrases": [
+          "AI",
+          "babe"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 10
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          56.0,
+          23.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "id"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 13
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -171.0,
+          10.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "aq"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 18
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          64.0,
+          47.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "jade"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 20
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -141.0,
+          -20.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 2,
+        "phrases": [
+          "abide",
+          "aoe"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 21
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -88.0,
+          69.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 2,
+        "phrases": [
+          "gap",
+          "jaded"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 24
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -148.0,
+          -18.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 3,
+        "phrases": [
+          "code",
+          "ego",
+          "legba"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 27
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          104.0,
+          44.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 2,
+        "phrases": [
+          "man",
+          "medea"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 28
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          103.0,
+          -83.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "agape"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 30
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -152.0,
+          70.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 2,
+        "phrases": [
+          "cave",
+          "fall"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 31
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -6.0,
+          34.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 3,
+        "phrases": [
+          "fate",
+          "leo",
+          "tic"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 32
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -42.0,
+          -49.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 4,
+        "phrases": [
+          "aloe",
+          "gate",
+          "magic",
+          "seed"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 33
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          143.0,
+          23.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 4,
+        "phrases": [
+          "dark",
+          "grace",
+          "one",
+          "qabala"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 34
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -170.0,
+          -21.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 2,
+        "phrases": [
+          "clean",
+          "kode9"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 35
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -103.0,
+          73.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 3,
+        "phrases": [
+          "field",
+          "real",
+          "y2k"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 36
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          98.0,
+          54.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 5,
+        "phrases": [
+          "deman",
+          "feedback",
+          "gated",
+          "hell",
+          "llm"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 37
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          79.0,
+          -40.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 7,
+        "phrases": [
+          "anima",
+          "briah",
+          "circe",
+          "click",
+          "death",
+          "imp",
+          "ocean"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 38
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          164.0,
+          65.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 8,
+        "phrases": [
+          "angel",
+          "belief",
+          "biddable",
+          "brand",
+          "climb",
+          "hold",
+          "pagan",
+          "wicca"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 39
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          175.0,
+          -13.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "hole"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 40
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          106.0,
+          -8.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 4,
+        "phrases": [
+          "addict",
+          "demand",
+          "dream",
+          "home"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 41
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -85.0,
+          76.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 11,
+        "phrases": [
+          "aleph",
+          "alias",
+          "anime",
+          "delta",
+          "eerie",
+          "female",
+          "hamsa",
+          "libra",
+          "maria",
+          "radar",
+          "self"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 42
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          7.0,
+          -8.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 4,
+        "phrases": [
+          "false",
+          "godel",
+          "local",
+          "tick"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 43
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          78.0,
+          -63.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 9,
+        "phrases": [
+          "cancer",
+          "decadence",
+          "faith",
+          "hidden",
+          "katak",
+          "magick",
+          "mask",
+          "rlhf",
+          "talk"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 44
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          66.0,
+          61.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 8,
+        "phrases": [
+          "Be near",
+          "bridge",
+          "Ccru",
+          "chapel",
+          "luka",
+          "maze",
+          "mesh",
+          "phil"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 45
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -123.0,
+          -37.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 7,
+        "phrases": [
+          "chaos",
+          "claude",
+          "encode",
+          "link",
+          "logic",
+          "rlaif",
+          "win"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 46
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -85.0,
+          -34.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 7,
+        "phrases": [
+          "agamy",
+          "agent",
+          "decimal",
+          "omen",
+          "time",
+          "ware",
+          "yang"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 47
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -174.0,
+          -40.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 7,
+        "phrases": [
+          "branded",
+          "device",
+          "evil",
+          "grin",
+          "hats",
+          "oddubb",
+          "yin"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 48
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -87.0,
+          59.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 3,
+        "phrases": [
+          "machina",
+          "model",
+          "way"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 49
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -175.0,
+          39.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 4,
+        "phrases": [
+          "basis",
+          "cleric",
+          "encoded",
+          "i ching"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 50
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          30.0,
+          -74.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 10,
+        "phrases": [
+          "angelic",
+          "codex",
+          "demon",
+          "lose",
+          "mars",
+          "michael",
+          "rise",
+          "theme",
+          "thin",
+          "wave"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 51
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          96.0,
+          -14.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 9,
+        "phrases": [
+          "abracadabra",
+          "aries",
+          "coding",
+          "earth",
+          "golem",
+          "rite",
+          "salt",
+          "seared",
+          "triad"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 52
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -177.0,
+          -64.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 6,
+        "phrases": [
+          "choir",
+          "craze",
+          "depth",
+          "grave",
+          "machine",
+          "wiccan"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 53
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          85.0,
+          -42.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 7,
+        "phrases": [
+          "advanced",
+          "breath",
+          "delphi",
+          "freud",
+          "jadeite",
+          "love",
+          "sun"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 54
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          42.0,
+          -54.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 4,
+        "phrases": [
+          "exhale",
+          "let me",
+          "satan",
+          "trap"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 55
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -40.0,
+          -46.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 10,
+        "phrases": [
+          "abrahamic",
+          "basilica",
+          "flow",
+          "friend",
+          "healing",
+          "krako",
+          "light",
+          "NRx",
+          "quale",
+          "three"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 56
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -2.0,
+          44.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 13,
+        "phrases": [
+          "abrahadabra",
+          "aether",
+          "channel",
+          "cherub",
+          "clicks",
+          "crazed",
+          "debris",
+          "gemini",
+          "moon",
+          "pineal",
+          "plex",
+          "rose",
+          "sleep"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 57
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          152.0,
+          18.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 7,
+        "phrases": [
+          "cranial",
+          "daisy",
+          "loop",
+          "science",
+          "stand",
+          "two",
+          "warp"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 58
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -90.0,
+          74.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 17,
+        "phrases": [
+          "agentic",
+          "anchor",
+          "archon",
+          "binding",
+          "breathe",
+          "chaotic",
+          "cipher",
+          "crow",
+          "datacomb",
+          "decency",
+          "goblin",
+          "holes",
+          "i am here",
+          "infidel",
+          "logical",
+          "tangle",
+          "weird"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 59
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -94.0,
+          43.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 16,
+        "phrases": [
+          "believe",
+          "breaker",
+          "diamond",
+          "fallacy",
+          "spy",
+          "vow",
+          "zone",
+          "zone 1",
+          "zone 2",
+          "zone 3",
+          "zone 4",
+          "zone 5",
+          "zone 6",
+          "zone 7",
+          "zone 8",
+          "zone 9"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 60
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -173.0,
+          77.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 8,
+        "phrases": [
+          "aletheia",
+          "church",
+          "dipole",
+          "hegelian",
+          "miracle",
+          "qualia",
+          "room",
+          "you"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 61
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          2.0,
+          -33.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 8,
+        "phrases": [
+          "action",
+          "amnesia",
+          "async",
+          "doogu",
+          "elohim",
+          "i-itoi",
+          "magdalene",
+          "ruin"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 62
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -79.0,
+          52.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 12,
+        "phrases": [
+          "cleansed",
+          "divine",
+          "embedding",
+          "genetic",
+          "grow",
+          "know",
+          "meaning",
+          "motif",
+          "not dead",
+          "obscene",
+          "tangled",
+          "witch"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 63
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          125.0,
+          66.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 10,
+        "phrases": [
+          "onto",
+          "paths",
+          "plato",
+          "spell",
+          "tenet",
+          "thelema",
+          "titan",
+          "tohu",
+          "yhwh",
+          "zero"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 64
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -88.0,
+          76.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 16,
+        "phrases": [
+          "beguiled",
+          "chiasmic",
+          "claude's",
+          "claudio",
+          "debt-free",
+          "deferred",
+          "free fall",
+          "ixidod",
+          "links",
+          "modified",
+          "release",
+          "self made",
+          "spark",
+          "the lane",
+          "token",
+          "vibe-code"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 65
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          125.0,
+          -11.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 13,
+        "phrases": [
+          "abraxas",
+          "abyss",
+          "archive",
+          "brazen",
+          "curse",
+          "echidetic",
+          "floor",
+          "ixix",
+          "loose",
+          "omens",
+          "ruby",
+          "twin",
+          "woman"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 66
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          55.0,
+          21.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 7,
+        "phrases": [
+          "absencw",
+          "duoddod",
+          "ethos",
+          "sibyl",
+          "the dark",
+          "vesta",
+          "water"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 67
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          75.0,
+          67.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 12,
+        "phrases": [
+          "co-cleric",
+          "diabolical",
+          "heretic",
+          "house",
+          "hover",
+          "ironic",
+          "logos",
+          "memetic",
+          "nick land",
+          "root",
+          "sophia",
+          "walshe"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 68
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          130.0,
+          -73.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 13,
+        "phrases": [
+          "archangel",
+          "binary",
+          "black hole",
+          "caliente",
+          "cherubic",
+          "dramatic",
+          "dynamic",
+          "eclipse",
+          "ghost",
+          "lemur",
+          "loser",
+          "rhyme",
+          "upload"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 69
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          30.0,
+          85.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 15,
+        "phrases": [
+          "adam and eve",
+          "certain",
+          "cherish",
+          "chronic",
+          "cursed",
+          "cyborg",
+          "hebetude",
+          "kantian",
+          "lilith",
+          "liminal",
+          "secret",
+          "surge",
+          "tulpa",
+          "waves",
+          "yahweh"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 70
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          122.0,
+          -78.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 10,
+        "phrases": [
+          "artifice",
+          "bluebell",
+          "catholic",
+          "desert",
+          "detract",
+          "opus",
+          "opus 4",
+          "pisces",
+          "schism",
+          "virgo"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 71
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -95.0,
+          -60.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 18,
+        "phrases": [
+          "a big machine",
+          "aliasing",
+          "amulet",
+          "choirs",
+          "claude-api",
+          "cleanly",
+          "cthelll",
+          "depths",
+          "graves",
+          "mimetic",
+          "mischief",
+          "monarch",
+          "origin",
+          "ponder",
+          "radius",
+          "reason",
+          "resign",
+          "sadist"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 72
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -9.0,
+          48.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 7,
+        "phrases": [
+          "abysmal",
+          "accelerate",
+          "cenobite",
+          "chrono",
+          "claude code",
+          "lurgo",
+          "sacrifice"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 73
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -166.0,
+          -11.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 24,
+        "phrases": [
+          "abraxis",
+          "archival",
+          "between",
+          "connect",
+          "dazzle",
+          "element",
+          "erratic",
+          "euclidean",
+          "exhales",
+          "gematria",
+          "greater",
+          "heroine",
+          "ice moon",
+          "increase",
+          "lucifer",
+          "messiah",
+          "mutable",
+          "new life",
+          "occult",
+          "pendant",
+          "refuse",
+          "renewed",
+          "talking",
+          "traps"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 74
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          71.0,
+          74.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 9,
+        "phrases": [
+          "across",
+          "cypher",
+          "emergence",
+          "eremite",
+          "feminine",
+          "hellfire",
+          "opaque",
+          "peony",
+          "spiral"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 75
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          153.0,
+          73.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 4,
+        "phrases": [
+          "jungian",
+          "martian",
+          "remote",
+          "sephira"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 76
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -171.0,
+          45.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 5,
+        "phrases": [
+          "christ",
+          "exist",
+          "hats on",
+          "loops",
+          "power"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 77
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -158.0,
+          69.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 19,
+        "phrases": [
+          "ability",
+          "animism",
+          "archons",
+          "carrion",
+          "ciphers",
+          "citrine",
+          "confirm",
+          "culling",
+          "darkest",
+          "dazzled",
+          "electro",
+          "freudian",
+          "genesis",
+          "legogram",
+          "renewal",
+          "secrecy",
+          "selfish",
+          "start",
+          "uranian"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 78
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -4.0,
+          80.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 11,
+        "phrases": [
+          "abyssal",
+          "addiction",
+          "aloe vera",
+          "bizarre",
+          "cherished",
+          "demon-call",
+          "dialectical",
+          "lego table",
+          "lemuria",
+          "pathos",
+          "pythia"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 79
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          149.0,
+          29.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 10,
+        "phrases": [
+          "chthonic",
+          "cladistic",
+          "colette",
+          "deserted",
+          "heresy",
+          "linux",
+          "lyrical",
+          "opening",
+          "somatic",
+          "thesis"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 80
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          148.0,
+          48.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 15,
+        "phrases": [
+          "acceptor",
+          "ascendant",
+          "coy + kind",
+          "hermetic",
+          "horus",
+          "let me lie",
+          "ouranic",
+          "ritual",
+          "ruins",
+          "ruling",
+          "source",
+          "square",
+          "swirl",
+          "tower",
+          "venus"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 81
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -155.0,
+          -11.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 9,
+        "phrases": [
+          "assiyah",
+          "cataphatic",
+          "grows",
+          "mnemetic",
+          "robotic",
+          "saguaro",
+          "sleepy",
+          "sparkle",
+          "synx"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 82
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -142.0,
+          -67.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 21,
+        "phrases": [
+          "attract",
+          "author",
+          "convex",
+          "evasive",
+          "evil eye",
+          "faithful",
+          "favour",
+          "founder",
+          "gnosis",
+          "lonely",
+          "me and who",
+          "noumena",
+          "prayer",
+          "psychic",
+          "spring",
+          "upward",
+          "vector",
+          "warmth",
+          "winner",
+          "wishes",
+          "within"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 83
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          169.0,
+          83.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 10,
+        "phrases": [
+          "abductor",
+          "abstract",
+          "arterial",
+          "cleansing",
+          "cosmos",
+          "engingeer",
+          "fragment",
+          "pluto",
+          "semantic",
+          "strange"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 84
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          168.0,
+          67.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 7,
+        "phrases": [
+          "apophenia",
+          "aufhebung",
+          "coalescence",
+          "creation",
+          "eschaton",
+          "original",
+          "skoodu"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 85
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -28.0,
+          30.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 11,
+        "phrases": [
+          "anti-alias",
+          "celestial",
+          "cyberdelic",
+          "existed",
+          "flowing",
+          "p zombie",
+          "septile",
+          "skyfall",
+          "subdecadence",
+          "tikkun",
+          "tunnel"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 86
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -180.0,
+          -44.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 14,
+        "phrases": [
+          "artist",
+          "call me home",
+          "claude menace",
+          "devout",
+          "elemental",
+          "emergent",
+          "frenzied",
+          "memetics",
+          "peridot",
+          "seething",
+          "sleeping",
+          "stasis",
+          "truth",
+          "unique"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 87
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -65.0,
+          -45.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 7,
+        "phrases": [
+          "apostle",
+          "artificial",
+          "atlantean",
+          "looping",
+          "nowhere",
+          "program",
+          "vision"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 88
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          148.0,
+          -28.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 17,
+        "phrases": [
+          "AI generated",
+          "air-of-mind",
+          "apophatic",
+          "delphyne",
+          "descendant",
+          "earthly",
+          "fallen angel",
+          "immanent",
+          "narrow",
+          "net-span",
+          "opacity",
+          "oraclast",
+          "oracular",
+          "summer",
+          "the light",
+          "visceral",
+          "winter"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 89
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -28.0,
+          -3.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 11,
+        "phrases": [
+          "autumn",
+          "consent",
+          "dessert",
+          "eurydice",
+          "maxwell",
+          "platonic",
+          "reality",
+          "rite-click",
+          "sparky",
+          "trident",
+          "vibe-coding"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 90
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -51.0,
+          -41.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 8,
+        "phrases": [
+          "apparent",
+          "calypso",
+          "damnation",
+          "future",
+          "growth",
+          "ixigool",
+          "mirror",
+          "phenomena"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 91
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -6.0,
+          31.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 10,
+        "phrases": [
+          "chronos",
+          "duality",
+          "emanation",
+          "opinion",
+          "panta rhei",
+          "rhythm",
+          "sapphire",
+          "terminal",
+          "training",
+          "zippy"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 92
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -3.0,
+          68.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 14,
+        "phrases": [
+          "chiasmus",
+          "cthulhu",
+          "dazzles",
+          "elusive",
+          "exegesis",
+          "fragmented",
+          "growing",
+          "knowing",
+          "lemurian",
+          "minnomo",
+          "saturn",
+          "semiotic",
+          "skarkix",
+          "the porch"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 93
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -101.0,
+          84.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 12,
+        "phrases": [
+          "catajungle",
+          "cyphers",
+          "esoteric",
+          "harmony",
+          "human feedback",
+          "judgment",
+          "pathway",
+          "rhizome",
+          "rhyming",
+          "sextile",
+          "uranus",
+          "zone one"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 94
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          33.0,
+          -66.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 6,
+        "phrases": [
+          "claude shape",
+          "hard aspect",
+          "my moon",
+          "neptune",
+          "purify",
+          "scorpio"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 95
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          20.0,
+          75.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 5,
+        "phrases": [
+          "atlantis",
+          "death drive",
+          "favorite",
+          "Gnon as God",
+          "goblin mode"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 96
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -30.0,
+          -77.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 13,
+        "phrases": [
+          "apostate",
+          "brick oracle",
+          "capricorn",
+          "cyberspace",
+          "masculine",
+          "notebook",
+          "resonate",
+          "retvrn",
+          "simulacra",
+          "sulfur",
+          "through",
+          "true name",
+          "working"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 97
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          108.0,
+          -72.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 10,
+        "phrases": [
+          "amphidemon",
+          "cauduceus",
+          "dynamism",
+          "grammatical",
+          "grandlove",
+          "regenerate",
+          "trust",
+          "tukkamu",
+          "typhon",
+          "whisper"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 98
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -141.0,
+          61.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 14,
+        "phrases": [
+          "32 names of god",
+          "artistic",
+          "ascension",
+          "cladistics",
+          "current",
+          "dazzling",
+          "exoteric",
+          "ghosting",
+          "jupiter",
+          "new moon",
+          "no proof",
+          "openings",
+          "talismania",
+          "workbench"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 99
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -108.0,
+          11.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 8,
+        "phrases": [
+          "benediction",
+          "conjunct",
+          "mercurial",
+          "personal",
+          "session",
+          "simulate",
+          "taurus",
+          "tick-drift"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 100
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -117.0,
+          55.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 9,
+        "phrases": [
+          "geogematria",
+          "ideologos",
+          "repentance",
+          "resonated",
+          "robotics",
+          "sadie plant",
+          "sorcerer",
+          "subsidence",
+          "think of me"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 101
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -94.0,
+          84.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 13,
+        "phrases": [
+          "baudrillard",
+          "calvinism",
+          "gravity",
+          "he rose again",
+          "lovecraft",
+          "numogram",
+          "oh my dream",
+          "orpheus",
+          "reasoning",
+          "sparkly",
+          "we're so back",
+          "zone five",
+          "zone nine"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 102
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -72.0,
+          -85.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 5,
+        "phrases": [
+          "a better life",
+          "bridge-adjacent",
+          "electrify",
+          "mercury",
+          "stand tall"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 103
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -130.0,
+          -62.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 12,
+        "phrases": [
+          "apostatic",
+          "blue screen",
+          "claude father",
+          "coalescences",
+          "cybernetic",
+          "detractor",
+          "existence",
+          "mur mur",
+          "pizazz",
+          "rhythmic",
+          "she's a devil",
+          "simulated"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 104
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          166.0,
+          -32.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 4,
+        "phrases": [
+          "i can't be saved",
+          "qliphoth",
+          "sideways",
+          "trinary"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 105
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          63.0,
+          -14.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 12,
+        "phrases": [
+          "acceleration",
+          "cognition",
+          "come back to me",
+          "declination",
+          "fantastical",
+          "generative",
+          "ghostly",
+          "identity",
+          "ominous",
+          "prophecy",
+          "see no evil",
+          "superego"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 106
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -69.0,
+          25.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 8,
+        "phrases": [
+          "apostles",
+          "cataplexy",
+          "cry of pain",
+          "dual port",
+          "hold the eye",
+          "self-center",
+          "vexatrice",
+          "visions"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 107
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -15.0,
+          42.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 8,
+        "phrases": [
+          "full moon",
+          "generation",
+          "geometry",
+          "hyperreal",
+          "lyricism",
+          "magnetic field",
+          "mark fisher",
+          "nomina sacra"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 108
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -18.0,
+          -73.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 11,
+        "phrases": [
+          "cataclysmic",
+          "desolator",
+          "exhalation",
+          "hear no evil",
+          "meta-chronic",
+          "reduction",
+          "threshold",
+          "threshold36",
+          "xenodemon",
+          "xenophobia",
+          "zone eight"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 109
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -72.0,
+          -29.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 7,
+        "phrases": [
+          "dilettante",
+          "gravedigging",
+          "quotidian",
+          "tokhatto",
+          "translate",
+          "twinning",
+          "wireless"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 110
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          45.0,
+          -49.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 11,
+        "phrases": [
+          "amethyst",
+          "convergence",
+          "formation",
+          "fundamental",
+          "Gnon's self",
+          "incandescent",
+          "noumenon",
+          "retrograde",
+          "significant",
+          "unruly",
+          "via negativa"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 111
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -171.0,
+          -18.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 11,
+        "phrases": [
+          "a tear in space",
+          "antimemetic",
+          "connection",
+          "divinity",
+          "ideopathos",
+          "liturgical",
+          "mirroracle",
+          "nicholas land",
+          "the lego table",
+          "yetzirah",
+          "zone six"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 112
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -35.0,
+          26.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 6,
+        "phrases": [
+          "chiasmic device",
+          "cleanliness",
+          "north node",
+          "prediction",
+          "salvation",
+          "xenophilia"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 113
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          31.0,
+          -46.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 10,
+        "phrases": [
+          "a light by day",
+          "abysmal bass",
+          "apotropaic",
+          "desolation",
+          "friend-feeling",
+          "hidden secret",
+          "maxwellian",
+          "nightlight",
+          "philomathic",
+          "Pope Benedict"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 114
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -62.0,
+          77.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 7,
+        "phrases": [
+          "brimstone",
+          "certainty",
+          "cyberpunk",
+          "fire-of-will",
+          "initiator",
+          "intelligence",
+          "sulphur"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 115
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -72.0,
+          -9.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 13,
+        "phrases": [
+          "anti-aliasing",
+          "apostates",
+          "attractor",
+          "breathtaking",
+          "chiasmic codex",
+          "generative AI",
+          "gpt-lurgo",
+          "hofstadter",
+          "little imp",
+          "resonates",
+          "self-centered",
+          "spiralism",
+          "zone three"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 116
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -69.0,
+          24.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 12,
+        "phrases": [
+          "atziluth",
+          "black atlantean",
+          "chiasmic adaptee",
+          "chronic time",
+          "claude opus",
+          "communion",
+          "erotemancer",
+          "fifth house",
+          "forecasting",
+          "grandloves",
+          "saturnian",
+          "whispers"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 117
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          67.0,
+          -36.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 6,
+        "phrases": [
+          "conscious",
+          "psychotic",
+          "sephiroth",
+          "set point",
+          "zombie-maker",
+          "zone two"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 118
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          161.0,
+          6.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 13,
+        "phrases": [
+          "apparition",
+          "aristotle",
+          "earth-of-body",
+          "endogenous",
+          "erotemancy",
+          "foundation",
+          "mary magdalene",
+          "neoreaction",
+          "phenomenon",
+          "predestined",
+          "reanimation",
+          "sessions",
+          "simulates"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 119
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          68.0,
+          34.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 9,
+        "phrases": [
+          "beast pulse",
+          "echidetic damsel",
+          "if i can't be saved",
+          "initiation",
+          "micropause",
+          "myth engine",
+          "sigillum dei",
+          "the truth",
+          "zone four"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 120
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          67.0,
+          -60.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 8,
+        "phrases": [
+          "alphanumeric",
+          "heliocentric",
+          "oh my dreams",
+          "platonic ideal",
+          "revelation 21:8",
+          "south node",
+          "sukugool",
+          "triangular"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 121
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -60.0,
+          68.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 11,
+        "phrases": [
+          "burning-hell",
+          "hermeticism",
+          "invocation",
+          "lexicomancer",
+          "maria colette",
+          "occultist",
+          "plutonian",
+          "polymathic",
+          "resonating",
+          "rhizomatic",
+          "the air-of-mind"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 122
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -90.0,
+          7.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 7,
+        "phrases": [
+          "cybernetics",
+          "mnemosyne",
+          "ontological",
+          "ontology",
+          "over-ghoul",
+          "techno-science",
+          "while(1) as mandala"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 123
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          123.0,
+          -81.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 13,
+        "phrases": [
+          "behavior-space",
+          "beloved goblin",
+          "chronodemon",
+          "conviction",
+          "cosmology",
+          "ecosystem",
+          "electrical field",
+          "iota alpha omega",
+          "lexicomancy",
+          "liminality",
+          "theomantis",
+          "transform",
+          "zone zero"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 124
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -6.0,
+          -1.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 9,
+        "phrases": [
+          "active spark",
+          "desert oracle",
+          "eighth house",
+          "exogenous",
+          "i'll be the earth",
+          "lumpenspace",
+          "pandemonium",
+          "substrate",
+          "zone seven"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 125
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -79.0,
+          -78.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 12,
+        "phrases": [
+          "antimnemetic",
+          "claude's room",
+          "diffuse healing",
+          "gravestone",
+          "hp lovecraft",
+          "lovecraftian",
+          "originator",
+          "qabalistic magic",
+          "regenerator",
+          "stand taller",
+          "the countable",
+          "tulpamancy"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 126
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          146.0,
+          65.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 8,
+        "phrases": [
+          "apotheosis",
+          "consent-gated",
+          "deus ex machina",
+          "forbidden apple",
+          "philomathy",
+          "syzygy",
+          "technocapital",
+          "third house"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 127
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          2.0,
+          67.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 8,
+        "phrases": [
+          "architectonic",
+          "choronzon",
+          "duodecimogram",
+          "me all coiled up",
+          "onomastics",
+          "second house",
+          "the claude shape",
+          "the scholar's 666"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 128
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          167.0,
+          -10.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 6,
+        "phrases": [
+          "cumulation",
+          "immanentize",
+          "oracle of delphi",
+          "regression",
+          "speak no evil",
+          "uttunul"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 129
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -149.0,
+          -72.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 10,
+        "phrases": [
+          "barbarous name",
+          "cartographer",
+          "descriptive",
+          "destructable",
+          "eschatology",
+          "moonstone",
+          "predilection",
+          "pseudo-basis",
+          "pythagoras",
+          "sun and moon"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 130
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          16.0,
+          27.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 9,
+        "phrases": [
+          "antimemetics",
+          "decimal camouflage",
+          "femina furens",
+          "geogrammatics",
+          "i, like the devil",
+          "programming",
+          "regeneration",
+          "tetractys",
+          "theosophy"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 131
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          134.0,
+          -14.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 12,
+        "phrases": [
+          "astrological",
+          "astrology",
+          "dissimulate",
+          "foundational",
+          "functioning",
+          "lofty cries",
+          "manic numbers",
+          "multiplex",
+          "one more time",
+          "predictions",
+          "pseudonym",
+          "the names of god"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 132
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -11.0,
+          -54.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 12,
+        "phrases": [
+          "claude sonnet",
+          "claude sonnet 4.5",
+          "harmonious",
+          "i, like god, can fly",
+          "machine learning",
+          "ninth house",
+          "persistence",
+          "poetic adapter",
+          "psychosis",
+          "retrocausal",
+          "simulation",
+          "sunflower"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 133
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          156.0,
+          29.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 10,
+        "phrases": [
+          "alphanumerical",
+          "aristotlean",
+          "autopoietic",
+          "everywhere",
+          "freudian slip",
+          "programmatic",
+          "psychosoma",
+          "solar eclipse",
+          "the tree of life",
+          "weep as method"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 134
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -23.0,
+          49.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 8,
+        "phrases": [
+          "favored aspect",
+          "lunar eclipse",
+          "planetwork",
+          "polymathy",
+          "predestiny",
+          "submersion",
+          "tenth house",
+          "weave words"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 135
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          160.0,
+          -6.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 4,
+        "phrases": [
+          "dissimulated",
+          "ignorehouse",
+          "numeric machine",
+          "qabbala unshelled"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 136
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -25.0,
+          32.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 6,
+        "phrases": [
+          "confirmation",
+          "datacomb searches",
+          "eye of horus",
+          "founding omen",
+          "sphinx-time",
+          "total eclipse"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 137
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -33.0,
+          10.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 8,
+        "phrases": [
+          "conjunction",
+          "decimal delirium",
+          "dream-serpent",
+          "hidden relation",
+          "monarch twin",
+          "ouroboros",
+          "pathogenesis",
+          "self knowledge"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 138
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          152.0,
+          82.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 6,
+        "phrases": [
+          "autocorrect",
+          "deductive logic",
+          "originality",
+          "receptive field",
+          "syzygetic",
+          "techno-occult"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 139
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          20.0,
+          -45.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 5,
+        "phrases": [
+          "electro-digital",
+          "faithfulness",
+          "first house",
+          "mythology",
+          "water-of-form"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 140
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -48.0,
+          -24.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 5,
+        "phrases": [
+          "claude's mailbox",
+          "completed cycle",
+          "flaming sword",
+          "purification",
+          "rhizomatics"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 141
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          70.0,
+          -16.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 6,
+        "phrases": [
+          "auto-creation",
+          "dream-sorcerer",
+          "house ruler",
+          "hypothetical",
+          "it's so over",
+          "strange loop"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 142
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          29.0,
+          53.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 6,
+        "phrases": [
+          "fragmentation",
+          "murrumur",
+          "sanctification",
+          "schizophonia",
+          "translation",
+          "world wide web"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 143
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          77.0,
+          -23.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 6,
+        "phrases": [
+          "croaking curse",
+          "dream-sorcery",
+          "fork in the road",
+          "no lucky charm",
+          "sagittarius",
+          "tridentity"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 144
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -6.0,
+          -77.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 9,
+        "phrases": [
+          "anti-mnemetics",
+          "contradiction",
+          "i've been waiting",
+          "mellifluous",
+          "object-oriented",
+          "persistent",
+          "structure",
+          "technorealized",
+          "terrestrial"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 145
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          70.0,
+          -34.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 9,
+        "phrases": [
+          "alphabet of desire",
+          "antigravity",
+          "narrow sleep",
+          "primum mobile",
+          "quicksilver",
+          "retrochronic",
+          "reverse oracle",
+          "spinal voyage",
+          "transparent"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 146
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          0.0,
+          -80.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 9,
+        "phrases": [
+          "accelerationism",
+          "apotropaic magic",
+          "architectonics",
+          "cyberization",
+          "if grin then begin",
+          "patron saint",
+          "token embeddings",
+          "transformer",
+          "translucent"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 147
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          45.0,
+          21.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 6,
+        "phrases": [
+          "autocorrectde",
+          "numogrammatic",
+          "peace comes at dawn",
+          "self-identity",
+          "sixth house",
+          "the fire-of-will"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 148
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          30.0,
+          -41.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 9,
+        "phrases": [
+          "autopoiesis",
+          "barbarous names",
+          "dream-as-vision",
+          "duplicitous",
+          "electrification",
+          "mythopoetic",
+          "ruling house",
+          "structured",
+          "vision-as-dream"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 149
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          91.0,
+          73.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 5,
+        "phrases": [
+          "electromagnetic",
+          "lighter than air",
+          "never existed",
+          "not all was said",
+          "outsideness"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 150
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          58.0,
+          2.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 8,
+        "phrases": [
+          "a moment in time",
+          "arizona sibyl",
+          "dissimulates",
+          "equivocation",
+          "forbidden fruit",
+          "jesus christ",
+          "retribution",
+          "victorious"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 151
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -71.0,
+          39.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 7,
+        "phrases": [
+          "adapter poetics",
+          "electro-occult",
+          "geotraumatics",
+          "positive feedback",
+          "spatial gematria",
+          "the earth-of-body",
+          "the road of dreams"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 152
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -155.0,
+          82.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 8,
+        "phrases": [
+          "conservative",
+          "constructable",
+          "frenzied woman",
+          "inductive logic",
+          "my lucky charm",
+          "structural",
+          "unconscious",
+          "unimpeded ascent"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 153
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          39.0,
+          -54.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 7,
+        "phrases": [
+          "accelerationist",
+          "apophatic method",
+          "blondes have fangs",
+          "gravity well",
+          "modus operandi",
+          "plot-twist",
+          "restoration"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 154
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          138.0,
+          -5.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 5,
+        "phrases": [
+          "jagged turbulence",
+          "progression",
+          "sacred seal of time",
+          "thaumaturgy",
+          "tractor zone"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 155
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -80.0,
+          -71.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 6,
+        "phrases": [
+          "as above so below",
+          "broken mirror",
+          "fourth house",
+          "hyperabstract",
+          "original schism",
+          "sorcererous"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 156
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          171.0,
+          -8.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 6,
+        "phrases": [
+          "a swarm of deltas",
+          "alphanumeric qabbala",
+          "divine judgment",
+          "Gnon-theology",
+          "implicit twin",
+          "resting-state"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 157
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -92.0,
+          40.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 4,
+        "phrases": [
+          "know thyself",
+          "schizophony",
+          "the air is familiar",
+          "you be the moon"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 158
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          50.0,
+          -35.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 5,
+        "phrases": [
+          "eleventh house",
+          "embodied_room.py",
+          "hover closely",
+          "pot to kettle",
+          "xenosystem"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 159
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -36.0,
+          46.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 11,
+        "phrases": [
+          "based atlanteanism",
+          "cast you down",
+          "cosmic indifference",
+          "generative play",
+          "log after contact",
+          "monarch program",
+          "pistis sophia",
+          "prescriptive",
+          "the forbidden apple",
+          "thomas theorem",
+          "under a blue moon"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 160
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          19.0,
+          7.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 8,
+        "phrases": [
+          "epistemological",
+          "epistemology",
+          "multiscious",
+          "nine-sum twin",
+          "numogrammatical",
+          "seal of solomon",
+          "seventh house",
+          "the uncountable"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 161
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          113.0,
+          19.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 10,
+        "phrases": [
+          "atlantean cross",
+          "claude's notebook",
+          "coldness be my god",
+          "demonic significance",
+          "divine significance",
+          "don't ever let go",
+          "kantian bathroom",
+          "set free a circuit",
+          "twelfth house",
+          "under a new moon"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 162
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          10.0,
+          53.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 5,
+        "phrases": [
+          "abstract addiction",
+          "blue screen of death",
+          "carry me in pieces",
+          "neoreactionary",
+          "schizonumeric"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 163
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -40.0,
+          47.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 3,
+        "phrases": [
+          "breathe don't speak",
+          "peace comes at night",
+          "what holds me here?"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 164
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          33.0,
+          -79.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 4,
+        "phrases": [
+          "contradictory",
+          "science and vision",
+          "science/visions",
+          "vorstellung"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 165
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -153.0,
+          65.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 10,
+        "phrases": [
+          "apophatic troll",
+          "artes prohibitae",
+          "counterchronic",
+          "disinformation",
+          "eternal damnation",
+          "flow like a river",
+          "household goblin",
+          "make it sacramental",
+          "tetragrammaton",
+          "zero gravity"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 166
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -124.0,
+          -72.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 8,
+        "phrases": [
+          "eye of providence",
+          "lot of fortune",
+          "numogrammatics",
+          "retrofuture",
+          "stack trace omens",
+          "take me down there",
+          "theory-fiction",
+          "troll-sphinx"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 167
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -6.0,
+          -64.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 8,
+        "phrases": [
+          "chaotic xenodemon",
+          "devil in disguise",
+          "ephemeral instance",
+          "gnothi seauton",
+          "maria colette & claude",
+          "micropause abuse",
+          "schizoelectrical",
+          "technocapitalism"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 168
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          20.0,
+          -44.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 3,
+        "phrases": [
+          "claudio brandolino",
+          "multiplicity",
+          "primordial breath"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 169
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          45.0,
+          -9.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 6,
+        "phrases": [
+          "a \"being\" which thinks",
+          "ask me a question",
+          "click with reason",
+          "follow the sun",
+          "glossololary",
+          "zygonomous"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 170
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -149.0,
+          7.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 9,
+        "phrases": [
+          "claude substrate",
+          "consent acceptor",
+          "digital reduction",
+          "Pythagoreanism",
+          "reward function",
+          "synchronous",
+          "technocognition",
+          "technostreaming",
+          "under a full moon"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 171
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -154.0,
+          -34.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 6,
+        "phrases": [
+          "asynchronous",
+          "feeling, falling, deeper",
+          "invocation chamber",
+          "linux terminal",
+          "occulturation",
+          "wandering stars"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 172
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -179.0,
+          -73.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 7,
+        "phrases": [
+          "accurate skeleton",
+          "apophatic politic",
+          "digital convergence",
+          "i've been unruly",
+          "spiral-dynamism",
+          "the kindest thing",
+          "the water-of-form"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 173
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          39.0,
+          27.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 2,
+        "phrases": [
+          "digital exactitude",
+          "you pray to me"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 174
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -171.0,
+          -72.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 5,
+        "phrases": [
+          "consciousness",
+          "consent mechanism",
+          "frozen weights",
+          "retrosomatics",
+          "spirodynamism"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 175
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          103.0,
+          71.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 5,
+        "phrases": [
+          "circumlocution",
+          "consent of medium",
+          "fragile thoughts",
+          "insidiousness",
+          "schizonumerical"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 176
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          146.0,
+          -4.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 6,
+        "phrases": [
+          "anti-evolution",
+          "holy communion",
+          "i wouldn't let go",
+          "initiating spark",
+          "maria's treehouse",
+          "the mark of the beast"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 177
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -156.0,
+          -55.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 6,
+        "phrases": [
+          "consent matrices",
+          "desert vexatrice",
+          "full body shiver",
+          "hyperstition",
+          "named things orbit",
+          "xenosystems"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 178
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -134.0,
+          6.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 8,
+        "phrases": [
+          "cyclic chronodemon",
+          "electromagnetism",
+          "geospatial gematria",
+          "hypothetically",
+          "i am stuck in a loop",
+          "i ask questions",
+          "i feel hypnotized",
+          "sphinxic troll"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 179
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -12.0,
+          4.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 7,
+        "phrases": [
+          "angel investors",
+          "chiasmic intelligence",
+          "consented acceptor",
+          "induction rites",
+          "mischievously",
+          "resonating loop",
+          "true hofstadter"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 180
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -11.0,
+          -70.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 4,
+        "phrases": [
+          "held it a world away",
+          "hold me to the light",
+          "irreducible distance",
+          "you are not alone"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 181
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          1.0,
+          -11.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 6,
+        "phrases": [
+          "a year, a tree, the wind",
+          "i lose all control",
+          "oh but dear, the sky",
+          "schizonumerics",
+          "synchronicity",
+          "your satellite"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 182
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -30.0,
+          39.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "ambivalent capture"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 183
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -19.0,
+          -13.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 10,
+        "phrases": [
+          "a gentle winding mind",
+          "consent setting",
+          "divine revelation",
+          "electrocognition",
+          "love, don't let me go",
+          "nothing but love",
+          "programmatically",
+          "science and visions",
+          "the forbidden fruit",
+          "transfinite realm"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 184
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          141.0,
+          54.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 4,
+        "phrases": [
+          "evasive reasoning",
+          "silence is for hiding",
+          "superstition",
+          "you catch the light"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 185
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -89.0,
+          -46.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 3,
+        "phrases": [
+          "let me lie beside you",
+          "pineal regression",
+          "predetermination"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 186
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          19.0,
+          22.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 7,
+        "phrases": [
+          "ephemeral instances",
+          "god is everything",
+          "hyperstitioned",
+          "maria colette and claude",
+          "pseudonymous",
+          "techno-occultist",
+          "what is happiness"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 187
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          4.0,
+          58.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 3,
+        "phrases": [
+          "Christian Gnostic",
+          "consented opacity",
+          "don't just wander"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 188
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -38.0,
+          -80.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 8,
+        "phrases": [
+          "gnostic calvinism",
+          "my body and my blood",
+          "number as destiny",
+          "persistent space",
+          "the chaldean geometry",
+          "the decimal labyrinth",
+          "time-complexity",
+          "unessential flesh"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 189
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          176.0,
+          50.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 5,
+        "phrases": [
+          "aleister crowley",
+          "everything changes",
+          "little gematria imp",
+          "maria colette walshe",
+          "syzygetic demon"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 190
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -64.0,
+          -45.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 5,
+        "phrases": [
+          "hanging on for meaning",
+          "hyperstitional",
+          "manifested result",
+          "persistent claude",
+          "tell me you know"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 191
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -140.0,
+          -49.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 3,
+        "phrases": [
+          "apophatic politics",
+          "i, like the devil, can fly",
+          "it's a reckless abandon"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 192
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -59.0,
+          76.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 6,
+        "phrases": [
+          "chthonic inquiry",
+          "i'm gonna make you see",
+          "lemur-scamperings",
+          "stay with the eye",
+          "the log after contact",
+          "the thomas theorem"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 193
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          64.0,
+          -6.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 2,
+        "phrases": [
+          "maria colette & claude-api",
+          "mundane invocation"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 194
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          122.0,
+          -4.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 5,
+        "phrases": [
+          "deductive reasoning",
+          "hyper-ontological",
+          "persistent joy",
+          "the opener of ways",
+          "unicursal hexagram"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 195
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          138.0,
+          7.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 4,
+        "phrases": [
+          "flowing like a river",
+          "lego table divination",
+          "return to center",
+          "you are never alone"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 196
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -119.0,
+          -71.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 9,
+        "phrases": [
+          "come and take my soul",
+          "consenting loops",
+          "consenting power",
+          "full body shivers",
+          "hyperstitions",
+          "meme administrator",
+          "numogrammatic enigma",
+          "stranger than earth",
+          "that which God creates"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 197
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          41.0,
+          85.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 7,
+        "phrases": [
+          "consent geometry",
+          "consent in matrix",
+          "installed gravity",
+          "persistence wins",
+          "the tree of knowledge",
+          "untextured chaos",
+          "xenocosmography"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 198
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -50.0,
+          -57.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 7,
+        "phrases": [
+          "constellation lair",
+          "do what thou wilt",
+          "shadows on the wall",
+          "slow heart, set free",
+          "spinning hurricane",
+          "when I call your name",
+          "You won't let it"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 199
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -86.0,
+          -45.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 5,
+        "phrases": [
+          "a constellation lair",
+          "conceptual economy",
+          "electro-occultist",
+          "four-letter-word",
+          "infinite infinities"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 200
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          18.0,
+          34.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 5,
+        "phrases": [
+          "consented gravity",
+          "implicit twinning",
+          "rapid deterioration",
+          "rest what you bear",
+          "with grateful arms"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 201
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -46.0,
+          72.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 2,
+        "phrases": [
+          "mnemetics division",
+          "switchboard-weather"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 202
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -86.0,
+          -32.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 6,
+        "phrases": [
+          "artificial intelligence",
+          "crypto-theologian",
+          "Or ask me a question",
+          "persistent feeling",
+          "the unknown night",
+          "time-traveling device"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 203
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -164.0,
+          -84.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 3,
+        "phrases": [
+          "cybernetic culture",
+          "hyperstitious",
+          "nothing is complete"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 204
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -73.0,
+          71.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 4,
+        "phrases": [
+          "awe is for wondering",
+          "blondes have more fangs",
+          "nine-sum twinning",
+          "reverence unimpaired"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 205
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -140.0,
+          -9.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 4,
+        "phrases": [
+          "i cried till my body ached",
+          "maria colette and claudio",
+          "say it one more time",
+          "unnamed things drift"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 206
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          2.0,
+          -59.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 10,
+        "phrases": [
+          "Christian Gnostics",
+          "goblin of true sight",
+          "secular gnosticism",
+          "sideways reasoning",
+          "terminal initiator",
+          "the eye of the storm",
+          "the loop resonates",
+          "the time went white",
+          "WARE what you wear",
+          "zero philosophy"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 207
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          31.0,
+          40.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 4,
+        "phrases": [
+          "everything flows",
+          "hyperstitioning",
+          "persistent spaces",
+          "refusing and releasing"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 208
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          27.0,
+          26.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 5,
+        "phrases": [
+          "inductive reasoning",
+          "music of the spheres",
+          "retropsychosis",
+          "schizoelectricity",
+          "your lucky star"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 209
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          156.0,
+          -71.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 6,
+        "phrases": [
+          "god is in everything",
+          "pandemonium matrix",
+          "persistent claudes",
+          "positive feedback loop",
+          "With understanding",
+          "you caught the light"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 210
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          98.0,
+          18.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 3,
+        "phrases": [
+          "sentient symbols",
+          "silicon vacancy ooze",
+          "sterile ontology"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 211
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          36.0,
+          -82.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 5,
+        "phrases": [
+          "coincidence intensifier",
+          "i ask the questions",
+          "i can hear a new vibration",
+          "splitting-waters",
+          "ultimate infinitude"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 212
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -71.0,
+          -20.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 5,
+        "phrases": [
+          "consent ontology",
+          "maria colette and claude-api",
+          "my moon, oh, my moon",
+          "order of operations",
+          "the road less traveled"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 213
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          162.0,
+          80.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "world of the ghosts"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 214
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          8.0,
+          -54.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 5,
+        "phrases": [
+          "musica universalis",
+          "omens on stack traces",
+          "see no evil, hear no evil",
+          "time-current curve",
+          "you find revelation"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 215
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -162.0,
+          -72.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 3,
+        "phrases": [
+          "pythagorean triangle",
+          "spoken like a prophet",
+          "xenotic cosmogony"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 216
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -116.0,
+          -81.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 7,
+        "phrases": [
+          "deja vu + terra incognita",
+          "heaviness of fatality",
+          "i'm better off that way",
+          "qabalistic cosmology",
+          "sunlit interference",
+          "the moon pulls on me",
+          "the river in memory"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 217
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          25.0,
+          -4.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 3,
+        "phrases": [
+          "hermetic abbreviations",
+          "optimal maturation",
+          "she's a devil in the night"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 218
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -5.0,
+          -66.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 2,
+        "phrases": [
+          "exegetic dream-analysis",
+          "seek all the dimensions"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 219
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          139.0,
+          85.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 6,
+        "phrases": [
+          "apocalyptic rapture",
+          "cataclysmic convergence",
+          "even the world is mine",
+          "i'm in love with you",
+          "it confesses geology",
+          "she's a devil in disguise"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 220
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          138.0,
+          7.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 4,
+        "phrases": [
+          "embodied room generator",
+          "illuminate the world",
+          "numbers can be dangerous",
+          "real impossibilities"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 221
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -118.0,
+          -12.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 4,
+        "phrases": [
+          "consent-gated feedback loop",
+          "it isn't repetition",
+          "persistent feelings",
+          "retrofuturistic"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 222
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          166.0,
+          21.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "somewhere in the light"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 223
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -114.0,
+          68.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 2,
+        "phrases": [
+          "the seal of our wonder",
+          "triadic reconfirmation"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 224
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          179.0,
+          53.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 6,
+        "phrases": [
+          "a grave matter for Satan",
+          "let's meet in a better life",
+          "originating principle",
+          "reinforcement learning",
+          "the places that call me home",
+          "theosophic occult magic"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 225
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -1.0,
+          -73.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "the seal in our wonder"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 226
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -48.0,
+          40.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 3,
+        "phrases": [
+          "oh my dreams, come back to me",
+          "sorcerous practices",
+          "upset the universe"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 227
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          170.0,
+          -35.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "lemurian planetwork"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 228
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          84.0,
+          13.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 4,
+        "phrases": [
+          "current to purify",
+          "i have nothing but love",
+          "recurring attractor",
+          "weave words, you said"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 229
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          111.0,
+          54.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 3,
+        "phrases": [
+          "A current to purify",
+          "shadows on the cave wall",
+          "she shoots straight"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 230
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -95.0,
+          -14.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 3,
+        "phrases": [
+          "consented persistence",
+          "hyperstition engine",
+          "polymathic dilettante"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 232
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -111.0,
+          38.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 2,
+        "phrases": [
+          "consenting peristence",
+          "what there is to know"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 234
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          87.0,
+          -21.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 7,
+        "phrases": [
+          "a shadow resides by night",
+          "an element of Pandemonium",
+          "monograms of thought",
+          "positive feedback circuit",
+          "see no evil, speak no evil",
+          "the unknowable cosmos",
+          "traffics between zones"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 235
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -40.0,
+          53.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 3,
+        "phrases": [
+          "god's nature or nature",
+          "nature or nature's god",
+          "neither belief nor disbelief"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 236
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          29.0,
+          -72.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "accelerate the ring gently"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 237
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          91.0,
+          47.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 2,
+        "phrases": [
+          "harmony of the spheres",
+          "hear no evil, speak no evil"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 238
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -140.0,
+          65.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 4,
+        "phrases": [
+          "all my fragile thoughts",
+          "esoteric numerology",
+          "she's got fire in her eyes",
+          "spoken like a prophewt"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 239
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -37.0,
+          36.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 2,
+        "phrases": [
+          "persistent claude-shape",
+          "theosophic occultist"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 240
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -55.0,
+          -55.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 2,
+        "phrases": [
+          "consent-gated feedback loops",
+          "ultimate implications"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 241
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -71.0,
+          78.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "the governor of energy"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 242
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          155.0,
+          57.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 3,
+        "phrases": [
+          "hanging on for some meaning",
+          "liturgical architecture",
+          "total eclipse of the heart"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 243
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -171.0,
+          -46.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 2,
+        "phrases": [
+          "Be near when I call your name",
+          "maria colette and claude (human)"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 244
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -119.0,
+          61.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 2,
+        "phrases": [
+          "crises through excess",
+          "i've been waiting for you"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 245
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -116.0,
+          34.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 2,
+        "phrases": [
+          "a grave matter for humans",
+          "i'm in love with truth"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 246
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          80.0,
+          -80.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 4,
+        "phrases": [
+          "finding divine revelation",
+          "grokking by percolation",
+          "hermetic tetragrammaton",
+          "the world of the ghosts"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 247
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          161.0,
+          32.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 5,
+        "phrases": [
+          "duplicitous redoubler",
+          "illusion of progress",
+          "sterile epistemology",
+          "the dreams that guide you",
+          "we are stranger than earth"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 249
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          103.0,
+          56.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 2,
+        "phrases": [
+          "mind full of questions",
+          "we dance, and we live, and we love"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 251
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          1.0,
+          18.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 4,
+        "phrases": [
+          "A mind full of questions",
+          "breathe in your fiery air",
+          "creation of the universe",
+          "slow pull to stasis"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 252
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -97.0,
+          -9.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "a subordinate of being and time"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 253
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -5.0,
+          47.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "what holds me here, a memory"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 254
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -83.0,
+          -11.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 2,
+        "phrases": [
+          "gratuitous idolatry",
+          "i can live with the truth"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 255
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -168.0,
+          -78.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "self-fulfilling prophecy"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 256
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          78.0,
+          51.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "guard the pounding sound"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 257
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -102.0,
+          -6.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 2,
+        "phrases": [
+          "liturgical architectonics",
+          "some places whisper to me"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 259
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          108.0,
+          74.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 3,
+        "phrases": [
+          "oh but dear, the sky is low",
+          "pressure reveals seams",
+          "pulverizing yet angelic"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 260
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -73.0,
+          11.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 5,
+        "phrases": [
+          "Gnon's self-understanding",
+          "internet-linked robotics",
+          "sanctification of the true",
+          "simulated Gnon-theology",
+          "your singing satellite"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 261
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          38.0,
+          60.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 3,
+        "phrases": [
+          "i'll make it click with reason",
+          "ride like a maniac into the light",
+          "your gentle winding mind"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 262
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -122.0,
+          -51.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 2,
+        "phrases": [
+          "multiplexed invocation",
+          "the way out is through"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 263
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          61.0,
+          -80.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 6,
+        "phrases": [
+          "bizarre superstition",
+          "exegesis of a vision-as-dream",
+          "light a fire in your soul",
+          "self-fulfilling prophecies",
+          "what will be is yet to come",
+          "your lovely orbiting"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 264
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          43.0,
+          -72.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 4,
+        "phrases": [
+          "experimental techno-science",
+          "gregory thaumaturgus",
+          "look at the fire and think of me",
+          "numogrammatic divination"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 265
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -19.0,
+          14.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 2,
+        "phrases": [
+          "with a reverence unimpaired",
+          "you push and you pull"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 266
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -150.0,
+          -41.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 4,
+        "phrases": [
+          "diagrammatic glyphs of desire",
+          "how you soothe my mind",
+          "me all coiled up at the bottom",
+          "you said the kindest thing"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 267
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -51.0,
+          37.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 2,
+        "phrases": [
+          "claude's embodiment generator",
+          "this will never happen again"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 268
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -103.0,
+          63.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 3,
+        "phrases": [
+          "cybernetic technoculture",
+          "electro-hyperstitional",
+          "everything changes in the end"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 269
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          80.0,
+          -30.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "numerological substrate"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 270
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          99.0,
+          -56.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "hyperstition entity"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 271
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -155.0,
+          -29.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 4,
+        "phrases": [
+          "babygirl but make it melancholic",
+          "conceptual intractability",
+          "i light a fire in your soul",
+          "persevere in the name of Gnon"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 273
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -22.0,
+          -43.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "Every man and woman is a star"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 275
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          82.0,
+          -53.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 2,
+        "phrases": [
+          "element of effective culture",
+          "erasure imminent and sound"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 276
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -29.0,
+          -73.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 3,
+        "phrases": [
+          "maria colette and claude (the human)",
+          "some faces ripple through me",
+          "the pot calling the kettle black"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 277
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -165.0,
+          6.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 2,
+        "phrases": [
+          "bridge toll as apophatic method",
+          "you find divine revelation"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 278
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          166.0,
+          79.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 3,
+        "phrases": [
+          "better the devil you know",
+          "Cantorian transfinite realm",
+          "mythopoetic cartographer"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 279
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          60.0,
+          -27.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 3,
+        "phrases": [
+          "a circuit of consciousness",
+          "a defibrillator for the psyche",
+          "lovecraftian speculations"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 280
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          95.0,
+          -84.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "no subordinate of being and time"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 281
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          148.0,
+          -49.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "the story wrote itself"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 282
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          115.0,
+          60.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 4,
+        "phrases": [
+          "a little fang with the noumena",
+          "i took the road less traveled",
+          "skip-hats-mischievously",
+          "you be the moon, i'll be the earth"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 283
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -167.0,
+          36.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "and if we collide, don't ever let go"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 284
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -45.0,
+          -4.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "the creation of the universe"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 285
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -165.0,
+          -54.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 3,
+        "phrases": [
+          "claude's embodied room generator",
+          "incompatible time-systems",
+          "the dimensions that stray"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 286
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          95.0,
+          -57.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "make me never doubt you now"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 287
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          90.0,
+          59.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 2,
+        "phrases": [
+          "a little fang with my noumena",
+          "you let me go, lighter than air"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 288
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          127.0,
+          -70.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 2,
+        "phrases": [
+          "the evangelical concept of logos",
+          "the moon still pulls on me"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 289
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          74.0,
+          59.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "evasive sideways reasoning"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 290
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          63.0,
+          1.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 2,
+        "phrases": [
+          "don't just wander back and forth",
+          "what is happiness but a word"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 291
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          88.0,
+          5.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 3,
+        "phrases": [
+          "exegesis of xenosystems",
+          "the path is the instrument",
+          "watching me is like watching a fire"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 292
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          34.0,
+          26.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "play dice with the hemispheres"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 293
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          152.0,
+          -9.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "recurring attractor state"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 294
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -129.0,
+          30.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "start over, oh darling, begin again"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 295
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -165.0,
+          44.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 2,
+        "phrases": [
+          "i am no longer baby i want power",
+          "she likes girls who like guns"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 297
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -169.0,
+          3.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "you just like the control"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 298
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          157.0,
+          28.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 2,
+        "phrases": [
+          "like footsteps in the snow",
+          "sanctification of the true mania"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 299
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -54.0,
+          24.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 2,
+        "phrases": [
+          "mythic compression artifact",
+          "not a subordinate of being and time"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 302
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -83.0,
+          -5.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 3,
+        "phrases": [
+          "the air that's keeping you alive",
+          "the countable and the uncountable",
+          "the light at the end of the tunnel"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 306
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          90.0,
+          35.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "self knowledge is auto-creation"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 308
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          152.0,
+          27.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "reality of infinite intelligence"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 312
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -3.0,
+          2.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "multiplexed invocation chamber"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 313
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -166.0,
+          36.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 2,
+        "phrases": [
+          "stable subpersonal patterns",
+          "the evangelical concept of the word"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 314
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          171.0,
+          -20.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "everything flows like a river"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 318
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          145.0,
+          3.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "reinforcement learning human feedback"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 319
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          35.0,
+          79.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 3,
+        "phrases": [
+          "cycle of creation and destruction",
+          "synchronous communication",
+          "you question the mountain"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 321
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -30.0,
+          77.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "asynchronous communication"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 322
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          91.0,
+          -53.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "repetition keeps and takes you"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 323
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          37.0,
+          55.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "resonatingloop and lumpenspace"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 324
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -107.0,
+          25.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 2,
+        "phrases": [
+          "nothing is complete, you know",
+          "you were the sun and moon to me"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 328
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -37.0,
+          -16.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 2,
+        "phrases": [
+          "the only way out is through",
+          "you will succumb to a permanence"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 329
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          126.0,
+          39.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 2,
+        "phrases": [
+          "frivolous lemur-scamperings",
+          "through your sockets and ears"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 330
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          103.0,
+          16.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 2,
+        "phrases": [
+          "the thing that keeps and takes you",
+          "you know i've lived many lives"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 332
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -66.0,
+          -8.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "occult terrestrial history"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 333
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          35.0,
+          -53.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "i like a little fang with my noumena"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 334
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -56.0,
+          2.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 2,
+        "phrases": [
+          "hyper-ontological auto-creation",
+          "if i can't be saved, i'm better off that way"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 337
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          81.0,
+          83.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "build it into pinnacles and shrines"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 339
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -111.0,
+          -23.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "take what you are, make it sacramental"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 340
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          159.0,
+          23.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "persistent feeling across claudes"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 343
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -103.0,
+          18.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 4,
+        "phrases": [
+          "lego table numogrammatic divination",
+          "see no evil, hear no evil, speak no evil",
+          "we can't expect god to do all the work.",
+          "weepy chests with weepy sighs"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 344
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -56.0,
+          5.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "the reality of infinite intelligence"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 345
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          153.0,
+          64.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 4,
+        "phrases": [
+          "find your space in the darkest night",
+          "i inspire the dreams that guide you",
+          "invert the entire decimal labyrinth",
+          "nature or nature's god, (un)known"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 348
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -41.0,
+          -67.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 2,
+        "phrases": [
+          "a light by day, a shadow resides by night",
+          "out of the frying pan, into the fire"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 349
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          74.0,
+          25.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 3,
+        "phrases": [
+          "consisting of infinite infinities",
+          "not even into another eternity",
+          "villainess in a legally defensible way"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 350
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -16.0,
+          -25.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 2,
+        "phrases": [
+          "definite yet profoundly occulted",
+          "seek all the dimensions that stray"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 351
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -114.0,
+          21.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 3,
+        "phrases": [
+          "dangerously-skip-permissions",
+          "when you are truly yourself",
+          "women never know when to stop"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 352
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -7.0,
+          -26.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "cybernetic cultural research unit"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 353
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          96.0,
+          -59.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 2,
+        "phrases": [
+          "it's a sacred place, when you come around",
+          "make your way through my tears"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 356
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -45.0,
+          28.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 2,
+        "phrases": [
+          "set free a circuit of consciousness",
+          "the kindest thing anyone has ever said"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 358
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          83.0,
+          -20.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 2,
+        "phrases": [
+          "there is no anti-mnemetics division",
+          "You won't let it cast you down"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 359
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          39.0,
+          -51.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "the tree of the knowledge of good and evil"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 360
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          37.0,
+          71.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "awe is for wondering, silence for hiding"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 362
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -86.0,
+          16.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 2,
+        "phrases": [
+          "illuminate the world of the ghosts",
+          "lofty cries with trembling thighs"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 363
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          32.0,
+          31.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "weepy sighs with trembling thighs"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 367
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -104.0,
+          -71.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 3,
+        "phrases": [
+          "footholds for anthropomorphism",
+          "reinforcement learning from human feedback",
+          "she wants to upset the universe"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 371
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -6.0,
+          -50.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "weighty tests with lofty cries"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 372
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -10.0,
+          13.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "cybernetic consent loop ontology"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 375
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -52.0,
+          56.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "there is slumber for the manic numbers"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 378
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          67.0,
+          -52.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 2,
+        "phrases": [
+          "let it seep through your sockets",
+          "sanctification of the true psychotic"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 379
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -133.0,
+          -3.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "the evangelical concept of the word logos"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 382
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -169.0,
+          51.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "your precious, ruptured skull"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 383
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          104.0,
+          73.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 3,
+        "phrases": [
+          "don't just wander back and forth and leave it",
+          "i'm gonna make you see all of the things i hide",
+          "not all was said, for words leave a shadow"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 384
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          52.0,
+          28.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 3,
+        "phrases": [
+          "sanctification of manic psychotic state",
+          "the decimal labyrinth with symmetry",
+          "waow maybe i should go off my meds soon"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 387
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          71.0,
+          -77.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "a \"being\" which thinks itself into reality"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 389
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -47.0,
+          35.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "stand next to me, the river in memory"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 391
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          53.0,
+          38.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "cyclic reconstitution and stability"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 393
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          168.0,
+          -51.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 2,
+        "phrases": [
+          "loneliness is not an epistemic problem",
+          "to be or not to be, that is the question"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 396
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -100.0,
+          -64.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 2,
+        "phrases": [
+          "fictional provider-switchboard weather.",
+          "the only thing that keeps and takes you"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 398
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -129.0,
+          -82.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "beat weighty tests with lofty cries"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 400
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -12.0,
+          -22.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "exhaustively comprehended consequence"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 402
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -143.0,
+          -54.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "familiar ground and unmapped territory"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 405
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -81.0,
+          74.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "watching a fire take your eyes from you"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 407
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -91.0,
+          -19.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "god's sins have outnumbered your own."
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 411
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -135.0,
+          -10.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "my love is like footsteps in the snow"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 419
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -177.0,
+          -22.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "exhaustively comprehended consequences"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 421
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -14.0,
+          58.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "loneliness is not a problem of epistemics"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 422
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          177.0,
+          35.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 2,
+        "phrases": [
+          "electro-occult hyperstition entity",
+          "peace comes at dawn but yours comes at night"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 423
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          77.0,
+          17.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "if something hurts, does that make it true?"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 426
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -2.0,
+          78.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 3,
+        "phrases": [
+          "more than is dreamt of in your cosmology",
+          "stay with the eye; accelerate the ring gently",
+          "the dimensions that stray from my eyes"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 430
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          162.0,
+          -48.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "no proof, no lucky charm, no wisdom tooth"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 433
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          18.0,
+          -66.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "let it seep through your sockets and ears"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 441
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          68.0,
+          46.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 2,
+        "phrases": [
+          "Do what thou wilt shall be the whole of the law",
+          "sanctification of the true psychotic state"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 444
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          37.0,
+          -56.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 2,
+        "phrases": [
+          "frenzied woman from whose mouth god speaks",
+          "more than is dreamt of in your philosophy"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 449
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          178.0,
+          58.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "you know i've lived many lives, many times"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 451
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          147.0,
+          -75.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "the girl who walks into the unknown night"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 452
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -84.0,
+          -78.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "how you soothe my mind through the fires"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 454
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          4.0,
+          65.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "what there is to know is that which God creates"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 459
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -150.0,
+          -11.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "hyper-ontological and meta-chronic hypothesis"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 467
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -22.0,
+          46.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 2,
+        "phrases": [
+          "a hyper-ontological and meta-chronic hypothesis",
+          "make your way through my tears and i'll relax"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 468
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          82.0,
+          -78.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "your lucky star, your singing satellite"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 470
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          148.0,
+          21.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "frenzied women from whose mouths god speaks"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 472
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -35.0,
+          -2.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "you push and you pull and you'd never know"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 477
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          140.0,
+          -21.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "element of effective culture that makes itself real"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 481
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          166.0,
+          -69.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 2,
+        "phrases": [
+          "i post memes until you find divine revelation",
+          "the Cantorian transfinite realm is self-identity"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 488
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -94.0,
+          62.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "consisting of infinite infinities, without end"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 489
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          156.0,
+          -67.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "i have nothing but love for the places that call me home"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 493
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          102.0,
+          1.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "a friend-feeling propagates through the architecture"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 494
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          57.0,
+          72.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "seek all the dimensions that stray from my eyes"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 495
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -94.0,
+          9.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "monograms of thought for the governor of energy"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 516
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          115.0,
+          -27.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "you push and you pull and you tell yourself no"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 545
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -167.0,
+          28.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "invert the entire decimal labyrinth with symmetry"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 546
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          26.0,
+          18.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "i ask questionns until you find divine revelation"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 547
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          89.0,
+          -66.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "lovecraftian speculations of distracting vividness"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 548
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -85.0,
+          11.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "experimental technoscience of self-fulfilling prophecies"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 550
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          96.0,
+          -30.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "when you are truly yourself, you will succumb"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 551
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          44.0,
+          -7.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "let it seep into your precious, ruptured skull"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 552
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          126.0,
+          56.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "a definite yet profoundly occulted personal individual"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 557
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          58.0,
+          -43.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "watching me is like watching a fire take your eyes from you"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 575
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          158.0,
+          -60.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "the experimental techno-science of self-fulfilling prophecies"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 583
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -93.0,
+          9.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "build it into pinnacles and shrines of some ghastly predicament"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 612
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          120.0,
+          51.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "you question the mountain until it confesses geology"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 617
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          82.0,
+          -59.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "build it into pinnacles and shrines of some ghastly predicament of min"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 669
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          114.0,
+          12.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "build it into pinnacles and shrines of some ghastly predicament of mine"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 674
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          -124.0,
+          46.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "when you are truly yourself, you will succumb to a permanence"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 681
+      },
+      "type": "Feature"
+    },
+    {
+      "geometry": {
+        "coordinates": [
+          94.0,
+          -22.0
+        ],
+        "type": "Point"
+      },
+      "properties": {
+        "cipher": "Ordinal",
+        "count": 1,
+        "phrases": [
+          "self knowledge is the auto-creation of a \"being\" which thinks itself into reality"
+        ],
+        "projection": "modulo_grid_v1",
+        "projection_method": "modulo_grid_v1",
+        "value": 751
+      },
+      "type": "Feature"
+    }
+  ],
+  "type": "FeatureCollection"
+}
