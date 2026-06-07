@@ -1,10 +1,14 @@
 import unittest
+from pathlib import Path
+from tempfile import TemporaryDirectory
+from unittest.mock import patch
 
 try:
     from fastapi.testclient import TestClient
 except Exception:  # pragma: no cover - dependency absence is reported by test skip
     TestClient = None
 
+import backend.app as backend_app
 from backend.app import app, get_live_source
 from geogematria.models import PhraseRecord
 
@@ -182,6 +186,72 @@ class BackendTests(unittest.TestCase):
         )
 
         self.assertEqual(response.status_code, 404)
+
+    def test_live_manifest_reports_missing_db_as_unavailable(self):
+        app.dependency_overrides.clear()
+        with TemporaryDirectory() as tmpdir:
+            missing_db_path = Path(tmpdir) / "missing.db"
+            with patch.dict(
+                "os.environ",
+                {"GEOGEMATRIA_GLOSSOLOLARY_DB": str(missing_db_path)},
+            ):
+                client = TestClient(app)
+                response = client.get("/api/live-manifest")
+
+        self.assertEqual(response.status_code, 503)
+        self.assertEqual(response.json()["detail"], "live source unavailable")
+
+    def test_live_cliquemap_endpoint_reports_missing_db_as_unavailable(self):
+        app.dependency_overrides.clear()
+        with TemporaryDirectory() as tmpdir:
+            missing_db_path = Path(tmpdir) / "missing.db"
+            with patch.dict(
+                "os.environ",
+                {"GEOGEMATRIA_GLOSSOLOLARY_DB": str(missing_db_path)},
+            ):
+                client = TestClient(app)
+                response = client.get(
+                    "/api/layers/cliquemap?cipher=aq&projection_method=value_hash_v1"
+                )
+
+        self.assertEqual(response.status_code, 503)
+        self.assertEqual(response.json()["detail"], "live source unavailable")
+
+    def test_live_manifest_reports_adapter_construction_failure_as_unavailable(self):
+        class BrokenAdapter:
+            def __init__(self, db_path):
+                raise RuntimeError("glossololary is not importable")
+
+        app.dependency_overrides.clear()
+        with TemporaryDirectory() as tmpdir:
+            db_path = Path(tmpdir) / "glossololary.db"
+            db_path.touch()
+            with patch.dict("os.environ", {"GEOGEMATRIA_GLOSSOLOLARY_DB": str(db_path)}):
+                with patch.object(backend_app, "GlossololaryLiveAdapter", BrokenAdapter):
+                    client = TestClient(app)
+                    response = client.get("/api/live-manifest")
+
+        self.assertEqual(response.status_code, 503)
+        self.assertEqual(response.json()["detail"], "live source unavailable")
+
+    def test_live_cliquemap_endpoint_reports_adapter_construction_failure_as_unavailable(self):
+        class BrokenAdapter:
+            def __init__(self, db_path):
+                raise RuntimeError("glossololary is not importable")
+
+        app.dependency_overrides.clear()
+        with TemporaryDirectory() as tmpdir:
+            db_path = Path(tmpdir) / "glossololary.db"
+            db_path.touch()
+            with patch.dict("os.environ", {"GEOGEMATRIA_GLOSSOLOLARY_DB": str(db_path)}):
+                with patch.object(backend_app, "GlossololaryLiveAdapter", BrokenAdapter):
+                    client = TestClient(app)
+                    response = client.get(
+                        "/api/layers/cliquemap?cipher=aq&projection_method=value_hash_v1"
+                    )
+
+        self.assertEqual(response.status_code, 503)
+        self.assertEqual(response.json()["detail"], "live source unavailable")
 
 
 if __name__ == "__main__":

@@ -31,10 +31,10 @@ import {
   create2DMapOptions,
   lockMapTo2D,
 } from "./map2d.js";
+import { loadLiveManifest, responseErrorMessage } from "./atlasLive.js";
 import "./styles.css";
 
 const MANIFEST_URL = "/data/manifest.json";
-const LIVE_MANIFEST_URL = "/api/live-manifest";
 const SOURCE_STATIC = "static";
 const SOURCE_LIVE = "live";
 const DOMAIN_HEAT_SOURCE_ID = "value-domain-source";
@@ -55,6 +55,7 @@ function App() {
   const [selectedTransformFamily, setSelectedTransformFamily] = useState("");
   const [selectedDatasetFile, setSelectedDatasetFile] = useState("");
   const [refreshNonce, setRefreshNonce] = useState(0);
+  const [liveManifestRefreshNonce, setLiveManifestRefreshNonce] = useState(0);
   const [atlas, setAtlas] = useState(EMPTY_COLLECTION);
   const [selectedLocus, setSelectedLocus] = useState(null);
   const [selectedLocusKey, setSelectedLocusKey] = useState("");
@@ -104,16 +105,10 @@ function App() {
   useEffect(() => {
     let isMounted = true;
 
-    fetch(LIVE_MANIFEST_URL)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`Live manifest request failed: ${response.status}`);
-        }
-        return response.json();
-      })
+    loadLiveManifest()
       .then((data) => {
         if (isMounted) {
-          setLiveManifest(data.map((entry) => normalizeManifestEntry(entry)));
+          setLiveManifest(data);
           setLiveManifestError("");
         }
       })
@@ -127,7 +122,7 @@ function App() {
     return () => {
       isMounted = false;
     };
-  }, []);
+  }, [liveManifestRefreshNonce]);
 
   const manifest = useMemo(
     () => (selectedSource === SOURCE_LIVE ? liveManifest : staticManifest),
@@ -215,7 +210,11 @@ function App() {
     fetch(entry.file)
       .then((response) => {
         if (!response.ok) {
-          throw new Error(`GeoJSON request failed: ${response.status}`);
+          return responseErrorMessage(response, "GeoJSON request failed").then(
+            (message) => {
+              throw new Error(message);
+            }
+          );
         }
         return response.json();
       })
@@ -383,6 +382,11 @@ function App() {
     }
   }
 
+  function refreshAtlasSource() {
+    setLiveManifestRefreshNonce((value) => value + 1);
+    setRefreshNonce((value) => value + 1);
+  }
+
   return (
     <main className="atlas-shell">
       <header className="atlas-header">
@@ -517,8 +521,8 @@ function App() {
             <button
               type="button"
               className="refresh-button"
-              onClick={() => setRefreshNonce((value) => value + 1)}
-              disabled={loadState.status === "loading" || !activeManifestEntry}
+              onClick={refreshAtlasSource}
+              disabled={loadState.status === "loading"}
             >
               refresh
             </button>

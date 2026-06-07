@@ -33,6 +33,11 @@ import {
   create2DMapOptions,
   lockMapTo2D,
 } from "../src/map2d.js";
+import {
+  LIVE_MANIFEST_URL,
+  loadLiveManifest,
+  responseErrorMessage,
+} from "../src/atlasLive.js";
 
 function feature({
   coordinates = [-111.25, 12.5],
@@ -328,6 +333,73 @@ test("manifest normalization preserves live source metadata", () => {
     assert.equal(entry.transform_family, "hash");
     assert.equal(entry.file.startsWith("/api/"), true);
   }
+});
+
+test("live manifest loader normalizes entries and can be retried by callers", async () => {
+  let requestCount = 0;
+  const fetchManifest = async (url) => {
+    requestCount += 1;
+    assert.equal(url, LIVE_MANIFEST_URL);
+    return {
+      ok: true,
+      async json() {
+        return [
+          {
+            source: "live",
+            mode: "cliquemap",
+            render_mode: "cliquemap",
+            search_kind: "phrase",
+            cipher: "AQ",
+            label: "AQ",
+            cipher_label: "AQ",
+            transform_family: "hash",
+            transform_family_label: "hash scatter",
+            projection_method: "value_hash_v1",
+            projection_label: "value hash v1",
+            projection_description: "Live local cliquemap from glossololary.",
+            dataset_label: "live AQ value hash v1",
+            file: "/api/layers/cliquemap?cipher=aq&projection_method=value_hash_v1",
+          },
+        ];
+      },
+    };
+  };
+
+  const first = await loadLiveManifest(fetchManifest);
+  const second = await loadLiveManifest(fetchManifest);
+
+  assert.equal(requestCount, 2);
+  assert.equal(first[0].source, "live");
+  assert.equal(first[0].cipher, "AQ");
+  assert.equal(second[0].file.startsWith("/api/"), true);
+});
+
+test("live manifest loader reports unavailable fetches", async () => {
+  await assert.rejects(
+    () =>
+      loadLiveManifest(async () => ({
+        ok: false,
+        status: 503,
+        async json() {
+          return { detail: "live source unavailable" };
+        },
+      })),
+    /live source unavailable/
+  );
+});
+
+test("response error messages fall back to HTTP status for non-json errors", async () => {
+  const message = await responseErrorMessage(
+    {
+      status: 500,
+      async json() {
+        throw new Error("not json");
+      },
+    },
+    "Live manifest request failed"
+  );
+
+  assert.equal(message, "Live manifest request failed: 500");
 });
 
 test("manifest normalization defaults legacy cliquemap entries without label parsing", () => {

@@ -25,11 +25,18 @@ def _db_path() -> Path:
 
 
 def get_live_source() -> GlossololarySource:
-    return GlossololaryLiveAdapter(db_path=_db_path())
+    db_path = _db_path()
+    if not db_path.exists():
+        raise HTTPException(status_code=503, detail="live source unavailable")
+
+    try:
+        return GlossololaryLiveAdapter(db_path=db_path)
+    except RuntimeError as exc:
+        raise HTTPException(status_code=503, detail="live source unavailable") from exc
 
 
 @app.get("/api/live-manifest")
-def api_live_manifest() -> list[dict]:
+def api_live_manifest(source: GlossololarySource = Depends(get_live_source)) -> list[dict]:
     return live_manifest_entries()
 
 

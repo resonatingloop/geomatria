@@ -9,29 +9,31 @@ interfaces.
 
 ## current status
 
-This repository currently contains the migrated static prototype:
+This repository contains the migrated static atlas plus the v1c local live
+cliquemap provider:
 
 ```text
-atlas/         React/Vite static atlas
-geogematria/   projection and GeoJSON helpers
-tests/         Python tests for projection/GeoJSON/adapter behavior
+backend/       local FastAPI server for live atlas layers
+atlas/         React/Vite atlas with static and live providers
+geogematria/   projection, GeoJSON, and live layer helpers
+tests/         Python tests for projection/GeoJSON/adapter/backend behavior
 specs/         project specs
 notes/         dated design notes from the prototype
 ```
 
-The static atlas loads precomputed GeoJSON files from its manifest. v1c will add
-a local FastAPI backend and live provider, but static manifest/GeoJSON loading
-must remain available.
+The static atlas loads precomputed GeoJSON files from its manifest. The live
+provider calls the local backend for allowlisted `value_hash_v1` cliquemap
+layers while preserving static manifest/GeoJSON loading.
 
 ## local checks
 
-Python prototype tests:
+Python tests:
 
 ```bash
 uv run --extra backend --extra test python -m unittest discover -s tests
 ```
 
-Static atlas checks:
+Atlas checks:
 
 ```bash
 cd atlas

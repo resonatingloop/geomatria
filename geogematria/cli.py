@@ -1,4 +1,4 @@
-"""Command line interface for the geogematria v0 prototype."""
+"""Command line interface for geogematria static exports and inspection."""
 
 from __future__ import annotations
 
@@ -26,7 +26,7 @@ from geogematria.projection import (
 
 
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(description="geogematria v0 prototype")
+    parser = argparse.ArgumentParser(description="geogematria static export and inspection tools")
     parser.add_argument("--db", default=str(DEFAULT_DB_PATH), help="glossololary db path")
     parser.add_argument(
         "--glossololary-src",
