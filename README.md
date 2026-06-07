@@ -28,7 +28,7 @@ must remain available.
 Python prototype tests:
 
 ```bash
-PYTHONPATH=. python3 -m unittest discover -s tests
+uv run --extra backend --extra test python -m unittest discover -s tests
 ```
 
 Static atlas checks:
@@ -44,3 +44,30 @@ npm run build
 For live layers, install or expose glossololary as a local editable dependency.
 Production geogematria code must use glossololary public methods only. If a
 needed public method is missing, add it in glossololary before consuming it here.
+
+Local editable install:
+
+```bash
+uv pip install -e ../glossololary
+```
+
+## local backend
+
+v1c exposes a local-only FastAPI backend for the allowlisted live cliquemap
+layer:
+
+```bash
+uv run --extra backend uvicorn backend.app:app --host 127.0.0.1 --port 8000
+```
+
+Configure the live-layer DB path locally before starting the backend:
+
+```bash
+export GEOGEMATRIA_GLOSSOLOLARY_DB=/path/to/glossololary.db
+```
+
+You can also put that value in a local `.env` for your shell tooling. `.env` is
+ignored and should not be committed. The backend does not load `.env` files by
+itself in v1c.
+
+The atlas dev server proxies `/api` to `http://127.0.0.1:8000`.

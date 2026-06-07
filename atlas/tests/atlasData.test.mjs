@@ -299,6 +299,32 @@ test("manifest normalization preserves value-domain identity while deriving heat
   assert.deepEqual(normalized.value_range, [1, 2000]);
 });
 
+test("manifest normalization preserves live source metadata", () => {
+  const normalized = normalizeManifestEntry({
+    source: "live",
+    mode: "cliquemap",
+    render_mode: "cliquemap",
+    search_kind: "phrase",
+    cipher: "AQ",
+    label: "AQ",
+    cipher_label: "AQ",
+    transform_family: "hash",
+    transform_family_label: "hash scatter",
+    projection_method: "value_hash_v1",
+    projection_label: "value hash v1",
+    projection_description: "Live local cliquemap from glossololary.",
+    dataset_label: "live value hash v1",
+    file: "/api/layers/cliquemap?cipher=aq&projection_method=value_hash_v1",
+  });
+
+  assert.equal(normalized.source, "live");
+  assert.equal(normalized.mode, "cliquemap");
+  assert.equal(normalized.render_mode, "cliquemap");
+  assert.equal(normalized.search_kind, "phrase");
+  assert.equal(normalized.transform_family, "hash");
+  assert.equal(normalized.file.startsWith("/api/"), true);
+});
+
 test("manifest normalization defaults legacy cliquemap entries without label parsing", () => {
   const normalized = normalizeManifestEntry({
     cipher: "QWER",

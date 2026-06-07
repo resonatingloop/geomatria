@@ -34,6 +34,9 @@ import {
 import "./styles.css";
 
 const MANIFEST_URL = "/data/manifest.json";
+const LIVE_MANIFEST_URL = "/api/live-manifest";
+const SOURCE_STATIC = "static";
+const SOURCE_LIVE = "live";
 const DOMAIN_HEAT_SOURCE_ID = "value-domain-source";
 const DOMAIN_HEAT_LAYER_ID = "value-domain-heat";
 const DOMAIN_PHRASE_LAYER_ID = "value-domain-phrases";
@@ -43,11 +46,15 @@ function App() {
   const mapRef = useRef(null);
   const markersRef = useRef([]);
   const unlock2DMapRef = useRef(null);
-  const [manifest, setManifest] = useState([]);
+  const [staticManifest, setStaticManifest] = useState([]);
+  const [liveManifest, setLiveManifest] = useState([]);
+  const [liveManifestError, setLiveManifestError] = useState("");
+  const [selectedSource, setSelectedSource] = useState(SOURCE_STATIC);
   const [selectedMode, setSelectedMode] = useState("");
   const [selectedCipher, setSelectedCipher] = useState("");
   const [selectedTransformFamily, setSelectedTransformFamily] = useState("");
   const [selectedDatasetFile, setSelectedDatasetFile] = useState("");
+  const [refreshNonce, setRefreshNonce] = useState(0);
   const [atlas, setAtlas] = useState(EMPTY_COLLECTION);
   const [selectedLocus, setSelectedLocus] = useState(null);
   const [selectedLocusKey, setSelectedLocusKey] = useState("");
@@ -80,16 +87,7 @@ function App() {
         validateManifest(data);
         if (isMounted) {
           const normalizedManifest = data.map(normalizeManifestEntry);
-          const defaultDataset = getDefaultDataset(normalizedManifest);
-          setManifest(normalizedManifest);
-          if (defaultDataset) {
-            applyDatasetSelection(defaultDataset);
-          } else {
-            setLoadState({
-              status: "error",
-              message: "No supported atlas datasets found in manifest.",
-            });
-          }
+          setStaticManifest(normalizedManifest);
         }
       })
       .catch((error) => {
@@ -103,6 +101,38 @@ function App() {
     };
   }, []);
 
+  useEffect(() => {
+    let isMounted = true;
+
+    fetch(LIVE_MANIFEST_URL)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`Live manifest request failed: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        if (isMounted) {
+          setLiveManifest(data.map((entry) => normalizeManifestEntry(entry)));
+          setLiveManifestError("");
+        }
+      })
+      .catch((error) => {
+        if (isMounted) {
+          setLiveManifest([]);
+          setLiveManifestError(error.message);
+        }
+      });
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
+  const manifest = useMemo(
+    () => (selectedSource === SOURCE_LIVE ? liveManifest : staticManifest),
+    [liveManifest, selectedSource, staticManifest]
+  );
   const summary = useMemo(() => atlasSummary(atlas), [atlas]);
   const activeManifestEntry = useMemo(
     () => manifest.find((entry) => entry.file === selectedDatasetFile),
@@ -135,6 +165,23 @@ function App() {
     }
     return byFeatureKey;
   }, [projectedLoci]);
+
+  useEffect(() => {
+    if (manifest.length === 0) {
+      if (selectedSource === SOURCE_LIVE) {
+        setAtlas(EMPTY_COLLECTION);
+        setLoadState({
+          status: "error",
+          message: "live source unavailable",
+        });
+      }
+      return;
+    }
+
+    if (!manifest.some((entry) => entry.file === selectedDatasetFile)) {
+      applyDatasetSelection(getDefaultDataset(manifest));
+    }
+  }, [manifest, selectedDatasetFile, selectedSource]);
 
   useEffect(() => {
     if (!selectedDatasetFile || manifest.length === 0) {
@@ -189,7 +236,7 @@ function App() {
     return () => {
       isMounted = false;
     };
-  }, [manifest, selectedDatasetFile]);
+  }, [manifest, refreshNonce, selectedDatasetFile]);
 
   useEffect(() => {
     if (!mapContainerRef.current || mapRef.current) {
@@ -445,6 +492,40 @@ function App() {
           </div>
         </div>
         <div className="atlas-meta">
+          <div className="source-controls" aria-label="Atlas source controls">
+            <div className="source-toggle">
+              <span>source</span>
+              <button
+                type="button"
+                className={selectedSource === SOURCE_STATIC ? "source-toggle__button source-toggle__button--active" : "source-toggle__button"}
+                onClick={() => setSelectedSource(SOURCE_STATIC)}
+              >
+                static
+              </button>
+              <button
+                type="button"
+                className={selectedSource === SOURCE_LIVE ? "source-toggle__button source-toggle__button--active" : "source-toggle__button"}
+                onClick={() => setSelectedSource(SOURCE_LIVE)}
+                disabled={liveManifest.length === 0}
+                title={liveManifestError || "live local source"}
+              >
+                live
+              </button>
+            </div>
+            <button
+              type="button"
+              className="refresh-button"
+              onClick={() => setRefreshNonce((value) => value + 1)}
+              disabled={loadState.status === "loading" || !activeManifestEntry}
+            >
+              refresh
+            </button>
+          </div>
+          {liveManifestError && (
+            <p className="projection-description projection-description--error">
+              live source unavailable
+            </p>
+          )}
           {activeManifestEntry?.projection_description && (
             <p className="projection-description">{activeManifestEntry.projection_description}</p>
           )}
@@ -454,6 +535,7 @@ function App() {
             </p>
           )}
           <div className="status-strip" aria-live="polite">
+            <span><b>source</b>{selectedSource}</span>
             <span><b>mode</b>{activeManifestEntry?.mode_label ?? selectedMode ?? "..."}</span>
             <span><b>render</b>{activeManifestEntry?.render_mode ?? "..."}</span>
             <span><b>cipher</b>{activeManifestEntry?.cipher_label ?? selectedCipher ?? "..."}</span>

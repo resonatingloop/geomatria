@@ -168,6 +168,67 @@ h1 {
   overflow: hidden;
 }
 
+.source-controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.source-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-height: 30px;
+  padding: 3px;
+  border: 1px solid var(--color-border-soft);
+  border-radius: 999px;
+  background: rgb(255 253 245 / 72%);
+}
+
+.source-toggle span {
+  padding: 0 7px;
+  color: var(--color-muted);
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.source-toggle__button,
+.refresh-button {
+  min-height: 24px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--color-text);
+  font-size: 0.78rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.source-toggle__button {
+  padding: 2px 9px;
+}
+
+.source-toggle__button--active {
+  border-color: var(--color-border);
+  background: var(--color-panel-strong);
+}
+
+.source-toggle__button:disabled,
+.refresh-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.46;
+}
+
+.refresh-button {
+  padding: 4px 11px;
+  border-color: var(--color-border-soft);
+  background: rgb(255 253 245 / 72%);
+}
+
 .control-card {
   display: grid;
   grid-template-columns:
