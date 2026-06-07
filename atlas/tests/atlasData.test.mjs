@@ -300,29 +300,34 @@ test("manifest normalization preserves value-domain identity while deriving heat
 });
 
 test("manifest normalization preserves live source metadata", () => {
-  const normalized = normalizeManifestEntry({
-    source: "live",
-    mode: "cliquemap",
-    render_mode: "cliquemap",
-    search_kind: "phrase",
-    cipher: "AQ",
-    label: "AQ",
-    cipher_label: "AQ",
-    transform_family: "hash",
-    transform_family_label: "hash scatter",
-    projection_method: "value_hash_v1",
-    projection_label: "value hash v1",
-    projection_description: "Live local cliquemap from glossololary.",
-    dataset_label: "live value hash v1",
-    file: "/api/layers/cliquemap?cipher=aq&projection_method=value_hash_v1",
-  });
+  const normalized = ["AQ", "Synx", "Ordinal", "QWER", "nQWER", "Reduced", "Standard", "Satanic"].map((cipher) =>
+    normalizeManifestEntry({
+      source: "live",
+      mode: "cliquemap",
+      render_mode: "cliquemap",
+      search_kind: "phrase",
+      cipher,
+      label: cipher,
+      cipher_label: cipher,
+      transform_family: "hash",
+      transform_family_label: "hash scatter",
+      projection_method: "value_hash_v1",
+      projection_label: "value hash v1",
+      projection_description: "Live local cliquemap from glossololary.",
+      dataset_label: `live ${cipher} value hash v1`,
+      file: `/api/layers/cliquemap?cipher=${cipher.toLowerCase()}&projection_method=value_hash_v1`,
+    })
+  );
 
-  assert.equal(normalized.source, "live");
-  assert.equal(normalized.mode, "cliquemap");
-  assert.equal(normalized.render_mode, "cliquemap");
-  assert.equal(normalized.search_kind, "phrase");
-  assert.equal(normalized.transform_family, "hash");
-  assert.equal(normalized.file.startsWith("/api/"), true);
+  assert.deepEqual(normalized.map((entry) => entry.cipher), ["AQ", "Synx", "Ordinal", "QWER", "nQWER", "Reduced", "Standard", "Satanic"]);
+  for (const entry of normalized) {
+    assert.equal(entry.source, "live");
+    assert.equal(entry.mode, "cliquemap");
+    assert.equal(entry.render_mode, "cliquemap");
+    assert.equal(entry.search_kind, "phrase");
+    assert.equal(entry.transform_family, "hash");
+    assert.equal(entry.file.startsWith("/api/"), true);
+  }
 });
 
 test("manifest normalization defaults legacy cliquemap entries without label parsing", () => {
