@@ -1,0 +1,52 @@
+<svg width="260" height="260" viewBox="0 0 260 260" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>geogematria seal — dust-edged spherical mark in a benchmark disc</title>
+<desc>The spherical triangulation glyph stamped inside a benchmark survey disc. Its triangle edges are a cantor set — solid, gap, solid, recursing — so the mark carries the projection's forbidden middle-thirds in its own body. Three sightlines converge on an off-center locus.</desc>
+
+<circle cx="130" cy="130" r="118" fill="none" stroke="#1D9E75" stroke-width="2.2" opacity="0.6"/>
+<circle cx="130" cy="130" r="106" fill="none" stroke="#1D9E75" stroke-width="1.2" opacity="0.5"/>
+<g stroke="#1D9E75" stroke-width="1.5" opacity="0.5" stroke-linecap="round">
+<line x1="238" y1="130" x2="246" y2="130"/>
+<line x1="223.5" y1="184" x2="230.5" y2="188"/>
+<line x1="184" y1="223.5" x2="188" y2="230.5"/>
+<line x1="130" y1="238" x2="130" y2="246"/>
+<line x1="76" y1="223.5" x2="72" y2="230.5"/>
+<line x1="36.5" y1="184" x2="29.5" y2="188"/>
+<line x1="22" y1="130" x2="14" y2="130"/>
+<line x1="36.5" y1="76" x2="29.5" y2="72"/>
+<line x1="76" y1="36.5" x2="72" y2="29.5"/>
+<line x1="130" y1="22" x2="130" y2="14"/>
+<line x1="184" y1="36.5" x2="188" y2="29.5"/>
+<line x1="223.5" y1="76" x2="230.5" y2="72"/>
+</g>
+
+<circle cx="130" cy="130" r="92" fill="none" stroke="#1D9E75" stroke-width="1.4" opacity="0.55"/>
+<ellipse cx="130" cy="130" rx="92" ry="27" fill="none" stroke="#1D9E75" stroke-width="1.1" opacity="0.4" stroke-dasharray="4 5"/>
+
+<line x1="130" y1="60" x2="122" y2="138" stroke="#EF9F27" stroke-width="0.9" opacity="0.5" stroke-linecap="round"/>
+<line x1="69.4" y1="165" x2="122" y2="138" stroke="#EF9F27" stroke-width="0.9" opacity="0.5" stroke-linecap="round"/>
+<line x1="190.6" y1="165" x2="122" y2="138" stroke="#EF9F27" stroke-width="0.9" opacity="0.5" stroke-linecap="round"/>
+
+<g stroke="#BE4A2A" stroke-width="2.4" stroke-linecap="round">
+<line x1="130" y1="60" x2="120.69" y2="70.18"/>
+<line x1="112.05" y1="80.75" x2="104.01" y2="91.65"/>
+<line x1="83.81" y1="126.66" x2="78.38" y2="139.09"/>
+<line x1="73.55" y1="151.88" x2="69.4" y2="165"/>
+<line x1="69.4" y1="165" x2="82.86" y2="167.99"/>
+<line x1="96.34" y1="170.21" x2="109.79" y2="171.66"/>
+<line x1="150.19" y1="171.66" x2="163.68" y2="170.21"/>
+<line x1="177.14" y1="167.99" x2="190.6" y2="165"/>
+<line x1="190.6" y1="165" x2="186.43" y2="151.88"/>
+<line x1="181.64" y1="139.09" x2="176.17" y2="126.66"/>
+<line x1="155.97" y1="91.65" x2="147.97" y2="80.75"/>
+<line x1="139.29" y1="70.18" x2="130" y2="60"/>
+</g>
+
+<circle cx="130" cy="60" r="4" fill="none" stroke="#1D9E75" stroke-width="1.8"/>
+<circle cx="69.4" cy="165" r="4" fill="none" stroke="#1D9E75" stroke-width="1.8"/>
+<circle cx="190.6" cy="165" r="4" fill="none" stroke="#1D9E75" stroke-width="1.8"/>
+
+<line x1="115" y1="138" x2="129" y2="138" stroke="#F2A623" stroke-width="1.1" stroke-linecap="round"/>
+<line x1="125.5" y1="144.06" x2="118.5" y2="131.94" stroke="#F2A623" stroke-width="1.1" stroke-linecap="round"/>
+<line x1="118.5" y1="144.06" x2="125.5" y2="131.94" stroke="#F2A623" stroke-width="1.1" stroke-linecap="round"/>
+<circle cx="122" cy="138" r="3.5" fill="#F2A623"/>
+</svg>

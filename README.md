@@ -9,8 +9,8 @@ interfaces.
 
 ## current status
 
-This repository contains the migrated static atlas plus the v1c local live
-cliquemap provider:
+This repository contains the migrated static atlas, static export CLI, offline
+projection inputs, and the v1c local live cliquemap provider:
 
 ```text
 backend/       local FastAPI server for live atlas layers
@@ -21,9 +21,26 @@ specs/         project specs
 notes/         dated design notes from the prototype
 ```
 
-The static atlas loads precomputed GeoJSON files from its manifest. The live
-provider calls the local backend for allowlisted `value_hash_v1` cliquemap
-layers while preserving static manifest/GeoJSON loading.
+The atlas loads precomputed GeoJSON files from its static manifest and can also
+request allowlisted live `value_hash_v1` cliquemap layers from the local
+backend. Live layers are local-only and read glossololary through its public
+interfaces.
+
+## static exports
+
+The CLI can inspect phrases/cliques, list ciphers/projections, and write static
+GeoJSON exports:
+
+```bash
+uv run geogematria ciphers
+uv run geogematria list-projections
+uv run geogematria locate "example phrase" --cipher aq --json
+uv run geogematria export --cipher aq --projection value_hash_v1 --format geojson
+uv run geogematria export-domain --cipher aq --projection nearest_10000_towns_hash_v1 --min 1 --max 2000 --format geojson
+```
+
+Static atlas data lives in `atlas/public/data/` and is described by
+`atlas/public/data/manifest.json`.
 
 ## local checks
 
@@ -40,6 +57,8 @@ cd atlas
 npm test
 npm run build
 ```
+
+Run these from `atlas/` after installing npm dependencies.
 
 ## glossololary dependency
 

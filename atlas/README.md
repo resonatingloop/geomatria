@@ -1,8 +1,9 @@
-# Geogematria Atlas v1b
+# Geogematria Atlas
 
-Static 2D atlas for v0 geogematria GeoJSON exports.
+React/Vite atlas for geogematria static GeoJSON exports and v1c local live
+cliquemap layers.
 
-## Run
+## Static Run
 
 ```bash
 npm install
@@ -14,6 +15,32 @@ Open:
 ```text
 http://127.0.0.1:5173/
 ```
+
+The static atlas works without the Python backend. It loads committed GeoJSON
+files from the static manifest.
+
+## Live Run
+
+Start the local backend from the repo root:
+
+```bash
+export GEOGEMATRIA_GLOSSOLOLARY_DB=/path/to/glossololary.db
+uv run --extra backend uvicorn backend.app:app --host 127.0.0.1 --port 8000
+```
+
+Then run the atlas dev server from `atlas/`:
+
+```bash
+npm run dev -- --port 5173
+```
+
+The Vite dev server proxies `/api` to `http://127.0.0.1:8000`. The live
+provider fetches `/api/live-manifest` and then supported layer URLs such as
+`/api/layers/cliquemap?cipher=aq&projection_method=value_hash_v1`.
+
+Live support is intentionally narrow in v1c: local-only cliquemap layers for
+the allowlisted workbench ciphers using `value_hash_v1`. Static manifest loading
+remains the baseline behavior.
 
 ## Static Data
 
@@ -27,8 +54,13 @@ Each manifest entry points to one exported cipher + projection method pair:
 
 ```json
 {
+  "id": "qwer.value_hash_v1.cliquemap",
+  "source": "static",
+  "mode": "cliquemap",
+  "render_mode": "cliquemap",
   "cipher": "QWER",
-  "label": "QWER",
+  "cipher_label": "QWER",
+  "transform_family": "hash",
   "projection_method": "value_hash_v1",
   "projection_label": "value hash v1",
   "file": "/data/qwer.value_hash_v1.geojson"
@@ -38,13 +70,13 @@ Each manifest entry points to one exported cipher + projection method pair:
 Regenerate a cipher/projection file from the v0 CLI:
 
 ```bash
-python3 ../geogematria.py export --cipher qwer --projection value_hash_v1 --format geojson > public/data/qwer.value_hash_v1.geojson
+uv run geogematria export --cipher qwer --projection value_hash_v1 --format geojson > public/data/qwer.value_hash_v1.geojson
 ```
 
 Generate a static value-domain export independent of phrase occupancy:
 
 ```bash
-python3 ../geogematria.py export-domain --cipher satanic --projection nearest_10000_towns_hash_v1 --min 1 --max 2000 --format geojson > public/data/satanic.nearest_10000_towns_hash_v1.domain_1_2000.geojson
+uv run geogematria export-domain --cipher satanic --projection nearest_10000_towns_hash_v1 --min 1 --max 2000 --format geojson > public/data/satanic.nearest_10000_towns_hash_v1.domain_1_2000.geojson
 ```
 
 Value-domain exports project every integer in the requested range. Actual
@@ -101,7 +133,7 @@ properties.base_coordinate        # place-snapping projections only
 properties.snapped_place          # place-snapping projections only
 ```
 
-## v1b Boundary
+## Layer Semantics
 
 This prototype renders projected loci. A clique is all phrases sharing the same
 cipher + value. A projected locus is the latitude/longitude coordinate produced
@@ -112,8 +144,8 @@ Nearest-town snapping may also put many distinct cliques at the same place
 locus because different base coordinates can snap to the same gazetteer town.
 
 The atlas does not merge collided cliques. It does not implement visual map
-clustering, backend requests, live glossololary access, globe rendering, manual
-placement, or live land/place lookup.
+clustering, globe rendering, manual placement, public upload, guest lexicon
+generation, or live land/place lookup.
 
 The UI has two static dataset modes:
 
@@ -128,3 +160,10 @@ and `clique size`.
 The map is locked to a flat 2D interaction model: pan, zoom, and marker
 selection remain enabled; rotation, pitch, and repeated world copies are
 disabled.
+
+## Checks
+
+```bash
+npm test
+npm run build
+```

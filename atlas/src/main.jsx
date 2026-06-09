@@ -40,6 +40,17 @@ const SOURCE_LIVE = "live";
 const DOMAIN_HEAT_SOURCE_ID = "value-domain-source";
 const DOMAIN_HEAT_LAYER_ID = "value-domain-heat";
 const DOMAIN_PHRASE_LAYER_ID = "value-domain-phrases";
+const SVG_NS = "http://www.w3.org/2000/svg";
+const LOCUS_MARKER_TRIANGLE_PATH = [
+  "M50 20",
+  "Q56 20 60 28",
+  "L79 70",
+  "Q83 79 74 82",
+  "L26 82",
+  "Q17 79 21 70",
+  "L40 28",
+  "Q44 20 50 20Z",
+].join(" ");
 
 function App() {
   const mapContainerRef = useRef(null);
@@ -302,12 +313,19 @@ function App() {
 
     for (const locus of markerLoci) {
       const markerNode = document.createElement("button");
+      const markerPixelSize = markerSize(locus.totalPhraseCount);
       markerNode.type = "button";
-      markerNode.className = isHeatmapMode
-        ? "atlas-marker atlas-marker--domain"
-        : "atlas-marker";
+      markerNode.className = [
+        "atlas-marker",
+        isHeatmapMode ? "atlas-marker--domain" : "",
+        !isHeatmapMode && locus.cliques.length > 1 ? "atlas-marker--multi-clique" : "",
+        markerPixelSize >= 36 ? "atlas-marker--dense" : "",
+      ]
+        .filter(Boolean)
+        .join(" ");
       markerNode.dataset.locusKey = locus.locusKey;
-      markerNode.style.setProperty("--marker-size", `${markerSize(locus.totalPhraseCount)}px`);
+      markerNode.style.setProperty("--marker-size", `${markerPixelSize}px`);
+      markerNode.append(createMarkerVisual({ isHeatmapMode }));
       markerNode.setAttribute(
         "aria-label",
         isHeatmapMode
@@ -389,12 +407,20 @@ function App() {
 
   return (
     <main className="atlas-shell">
-      <header className="atlas-header">
+      <header className={`atlas-header atlas-header--source-${selectedSource}`}>
         <div className="brand-lockup">
-          <p className="eyebrow">
-            {selectedSource === SOURCE_LIVE ? "live local instrument" : "static instrument"}
-          </p>
-          <h1>geogematria atlas</h1>
+          <img
+            className="brand-seal"
+            src="/geogematria_seal.svg"
+            alt=""
+            aria-hidden="true"
+          />
+          <div className="brand-copy">
+            <p className="eyebrow">
+              {selectedSource === SOURCE_LIVE ? "live local instrument" : "static instrument"}
+            </p>
+            <h1>geogematria atlas</h1>
+          </div>
         </div>
         <div className="atlas-controls" aria-label="Atlas controls">
           <div className="control-card">
@@ -528,7 +554,7 @@ function App() {
             </button>
           </div>
           {liveManifestError && (
-            <p className="projection-description projection-description--error">
+            <p className="projection-description projection-description--error projection-description--live-unavailable">
               live source unavailable
             </p>
           )}
@@ -669,6 +695,43 @@ function removeDomainHeatmap(map) {
   if (map.getSource?.(DOMAIN_HEAT_SOURCE_ID)) {
     map.removeSource(DOMAIN_HEAT_SOURCE_ID);
   }
+}
+
+function createMarkerVisual({ isHeatmapMode }) {
+  const visual = document.createElementNS(SVG_NS, "svg");
+  visual.setAttribute("class", "atlas-marker-visual");
+  visual.setAttribute("viewBox", "0 0 100 100");
+  visual.setAttribute("aria-hidden", "true");
+  visual.setAttribute("focusable", "false");
+
+  if (!isHeatmapMode) {
+    const halo = document.createElementNS(SVG_NS, "circle");
+    halo.setAttribute("class", "atlas-marker-halo");
+    halo.setAttribute("cx", "50");
+    halo.setAttribute("cy", "55");
+    halo.setAttribute("r", "39");
+    visual.append(halo);
+  }
+
+  const shape = document.createElementNS(SVG_NS, isHeatmapMode ? "circle" : "path");
+  shape.setAttribute("class", "atlas-marker-shape");
+  if (isHeatmapMode) {
+    shape.setAttribute("cx", "50");
+    shape.setAttribute("cy", "50");
+    shape.setAttribute("r", "34");
+  } else {
+    shape.setAttribute("d", LOCUS_MARKER_TRIANGLE_PATH);
+  }
+  visual.append(shape);
+
+  const spark = document.createElementNS(SVG_NS, "circle");
+  spark.setAttribute("class", "atlas-marker-spark");
+  spark.setAttribute("cx", "50");
+  spark.setAttribute("cy", isHeatmapMode ? "50" : "58");
+  spark.setAttribute("r", "5");
+  visual.append(spark);
+
+  return visual;
 }
 
 function datasetLabel(entry) {

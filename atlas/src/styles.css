@@ -10,6 +10,8 @@
   --color-accent-strong: #b06c30;
   --color-selected-marker: #2f756d;
   --color-error: #8d352e;
+  --color-source-static: #18413f;
+  --color-source-live: #6f2823;
   --color-ink-line: rgb(23 35 31 / 12%);
   --shadow-panel: 0 14px 34px rgb(43 38 30 / 18%);
   --shadow-marker: 0 7px 18px rgb(43 38 30 / 32%);
@@ -84,7 +86,7 @@ select {
   position: relative;
   z-index: 4;
   display: grid;
-  grid-template-columns: minmax(220px, auto) minmax(0, 1fr);
+  grid-template-columns: minmax(360px, auto) minmax(0, 1fr);
   grid-template-rows: auto auto;
   align-items: start;
   gap: var(--space-2) var(--space-5);
@@ -126,7 +128,22 @@ select {
 .brand-lockup {
   grid-column: 1;
   grid-row: 1;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
   min-width: 0;
+}
+
+.brand-copy {
+  display: grid;
+  gap: var(--space-1);
+  min-width: 0;
+}
+
+.brand-seal {
+  width: clamp(92px, 8.8vw, 128px);
+  height: clamp(92px, 8.8vw, 128px);
+  flex: 0 0 auto;
 }
 
 .eyebrow {
@@ -147,12 +164,25 @@ p {
 
 h1 {
   margin-bottom: 0;
+  color: var(--color-source-static);
   font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   font-size: clamp(1.25rem, 1.8vw, 1.8rem);
   font-weight: 800;
   letter-spacing: 0;
   line-height: 1.08;
   text-transform: lowercase;
+}
+
+.atlas-header--source-static h1 {
+  color: var(--color-source-static);
+}
+
+.atlas-header--source-live h1 {
+  color: var(--color-source-live);
+}
+
+.projection-description--live-unavailable {
+  color: var(--color-source-static);
 }
 
 .atlas-controls {
@@ -446,45 +476,151 @@ h1 {
 .atlas-marker {
   width: var(--marker-size);
   height: var(--marker-size);
+  appearance: none;
+  display: block;
   padding: 0;
-  border: 2px solid var(--color-panel-strong);
+  border: 0;
   border-radius: 999px;
-  background: var(--color-accent-strong);
-  box-shadow:
-    0 0 0 1px rgb(29 33 29 / 48%),
-    var(--shadow-marker);
+  background: transparent;
   cursor: pointer;
+  pointer-events: auto;
+}
+
+.atlas-marker-visual {
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.atlas-marker-halo {
+  fill: rgb(255 253 245 / 24%);
+  stroke: rgb(47 117 109 / 38%);
+  stroke-width: 3;
+  filter: drop-shadow(0 4px 8px rgb(43 38 30 / 18%));
   transition:
-    background-color 120ms ease,
-    box-shadow 120ms ease,
-    transform 120ms ease;
+    fill 120ms ease,
+    stroke 120ms ease,
+    stroke-width 120ms ease,
+    filter 120ms ease;
 }
 
-.atlas-marker:hover {
-  background: #c47c3d;
-  box-shadow:
-    0 0 0 2px rgb(138 93 44 / 58%),
-    0 9px 22px rgb(43 38 30 / 36%);
-  transform: scale(1.08);
+.atlas-marker-shape {
+  fill: var(--color-accent-strong);
+  stroke: var(--color-panel-strong);
+  stroke-linejoin: round;
+  stroke-width: 5;
+  filter:
+    drop-shadow(0 0 1px rgb(29 33 29 / 36%))
+    drop-shadow(0 7px 10px rgb(43 38 30 / 28%));
+  transition:
+    fill 120ms ease,
+    stroke 120ms ease,
+    stroke-width 120ms ease,
+    filter 120ms ease;
 }
 
-.atlas-marker--selected {
-  background: var(--color-selected-marker);
-  box-shadow:
-    0 0 0 3px rgb(255 253 245 / 92%),
-    0 0 0 7px rgb(47 117 109 / 34%),
-    0 10px 26px rgb(47 117 109 / 34%);
+.atlas-marker:not(.atlas-marker--domain) .atlas-marker-shape {
+  filter: drop-shadow(0 5px 7px rgb(43 38 30 / 28%));
 }
 
-.atlas-marker--domain {
-  border-width: 1px;
-  background: #2f756d;
+.atlas-marker-spark {
+  fill: #d7a64a;
+  opacity: 0;
+  stroke: rgb(255 253 245 / 54%);
+  stroke-width: 2;
+  transition: opacity 120ms ease;
+}
+
+.atlas-marker:hover .atlas-marker-halo {
+  fill: rgb(255 253 245 / 30%);
+  stroke: rgb(47 117 109 / 74%);
+  stroke-width: 4;
+  filter:
+    drop-shadow(0 0 5px rgb(47 117 109 / 28%))
+    drop-shadow(0 5px 8px rgb(43 38 30 / 18%));
+}
+
+.atlas-marker:hover .atlas-marker-shape {
+  fill: #c47c3d;
+  stroke: var(--color-panel-strong);
+  stroke-width: 6;
+  filter: drop-shadow(0 6px 8px rgb(43 38 30 / 32%));
+}
+
+.atlas-marker--selected .atlas-marker-halo {
+  fill: rgb(255 253 245 / 34%);
+  stroke: rgb(47 117 109 / 92%);
+  stroke-width: 6;
+  filter:
+    drop-shadow(0 0 7px rgb(47 117 109 / 44%))
+    drop-shadow(0 0 12px rgb(47 117 109 / 20%))
+    drop-shadow(0 7px 10px rgb(47 117 109 / 22%));
+}
+
+.atlas-marker--selected .atlas-marker-shape {
+  fill: var(--color-accent-strong);
+  stroke: var(--color-panel-strong);
+  stroke-width: 5;
+  filter: drop-shadow(0 6px 8px rgb(43 38 30 / 30%));
+}
+
+.atlas-marker--selected .atlas-marker-spark {
+  opacity: 1;
+}
+
+.atlas-marker--multi-clique .atlas-marker-halo {
+  stroke: rgb(47 117 109 / 66%);
+  stroke-width: 5;
+  filter:
+    drop-shadow(0 0 4px rgb(47 117 109 / 22%))
+    drop-shadow(0 5px 8px rgb(43 38 30 / 18%));
+}
+
+.atlas-marker--multi-clique .atlas-marker-shape {
+  stroke-width: 5;
+}
+
+.atlas-marker--dense:not(.atlas-marker--domain) .atlas-marker-halo {
+  stroke: rgb(47 117 109 / 70%);
+  stroke-width: 5;
+}
+
+.atlas-marker--selected.atlas-marker--multi-clique .atlas-marker-halo,
+.atlas-marker--selected.atlas-marker--dense:not(.atlas-marker--domain) .atlas-marker-halo {
+  stroke: rgb(47 117 109 / 92%);
+  stroke-width: 6;
+  filter:
+    drop-shadow(0 0 7px rgb(47 117 109 / 44%))
+    drop-shadow(0 0 12px rgb(47 117 109 / 20%))
+    drop-shadow(0 7px 10px rgb(47 117 109 / 22%));
+}
+
+.atlas-marker--domain .atlas-marker-shape {
+  fill: #2f756d;
+  stroke-width: 4;
   opacity: 0.78;
 }
 
-.atlas-marker--domain:hover,
-.atlas-marker--domain.atlas-marker--selected {
+.atlas-marker--domain:hover .atlas-marker-shape,
+.atlas-marker--domain.atlas-marker--selected .atlas-marker-shape {
   opacity: 1;
+}
+
+.atlas-marker--domain:hover .atlas-marker-shape {
+  stroke: rgb(47 117 109 / 72%);
+  stroke-width: 5;
+}
+
+.atlas-marker--domain.atlas-marker--selected .atlas-marker-shape {
+  fill: #2f756d;
+  stroke: rgb(47 117 109 / 88%);
+  stroke-width: 7;
+  filter:
+    drop-shadow(0 0 0 rgb(255 253 245 / 80%))
+    drop-shadow(0 0 6px rgb(47 117 109 / 44%))
+    drop-shadow(0 8px 12px rgb(47 117 109 / 24%));
 }
 
 .atlas-marker:focus-visible {
@@ -827,6 +963,11 @@ h1 {
     align-items: start;
   }
 
+  .brand-seal {
+    width: clamp(76px, 18vw, 112px);
+    height: clamp(76px, 18vw, 112px);
+  }
+
   .atlas-controls,
   .atlas-meta,
   .status-strip {
@@ -871,6 +1012,15 @@ h1 {
 }
 
 @media (max-width: 560px) {
+  .brand-lockup {
+    gap: var(--space-2);
+  }
+
+  .brand-seal {
+    width: 76px;
+    height: 76px;
+  }
+
   .control-card {
     grid-template-columns: 1fr;
   }
