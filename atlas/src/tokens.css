@@ -61,6 +61,14 @@
   --wash-note-domain: rgb(47 117 109 / 10%);
   --wash-phrase-rule: rgb(47 117 109 / 3%);
 
+  --dial-rim: rgb(47 117 109 / 28%);
+  --dial-engrave: rgb(23 35 31 / 30%);
+  --dial-engrave-highlight: rgb(255 255 255 / 80%);
+  --dial-rivet: rgb(23 35 31 / 34%);
+  --dial-rivet-highlight: rgb(255 255 255 / 85%);
+  --dial-index: rgb(190 74 42 / 70%);
+  --cipher-dial: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='22'%20height='36'%20viewBox='0%200%2022%2036'%3E%3Cg%20stroke='%232f756d'%20stroke-width='1.2'%20stroke-linecap='round'%20opacity='0.55'%3E%3Cline%20x1='2'%20y1='7'%20x2='6'%20y2='7'/%3E%3Cline%20x1='2'%20y1='12'%20x2='6'%20y2='12'/%3E%3Cline%20x1='2'%20y1='24'%20x2='6'%20y2='24'/%3E%3Cline%20x1='2'%20y1='29'%20x2='6'%20y2='29'/%3E%3Cline%20x1='6'%20y1='5'%20x2='6'%20y2='31'/%3E%3C/g%3E%3Cpath%20d='M6%2014%20L13%2018%20L6%2022%20Z'%20fill='%23BE4A2A'%20opacity='0.85'/%3E%3C/svg%3E");
+
   --header-texture:
     radial-gradient(ellipse at 15% 50%, rgb(47 117 109 / 0.06), transparent 45%),
     radial-gradient(ellipse at 88% 15%, rgb(190 74 42 / 0.04), transparent 35%),
@@ -183,8 +191,34 @@
   --wash-note-domain: rgb(29 158 117 / 16%);
   --wash-phrase-rule: rgb(29 158 117 / 8%);
 
-  --header-texture: none;
-  --header-texture-blend: normal;
+  --dial-rim: rgb(29 158 117 / 50%);
+  --dial-engrave: rgb(0 6 12 / 75%);
+  --dial-engrave-highlight: rgb(29 158 117 / 45%);
+  --dial-rivet: rgb(0 6 12 / 80%);
+  --dial-rivet-highlight: rgb(29 158 117 / 60%);
+  --dial-index: rgb(242 166 45 / 85%);
+  --cipher-dial: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='22'%20height='36'%20viewBox='0%200%2022%2036'%3E%3Cg%20stroke='%231D9E75'%20stroke-width='1.2'%20stroke-linecap='round'%20opacity='0.6'%3E%3Cline%20x1='2'%20y1='7'%20x2='6'%20y2='7'/%3E%3Cline%20x1='2'%20y1='12'%20x2='6'%20y2='12'/%3E%3Cline%20x1='2'%20y1='24'%20x2='6'%20y2='24'/%3E%3Cline%20x1='2'%20y1='29'%20x2='6'%20y2='29'/%3E%3Cline%20x1='6'%20y1='5'%20x2='6'%20y2='31'/%3E%3C/g%3E%3Cpath%20d='M6%2014%20L13%2018%20L6%2022%20Z'%20fill='%23F2A62D'%20opacity='0.9'/%3E%3C/svg%3E");
+
+  --header-texture:
+    /* star speckles: solid core + soft glow */
+    radial-gradient(circle 3.4px at 47% 26%, rgb(253 239 216 / 0.95) 0, rgb(253 239 216 / 0.9) 1.1px, transparent 100%),
+    radial-gradient(circle 2.6px at 63% 44%, rgb(242 166 45 / 0.9) 0, rgb(242 166 45 / 0.82) 0.9px, transparent 100%),
+    radial-gradient(circle 2.2px at 74% 22%, rgb(253 239 216 / 0.85) 0, rgb(253 239 216 / 0.78) 0.8px, transparent 100%),
+    radial-gradient(circle 3px   at 84% 52%, rgb(29 158 117 / 0.8) 0, rgb(29 158 117 / 0.72) 1px, transparent 100%),
+    radial-gradient(circle 2px   at 90% 30%, rgb(253 239 216 / 0.8) 0, rgb(253 239 216 / 0.72) 0.7px, transparent 100%),
+    radial-gradient(circle 2.4px at 55% 60%, rgb(253 239 216 / 0.7) 0, rgb(253 239 216 / 0.62) 0.8px, transparent 100%),
+    radial-gradient(circle 1.9px at 96% 46%, rgb(242 166 45 / 0.66) 0, rgb(242 166 45 / 0.58) 0.7px, transparent 100%),
+    radial-gradient(circle 2px   at 39% 50%, rgb(253 239 216 / 0.6) 0, rgb(253 239 216 / 0.52) 0.7px, transparent 100%),
+    radial-gradient(circle 1.8px at 69% 70%, rgb(29 158 117 / 0.6) 0, rgb(29 158 117 / 0.52) 0.7px, transparent 100%),
+    radial-gradient(circle 1.9px at 8% 38%,  rgb(253 239 216 / 0.58) 0, rgb(253 239 216 / 0.5) 0.7px, transparent 100%),
+    radial-gradient(circle 1.7px at 24% 70%, rgb(253 239 216 / 0.5) 0, rgb(253 239 216 / 0.42) 0.6px, transparent 100%),
+    radial-gradient(circle 2.1px at 31% 16%, rgb(242 166 45 / 0.5) 0, rgb(242 166 45 / 0.42) 0.7px, transparent 100%),
+    radial-gradient(circle 1.6px at 58% 82%, rgb(253 239 216 / 0.46) 0, rgb(253 239 216 / 0.38) 0.6px, transparent 100%),
+    radial-gradient(circle 1.8px at 13% 58%, rgb(253 239 216 / 0.52) 0, rgb(253 239 216 / 0.44) 0.6px, transparent 100%),
+    /* faint survey arcs */
+    radial-gradient(circle at 80% 135%, transparent calc(40% - 1px), rgb(29 158 117 / 0.3) 40%, transparent calc(40% + 1px)),
+    radial-gradient(circle at 18% -45%, transparent calc(32% - 1px), rgb(242 166 45 / 0.3) 32%, transparent calc(32% + 1px));
+  --header-texture-blend: screen;
 
   --stroke-focus: rgb(29 158 117 / 42%);
   --stroke-marker-halo: rgb(29 158 117 / 44%);

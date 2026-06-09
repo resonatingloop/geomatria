@@ -227,11 +227,21 @@ h1 {
   min-width: 0;
   padding: 9px 10px 10px;
   border: 1px solid var(--border-hairline);
+  border-top-width: 2px;
   border-radius: var(--radius);
   background:
+    /* corner rivets — recessed screw heads matching the calibration card */
+    radial-gradient(circle 3.6px at 9px 8px, var(--dial-rivet-highlight) 0, var(--dial-rivet-highlight) 1px, var(--dial-rivet) 1.8px, var(--dial-rivet) 2.8px, transparent 3.6px),
+    radial-gradient(circle 3.6px at calc(100% - 9px) 8px, var(--dial-rivet-highlight) 0, var(--dial-rivet-highlight) 1px, var(--dial-rivet) 1.8px, var(--dial-rivet) 2.8px, transparent 3.6px),
+    radial-gradient(circle 3.6px at 9px calc(100% - 8px), var(--dial-rivet-highlight) 0, var(--dial-rivet-highlight) 1px, var(--dial-rivet) 1.8px, var(--dial-rivet) 2.8px, transparent 3.6px),
+    radial-gradient(circle 3.6px at calc(100% - 9px) calc(100% - 8px), var(--dial-rivet-highlight) 0, var(--dial-rivet-highlight) 1px, var(--dial-rivet) 1.8px, var(--dial-rivet) 2.8px, transparent 3.6px),
+    /* engraved top groove: dark cut + light lip */
+    linear-gradient(180deg, var(--dial-engrave) 0, var(--dial-engrave) 1.5px, var(--dial-engrave-highlight) 1.5px, var(--dial-engrave-highlight) 3px, transparent 3px),
     linear-gradient(180deg, var(--wash-control-start), var(--wash-control-end)),
     var(--wash-control-surface);
-  box-shadow: var(--shadow-inset-light-soft);
+  box-shadow:
+    var(--shadow-inset-light-soft),
+    0 1px 3px rgb(0 0 0 / 14%) inset;
 }
 
 .source-controls {
@@ -268,6 +278,9 @@ h1 {
   border: 1px solid var(--border-subtle);
   border-radius: 999px;
   background: var(--wash-control-surface);
+  box-shadow:
+    0 1px 2px rgb(0 0 0 / 14%) inset,
+    0 1px 0 var(--dial-engrave-highlight);
 }
 
 .source-toggle span {
@@ -298,6 +311,10 @@ h1 {
 .source-toggle__button--active {
   border-color: var(--border-default);
   background: var(--bg-surface-raised);
+  /* seated cap + locked gold index line at the detent */
+  box-shadow:
+    0 1px 0 var(--dial-engrave-highlight),
+    inset 0 -2px 0 var(--dial-index);
 }
 
 .source-toggle__button:disabled,
@@ -310,6 +327,9 @@ h1 {
   padding: 4px 11px;
   border-color: var(--border-subtle);
   background: var(--wash-control-surface);
+  box-shadow:
+    0 1px 0 var(--dial-engrave-highlight),
+    0 1px 2px rgb(0 0 0 / 10%);
 }
 
 .control-card {
@@ -320,21 +340,36 @@ h1 {
     minmax(128px, 0.75fr)
     minmax(190px, 1.25fr)
     minmax(150px, 0.9fr);
-  gap: var(--space-2);
-  width: min(100%, 760px);
-  padding: var(--space-2);
+  gap: 0;
+  width: 100%;
+  padding: 0;
+  overflow: hidden;
   border: 1px solid var(--border-subtle);
+  border-top-width: 2px;
   border-radius: var(--radius);
   background:
+    /* corner rivets — recessed screw heads, inset so the radius/overflow doesn't clip them */
+    radial-gradient(circle 3.6px at 9px 8px, var(--dial-rivet-highlight) 0, var(--dial-rivet-highlight) 1px, var(--dial-rivet) 1.8px, var(--dial-rivet) 2.8px, transparent 3.6px),
+    radial-gradient(circle 3.6px at calc(100% - 9px) 8px, var(--dial-rivet-highlight) 0, var(--dial-rivet-highlight) 1px, var(--dial-rivet) 1.8px, var(--dial-rivet) 2.8px, transparent 3.6px),
+    radial-gradient(circle 3.6px at 9px calc(100% - 8px), var(--dial-rivet-highlight) 0, var(--dial-rivet-highlight) 1px, var(--dial-rivet) 1.8px, var(--dial-rivet) 2.8px, transparent 3.6px),
+    radial-gradient(circle 3.6px at calc(100% - 9px) calc(100% - 8px), var(--dial-rivet-highlight) 0, var(--dial-rivet-highlight) 1px, var(--dial-rivet) 1.8px, var(--dial-rivet) 2.8px, transparent 3.6px),
+    /* engraved top groove: dark cut + light lip */
+    linear-gradient(180deg, var(--dial-engrave) 0, var(--dial-engrave) 1.5px, var(--dial-engrave-highlight) 1.5px, var(--dial-engrave-highlight) 3px, transparent 3px),
     linear-gradient(180deg, var(--wash-control-start), var(--wash-control-end)),
     var(--bg-surface);
-  box-shadow: var(--shadow-inset-light);
+  box-shadow:
+    var(--shadow-inset-light),
+    0 1px 3px rgb(0 0 0 / 14%) inset;
 }
 
 .field-control {
+  position: relative;
   display: grid;
   gap: var(--space-1);
   min-width: 0;
+  padding: 6px 10px 8px;
+  border-right: 1px solid var(--dial-engrave);
+  box-shadow: 1px 0 0 var(--dial-engrave-highlight);
   color: var(--text-secondary);
   font-size: 0.68rem;
   font-weight: 800;
@@ -342,11 +377,33 @@ h1 {
   text-transform: uppercase;
 }
 
+.field-control:last-child {
+  border-right: none;
+  box-shadow: none;
+}
+
+.field-control > span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.field-control > span::before {
+  content: "";
+  display: inline-block;
+  flex-shrink: 0;
+  width: 2px;
+  height: 7px;
+  background: var(--dial-index);
+  opacity: 0.85;
+}
+
 .field-control select,
 .field-control input {
   width: 100%;
   min-height: 36px;
   border: 1px solid var(--border-default);
+  border-left-width: 2px;
   border-radius: var(--radius);
   background: var(--bg-surface-raised);
   color: var(--text-primary);
@@ -358,9 +415,30 @@ h1 {
 
 .field-control select {
   min-width: 0;
-  padding: 0 34px 0 10px;
+  padding: 0 28px 0 9px;
   overflow: hidden;
   text-overflow: ellipsis;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+/* engraved index caret — replaces native arrow on the four select cells */
+.field-control--mode::after,
+.field-control--cipher::after,
+.field-control--family::after,
+.field-control--projection::after {
+  content: "";
+  position: absolute;
+  right: 13px;
+  bottom: 22px;
+  width: 6px;
+  height: 6px;
+  border-right: 1.5px solid var(--dial-engrave);
+  border-bottom: 1.5px solid var(--dial-engrave);
+  transform: rotate(45deg);
+  filter: drop-shadow(0 1px 0 var(--dial-engrave-highlight));
+  pointer-events: none;
 }
 
 .field-control input {
@@ -374,8 +452,20 @@ h1 {
   outline-offset: 1px;
 }
 
+/* cipher register reads wheel-like — give it the first dial face */
+.field-control--cipher select {
+  padding-left: 22px;
+  background-image: var(--cipher-dial);
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+
 .search-control {
   min-width: 0;
+}
+
+.search-control input {
+  letter-spacing: 0.025em;
 }
 
 .status-strip {
@@ -403,6 +493,9 @@ h1 {
   border: 1px solid var(--border-subtle);
   border-radius: 999px;
   background: var(--wash-control-surface);
+  box-shadow:
+    0 1px 2px rgb(0 0 0 / 12%) inset,
+    0 1px 0 var(--dial-engrave-highlight);
   text-overflow: ellipsis;
   white-space: nowrap;
 }
