@@ -45,9 +45,10 @@ const DOMAIN_HEAT_SOURCE_ID = "value-domain-source";
 const DOMAIN_HEAT_LAYER_ID = "value-domain-heat";
 const DOMAIN_PHRASE_LAYER_ID = "value-domain-phrases";
 const SVG_NS = "http://www.w3.org/2000/svg";
-const LOCUS_MARKER_TRIANGLE_PATH = "M50 22 L76 70 Q79 76 72 78 L28 78 Q21 76 24 70 L50 22 Z";
-const LOCUS_MARKER_DENSE_TRIANGLE_PATH = "M50 25 L73 68 Q76 73 70 75 L30 75 Q24 73 27 68 L50 25 Z";
-const LOCUS_MARKER_INSET_PATH = "M50 36 L64 63 Q65 66 62 67 L38 67 Q35 66 36 63 L50 36 Z";
+const TRI_PATH = "M50,20 L76,65 L24,65 Z";
+const TRI_PATH_DENSE = "M50,23 L73,63 L27,63 Z";
+const TRI_VERTICES = [[50, 20], [76, 65], [24, 65]];
+const TRI_VERTICES_DENSE = [[50, 23], [73, 63], [27, 63]];
 const DAY_BASEMAP_STYLE = {
   version: 8,
   sources: {
@@ -428,40 +429,22 @@ function App() {
   return (
     <main className="atlas-shell">
       <header className={`atlas-header atlas-header--source-${selectedSource}`}>
-        <div className="brand-lockup">
-          <img
-            className="brand-seal"
-            src="/geogematria_seal.svg"
-            alt=""
-            aria-hidden="true"
-          />
-          <div className="brand-copy">
-            <p className="eyebrow">
-              {selectedSource === SOURCE_LIVE ? "live local instrument" : "static instrument"}
-            </p>
-            <h1>geogematria atlas</h1>
-          </div>
-        </div>
-        <div className="atlas-controls" aria-label="Atlas controls">
-          <div className="theme-control-row">
-            <div className="source-toggle">
-              <span>theme</span>
-              <button
-                type="button"
-                className={theme === THEME_DAY ? "source-toggle__button source-toggle__button--active" : "source-toggle__button"}
-                onClick={() => setTheme(THEME_DAY)}
-              >
-                day
-              </button>
-              <button
-                type="button"
-                className={theme === THEME_DARK ? "source-toggle__button source-toggle__button--active" : "source-toggle__button"}
-                onClick={() => setTheme(THEME_DARK)}
-              >
-                night
-              </button>
+        <div className="header-left">
+          <div className="brand-lockup">
+            <img
+              className="brand-seal"
+              src="/geogematria_seal.svg"
+              alt=""
+              aria-hidden="true"
+            />
+            <div className="brand-copy">
+              <p className="eyebrow">
+                {selectedSource === SOURCE_LIVE ? "live local instrument" : "static instrument"}
+              </p>
+              <h1>geogematria atlas</h1>
             </div>
           </div>
+          <div className="atlas-controls" aria-label="Atlas controls">
           <div className="control-card">
             <label className="field-control field-control--mode">
               <span>map mode</span>
@@ -561,6 +544,7 @@ function App() {
               />
             </label>
           </div>
+          </div>
         </div>
         <div className="atlas-meta">
           <div className="source-controls" aria-label="Atlas source controls">
@@ -591,6 +575,23 @@ function App() {
             >
               refresh
             </button>
+            <div className="source-toggle">
+              <span>theme</span>
+              <button
+                type="button"
+                className={theme === THEME_DAY ? "source-toggle__button source-toggle__button--active" : "source-toggle__button"}
+                onClick={() => setTheme(THEME_DAY)}
+              >
+                day
+              </button>
+              <button
+                type="button"
+                className={theme === THEME_DARK ? "source-toggle__button source-toggle__button--active" : "source-toggle__button"}
+                onClick={() => setTheme(THEME_DARK)}
+              >
+                night
+              </button>
+            </div>
           </div>
           <div className="atlas-description-row">
             {liveManifestError && (
@@ -781,17 +782,27 @@ function createMarkerVisual({ isHeatmapMode, isDense }) {
     return visual;
   }
 
-  const shape = document.createElementNS(SVG_NS, "path");
-  shape.setAttribute("class", "atlas-marker-shape");
-  shape.setAttribute("d", isDense ? LOCUS_MARKER_DENSE_TRIANGLE_PATH : LOCUS_MARKER_TRIANGLE_PATH);
-  visual.append(shape);
+  const tri = document.createElementNS(SVG_NS, "path");
+  tri.setAttribute("class", "atlas-marker-shape");
+  tri.setAttribute("d", isDense ? TRI_PATH_DENSE : TRI_PATH);
+  visual.append(tri);
 
-  if (!isDense) {
-    const inset = document.createElementNS(SVG_NS, "path");
-    inset.setAttribute("class", "atlas-marker-inset");
-    inset.setAttribute("d", LOCUS_MARKER_INSET_PATH);
-    visual.append(inset);
+  const vertices = isDense ? TRI_VERTICES_DENSE : TRI_VERTICES;
+  for (const [cx, cy] of vertices) {
+    const node = document.createElementNS(SVG_NS, "circle");
+    node.setAttribute("class", "atlas-marker-vertex");
+    node.setAttribute("cx", String(cx));
+    node.setAttribute("cy", String(cy));
+    node.setAttribute("r", isDense ? "4" : "4.5");
+    visual.append(node);
   }
+
+  const spark = document.createElementNS(SVG_NS, "circle");
+  spark.setAttribute("class", "atlas-marker-spark");
+  spark.setAttribute("cx", "50");
+  spark.setAttribute("cy", "50");
+  spark.setAttribute("r", "3.5");
+  visual.append(spark);
 
   return visual;
 }
