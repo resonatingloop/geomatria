@@ -37,20 +37,36 @@ import "./styles.css";
 const MANIFEST_URL = "/data/manifest.json";
 const SOURCE_STATIC = "static";
 const SOURCE_LIVE = "live";
+const THEME_DAY = "day";
+const THEME_DARK = "dark";
+const THEME_STORAGE_KEY = "geogematria-theme";
+const DARK_BASEMAP_STYLE_URL = "https://tiles.openfreemap.org/styles/dark";
 const DOMAIN_HEAT_SOURCE_ID = "value-domain-source";
 const DOMAIN_HEAT_LAYER_ID = "value-domain-heat";
 const DOMAIN_PHRASE_LAYER_ID = "value-domain-phrases";
 const SVG_NS = "http://www.w3.org/2000/svg";
-const LOCUS_MARKER_TRIANGLE_PATH = [
-  "M50 20",
-  "Q56 20 60 28",
-  "L79 70",
-  "Q83 79 74 82",
-  "L26 82",
-  "Q17 79 21 70",
-  "L40 28",
-  "Q44 20 50 20Z",
-].join(" ");
+const LOCUS_MARKER_TRIANGLE_PATH = "M50 22 L76 70 Q79 76 72 78 L28 78 Q21 76 24 70 L50 22 Z";
+const LOCUS_MARKER_DENSE_TRIANGLE_PATH = "M50 25 L73 68 Q76 73 70 75 L30 75 Q24 73 27 68 L50 25 Z";
+const LOCUS_MARKER_INSET_PATH = "M50 36 L64 63 Q65 66 62 67 L38 67 Q35 66 36 63 L50 36 Z";
+const DAY_BASEMAP_STYLE = {
+  version: 8,
+  sources: {
+    "osm-raster": {
+      type: "raster",
+      tiles: ["https://tile.openstreetmap.org/{z}/{x}/{y}.png"],
+      tileSize: 256,
+      attribution:
+        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    },
+  },
+  layers: [
+    {
+      id: "osm-raster",
+      type: "raster",
+      source: "osm-raster",
+    },
+  ],
+};
 
 function App() {
   const mapContainerRef = useRef(null);
@@ -73,6 +89,14 @@ function App() {
   const [selectedFeatureKey, setSelectedFeatureKey] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
   const [loadState, setLoadState] = useState({ status: "loading", message: "" });
+  const [theme, setTheme] = useState(() => {
+    if (typeof window === "undefined") {
+      return THEME_DAY;
+    }
+    return window.localStorage.getItem(THEME_STORAGE_KEY) === THEME_DARK
+      ? THEME_DARK
+      : THEME_DAY;
+  });
 
   function applyDatasetSelection(dataset) {
     setSelectedMode(dataset?.mode ?? "");
@@ -112,6 +136,11 @@ function App() {
       isMounted = false;
     };
   }, []);
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme;
+    window.localStorage.setItem(THEME_STORAGE_KEY, theme);
+  }, [theme]);
 
   useEffect(() => {
     let isMounted = true;
@@ -254,25 +283,7 @@ function App() {
     }
 
     mapRef.current = new maplibregl.Map(
-      create2DMapOptions(mapContainerRef.current, {
-        version: 8,
-        sources: {
-          "osm-raster": {
-            type: "raster",
-            tiles: ["https://tile.openstreetmap.org/{z}/{x}/{y}.png"],
-            tileSize: 256,
-            attribution:
-              '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-          },
-        },
-        layers: [
-          {
-            id: "osm-raster",
-            type: "raster",
-            source: "osm-raster",
-          },
-        ],
-      })
+      create2DMapOptions(mapContainerRef.current, baseMapStyle(theme))
     );
 
     unlock2DMapRef.current = lockMapTo2D(mapRef.current);
@@ -295,9 +306,18 @@ function App() {
       return;
     }
 
+    map.setStyle(baseMapStyle(theme));
+  }, [theme]);
+
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map) {
+      return;
+    }
+
     updateDomainHeatmap(map, heatmapCollection);
     return () => removeDomainHeatmap(map);
-  }, [heatmapCollection]);
+  }, [heatmapCollection, theme]);
 
   useEffect(() => {
     const map = mapRef.current;
@@ -325,7 +345,7 @@ function App() {
         .join(" ");
       markerNode.dataset.locusKey = locus.locusKey;
       markerNode.style.setProperty("--marker-size", `${markerPixelSize}px`);
-      markerNode.append(createMarkerVisual({ isHeatmapMode }));
+      markerNode.append(createMarkerArt({ isHeatmapMode, isDense: markerPixelSize >= 47 }));
       markerNode.setAttribute(
         "aria-label",
         isHeatmapMode
@@ -423,6 +443,25 @@ function App() {
           </div>
         </div>
         <div className="atlas-controls" aria-label="Atlas controls">
+          <div className="theme-control-row">
+            <div className="source-toggle">
+              <span>theme</span>
+              <button
+                type="button"
+                className={theme === THEME_DAY ? "source-toggle__button source-toggle__button--active" : "source-toggle__button"}
+                onClick={() => setTheme(THEME_DAY)}
+              >
+                day
+              </button>
+              <button
+                type="button"
+                className={theme === THEME_DARK ? "source-toggle__button source-toggle__button--active" : "source-toggle__button"}
+                onClick={() => setTheme(THEME_DARK)}
+              >
+                night
+              </button>
+            </div>
+          </div>
           <div className="control-card">
             <label className="field-control field-control--mode">
               <span>map mode</span>
@@ -553,24 +592,28 @@ function App() {
               refresh
             </button>
           </div>
-          {liveManifestError && (
-            <p className="projection-description projection-description--error projection-description--live-unavailable">
-              live source unavailable
-            </p>
-          )}
-          {activeManifestEntry?.projection_description && (
-            <p className="projection-description">{activeManifestEntry.projection_description}</p>
-          )}
-          {isUnsupportedDataset && (
-            <p className="projection-description projection-description--error">
-              Unsupported dataset mode: {activeManifestEntry.mode}
-            </p>
-          )}
-          <div className="status-strip" aria-live="polite">
-            {!isHeatmapMode && (
-              <span><b>cliques</b>{summary.cliqueCount}</span>
+          <div className="atlas-description-row">
+            {liveManifestError && (
+              <p className="projection-description projection-description--error projection-description--live-unavailable">
+                live source unavailable
+              </p>
             )}
-            <span><b>phrases</b>{summary.phraseCount}</span>
+            {activeManifestEntry?.projection_description && (
+              <p className="projection-description">{activeManifestEntry.projection_description}</p>
+            )}
+            {isUnsupportedDataset && (
+              <p className="projection-description projection-description--error">
+                Unsupported dataset mode: {activeManifestEntry.mode}
+              </p>
+            )}
+          </div>
+          <div className="atlas-stats-row">
+            <div className="status-strip" aria-live="polite">
+              {!isHeatmapMode && (
+                <span><b>cliques</b>{summary.cliqueCount}</span>
+              )}
+              <span><b>phrases</b>{summary.phraseCount}</span>
+            </div>
           </div>
         </div>
       </header>
@@ -612,6 +655,8 @@ function App() {
 
 function updateDomainHeatmap(map, collection) {
   const render = () => {
+    const themeTokens = atlasThemeTokens();
+
     removeDomainHeatmap(map);
 
     if (!collection.features.length) {
@@ -637,15 +682,15 @@ function updateDomainHeatmap(map, collection) {
           ["linear"],
           ["heatmap-density"],
           0,
-          "rgba(47, 117, 109, 0)",
+          themeTokens.mapHeatEmpty,
           0.2,
-          "rgba(47, 117, 109, 0.44)",
+          themeTokens.mapHeatLow,
           0.45,
-          "rgba(176, 108, 48, 0.58)",
+          themeTokens.mapHeatMid,
           0.7,
-          "rgba(171, 74, 43, 0.74)",
+          themeTokens.mapHeatHigh,
           1,
-          "rgba(99, 38, 31, 0.86)",
+          themeTokens.mapHeatPeak,
         ],
       },
     });
@@ -656,20 +701,37 @@ function updateDomainHeatmap(map, collection) {
       filter: [">", ["get", "phrase_weight"], 0],
       paint: {
         "circle-radius": ["interpolate", ["linear"], ["get", "phrase_weight"], 1, 2.5, 8, 7],
-        "circle-color": "#2f756d",
+        "circle-color": themeTokens.mapPhrasePoint,
         "circle-opacity": 0.32,
-        "circle-stroke-color": "#fffbee",
+        "circle-stroke-color": themeTokens.mapPhraseStroke,
         "circle-stroke-width": 0.8,
         "circle-stroke-opacity": 0.55,
       },
     });
   };
 
-  if (map.loaded?.()) {
+  if (map.isStyleLoaded?.()) {
     render();
   } else {
-    map.once?.("load", render);
+    map.once?.("style.load", render);
   }
+}
+
+function atlasThemeTokens() {
+  const styles = getComputedStyle(document.documentElement);
+  return {
+    mapHeatEmpty: cssToken(styles, "--map-heat-empty"),
+    mapHeatLow: cssToken(styles, "--map-heat-low"),
+    mapHeatMid: cssToken(styles, "--map-heat-mid"),
+    mapHeatHigh: cssToken(styles, "--map-heat-high"),
+    mapHeatPeak: cssToken(styles, "--map-heat-peak"),
+    mapPhrasePoint: cssToken(styles, "--map-phrase-point"),
+    mapPhraseStroke: cssToken(styles, "--map-phrase-stroke"),
+  };
+}
+
+function cssToken(styles, name) {
+  return styles.getPropertyValue(name).trim();
 }
 
 function removeDomainHeatmap(map) {
@@ -683,39 +745,53 @@ function removeDomainHeatmap(map) {
   }
 }
 
-function createMarkerVisual({ isHeatmapMode }) {
+function baseMapStyle(theme) {
+  return theme === THEME_DARK ? DARK_BASEMAP_STYLE_URL : DAY_BASEMAP_STYLE;
+}
+
+function createMarkerArt({ isHeatmapMode, isDense }) {
+  const art = document.createElement("span");
+  art.className = "atlas-marker-art";
+  art.append(createMarkerVisual({ isHeatmapMode, isDense }));
+  return art;
+}
+
+function createMarkerVisual({ isHeatmapMode, isDense }) {
   const visual = document.createElementNS(SVG_NS, "svg");
   visual.setAttribute("class", "atlas-marker-visual");
   visual.setAttribute("viewBox", "0 0 100 100");
   visual.setAttribute("aria-hidden", "true");
   visual.setAttribute("focusable", "false");
 
-  if (!isHeatmapMode) {
-    const halo = document.createElementNS(SVG_NS, "circle");
-    halo.setAttribute("class", "atlas-marker-halo");
-    halo.setAttribute("cx", "50");
-    halo.setAttribute("cy", "55");
-    halo.setAttribute("r", "39");
-    visual.append(halo);
+  const halo = document.createElementNS(SVG_NS, "circle");
+  halo.setAttribute("class", "atlas-marker-halo");
+  halo.setAttribute("cx", "50");
+  halo.setAttribute("cy", "50");
+  halo.setAttribute("r", isHeatmapMode ? "35" : isDense ? "36" : "39");
+  visual.append(halo);
+
+  const haloGlow = document.createElementNS(SVG_NS, "circle");
+  haloGlow.setAttribute("class", "atlas-marker-halo-glow");
+  haloGlow.setAttribute("cx", "50");
+  haloGlow.setAttribute("cy", "50");
+  haloGlow.setAttribute("r", isHeatmapMode ? "28" : isDense ? "29" : "31");
+  visual.append(haloGlow);
+
+  if (isHeatmapMode) {
+    return visual;
   }
 
-  const shape = document.createElementNS(SVG_NS, isHeatmapMode ? "circle" : "path");
+  const shape = document.createElementNS(SVG_NS, "path");
   shape.setAttribute("class", "atlas-marker-shape");
-  if (isHeatmapMode) {
-    shape.setAttribute("cx", "50");
-    shape.setAttribute("cy", "50");
-    shape.setAttribute("r", "34");
-  } else {
-    shape.setAttribute("d", LOCUS_MARKER_TRIANGLE_PATH);
-  }
+  shape.setAttribute("d", isDense ? LOCUS_MARKER_DENSE_TRIANGLE_PATH : LOCUS_MARKER_TRIANGLE_PATH);
   visual.append(shape);
 
-  const spark = document.createElementNS(SVG_NS, "circle");
-  spark.setAttribute("class", "atlas-marker-spark");
-  spark.setAttribute("cx", "50");
-  spark.setAttribute("cy", isHeatmapMode ? "50" : "58");
-  spark.setAttribute("r", "5");
-  visual.append(spark);
+  if (!isDense) {
+    const inset = document.createElementNS(SVG_NS, "path");
+    inset.setAttribute("class", "atlas-marker-inset");
+    inset.setAttribute("d", LOCUS_MARKER_INSET_PATH);
+    visual.append(inset);
+  }
 
   return visual;
 }
