@@ -460,8 +460,63 @@ h1 {
   background-position: left center;
 }
 
+/* view = indexed selector — graduated index scale along the bottom edge */
+.field-control--mode select {
+  background-image: var(--view-index);
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: 100% auto;
+}
+
+/* gold current-index pointer — slides to the selected projection's notch.
+   --view-tickpos (0..1, set inline) maps across the scale's tick span. */
+.field-control--mode::before {
+  content: "";
+  position: absolute;
+  bottom: 8px;
+  left: calc(9px + (100% - 20px) * var(--view-tickpos, 0.3125));
+  width: 3px;
+  height: 6px;
+  transform: translateX(-50%);
+  border-radius: 1px 1px 0 0;
+  background: var(--dial-index);
+  box-shadow: 0 0 5px 1px var(--dial-index);
+  pointer-events: none;
+  transition: left 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* lineage = stepped register — ascending step notches on the left */
+.field-control--family select {
+  padding-left: 22px;
+  background-image: var(--lineage-step);
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+
+/* source plate = mounted cartridge — corner clips on the left */
+.field-control--projection select {
+  padding-left: 20px;
+  background-image: var(--source-plate);
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+
 .search-control {
   min-width: 0;
+}
+
+/* phrase aperture = slit/window — recessed mono readout with aperture rails */
+.search-control input {
+  font-family: var(--font-mono);
+  background-image:
+    linear-gradient(180deg, var(--aperture-rail) 0, transparent 1px),
+    linear-gradient(0deg, var(--aperture-rail) 0, transparent 1px);
+  background-repeat: no-repeat;
+  background-position: top center, bottom center;
+  background-size: calc(100% - 8px) 1px;
+  box-shadow:
+    var(--shadow-inset-light-field),
+    0 1px 3px rgb(0 0 0 / 12%) inset;
 }
 
 .search-control input {
@@ -637,7 +692,9 @@ h1 {
   background: transparent;
   cursor: pointer;
   pointer-events: auto;
-  transition: opacity 180ms ease;
+  /* opacity itself is driven via MapLibre setOpacity() (see main.jsx); this
+     transition animates those inline changes for the ghost/afterimage fades */
+  transition: opacity 220ms ease;
 }
 
 .atlas-marker-art {
@@ -1155,10 +1212,6 @@ h1 {
 
 /* ── Night mode: attention hierarchy ─────────────────────────────────── */
 /* Inactive (non-selected, non-hovered) loci recede; selected/hovered stay vivid */
-
-[data-theme='dark'] .atlas-marker:not(.atlas-marker--selected):not(:hover) {
-  opacity: var(--marker-inactive-opacity);
-}
 
 [data-theme='dark'] .atlas-marker:not(.atlas-marker--selected):not(:hover) .atlas-marker-halo {
   filter: var(--shadow-marker-halo-inactive);
