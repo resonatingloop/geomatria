@@ -29,8 +29,9 @@
 }
 
 :root {
-  --font-display: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
-  --font-header: "MonaspaceXenon", "CMUTypewriter", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --font-display: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --font-header: "Source Sans 3", system-ui, sans-serif;
+  --font-mono: "Source Code Pro", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   --radius: 6px;
   --radius-small: 4px;
   --space-1: 4px;
@@ -101,8 +102,7 @@ select {
   z-index: 4;
   flex-shrink: 0;
   display: grid;
-  grid-template-columns: minmax(420px, 1fr) minmax(340px, 52ch);
-  grid-template-rows: auto auto;
+  grid-template-columns: 1fr min(34rem, 40vw);
   align-items: start;
   gap: var(--space-3) var(--space-5);
   padding: var(--space-2) var(--space-5);
@@ -140,9 +140,15 @@ select {
   background: linear-gradient(90deg, transparent, var(--line-ink), transparent);
 }
 
+.header-left {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  align-self: start;
+  min-width: 0;
+}
+
 .brand-lockup {
-  grid-column: 1;
-  grid-row: 1;
   display: flex;
   align-items: center;
   gap: var(--space-3);
@@ -202,27 +208,21 @@ h1 {
 
 .atlas-controls {
   display: grid;
-  grid-column: 1;
-  grid-row: 2;
   gap: var(--space-2);
-  align-self: end;
   justify-items: start;
   min-width: 0;
 }
 
 .atlas-meta {
-  display: grid;
-  grid-template-rows: auto minmax(0, auto) auto;
-  align-items: flex-end;
-  grid-column: 2;
-  grid-row: 1 / 3;
-  align-self: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-self: stretch;
   justify-self: end;
   gap: var(--space-2);
   width: 100%;
-  max-width: 52ch;
+  max-width: min(34rem, 40vw);
   min-width: 0;
-  margin-left: auto;
   padding: 9px 10px 10px;
   border: 1px solid var(--border-hairline);
   border-radius: var(--radius);
@@ -230,12 +230,6 @@ h1 {
     linear-gradient(180deg, var(--wash-control-start), var(--wash-control-end)),
     var(--wash-control-surface);
   box-shadow: var(--shadow-inset-light-soft);
-}
-
-.theme-control-row {
-  display: flex;
-  justify-content: flex-start;
-  width: 100%;
 }
 
 .source-controls {
@@ -251,7 +245,6 @@ h1 {
   display: flex;
   justify-content: flex-end;
   width: 100%;
-  min-height: 2.1em;
 }
 
 .atlas-description-row:empty {
@@ -429,7 +422,7 @@ h1 {
   flex: 0 1 360px;
   justify-content: flex-end;
   max-width: min(360px, 100%);
-  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-family: var(--font-mono);
 }
 
 .atlas-workspace {
@@ -592,30 +585,37 @@ h1 {
 }
 
 .atlas-marker-shape {
-  fill: var(--accent-marker);
-  stroke: var(--marker-triangle-stroke);
-  stroke-linejoin: round;
+  fill: none;
+  stroke: var(--accent-marker);
   stroke-width: 3.5;
+  stroke-dasharray: 5 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
   vector-effect: non-scaling-stroke;
-  filter:
-    var(--shadow-marker-shape);
+  filter: var(--shadow-marker-shape);
   transition:
-    fill 120ms ease,
     stroke 120ms ease,
     stroke-width 120ms ease,
     filter 120ms ease;
 }
 
-.atlas-marker-inset {
-  fill: transparent;
-  stroke: var(--marker-triangle-inset);
-  stroke-linejoin: round;
-  stroke-width: 1.7;
-  opacity: 0.62;
+.atlas-marker-vertex {
+  fill: var(--accent-marker);
+  stroke: var(--marker-triangle-stroke);
+  stroke-width: 1.5;
   vector-effect: non-scaling-stroke;
   transition:
-    opacity 120ms ease,
+    fill 120ms ease,
     stroke 120ms ease;
+}
+
+.atlas-marker-spark {
+  fill: var(--accent-marker-spark);
+  stroke: var(--wash-marker-spark-stroke);
+  stroke-width: 1.5;
+  opacity: 0;
+  vector-effect: non-scaling-stroke;
+  transition: opacity 120ms ease;
 }
 
 .atlas-marker:hover .atlas-marker-halo {
@@ -627,10 +627,13 @@ h1 {
 }
 
 .atlas-marker:hover .atlas-marker-shape {
-  fill: var(--accent-marker);
-  stroke: var(--marker-triangle-stroke);
+  stroke: var(--accent-marker-hover);
   stroke-width: 4;
   filter: var(--shadow-marker-shape-hover);
+}
+
+.atlas-marker:hover .atlas-marker-vertex {
+  fill: var(--accent-marker-hover);
 }
 
 .atlas-marker--selected .atlas-marker-halo {
@@ -642,14 +645,16 @@ h1 {
 }
 
 .atlas-marker--selected .atlas-marker-shape {
-  fill: var(--accent-marker);
-  stroke: var(--marker-triangle-stroke);
   stroke-width: 4;
   filter: var(--shadow-marker-shape-selected);
 }
 
-.atlas-marker--selected .atlas-marker-inset {
-  opacity: 0.88;
+.atlas-marker--selected .atlas-marker-vertex {
+  fill: var(--accent-marker-hover);
+}
+
+.atlas-marker--selected .atlas-marker-spark {
+  opacity: 1;
 }
 
 .atlas-marker--multi-clique .atlas-marker-halo {
@@ -793,7 +798,7 @@ h1 {
 
 .match-meta {
   color: var(--text-secondary);
-  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-family: var(--font-mono);
   font-size: 0.75rem;
 }
 
@@ -858,7 +863,7 @@ h1 {
 
 .locus-card h2 {
   margin-bottom: 0;
-  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-family: var(--font-mono);
   font-size: clamp(1.35rem, 2vw, 1.7rem);
   letter-spacing: 0;
   line-height: 1.04;
@@ -921,7 +926,7 @@ h1 {
 
 .clique-card h3 {
   margin-bottom: 0;
-  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-family: var(--font-mono);
   font-size: 1rem;
 }
 
@@ -951,7 +956,7 @@ h1 {
   margin: 4px 0 0;
   overflow-wrap: anywhere;
   color: var(--text-primary);
-  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-family: var(--font-mono);
   font-size: 0.92rem;
 }
 
@@ -1034,7 +1039,6 @@ h1 {
 @media (max-width: 980px) {
   .atlas-header {
     grid-template-columns: 1fr;
-    align-items: start;
   }
 
   .brand-seal {
@@ -1042,19 +1046,10 @@ h1 {
     height: clamp(76px, 18vw, 112px);
   }
 
-  .atlas-controls,
   .atlas-meta {
-    grid-column: 1;
-    grid-row: auto;
-    justify-content: flex-start;
-    width: 100%;
-  }
-
-  .atlas-meta {
-    align-items: flex-start;
+    align-self: auto;
     justify-self: stretch;
     max-width: 100%;
-    margin-left: 0;
   }
 
   .source-controls,
@@ -1076,10 +1071,6 @@ h1 {
 
   .status-strip span {
     max-width: min(100%, 320px);
-  }
-
-  .projection-description {
-    margin-top: 0;
   }
 }
 
