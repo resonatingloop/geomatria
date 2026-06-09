@@ -485,7 +485,7 @@ function App() {
               <p className="eyebrow">
                 {selectedSource === SOURCE_LIVE ? "live local instrument" : "static instrument"}
               </p>
-              <h1>geogematria atlas</h1>
+              <h1>geomatria atlas</h1>
             </div>
           </div>
           <div className="atlas-controls" aria-label="Atlas calibration register">
