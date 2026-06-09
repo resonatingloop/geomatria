@@ -73,7 +73,28 @@ function App() {
   const mapContainerRef = useRef(null);
   const mapRef = useRef(null);
   const markersRef = useRef([]);
+  const selectedLocusKeyRef = useRef("");
   const unlock2DMapRef = useRef(null);
+
+  // Marker opacity is driven through MapLibre's setOpacity() API rather than CSS:
+  // MapLibre writes element.style.opacity inline on every map move, which would
+  // override any CSS opacity rule. Resting loci read as ghosts; a selection snaps
+  // the chosen locus to full and pushes the rest to afterimages.
+  const GHOST_OPACITY = "0.4";
+  // afterimages need more presence on the light/cream canvas than on dark navy
+  const AFTERIMAGE_OPACITY_DARK = "0.12";
+  const AFTERIMAGE_OPACITY_LIGHT = "0.24";
+  function markerOpacityFor(locusKey) {
+    const selected = selectedLocusKeyRef.current;
+    if (!selected) return GHOST_OPACITY;
+    if (locusKey === selected) return "1";
+    return document.documentElement.dataset.theme === THEME_DARK
+      ? AFTERIMAGE_OPACITY_DARK
+      : AFTERIMAGE_OPACITY_LIGHT;
+  }
+  function applyMarkerOpacity(entry) {
+    entry.marker.setOpacity(markerOpacityFor(entry.locusKey));
+  }
   const [staticManifest, setStaticManifest] = useState([]);
   const [liveManifest, setLiveManifest] = useState([]);
   const [liveManifestError, setLiveManifestError] = useState("");
@@ -361,7 +382,13 @@ function App() {
         .setLngLat([locus.longitude, locus.latitude])
         .addTo(map);
 
-      markersRef.current.push({ marker, markerNode, locusKey: locus.locusKey });
+      const entry = { marker, markerNode, locusKey: locus.locusKey };
+      // hover reveals a ghost/afterimage; leaving restores its state opacity
+      markerNode.addEventListener("mouseenter", () => marker.setOpacity("1"));
+      markerNode.addEventListener("mouseleave", () => applyMarkerOpacity(entry));
+      applyMarkerOpacity(entry);
+
+      markersRef.current.push(entry);
       bounds.extend([locus.longitude, locus.latitude]);
       hasBounds = true;
     }
@@ -372,13 +399,21 @@ function App() {
   }, [isHeatmapMode, markerLoci]);
 
   useEffect(() => {
+    selectedLocusKeyRef.current = selectedLocusKey;
     for (const entry of markersRef.current) {
       entry.markerNode.classList.toggle(
         "atlas-marker--selected",
         entry.locusKey === selectedLocusKey
       );
+      applyMarkerOpacity(entry);
     }
   }, [selectedLocusKey]);
+
+  useEffect(() => {
+    for (const entry of markersRef.current) {
+      applyMarkerOpacity(entry);
+    }
+  }, [theme]);
 
   const modeOptions = useMemo(() => getAvailableModes(manifest), [manifest]);
   const cipherOptions = useMemo(

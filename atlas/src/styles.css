@@ -692,7 +692,9 @@ h1 {
   background: transparent;
   cursor: pointer;
   pointer-events: auto;
-  transition: opacity 180ms ease;
+  /* opacity itself is driven via MapLibre setOpacity() (see main.jsx); this
+     transition animates those inline changes for the ghost/afterimage fades */
+  transition: opacity 220ms ease;
 }
 
 .atlas-marker-art {
@@ -1210,10 +1212,6 @@ h1 {
 
 /* ── Night mode: attention hierarchy ─────────────────────────────────── */
 /* Inactive (non-selected, non-hovered) loci recede; selected/hovered stay vivid */
-
-[data-theme='dark'] .atlas-marker:not(.atlas-marker--selected):not(:hover) {
-  opacity: var(--marker-inactive-opacity);
-}
 
 [data-theme='dark'] .atlas-marker:not(.atlas-marker--selected):not(:hover) .atlas-marker-halo {
   filter: var(--shadow-marker-halo-inactive);
