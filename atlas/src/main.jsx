@@ -444,10 +444,10 @@ function App() {
               <h1>geogematria atlas</h1>
             </div>
           </div>
-          <div className="atlas-controls" aria-label="Atlas controls">
+          <div className="atlas-controls" aria-label="Atlas calibration register">
           <div className="control-card">
             <label className="field-control field-control--mode">
-              <span>map mode</span>
+              <span>projection</span>
               <select
                 value={selectedMode}
                 onChange={(event) =>
@@ -456,7 +456,7 @@ function App() {
                 disabled={modeOptions.length === 0}
               >
                 {modeOptions.length === 0 ? (
-                  <option value="">no supported modes</option>
+                  <option value="">no projections</option>
                 ) : (
                   modeOptions.map((option) => (
                     <option key={option.id} value={option.id}>
@@ -467,7 +467,7 @@ function App() {
               </select>
             </label>
             <label className="field-control field-control--cipher">
-              <span>cipher</span>
+              <span>cipher register</span>
               <select
                 value={selectedCipher}
                 onChange={(event) =>
@@ -479,7 +479,7 @@ function App() {
                 disabled={cipherOptions.length === 0}
               >
                 {cipherOptions.length === 0 ? (
-                  <option value="">no ciphers</option>
+                  <option value="">no registers</option>
                 ) : (
                   cipherOptions.map((option) => (
                     <option key={option.id} value={option.id}>
@@ -490,7 +490,7 @@ function App() {
               </select>
             </label>
             <label className="field-control field-control--family">
-              <span>family</span>
+              <span>lineage</span>
               <select
                 value={selectedTransformFamily}
                 onChange={(event) =>
@@ -503,7 +503,7 @@ function App() {
                 disabled={transformFamilyOptions.length === 0}
               >
                 {transformFamilyOptions.length === 0 ? (
-                  <option value="">no families</option>
+                  <option value="">no lineages</option>
                 ) : (
                   transformFamilyOptions.map((option) => (
                     <option key={option.id} value={option.id}>
@@ -514,14 +514,14 @@ function App() {
               </select>
             </label>
             <label className="field-control field-control--projection">
-              <span>dataset</span>
+              <span>source plate</span>
               <select
                 value={selectedDatasetFile}
                 onChange={(event) => setSelectedDatasetFile(event.target.value)}
                 disabled={datasetOptions.length === 0}
               >
                 {datasetOptions.length === 0 ? (
-                  <option value="">no datasets</option>
+                  <option value="">no plates</option>
                 ) : (
                   datasetOptions.map((entry) => (
                     <option key={entry.file} value={entry.file}>
@@ -532,7 +532,7 @@ function App() {
               </select>
             </label>
             <label className="field-control search-control">
-              <span>{isValueSearch ? "search values" : "search phrases"}</span>
+              <span>{isValueSearch ? "value aperture" : "phrase aperture"}</span>
               <input
                 type={isValueSearch ? "number" : "search"}
                 value={searchQuery}
@@ -549,7 +549,7 @@ function App() {
         <div className="atlas-meta">
           <div className="source-controls" aria-label="Atlas source controls">
             <div className="source-toggle">
-              <span>source</span>
+              <span>feed</span>
               <button
                 type="button"
                 className={selectedSource === SOURCE_STATIC ? "source-toggle__button source-toggle__button--active" : "source-toggle__button"}
@@ -562,7 +562,7 @@ function App() {
                 className={selectedSource === SOURCE_LIVE ? "source-toggle__button source-toggle__button--active" : "source-toggle__button"}
                 onClick={() => setSelectedSource(SOURCE_LIVE)}
                 disabled={liveManifest.length === 0}
-                title={liveManifestError || "live local source"}
+                title={liveManifestError || "live local instrument"}
               >
                 live
               </button>
@@ -573,23 +573,23 @@ function App() {
               onClick={refreshAtlasSource}
               disabled={loadState.status === "loading"}
             >
-              refresh
+              recast
             </button>
             <div className="source-toggle">
-              <span>theme</span>
+              <span>lamp</span>
               <button
                 type="button"
                 className={theme === THEME_DAY ? "source-toggle__button source-toggle__button--active" : "source-toggle__button"}
                 onClick={() => setTheme(THEME_DAY)}
               >
-                day
+                on
               </button>
               <button
                 type="button"
                 className={theme === THEME_DARK ? "source-toggle__button source-toggle__button--active" : "source-toggle__button"}
                 onClick={() => setTheme(THEME_DARK)}
               >
-                night
+                off
               </button>
             </div>
           </div>
