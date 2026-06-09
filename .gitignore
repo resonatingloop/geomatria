@@ -8,6 +8,10 @@ node_modules/
 atlas/node_modules/
 atlas/dist/
 
+# BellTopo Sans — EULA prohibits redistribution; install font files locally
+# see atlas/src/assets/fonts/EULA.txt
+atlas/src/assets/fonts/*.otf
+
 # C extensions
 *.so
 

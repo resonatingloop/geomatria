@@ -7,8 +7,8 @@ export const EMPTY_COLLECTION = {
   features: [],
 };
 
-export const MIN_MARKER_SIZE = 14;
-export const MAX_MARKER_SIZE = 42;
+export const MIN_MARKER_SIZE = 18;
+export const MAX_MARKER_SIZE = 55;
 export const DEFAULT_COUNT = 1;
 
 export function validateManifest(data) {
@@ -217,7 +217,7 @@ export function normalizeDomainPhraseCount(rawSize, fallbackPhraseCount = 0) {
 export function markerSize(cliqueSize) {
   return Math.max(
     MIN_MARKER_SIZE,
-    Math.min(MAX_MARKER_SIZE, 12 + Math.sqrt(normalizeCliqueSize(cliqueSize)) * 10)
+    Math.min(MAX_MARKER_SIZE, 16 + Math.sqrt(normalizeCliqueSize(cliqueSize)) * 13)
   );
 }
 

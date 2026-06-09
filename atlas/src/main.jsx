@@ -319,7 +319,7 @@ function App() {
         "atlas-marker",
         isHeatmapMode ? "atlas-marker--domain" : "",
         !isHeatmapMode && locus.cliques.length > 1 ? "atlas-marker--multi-clique" : "",
-        markerPixelSize >= 36 ? "atlas-marker--dense" : "",
+        markerPixelSize >= 47 ? "atlas-marker--dense" : "",
       ]
         .filter(Boolean)
         .join(" ");
@@ -567,25 +567,10 @@ function App() {
             </p>
           )}
           <div className="status-strip" aria-live="polite">
-            <span><b>source</b>{selectedSource}</span>
-            <span><b>mode</b>{activeManifestEntry?.mode_label ?? selectedMode ?? "..."}</span>
-            <span><b>render</b>{activeManifestEntry?.render_mode ?? "..."}</span>
-            <span><b>cipher</b>{activeManifestEntry?.cipher_label ?? selectedCipher ?? "..."}</span>
-            <span><b>family</b>{activeManifestEntry?.transform_family_label ?? selectedTransformFamily ?? "..."}</span>
-            <span><b>projection</b>{activeManifestEntry?.projection_method ?? "..."}</span>
-            {isHeatmapMode ? (
-              <>
-                <span><b>values</b>{summary.domainValueCount}</span>
-                <span><b>loci</b>{summary.projectedLocusCount}</span>
-                <span><b>occupied</b>{summary.valuesWithPhrases}</span>
-              </>
-            ) : (
+            {!isHeatmapMode && (
               <span><b>cliques</b>{summary.cliqueCount}</span>
             )}
             <span><b>phrases</b>{summary.phraseCount}</span>
-            <span className="status-strip__path" title={activeManifestEntry?.file ?? MANIFEST_URL}>
-              <b>dataset</b>{activeManifestEntry?.file ?? MANIFEST_URL}
-            </span>
           </div>
         </div>
       </header>
@@ -598,6 +583,7 @@ function App() {
               {loadState.status === "loading" ? "Loading atlas data" : loadState.message}
             </div>
           )}
+          <div className="map-glass" />
         </div>
 
         <aside className="side-panel">
@@ -617,7 +603,7 @@ function App() {
               });
             }}
           />
-          <LocusPanel locus={selectedLocus} selectedFeatureKey={selectedFeatureKey} />
+          <LocusPanel locus={selectedLocus} selectedFeatureKey={selectedFeatureKey} projectionMethod={activeManifestEntry?.projection_method} />
         </aside>
       </section>
     </main>
@@ -794,7 +780,7 @@ function SearchResults({
   );
 }
 
-function LocusPanel({ locus, selectedFeatureKey }) {
+function LocusPanel({ locus, selectedFeatureKey, projectionMethod }) {
   if (!locus) {
     return (
       <section className="feature-panel feature-panel--empty">
@@ -900,6 +886,12 @@ function LocusPanel({ locus, selectedFeatureKey }) {
               <div>
                 <dt>Original hash coordinate</dt>
                 <dd>{locus.baseCoordinate.googleMapsCopy}</dd>
+              </div>
+            )}
+            {projectionMethod && (
+              <div>
+                <dt>Projection method</dt>
+                <dd>{projectionMethod}</dd>
               </div>
             )}
           </dl>
