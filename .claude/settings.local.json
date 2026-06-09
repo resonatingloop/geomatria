@@ -4,7 +4,10 @@
       "Bash(npm run *)",
       "Skill(run)",
       "Bash(chromium-cli screenshot *)",
-      "Bash(chromium-cli *)"
+      "Bash(chromium-cli *)",
+      "Bash(DISPLAY=:0 xvfb-run --auto-servernum '--server-args=-screen 0 1400x900x24' npx --yes playwright@latest screenshot --browser chromium http://127.0.0.1:5199/ /tmp/day-header-texture.png --wait-for-timeout 2500 --viewport-size 1400,900)",
+      "Bash(npx playwright *)",
+      "Bash(wait)"
     ]
   }
 }

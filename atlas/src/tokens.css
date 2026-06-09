@@ -15,8 +15,8 @@
   --border-hairline: rgba(29, 158, 117, 0.25);
   --accent-warm: #BE4A2A;
   --accent-locus: #F2A62D;
-  --accent-trace: #8a5d2c;
-  --accent-marker: #b06c30;
+  --accent-trace: ##BE4A2A;
+  --accent-marker: #BE4A2A;
   --accent-marker-hover: #c47c3d;
   --accent-marker-spark: #d7a64a;
   --state-error: #8d352e;
@@ -61,21 +61,28 @@
   --wash-note-domain: rgb(47 117 109 / 10%);
   --wash-phrase-rule: rgb(47 117 109 / 3%);
 
+  --header-texture:
+    radial-gradient(ellipse at 15% 50%, rgb(47 117 109 / 0.06), transparent 45%),
+    radial-gradient(ellipse at 88% 15%, rgb(190 74 42 / 0.04), transparent 35%),
+    repeating-linear-gradient(0deg, rgb(23 35 31 / 0.022) 0 1px, transparent 1px 28px),
+    repeating-linear-gradient(90deg, rgb(23 35 31 / 0.016) 0 1px, transparent 1px 28px);
+  --header-texture-blend: multiply;
+
   --stroke-focus: rgb(47 117 109 / 22%);
   --stroke-marker-halo: rgb(47 117 109 / 38%);
   --stroke-marker-halo-hover: rgb(47 117 109 / 74%);
   --stroke-marker-halo-selected: rgb(47 117 109 / 92%);
-  --stroke-marker-halo-multi: rgb(47 117 109 / 66%);
-  --stroke-marker-halo-dense: rgb(47 117 109 / 70%);
+  --stroke-marker-halo-multi: rgb(47 117 109 / 44%);
+  --stroke-marker-halo-dense: rgb(47 117 109 / 55%);
   --stroke-marker-domain-hover: rgb(47 117 109 / 72%);
   --stroke-marker-domain-selected: rgb(47 117 109 / 88%);
   --marker-triangle-stroke: #fffbee;
   --marker-triangle-inset: rgb(255 253 245 / 64%);
   --map-heat-empty: rgba(47, 117, 109, 0);
   --map-heat-low: rgba(47, 117, 109, 0.44);
-  --map-heat-mid: rgba(176, 108, 48, 0.58);
-  --map-heat-high: rgba(171, 74, 43, 0.74);
-  --map-heat-peak: rgba(99, 38, 31, 0.86);
+  --map-heat-mid: rgba(232, 100, 43, 0.74);
+  --map-heat-high: rgba(232, 100, 43, 0.74);
+  --map-heat-peak: rgba(232, 100, 43, 0.74);
   --map-phrase-point: #2f756d;
   --map-phrase-stroke: #fffbee;
 
@@ -112,30 +119,30 @@
 
 
 [data-theme='dark'] {
-  --bg-canvas: #001524;
-  --bg-surface: #2c2b26;
+  --bg-canvas: #2c2b26;
+  --bg-surface: #000C14;
   --bg-surface-raised: #36352f;
-  --bg-surface-header-mix: #001524;
+  --bg-surface-header-mix: #000C14;
   --bg-surface-sticky-mix: #1f211f;
   --bg-map-frame: #001524;
   --bg-map-canvas: #2c2b26;
-  --bg-count-badge: #001524;
-  --bg-type-badge: #001524;
+  --bg-count-badge: #000C14;
+  --bg-type-badge: #000C14;
   --text-primary: #FDEFD8;
   --text-secondary: #9A9686;
   --border-default: #1D9E75;
-  --border-subtle: rgb(29 158 117 / 28%);
-  --border-hairline: rgba(29, 158, 117, 0.25);
-  --accent-warm: #BE4A2A;
+  --border-subtle: rgb(29 158 117 / 20%);
+  --border-hairline: rgba(29, 158, 117, 0.2);
+  --accent-warm: #D9663A;
   --accent-locus: #F2A62D;
   --accent-trace: #F2A62D;
-  --accent-marker: #BE4A2A;
+  --accent-marker: #D9663A;
   --accent-marker-hover: #F2A62D;
   --accent-marker-spark: #F2A62D;
-  --state-error: #BE4A2A;
-  --live-state: #BE4A2A;
+  --state-error: #D9663A;
+  --live-state: #D9663A;
   --static-state: #1D9E75;
-  --live-title-state: #BE4A2A;
+  --live-title-state: #D9663A;
   --marker-domain: #1D9E75;
 
   --line-ink: rgb(253 239 216 / 16%);
@@ -155,6 +162,8 @@
   --wash-side-panel-end: rgb(0 21 36 / 88%);
   --wash-map-glass-edge: rgba(0, 21, 36, 0.62);
   --wash-map-glass-sheen: rgba(253, 239, 216, 0.12);
+  --wash-map-vignette-mid: rgb(0 12 20 / 0.16);
+  --wash-map-vignette-edge: rgb(0 12 20 / 0.44);
   --wash-map-surface: rgb(0 21 36 / 26%);
   --wash-map-cool: rgb(29 158 117 / 14%);
   --wash-map-warm: rgb(190 74 42 / 15%);
@@ -174,12 +183,15 @@
   --wash-note-domain: rgb(29 158 117 / 16%);
   --wash-phrase-rule: rgb(29 158 117 / 8%);
 
+  --header-texture: none;
+  --header-texture-blend: normal;
+
   --stroke-focus: rgb(29 158 117 / 42%);
-  --stroke-marker-halo: rgb(29 158 117 / 52%);
+  --stroke-marker-halo: rgb(29 158 117 / 44%);
   --stroke-marker-halo-hover: rgb(242 166 45 / 78%);
   --stroke-marker-halo-selected: rgb(242 166 45 / 92%);
-  --stroke-marker-halo-multi: rgb(29 158 117 / 78%);
-  --stroke-marker-halo-dense: rgb(29 158 117 / 82%);
+  --stroke-marker-halo-multi: rgb(29 158 117 / 54%);
+  --stroke-marker-halo-dense: rgb(29 158 117 / 54%);
   --stroke-marker-domain-hover: rgb(242 166 45 / 76%);
   --stroke-marker-domain-selected: rgb(242 166 45 / 92%);
   --marker-triangle-stroke: #FDEFD8;
@@ -200,10 +212,13 @@
   --shadow-map-frame:
     0 0 0 1px rgb(253 239 216 / 8%) inset,
     0 18px 44px rgb(0 0 0 / 36%) inset;
+  --marker-inactive-opacity: 0.52;
   --shadow-marker-halo: drop-shadow(0 4px 8px rgb(0 0 0 / 34%));
+  --shadow-marker-halo-inactive: drop-shadow(0 2px 5px rgb(0 0 0 / 26%));
   --shadow-marker-shape:
     drop-shadow(0 0 1px rgb(0 21 36 / 80%))
     drop-shadow(0 7px 10px rgb(0 0 0 / 42%));
+  --shadow-marker-shape-inactive: drop-shadow(0 3px 5px rgb(0 0 0 / 32%));
   --shadow-marker-simple: drop-shadow(0 5px 7px rgb(0 0 0 / 42%));
   --shadow-marker-hover:
     drop-shadow(0 0 5px rgb(242 166 45 / 34%))
