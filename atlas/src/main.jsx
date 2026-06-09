@@ -426,6 +426,15 @@ function App() {
     setRefreshNonce((value) => value + 1);
   }
 
+  const modeIndex = Math.max(
+    0,
+    modeOptions.findIndex((option) => option.id === selectedMode),
+  );
+  const viewTickPos =
+    modeOptions.length > 1
+      ? (10 + (modeIndex / (modeOptions.length - 1)) * 140) / 160
+      : 0.5;
+
   return (
     <main className="atlas-shell">
       <header className={`atlas-header atlas-header--source-${selectedSource}`}>
@@ -446,7 +455,10 @@ function App() {
           </div>
           <div className="atlas-controls" aria-label="Atlas calibration register">
           <div className="control-card">
-            <label className="field-control field-control--mode">
+            <label
+              className="field-control field-control--mode"
+              style={{ "--view-tickpos": viewTickPos }}
+            >
               <span>projection</span>
               <select
                 value={selectedMode}
