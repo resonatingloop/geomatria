@@ -579,7 +579,7 @@ h1 {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(320px, 400px);
+  grid-template-columns: minmax(0, 1fr);
   flex: 1;
   min-height: 0;
   overflow: hidden;
@@ -867,20 +867,19 @@ h1 {
   outline-offset: 4px;
 }
 
-.side-panel {
-  display: flex;
-  flex-direction: column;
-  min-height: 0;
-  overflow: auto;
-  border-left: 1px solid var(--border-default);
+/* Aperture results: summoned dropdown under the phrase/value field. Positioned
+   fixed (top/left/width set inline from the field's rect) so it escapes the
+   overflow: hidden on .atlas-header / .control-card. */
+.search-results {
+  position: fixed;
+  z-index: 30;
+  padding: var(--space-3) var(--space-3) var(--space-2);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius);
   background:
     linear-gradient(180deg, var(--wash-side-panel-start), var(--wash-side-panel-end)),
     var(--bg-surface);
-}
-
-.search-results {
-  padding: var(--space-4) var(--space-5);
-  border-bottom: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-panel);
 }
 
 .section-heading {
@@ -913,17 +912,24 @@ h1 {
 .search-results ol {
   display: grid;
   gap: var(--space-2);
-  max-height: min(30vh, 300px);
+  max-height: min(42vh, 360px);
   margin: 0;
   padding: 0;
   overflow: auto;
   overscroll-behavior: contain;
   list-style: none;
+  counter-reset: slip;
+}
+
+.search-results li {
+  counter-increment: slip;
 }
 
 .search-results button {
   display: grid;
-  gap: 3px;
+  grid-template-columns: auto 1fr;
+  column-gap: 9px;
+  row-gap: 3px;
   width: 100%;
   padding: 10px 11px;
   border: 1px solid var(--border-subtle);
@@ -933,6 +939,24 @@ h1 {
   cursor: pointer;
   text-align: left;
   box-shadow: var(--shadow-inset-light);
+}
+
+/* indexed slip: 01, 02, ... etched in the left gutter */
+.search-results button::before {
+  grid-row: 1 / span 2;
+  align-self: start;
+  content: counter(slip, decimal-leading-zero);
+  padding-top: 1px;
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.search-results .match-phrase,
+.search-results .match-meta {
+  grid-column: 2;
 }
 
 .search-results button:hover,
@@ -962,38 +986,13 @@ h1 {
   font-size: 0.75rem;
 }
 
-.feature-panel {
-  padding: var(--space-5);
-}
-
-.feature-panel--empty {
-  display: grid;
-  min-height: 220px;
-  place-items: center;
-  color: var(--text-secondary);
-  font-weight: 700;
-}
-
-.empty-card,
 .locus-card {
+  position: relative;
+  padding: var(--space-5);
   border: 1px solid var(--border-default);
   border-radius: var(--radius);
   background: var(--bg-surface-raised);
   box-shadow: var(--shadow-panel);
-}
-
-.empty-card {
-  width: 100%;
-  padding: var(--space-5);
-}
-
-.empty-card p:last-child {
-  margin-bottom: 0;
-}
-
-.locus-card {
-  position: relative;
-  padding: var(--space-5);
 }
 
 .locus-card::before {
@@ -1221,6 +1220,257 @@ h1 {
   filter: var(--shadow-marker-shape-inactive);
 }
 
+/* ── Locus plate: compact summoned reading, tethered beside the locus ─────── */
+/* Hosted inside a maplibre Popup (.locus-plate-popup) so it tracks the
+   selected coordinate; position: relative anchors its rivets + clear button. */
+.locus-plate {
+  position: relative;
+  width: min(248px, 72vw);
+  padding: 14px 16px 13px;
+  border: 1px solid var(--plate-border);
+  border-radius: var(--radius);
+  background: var(--plate-surface);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.45),
+    var(--plate-shadow);
+  animation: plate-in 0.26s ease both;
+}
+
+/* Strip maplibre's popup chrome so only the plate shows. */
+.locus-plate-popup .maplibregl-popup-content {
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.locus-plate-popup .maplibregl-popup-tip {
+  display: none;
+}
+
+/* etched inner registration frame + warm selected-state rim */
+.locus-plate::before {
+  position: absolute;
+  inset: 4px;
+  pointer-events: none;
+  content: "";
+  border: 1px solid var(--plate-rim);
+  border-radius: calc(var(--radius) - 3px);
+  opacity: 0.5;
+}
+
+@keyframes plate-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.locus-plate__rivet {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--plate-rivet);
+  box-shadow: 0 1px 0 var(--plate-rivet-highlight);
+}
+
+.locus-plate__rivet--tl { top: 7px; left: 7px; }
+.locus-plate__rivet--tr { top: 7px; right: 7px; }
+.locus-plate__rivet--bl { bottom: 7px; left: 7px; }
+.locus-plate__rivet--br { bottom: 7px; right: 7px; }
+
+.locus-plate__clear {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 1;
+  display: grid;
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1;
+  cursor: pointer;
+  place-items: center;
+}
+
+.locus-plate__clear:hover,
+.locus-plate__clear:focus-visible {
+  color: var(--accent-warm);
+  outline: none;
+}
+
+.locus-plate__label {
+  margin: 0 0 2px;
+  color: var(--plate-label);
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.locus-plate__readout {
+  margin: 0;
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 1.42rem;
+  font-weight: 800;
+  line-height: 1.04;
+  letter-spacing: 0.01em;
+}
+
+.locus-plate__meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.locus-plate__badge {
+  padding: 2px 8px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 999px;
+  background: var(--bg-type-badge);
+  color: var(--text-primary);
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-transform: lowercase;
+}
+
+.locus-plate__count {
+  color: var(--text-secondary);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.locus-plate__coords {
+  margin: 9px 0 11px;
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+}
+
+.locus-plate__open {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border: 1px solid var(--plate-border);
+  border-radius: var(--radius);
+  background: var(--bg-surface-raised);
+  color: var(--text-primary);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.locus-plate__open::after {
+  content: "→";
+  font-weight: 700;
+}
+
+.locus-plate__open:hover,
+.locus-plate__open:focus-visible {
+  border-color: var(--accent-warm);
+  color: var(--accent-warm);
+  outline: none;
+}
+
+/* ── Readout tray: right-edge slide-out over the map, with faint scrim ────── */
+.readout-tray__scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 25;
+  background: var(--tray-scrim);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.readout-tray__scrim--open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.readout-tray {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 26;
+  display: flex;
+  flex-direction: column;
+  width: min(400px, 92vw);
+  background: var(--tray-surface);
+  border-left: 1px solid var(--tray-border);
+  box-shadow: var(--tray-shadow);
+  transform: translateX(100%);
+  transition: transform 0.32s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.readout-tray--open {
+  transform: translateX(0);
+}
+
+.readout-tray:not(.readout-tray--open) {
+  pointer-events: none;
+}
+
+.readout-tray__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-5);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.readout-tray__head .eyebrow {
+  margin: 0;
+}
+
+.readout-tray__close {
+  display: grid;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  border: 1px solid var(--border-subtle);
+  border-radius: 50%;
+  background: var(--bg-surface-raised);
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+  place-items: center;
+}
+
+.readout-tray__close:hover,
+.readout-tray__close:focus-visible {
+  border-color: var(--accent-warm);
+  color: var(--accent-warm);
+  outline: none;
+}
+
+.readout-tray__body {
+  flex: 1;
+  min-height: 0;
+  padding: var(--space-5);
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+
 @media (max-width: 980px) {
   .atlas-header {
     grid-template-columns: 1fr;
@@ -1260,16 +1510,6 @@ h1 {
 }
 
 @media (max-width: 820px) {
-  .atlas-workspace {
-    grid-template-columns: 1fr;
-  }
-
-  .side-panel {
-    max-height: 46vh;
-    border-top: 1px solid var(--border-default);
-    border-left: 0;
-  }
-
   .search-control {
     min-width: 0;
   }

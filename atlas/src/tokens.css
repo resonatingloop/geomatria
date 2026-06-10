@@ -148,6 +148,19 @@
     drop-shadow(0 0 0 rgb(255 253 245 / 80%))
     drop-shadow(0 0 6px rgb(47 117 109 / 44%))
     drop-shadow(0 8px 12px rgb(47 117 109 / 24%));
+
+  /* locus plate + readout tray (progressive disclosure) */
+  --plate-surface: linear-gradient(155deg, #fbf6e8, #efe6cc);
+  --plate-border: #b3a988;
+  --plate-rim: rgb(190 74 42 / 55%);
+  --plate-rivet: rgb(23 35 31 / 38%);
+  --plate-rivet-highlight: rgb(255 255 255 / 85%);
+  --plate-label: #8a6a3c;
+  --plate-shadow: 0 10px 24px rgb(40 30 20 / 22%), 0 2px 6px rgb(40 30 20 / 16%);
+  --tray-surface: linear-gradient(180deg, #fffbee, #f3ecd6);
+  --tray-border: #aeb19f;
+  --tray-shadow: -18px 0 40px rgb(40 30 20 / 22%);
+  --tray-scrim: rgb(30 24 16 / 22%);
 }
 
 
@@ -177,6 +190,19 @@
   --static-state: #1D9E75;
   --live-title-state: #D9663A;
   --marker-domain: #1D9E75;
+
+  /* locus plate + readout tray (progressive disclosure) */
+  --plate-surface: linear-gradient(155deg, #14201b, #0a141a);
+  --plate-border: #1D9E75;
+  --plate-rim: rgb(242 166 45 / 60%);
+  --plate-rivet: rgb(253 239 216 / 28%);
+  --plate-rivet-highlight: rgb(253 239 216 / 70%);
+  --plate-label: #C9A24A;
+  --plate-shadow: 0 10px 26px rgb(0 0 0 / 50%), 0 0 0 1px rgb(29 158 117 / 18%);
+  --tray-surface: linear-gradient(180deg, #0c1820, #07111a);
+  --tray-border: #1D9E75;
+  --tray-shadow: -18px 0 44px rgb(0 0 0 / 55%);
+  --tray-scrim: rgb(0 6 10 / 46%);
 
   --line-ink: rgb(253 239 216 / 16%);
   --line-map-frame: rgb(253 239 216 / 12%);
