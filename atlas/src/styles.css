@@ -106,7 +106,7 @@ select {
   align-items: start;
   gap: var(--space-3) var(--space-5);
   padding: var(--space-2) var(--space-5);
-  border-bottom: 1px solid var(--border-default);
+  border-bottom: 1px solid var(--header-edge);
   background-color: color-mix(in srgb, var(--bg-surface) 94%, var(--bg-surface-header-mix));
   background-image: var(--header-texture);
   background-blend-mode: var(--header-texture-blend);
@@ -140,6 +140,16 @@ select {
   height: 1px;
   content: "";
   background: linear-gradient(90deg, transparent, var(--line-ink), transparent);
+}
+
+/* night header: deep-black centre falloff for instrument depth (behind content) */
+[data-theme='dark'] .atlas-header::before {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  content: "";
+  background: radial-gradient(ellipse 72% 130% at 50% 42%, rgb(0 0 0 / 0.78), transparent 62%);
 }
 
 .header-left {
@@ -986,13 +996,41 @@ h1 {
   font-size: 0.75rem;
 }
 
+/* The mounted readout plate — fully resolved brass measurement plate. */
 .locus-card {
   position: relative;
   padding: var(--space-5);
-  border: 1px solid var(--border-default);
+  border: 1px solid var(--plate-border);
   border-radius: var(--radius);
-  background: var(--bg-surface-raised);
-  box-shadow: var(--shadow-panel);
+  /* four corner rivets (domed brass screw heads) over the plate surface */
+  background:
+    radial-gradient(circle 3.2px at 13px 13px, var(--plate-rivet-highlight) 0 0.8px, var(--plate-rivet) 1.7px 2.5px, transparent 2.8px),
+    radial-gradient(circle 3.2px at calc(100% - 13px) 13px, var(--plate-rivet-highlight) 0 0.8px, var(--plate-rivet) 1.7px 2.5px, transparent 2.8px),
+    radial-gradient(circle 3.2px at 13px calc(100% - 13px), var(--plate-rivet-highlight) 0 0.8px, var(--plate-rivet) 1.7px 2.5px, transparent 2.8px),
+    radial-gradient(circle 3.2px at calc(100% - 13px) calc(100% - 13px), var(--plate-rivet-highlight) 0 0.8px, var(--plate-rivet) 1.7px 2.5px, transparent 2.8px),
+    var(--plate-surface);
+  /* stronger beveled metal edge: lit top-left, shaded bottom-right */
+  box-shadow:
+    inset 2px 2px 0 var(--plate-bevel-hi),
+    inset -2px -2px 0 var(--plate-bevel-lo),
+    var(--plate-shadow);
+}
+
+/* engraved labels struck into the plate */
+.locus-card .eyebrow,
+.locus-card dt {
+  text-shadow: var(--plate-emboss);
+}
+
+/* etched inset rim frame (mirrors .locus-plate::before) */
+.locus-card::after {
+  position: absolute;
+  inset: 6px;
+  pointer-events: none;
+  content: "";
+  border: 1px solid var(--plate-rim);
+  border-radius: calc(var(--radius) - 4px);
+  opacity: 0.45;
 }
 
 .locus-card::before {
@@ -1017,15 +1055,24 @@ h1 {
   justify-content: space-between;
   gap: var(--space-4);
   padding-bottom: var(--space-4);
+  margin-bottom: var(--space-1);
   border-bottom: 1px solid var(--border-subtle);
 }
 
 .locus-card h2 {
   margin-bottom: 0;
   font-family: var(--font-mono);
-  font-size: clamp(1.35rem, 2vw, 1.7rem);
-  letter-spacing: 0;
-  line-height: 1.04;
+  font-size: clamp(1.6rem, 2.5vw, 2.05rem);
+  font-weight: 800;
+  letter-spacing: 0.005em;
+  line-height: 1.0;
+  text-shadow: var(--plate-emboss);
+}
+
+.locus-card__header .eyebrow {
+  margin-bottom: 3px;
+  color: var(--plate-label);
+  letter-spacing: 0.12em;
 }
 
 .type-badge {
@@ -1062,41 +1109,10 @@ h1 {
   background: var(--wash-note-domain);
 }
 
-.clique-stack {
-  display: grid;
-  gap: var(--space-4);
-}
-
-.clique-card {
-  padding: var(--space-4);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius);
-  background: var(--bg-surface);
-}
-
-.clique-card__header {
-  display: flex;
-  align-items: start;
-  justify-content: space-between;
-  gap: var(--space-3);
-  padding-bottom: var(--space-3);
-  border-bottom: 1px solid var(--border-subtle);
-}
-
-.clique-card h3 {
-  margin-bottom: 0;
-  font-family: var(--font-mono);
-  font-size: 1rem;
-}
-
 .detail-grid {
   display: grid;
   gap: var(--space-3);
   margin: var(--space-4) 0;
-}
-
-.detail-grid--compact {
-  margin: var(--space-3) 0;
 }
 
 .detail-grid div {
@@ -1119,73 +1135,147 @@ h1 {
   font-size: 0.92rem;
 }
 
+/* quiet hairline section — not a box */
 .debug-details {
   margin: 0 0 var(--space-4);
-  border-top: 1px solid var(--border-subtle);
-  border-bottom: 1px solid var(--border-subtle);
-  padding: 10px 0;
+  padding: 9px 0 2px;
+  border-top: 1px solid var(--ledger-rule);
 }
 
 .debug-details summary {
-  color: var(--text-secondary);
+  color: var(--tray-slip-label);
   cursor: pointer;
-  font-size: 0.78rem;
-  font-weight: 800;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 .detail-grid--debug {
   margin-bottom: 4px;
 }
 
-.phrase-card {
-  padding: var(--space-4);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius);
-  background:
-    linear-gradient(0deg, var(--wash-phrase-rule) 1px, transparent 1px),
-    var(--bg-surface);
-  background-size: 100% 28px;
+/* ── Phrase ledger: quiet inscribed rows inside the one plate ─────────────── */
+.phrase-ledger-wrap {
+  margin-top: var(--space-4);
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--ledger-rule);
 }
 
-.clique-phrases summary {
-  margin-top: var(--space-2);
+.ledger-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 4px;
+  color: var(--plate-label);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.ledger-head__count {
   color: var(--text-secondary);
+  letter-spacing: 0.04em;
+}
+
+.phrase-ledger {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  max-height: min(44vh, 540px);
+  overflow: auto;
+  overscroll-behavior: contain;
+  list-style: none;
+  counter-reset: slip;
+}
+
+/* a ledger row: hairline-ruled inscription, not a button */
+.phrase-ledger li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 12px;
+  align-items: baseline;
+  counter-increment: slip;
+  padding: 5px 2px;
+  border-bottom: 1px solid var(--ledger-rule);
+  overflow-wrap: anywhere;
+  font-size: 0.9rem;
+  line-height: 1.32;
+}
+
+.phrase-ledger li:last-child {
+  border-bottom: 0;
+}
+
+.phrase-ledger li::before {
+  content: counter(slip, decimal-leading-zero);
+  color: var(--tray-slip-label);
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  opacity: 0.7;
+}
+
+/* collision/heat groups: quiet expandable value labels */
+.ledger-group {
+  border-top: 1px solid var(--ledger-rule);
+}
+
+.ledger-group:first-child {
+  border-top: 0;
+}
+
+.ledger-group__summary {
+  display: flex;
+  align-items: baseline;
+  gap: 9px;
+  padding: 8px 2px;
   cursor: pointer;
-  font-size: 0.78rem;
+  list-style: none;
+}
+
+.ledger-group__summary::-webkit-details-marker {
+  display: none;
+}
+
+.ledger-group__value {
+  font-family: var(--font-mono);
+  font-size: 0.96rem;
   font-weight: 800;
 }
 
-.clique-phrases .phrase-card {
-  margin-top: var(--space-3);
+.ledger-group__kind {
+  color: var(--accent-trace);
+  font-size: 0.64rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
-.phrase-card .section-heading {
-  position: sticky;
-  top: 0;
-  z-index: 1;
-  margin: calc(-1 * var(--space-4)) calc(-1 * var(--space-4)) var(--space-3);
-  padding: var(--space-3) var(--space-4);
-  border-bottom: 1px solid var(--border-subtle);
-  background: color-mix(in srgb, var(--bg-surface) 94%, var(--bg-surface-sticky-mix));
+.ledger-group__count {
+  margin-left: auto;
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
 }
 
-.phrase-card ul {
-  display: grid;
-  gap: var(--space-2);
-  max-height: min(42vh, 520px);
-  margin: 0;
-  padding-left: var(--space-4);
-  overflow: auto;
-  overscroll-behavior: contain;
+.ledger-group[open] .ledger-group__value {
+  color: var(--accent-warm);
 }
 
-.phrase-card li {
-  overflow-wrap: anywhere;
+.ledger-group .phrase-ledger {
+  max-height: min(34vh, 360px);
+  padding-bottom: 6px;
 }
 
 .empty-phrases {
-  margin-bottom: 0;
+  margin: 6px 0 0;
   color: var(--text-secondary);
+  font-size: 0.86rem;
 }
 
 .maplibregl-ctrl-group {
@@ -1229,9 +1319,11 @@ h1 {
   padding: 14px 16px 13px;
   border: 1px solid var(--plate-border);
   border-radius: var(--radius);
-  background: var(--plate-surface);
+  background: var(--plate-surface-soft);
+  /* lighter, simpler bevel than the formal tray plate */
   box-shadow:
-    inset 0 1px 0 rgb(255 255 255 / 0.45),
+    inset 1px 1px 0 var(--plate-bevel-hi),
+    inset -1px -1px 0 var(--plate-bevel-lo),
     var(--plate-shadow);
   animation: plate-in 0.26s ease both;
 }
@@ -1404,19 +1496,31 @@ h1 {
   pointer-events: auto;
 }
 
+/* Pulled-out instrument bay: inset drawer (not a full-height slab), quiet
+   housing led by a strong left rail rather than a boxed perimeter. */
 .readout-tray {
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
+  top: var(--space-4);
+  right: var(--space-4);
+  bottom: auto;
+  /* hug content height so a short readout doesn't leave empty glass below */
+  max-height: calc(100% - 2 * var(--space-4));
   z-index: 26;
   display: flex;
   flex-direction: column;
-  width: min(400px, 92vw);
+  width: min(428px, 92vw);
+  border-radius: var(--radius);
+  border-left: 1px solid var(--tray-edge);
+  border-bottom: 1px solid var(--tray-edge);
   background: var(--tray-surface);
-  border-left: 1px solid var(--tray-border);
-  box-shadow: var(--tray-shadow);
-  transform: translateX(100%);
+  -webkit-backdrop-filter: var(--tray-blur);
+  backdrop-filter: var(--tray-blur);
+  box-shadow:
+    var(--tray-shadow),
+    inset 0 -1px 0 var(--tray-recess),
+    inset 0 0 52px var(--tray-recess);
+  overflow: hidden;
+  transform: translateX(calc(100% + var(--space-4)));
   transition: transform 0.32s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
@@ -1429,16 +1533,35 @@ h1 {
 }
 
 .readout-tray__head {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: var(--space-3);
   padding: var(--space-3) var(--space-5);
-  border-bottom: 1px solid var(--border-subtle);
+  /* a denser housing strip so the label sits on solid material, not glass */
+  border-bottom: 1px solid var(--tray-rim);
+  box-shadow: inset 0 -1px 0 var(--tray-recess);
+  background: linear-gradient(180deg, var(--tray-recess), var(--tray-recess) 55%, transparent);
 }
 
+/* engraved label tied to the left rail by a short registration tick */
 .readout-tray__head .eyebrow {
+  display: inline-flex;
+  align-items: center;
   margin: 0;
+  color: var(--tray-rail);
+  letter-spacing: 0.18em;
+  text-shadow: var(--plate-emboss);
+}
+
+.readout-tray__head .eyebrow::before {
+  width: 14px;
+  height: 2px;
+  margin-right: 9px;
+  content: "";
+  background: var(--tray-rail);
+  opacity: 0.75;
 }
 
 .readout-tray__close {
@@ -1464,7 +1587,7 @@ h1 {
 }
 
 .readout-tray__body {
-  flex: 1;
+  flex: 0 1 auto;
   min-height: 0;
   padding: var(--space-5);
   overflow: auto;

@@ -75,3 +75,32 @@ plate/tray/scrim tokens for both day and dark.
 ## out of scope
 
 map background click-to-clear; further search relocation beyond the dropdown.
+
+## follow-up: readout-tray visual arc (2026-06-09, same day)
+
+After the structural slice landed, did several visual integration passes on the
+ReadoutTray + readout plate (CSS/tokens, presentation only — no behavior/data
+change):
+
+- tray shell -> pulled-out **glass instrument drawer**: inset from the screen
+  edges (not a full-height slab), hugs its content height, sheer/frosted surface
+  with backdrop blur (day frosted, dark near-clear), thin matched ochre/green
+  edge (`--tray-edge`), engraved title rail with a rail-tie tick.
+- flattened the russian-doll nesting: one **mounted readout plate** (`.locus-card`)
+  holds flat sections; phrases are quiet numbered **ledger rows** (not boxed
+  buttons); collisions/heat = quiet expandable ledger groups; value shown once.
+- plates shifted parchment -> **aged-brass / dark-bronze instrument plate**:
+  matte warm gradient, beveled metal edge (`--plate-bevel-hi/-lo`), engraved
+  labels (`--plate-emboss`), etched rim, corner rivets. Formal version on the
+  tray plate (`.locus-card`), lighter version on the floating plate
+  (`.locus-plate` via `--plate-surface-soft`).
+
+### deferred "more hardware" ideas (revisit with fresh eyes)
+Keep restrained — antique survey hardware, not steampunk. Candidates:
+- faint **stamped registration line** etched along the plate's bottom edge
+  (e.g. mono projection method or a `N · ###` index).
+- **corner brackets** as an alternative/companion to the rivets.
+- very low-opacity **brushed-metal grain** on the plate surface.
+Also still open from earlier: aperture dropdown auto-collapse-on-select (left
+persistent on purpose for now); whether the plate should hide/offset while the
+tray overlaps it.

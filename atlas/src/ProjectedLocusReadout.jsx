@@ -17,6 +17,7 @@ export function ProjectedLocusReadout({ locus, selectedFeatureKey, projectionMet
     ? visibleDomainCliques(locus.cliques, selectedFeatureKey)
     : locus.cliques;
   const visibleCollision = visibleCliques.length > 1;
+  const soloClique = visibleCliques.length === 1 ? visibleCliques[0] : null;
 
   return (
     <article className="locus-card">
@@ -127,65 +128,57 @@ export function ProjectedLocusReadout({ locus, selectedFeatureKey, projectionMet
         </p>
       )}
 
-      <div className="clique-stack">
-        {visibleCliques.map((clique) => (
-          <CliqueCard key={clique.featureKey} clique={clique} collapsed={visibleCollision} />
-        ))}
-      </div>
+      {/* Phrase content as a flat ledger inside the one plate. A single clique
+          renders its phrases directly (the value already reads in the plate
+          title); collisions/heat loci group phrases under quiet expandable
+          value labels, where the differing value is informative, not a repeat. */}
+      <section className="phrase-ledger-wrap">
+        {visibleCollision ? (
+          visibleCliques.map((clique) => (
+            <details className="ledger-group" key={clique.featureKey}>
+              <summary className="ledger-group__summary">
+                <span className="ledger-group__value">{cliqueTitle(clique)}</span>
+                <span className="ledger-group__kind">{clique.details.cliqueKind}</span>
+                <span className="ledger-group__count">{clique.details.cliqueSize}</span>
+              </summary>
+              <PhraseLedger phrases={clique.details.phrases} mode={clique.details.mode} />
+            </details>
+          ))
+        ) : (
+          <>
+            <div className="ledger-head">
+              <span className="ledger-head__label">phrases</span>
+              <span className="ledger-head__count">
+                {soloClique ? soloClique.details.cliqueSize : 0}
+              </span>
+            </div>
+            <PhraseLedger
+              phrases={soloClique ? soloClique.details.phrases : []}
+              mode={soloClique ? soloClique.details.mode : undefined}
+            />
+          </>
+        )}
+      </section>
     </article>
   );
 }
 
-function CliqueCard({ clique, collapsed }) {
-  const { details } = clique;
-  const content = (
-    <div className="phrase-card">
-      <div className="section-heading">
-        <h3>Phrases</h3>
-        <span>{details.phrases.length}</span>
-      </div>
-      {details.phrases.length > 0 ? (
-        <ul>
-          {details.phrases.map((phrase, index) => (
-            <li key={`${phrase}-${index}`}>{phrase}</li>
-          ))}
-        </ul>
-      ) : (
-        <p className="empty-phrases">
-          {details.mode === VALUE_DOMAIN_MODE
-            ? "No phrases for this value."
-            : "No phrases in export."}
-        </p>
-      )}
-    </div>
-  );
-
+function PhraseLedger({ phrases, mode }) {
+  if (!phrases || phrases.length === 0) {
+    return (
+      <p className="empty-phrases">
+        {mode === VALUE_DOMAIN_MODE
+          ? "No phrases for this value."
+          : "No phrases in export."}
+      </p>
+    );
+  }
   return (
-    <section className="clique-card">
-      <div className="clique-card__header">
-        <div>
-          <p className="eyebrow">
-            {details.mode === VALUE_DOMAIN_MODE ? "domain value" : "clique"}
-          </p>
-          <h3>{cliqueTitle(clique)}</h3>
-        </div>
-        <span className="type-badge">{details.cliqueKind}</span>
-      </div>
-      <dl className="detail-grid detail-grid--compact">
-        <div>
-          <dt>{details.mode === VALUE_DOMAIN_MODE ? "Phrase count" : "Clique size"}</dt>
-          <dd>{details.cliqueSize}</dd>
-        </div>
-      </dl>
-      {collapsed ? (
-        <details className="clique-phrases">
-          <summary>Show phrases</summary>
-          {content}
-        </details>
-      ) : (
-        content
-      )}
-    </section>
+    <ol className="phrase-ledger">
+      {phrases.map((phrase, index) => (
+        <li key={`${phrase}-${index}`}>{phrase}</li>
+      ))}
+    </ol>
   );
 }
 
