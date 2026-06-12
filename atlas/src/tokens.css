@@ -12,6 +12,7 @@
   --text-secondary: #687269;
   --border-default: #aeb19f;
   --border-subtle: #d1d2bf;
+  --header-edge: #8f3c22;
   --border-hairline: rgba(29, 158, 117, 0.25);
   --accent-warm: #BE4A2A;
   --accent-locus: #F2A62D;
@@ -74,11 +75,32 @@
   --aperture-rail: rgb(47 117 109 / 30%);
 
   --header-texture:
+    /* parchment center lift: keeps the middle a touch lighter/cleaner */
+    radial-gradient(ellipse 58% 140% at 50% 45%, rgb(255 253 246 / 0.9), transparent 75%),
+    /* parchment edge falloff: warms + deepens both ends across the full width */
+    linear-gradient(90deg, rgb(150 92 44 / 0.26) 0%, transparent 24%, transparent 76%, rgb(150 92 44 / 0.26) 100%),
     radial-gradient(ellipse at 15% 50%, rgb(47 117 109 / 0.06), transparent 45%),
     radial-gradient(ellipse at 88% 15%, rgb(190 74 42 / 0.04), transparent 35%),
+    /* sparse fleck mottle: a few faint organic ink/ochre specks */
+    radial-gradient(circle 1.4px at 12% 30%, rgb(23 35 31 / 0.07), transparent 100%),
+    radial-gradient(circle 1.1px at 27% 68%, rgb(150 92 44 / 0.07), transparent 100%),
+    radial-gradient(circle 1.6px at 44% 22%, rgb(23 35 31 / 0.065), transparent 100%),
+    radial-gradient(circle 1.2px at 58% 74%, rgb(47 117 109 / 0.06), transparent 100%),
+    radial-gradient(circle 1.5px at 71% 38%, rgb(150 92 44 / 0.07), transparent 100%),
+    radial-gradient(circle 1.1px at 83% 64%, rgb(23 35 31 / 0.065), transparent 100%),
+    radial-gradient(circle 1.3px at 93% 28%, rgb(150 92 44 / 0.065), transparent 100%),
+    /* fiber grain: fine offset cross-weave + faint diagonal hatch = paper tooth */
+    repeating-linear-gradient(0deg, rgb(23 35 31 / 0.022) 0 1px, transparent 1px 7px),
+    repeating-linear-gradient(90deg, rgb(23 35 31 / 0.020) 0 1px, transparent 1px 9px),
+    repeating-linear-gradient(45deg, rgb(23 35 31 / 0.016) 0 1px, transparent 1px 6px),
     repeating-linear-gradient(0deg, rgb(23 35 31 / 0.022) 0 1px, transparent 1px 28px),
     repeating-linear-gradient(90deg, rgb(23 35 31 / 0.016) 0 1px, transparent 1px 28px);
-  --header-texture-blend: multiply;
+  --header-texture-blend:
+    screen,
+    multiply, multiply, multiply,
+    multiply, multiply, multiply, multiply, multiply, multiply, multiply,
+    multiply, multiply, multiply,
+    multiply, multiply;
 
   --stroke-focus: rgb(47 117 109 / 22%);
   --stroke-marker-halo: rgb(47 117 109 / 38%);
@@ -127,6 +149,31 @@
     drop-shadow(0 0 0 rgb(255 253 245 / 80%))
     drop-shadow(0 0 6px rgb(47 117 109 / 44%))
     drop-shadow(0 8px 12px rgb(47 117 109 / 24%));
+
+  /* locus plate + readout tray (progressive disclosure) */
+  /* aged-brass instrument plate — matte, warm, survey hardware (not glossy) */
+  --plate-surface: linear-gradient(157deg, #e3d6b6 0%, #d6c195 52%, #c9b487 100%);
+  --plate-surface-soft: linear-gradient(157deg, #e9e0c6, #dccfaa);
+  --plate-border: #9c8753;
+  --plate-bevel-hi: rgb(255 250 233 / 0.6);
+  --plate-bevel-lo: rgb(74 56 26 / 0.34);
+  --plate-rim: rgb(124 96 42 / 48%);
+  --plate-rivet: rgb(46 34 12 / 42%);
+  --plate-rivet-highlight: rgb(255 250 230 / 82%);
+  --plate-label: #7c6230;
+  --plate-emboss: 0 1px 0 rgb(255 251 236 / 0.55);
+  --plate-shadow: 0 10px 24px rgb(40 30 20 / 24%), 0 2px 6px rgb(40 30 20 / 18%);
+  --tray-surface: linear-gradient(180deg, rgb(248 242 228 / 0.16), rgb(228 219 196 / 0.20));
+  --tray-border: #aeb19f;
+  --tray-rail: #b9602f;
+  --tray-edge: #b9602f;
+  --tray-rim: rgb(255 252 243 / 60%);
+  --tray-recess: rgb(60 46 28 / 16%);
+  --tray-blur: blur(9px);
+  --tray-shadow: -22px 0 48px rgb(40 30 20 / 26%);
+  --tray-scrim: rgb(30 24 16 / 22%);
+  --tray-slip-label: #8a6a3c;
+  --ledger-rule: rgb(120 104 74 / 20%);
 }
 
 
@@ -144,6 +191,7 @@
   --text-secondary: #9A9686;
   --border-default: #1D9E75;
   --border-subtle: rgb(29 158 117 / 20%);
+  --header-edge: #1D9E75;
   --border-hairline: rgba(29, 158, 117, 0.2);
   --accent-warm: #D9663A;
   --accent-locus: #F2A62D;
@@ -156,6 +204,31 @@
   --static-state: #1D9E75;
   --live-title-state: #D9663A;
   --marker-domain: #1D9E75;
+
+  /* locus plate + readout tray (progressive disclosure) */
+  /* dark bronze instrument plate — aged, warm, matte */
+  --plate-surface: linear-gradient(157deg, #342d1c 0%, #29220f 55%, #221b0e 100%);
+  --plate-surface-soft: linear-gradient(157deg, #2c2618, #211b0f);
+  --plate-border: #6f5d34;
+  --plate-bevel-hi: rgb(217 190 122 / 0.22);
+  --plate-bevel-lo: rgb(0 0 0 / 0.52);
+  --plate-rim: rgb(201 162 74 / 42%);
+  --plate-rivet: rgb(0 0 0 / 46%);
+  --plate-rivet-highlight: rgb(217 190 122 / 55%);
+  --plate-label: #C9A24A;
+  --plate-emboss: 0 1px 0 rgb(0 0 0 / 0.5);
+  --plate-shadow: 0 10px 26px rgb(0 0 0 / 52%), 0 0 0 1px rgb(110 93 52 / 32%);
+  --tray-surface: linear-gradient(180deg, rgb(10 20 29 / 0.06), rgb(5 12 19 / 0.10));
+  --tray-border: rgb(29 158 117 / 50%);
+  --tray-rail: #1D9E75;
+  --tray-edge: rgb(29 158 117 / 38%);
+  --tray-rim: rgb(29 158 117 / 26%);
+  --tray-recess: rgb(0 0 0 / 46%);
+  --tray-blur: blur(9px);
+  --tray-shadow: -22px 0 52px rgb(0 0 0 / 60%);
+  --tray-scrim: rgb(0 6 10 / 46%);
+  --tray-slip-label: #C9A24A;
+  --ledger-rule: rgb(29 158 117 / 18%);
 
   --line-ink: rgb(253 239 216 / 16%);
   --line-map-frame: rgb(253 239 216 / 12%);

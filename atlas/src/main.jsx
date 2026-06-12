@@ -1,10 +1,10 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { createRoot } from "react-dom/client";
 import maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 import {
   EMPTY_COLLECTION,
-  VALUE_DOMAIN_MODE,
   atlasSummary,
   buildProjectedLoci,
   domainHeatmapCollection,
@@ -32,6 +32,8 @@ import {
   lockMapTo2D,
 } from "./map2d.js";
 import { loadLiveManifest, responseErrorMessage } from "./atlasLive.js";
+import { LocusPlate } from "./LocusPlate.jsx";
+import { ReadoutTray } from "./ReadoutTray.jsx";
 import "./styles.css";
 
 const MANIFEST_URL = "/data/manifest.json";
@@ -75,22 +77,30 @@ function App() {
   const markersRef = useRef([]);
   const selectedLocusKeyRef = useRef("");
   const unlock2DMapRef = useRef(null);
+  const apertureRef = useRef(null);
+  const platePopupRef = useRef(null);
+  const plateContainerRef = useRef(null);
+  if (plateContainerRef.current === null && typeof document !== "undefined") {
+    // Stable portal target created during render so the plate paints on the
+    // first selection; maplibre's Popup adopts this node via setDOMContent.
+    plateContainerRef.current = document.createElement("div");
+  }
 
   // Marker opacity is driven through MapLibre's setOpacity() API rather than CSS:
   // MapLibre writes element.style.opacity inline on every map move, which would
   // override any CSS opacity rule. Resting loci read as ghosts; a selection snaps
   // the chosen locus to full and pushes the rest to afterimages.
-  const GHOST_OPACITY = "0.4";
+  const GHOST_OPACITY_DARK = "0.4";
+  const GHOST_OPACITY_LIGHT = "0.56";
   // afterimages need more presence on the light/cream canvas than on dark navy
   const AFTERIMAGE_OPACITY_DARK = "0.12";
-  const AFTERIMAGE_OPACITY_LIGHT = "0.24";
+  const AFTERIMAGE_OPACITY_LIGHT = "0.38";
   function markerOpacityFor(locusKey) {
     const selected = selectedLocusKeyRef.current;
-    if (!selected) return GHOST_OPACITY;
+    const isDarkTheme = document.documentElement.dataset.theme === THEME_DARK;
+    if (!selected) return isDarkTheme ? GHOST_OPACITY_DARK : GHOST_OPACITY_LIGHT;
     if (locusKey === selected) return "1";
-    return document.documentElement.dataset.theme === THEME_DARK
-      ? AFTERIMAGE_OPACITY_DARK
-      : AFTERIMAGE_OPACITY_LIGHT;
+    return isDarkTheme ? AFTERIMAGE_OPACITY_DARK : AFTERIMAGE_OPACITY_LIGHT;
   }
   function applyMarkerOpacity(entry) {
     entry.marker.setOpacity(markerOpacityFor(entry.locusKey));
@@ -109,6 +119,7 @@ function App() {
   const [selectedLocus, setSelectedLocus] = useState(null);
   const [selectedLocusKey, setSelectedLocusKey] = useState("");
   const [selectedFeatureKey, setSelectedFeatureKey] = useState("");
+  const [trayOpen, setTrayOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [loadState, setLoadState] = useState({ status: "loading", message: "" });
   const [theme, setTheme] = useState(() => {
@@ -195,8 +206,6 @@ function App() {
     () => manifest.find((entry) => entry.file === selectedDatasetFile),
     [manifest, selectedDatasetFile]
   );
-  const isUnsupportedDataset =
-    activeManifestEntry && !isSelectableDataset(activeManifestEntry);
   const renderMode = activeManifestEntry?.render_mode ?? "";
   const searchKind = activeManifestEntry?.search_kind ?? "phrase";
   const isHeatmapMode = renderMode === HEATMAP_MODE;
@@ -267,6 +276,7 @@ function App() {
     setSelectedLocus(null);
     setSelectedLocusKey("");
     setSelectedFeatureKey("");
+    setTrayOpen(false);
     setSearchQuery("");
 
     fetch(entry.file)
@@ -415,11 +425,76 @@ function App() {
     }
   }, [theme]);
 
+  // Esc is two-stage: collapse the tray first, then clear the selection.
+  useEffect(() => {
+    if (!selectedLocus) {
+      return;
+    }
+    function onKeyDown(event) {
+      if (event.key !== "Escape") {
+        return;
+      }
+      if (trayOpen) {
+        setTrayOpen(false);
+      } else {
+        clearSelection();
+      }
+    }
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [selectedLocus, trayOpen]);
+
+  // Tether the LocusPlate popup to the selected coordinate. Create-once: the
+  // popup is only removed when nothing is selected (below) or on unmount (next
+  // effect), so it just re-points across selections rather than rebuilding.
+  useEffect(() => {
+    const map = mapRef.current;
+    if (!map) {
+      return;
+    }
+    const lngLat = getLocusLngLat(selectedLocus);
+    if (!lngLat) {
+      platePopupRef.current?.remove();
+      platePopupRef.current = null;
+      return;
+    }
+    if (!platePopupRef.current) {
+      platePopupRef.current = new maplibregl.Popup({
+        closeButton: false,
+        closeOnClick: false,
+        closeOnMove: false,
+        offset: 16,
+        maxWidth: "none",
+        className: "locus-plate-popup",
+      }).setDOMContent(plateContainerRef.current);
+    }
+    platePopupRef.current.setLngLat(lngLat);
+    if (!platePopupRef.current.isOpen()) {
+      platePopupRef.current.addTo(map);
+    }
+  }, [selectedLocus]);
+
+  useEffect(
+    () => () => {
+      platePopupRef.current?.remove();
+      platePopupRef.current = null;
+    },
+    []
+  );
+
   const modeOptions = useMemo(() => getAvailableModes(manifest), [manifest]);
   const cipherOptions = useMemo(
     () => getAvailableCiphers(manifest, selectedMode),
     [manifest, selectedMode]
   );
+  const cipherLabels = useMemo(() => {
+    const labels = new Map();
+    for (const option of cipherOptions) {
+      labels.set(option.id, option.label);
+      labels.set(option.id.toLowerCase(), option.label);
+    }
+    return labels;
+  }, [cipherOptions]);
   const transformFamilyOptions = useMemo(
     () => getAvailableTransformFamilies(manifest, selectedMode, selectedCipher),
     [manifest, selectedMode, selectedCipher]
@@ -456,6 +531,13 @@ function App() {
     }
   }
 
+  function clearSelection() {
+    setSelectedLocus(null);
+    setSelectedLocusKey("");
+    setSelectedFeatureKey("");
+    setTrayOpen(false);
+  }
+
   function refreshAtlasSource() {
     setLiveManifestRefreshNonce((value) => value + 1);
     setRefreshNonce((value) => value + 1);
@@ -474,22 +556,69 @@ function App() {
     <main className="atlas-shell">
       <header className={`atlas-header atlas-header--source-${selectedSource}`}>
         <div className="header-left">
-          <div className="brand-lockup">
-            <img
-              className="brand-seal"
-              src="/geogematria_seal.svg"
-              alt=""
-              aria-hidden="true"
-            />
-            <div className="brand-copy">
-              <p className="eyebrow">
-                {selectedSource === SOURCE_LIVE ? "live local instrument" : "static instrument"}
-              </p>
-              <h1>geomatria atlas</h1>
+          <div className="header-band">
+            <div className="brand-lockup">
+              <img
+                className="brand-seal"
+                src="/geogematria_seal.svg"
+                alt=""
+                aria-hidden="true"
+              />
+              <div className="brand-copy">
+                <p className="eyebrow">
+                  {selectedSource === SOURCE_LIVE ? "live local instrument" : "static instrument"}
+                </p>
+                <h1>geomatria atlas</h1>
+              </div>
+            </div>
+            <div className="source-controls header-source-controls" aria-label="Atlas source controls">
+              <div className="source-toggle">
+                <button
+                  type="button"
+                  className={selectedSource === SOURCE_STATIC ? "source-toggle__button source-toggle__button--active" : "source-toggle__button"}
+                  onClick={() => setSelectedSource(SOURCE_STATIC)}
+                >
+                  static
+                </button>
+                <button
+                  type="button"
+                  className={selectedSource === SOURCE_LIVE ? "source-toggle__button source-toggle__button--active" : "source-toggle__button"}
+                  onClick={() => setSelectedSource(SOURCE_LIVE)}
+                  disabled={liveManifest.length === 0}
+                  title={liveManifestError || "live local instrument"}
+                >
+                  live
+                </button>
+              </div>
+              <button
+                type="button"
+                className="refresh-button"
+                onClick={refreshAtlasSource}
+                disabled={loadState.status === "loading"}
+              >
+                recast
+              </button>
+              <div className="source-toggle">
+                <span>lamp</span>
+                <button
+                  type="button"
+                  className={theme === THEME_DAY ? "source-toggle__button source-toggle__button--active" : "source-toggle__button"}
+                  onClick={() => setTheme(THEME_DAY)}
+                >
+                  on
+                </button>
+                <button
+                  type="button"
+                  className={theme === THEME_DARK ? "source-toggle__button source-toggle__button--active" : "source-toggle__button"}
+                  onClick={() => setTheme(THEME_DARK)}
+                >
+                  off
+                </button>
+              </div>
             </div>
           </div>
           <div className="atlas-controls" aria-label="Atlas calibration register">
-          <div className="control-card">
+            <div className="control-card">
             <label
               className="field-control field-control--mode"
               style={{ "--view-tickpos": viewTickPos }}
@@ -578,7 +707,7 @@ function App() {
                 )}
               </select>
             </label>
-            <label className="field-control search-control">
+            <label className="field-control search-control" ref={apertureRef}>
               <span>{isValueSearch ? "value aperture" : "phrase aperture"}</span>
               <input
                 type={isValueSearch ? "number" : "search"}
@@ -590,78 +719,24 @@ function App() {
                 disabled={loadState.status !== "ready"}
               />
             </label>
-          </div>
-          </div>
-        </div>
-        <div className="atlas-meta">
-          <div className="source-controls" aria-label="Atlas source controls">
-            <div className="source-toggle">
-              <span>feed</span>
-              <button
-                type="button"
-                className={selectedSource === SOURCE_STATIC ? "source-toggle__button source-toggle__button--active" : "source-toggle__button"}
-                onClick={() => setSelectedSource(SOURCE_STATIC)}
-              >
-                static
-              </button>
-              <button
-                type="button"
-                className={selectedSource === SOURCE_LIVE ? "source-toggle__button source-toggle__button--active" : "source-toggle__button"}
-                onClick={() => setSelectedSource(SOURCE_LIVE)}
-                disabled={liveManifest.length === 0}
-                title={liveManifestError || "live local instrument"}
-              >
-                live
-              </button>
             </div>
-            <button
-              type="button"
-              className="refresh-button"
-              onClick={refreshAtlasSource}
-              disabled={loadState.status === "loading"}
-            >
-              recast
-            </button>
-            <div className="source-toggle">
-              <span>lamp</span>
-              <button
-                type="button"
-                className={theme === THEME_DAY ? "source-toggle__button source-toggle__button--active" : "source-toggle__button"}
-                onClick={() => setTheme(THEME_DAY)}
-              >
-                on
-              </button>
-              <button
-                type="button"
-                className={theme === THEME_DARK ? "source-toggle__button source-toggle__button--active" : "source-toggle__button"}
-                onClick={() => setTheme(THEME_DARK)}
-              >
-                off
-              </button>
-            </div>
-          </div>
-          <div className="atlas-description-row">
-            {liveManifestError && (
-              <p className="projection-description projection-description--error projection-description--live-unavailable">
-                live source unavailable
-              </p>
-            )}
-            {activeManifestEntry?.projection_description && (
-              <p className="projection-description">{activeManifestEntry.projection_description}</p>
-            )}
-            {isUnsupportedDataset && (
-              <p className="projection-description projection-description--error">
-                Unsupported dataset mode: {activeManifestEntry.mode}
-              </p>
-            )}
-          </div>
-          <div className="atlas-stats-row">
-            <div className="status-strip" aria-live="polite">
-              {!isHeatmapMode && (
-                <span><b>cliques</b>{summary.cliqueCount}</span>
-              )}
-              <span><b>phrases</b>{summary.phraseCount}</span>
-            </div>
+            <SearchResults
+              query={searchQuery}
+              matches={searchMatches}
+              searchKind={searchKind}
+              selectedLocusKey={selectedLocusKey}
+              locusByFeatureKey={locusByFeatureKey}
+              anchorRef={apertureRef}
+              onSelect={(match) => {
+                const locus = locusByFeatureKey.get(
+                  getFeatureKey(match.feature, match.featureIndex)
+                );
+                selectProjectedLocus(locus, {
+                  zoom: true,
+                  featureKey: getFeatureKey(match.feature, match.featureIndex),
+                });
+              }}
+            />
           </div>
         </div>
       </header>
@@ -675,27 +750,35 @@ function App() {
             </div>
           )}
           <div className="map-glass" />
+          <div className="map-status-cluster">
+            <div className="status-strip" aria-live="polite">
+              {!isHeatmapMode && (
+                <span><b>cliques</b>{summary.cliqueCount}</span>
+              )}
+              <span><b>phrases</b>{summary.phraseCount}</span>
+            </div>
+          </div>
         </div>
 
-        <aside className="side-panel">
-          <SearchResults
-            query={searchQuery}
-            matches={searchMatches}
-            searchKind={searchKind}
-            selectedLocusKey={selectedLocusKey}
-            locusByFeatureKey={locusByFeatureKey}
-            onSelect={(match) => {
-              const locus = locusByFeatureKey.get(
-                getFeatureKey(match.feature, match.featureIndex)
-              );
-              selectProjectedLocus(locus, {
-                zoom: true,
-                featureKey: getFeatureKey(match.feature, match.featureIndex),
-              });
-            }}
-          />
-          <LocusPanel locus={selectedLocus} selectedFeatureKey={selectedFeatureKey} projectionMethod={activeManifestEntry?.projection_method} />
-        </aside>
+        {selectedLocus &&
+          plateContainerRef.current &&
+          createPortal(
+            <LocusPlate
+              locus={selectedLocus}
+              cipherLabels={cipherLabels}
+              onOpenTray={() => setTrayOpen(true)}
+              onClear={clearSelection}
+            />,
+            plateContainerRef.current
+          )}
+        <ReadoutTray
+          open={trayOpen}
+          locus={selectedLocus}
+          selectedFeatureKey={selectedFeatureKey}
+          projectionMethod={activeManifestEntry?.projection_method}
+          cipherLabels={cipherLabels}
+          onClose={() => setTrayOpen(false)}
+        />
       </section>
     </main>
   );
@@ -858,15 +941,69 @@ function datasetLabel(entry) {
   return entry.dataset_label ?? entry.projection_label ?? entry.file;
 }
 
+// Every selectable locus is a buildProjectedLoci() record, which carries
+// longitude/latitude for both clique and heat/value-domain loci. Guard finite
+// values so a malformed record can't throw inside maplibre's setLngLat.
+function getLocusLngLat(locus) {
+  if (!locus) {
+    return null;
+  }
+  const { longitude, latitude } = locus;
+  if (!Number.isFinite(longitude) || !Number.isFinite(latitude)) {
+    return null;
+  }
+  return [longitude, latitude];
+}
+
+// Pins the aperture results dropdown under the search field. The dropdown is
+// position: fixed (to escape header/control-card overflow), so it needs the
+// field's viewport rect, refreshed on resize while open.
+function useApertureAnchor(anchorRef, active) {
+  const [style, setStyle] = useState(null);
+
+  useLayoutEffect(() => {
+    if (!active || !anchorRef?.current) {
+      return;
+    }
+    const measure = () => {
+      const rect = anchorRef.current?.getBoundingClientRect();
+      if (!rect) {
+        return;
+      }
+      const margin = 12;
+      const width = Math.min(
+        360,
+        Math.max(rect.width, 280),
+        window.innerWidth - margin * 2
+      );
+      const left = Math.min(rect.left, window.innerWidth - margin - width);
+      setStyle({
+        top: rect.bottom + 6,
+        left: Math.max(margin, left),
+        width,
+      });
+    };
+    measure();
+    window.addEventListener("resize", measure);
+    return () => window.removeEventListener("resize", measure);
+  }, [anchorRef, active]);
+
+  return style;
+}
+
 function SearchResults({
   query,
   matches,
   searchKind,
   selectedLocusKey,
   locusByFeatureKey,
+  anchorRef,
   onSelect,
 }) {
-  if (!query.trim()) {
+  const hasQuery = Boolean(query.trim());
+  const style = useApertureAnchor(anchorRef, hasQuery);
+
+  if (!hasQuery) {
     return null;
   }
 
@@ -875,6 +1012,7 @@ function SearchResults({
   return (
     <section
       className="search-results"
+      style={style}
       aria-label={isValueSearch ? "Value search results" : "Phrase search results"}
     >
       <div className="section-heading">
@@ -912,241 +1050,6 @@ function SearchResults({
       )}
     </section>
   );
-}
-
-function LocusPanel({ locus, selectedFeatureKey, projectionMethod }) {
-  if (!locus) {
-    return (
-      <section className="feature-panel feature-panel--empty">
-        <div className="empty-card">
-          <p className="eyebrow">projected locus</p>
-          <p>Select a projected locus.</p>
-        </div>
-      </section>
-    );
-  }
-
-  const hasCollision = locus.cliques.length > 1;
-  const isValueDomainLocus = locus.cliques.some(
-    (clique) => clique.details.mode === VALUE_DOMAIN_MODE
-  );
-  const visibleCliques = isValueDomainLocus
-    ? visibleDomainCliques(locus.cliques, selectedFeatureKey)
-    : locus.cliques;
-  const visibleCollision = visibleCliques.length > 1;
-
-  return (
-    <section className="feature-panel">
-      <article className="locus-card">
-        <div className="locus-card__header">
-          <div>
-            <p className="eyebrow">
-              {isValueDomainLocus ? "heat locus" : "projected locus"}
-            </p>
-            <h2>
-              {isValueDomainLocus
-                ? heatLocusTitle(locus)
-                : visibleCollision
-                  ? "multiple cliques"
-                  : cliqueTitle(visibleCliques[0])}
-            </h2>
-          </div>
-          <span className="type-badge">
-            {isValueDomainLocus
-              ? `${locus.valuesWithPhrases} occupied`
-              : visibleCollision
-                ? `${visibleCliques.length} cliques`
-                : visibleCliques[0].details.cliqueKind}
-          </span>
-        </div>
-
-        <dl className="detail-grid">
-          {isValueDomainLocus ? (
-            <>
-              <div>
-                <dt>Domain values here</dt>
-                <dd>{locus.domainValueCount}</dd>
-              </div>
-              <div>
-                <dt>Values with phrases</dt>
-                <dd>{locus.valuesWithPhrases}</dd>
-              </div>
-            </>
-          ) : (
-            <div>
-              <dt>Locus occupancy</dt>
-              <dd>{locus.cliques.length} {locus.cliques.length === 1 ? "clique" : "cliques"}</dd>
-            </div>
-          )}
-          <div>
-            <dt>Projection method</dt>
-            <dd>{locus.projectionMethod}</dd>
-          </div>
-          <div>
-            <dt>Google Maps</dt>
-            <dd>{locus.googleMapsCopy}</dd>
-          </div>
-          {locus.snappedPlace && (
-            <div>
-              <dt>Snapped place</dt>
-              <dd>
-                {locus.snappedPlace.name}, {locus.snappedPlace.country}
-              </dd>
-            </div>
-          )}
-          {locus.snapDistanceSummary && (
-            <div>
-              <dt>Snap distance</dt>
-              <dd>{formatSnapDistanceSummary(locus.snapDistanceSummary)}</dd>
-            </div>
-          )}
-        </dl>
-
-        {locus.snappedPlace && (
-          <p className="locus-note locus-note--place">
-            Place-snapped locus from an offline gazetteer. Distinct cliques may
-            share this town coordinate.
-          </p>
-        )}
-
-        <details className="debug-details">
-          <summary>Coordinate debug</summary>
-          <dl className="detail-grid detail-grid--debug">
-            <div>
-              <dt>GeoJSON</dt>
-              <dd>{locus.geoJsonCopy}</dd>
-            </div>
-            {locus.baseCoordinate && (
-              <div>
-                <dt>Original hash coordinate</dt>
-                <dd>{locus.baseCoordinate.googleMapsCopy}</dd>
-              </div>
-            )}
-            {projectionMethod && (
-              <div>
-                <dt>Projection method</dt>
-                <dd>{projectionMethod}</dd>
-              </div>
-            )}
-          </dl>
-        </details>
-
-        {isValueDomainLocus && (
-          <p className="locus-note locus-note--domain">
-            The heat layer counts every exported integer value at this coordinate.
-            The list below only shows values that have phrase occupancy.
-          </p>
-        )}
-
-        {!isValueDomainLocus && hasCollision && (
-          <p className="locus-note">
-            This projected locus contains multiple cliques because distinct cipher values
-            share the same projected coordinate.
-          </p>
-        )}
-
-        <div className="clique-stack">
-          {visibleCliques.map((clique) => (
-            <CliqueCard key={clique.featureKey} clique={clique} collapsed={visibleCollision} />
-          ))}
-        </div>
-      </article>
-    </section>
-  );
-}
-
-function CliqueCard({ clique, collapsed }) {
-  const { details } = clique;
-  const content = (
-    <div className="phrase-card">
-      <div className="section-heading">
-        <h3>Phrases</h3>
-        <span>{details.phrases.length}</span>
-      </div>
-      {details.phrases.length > 0 ? (
-        <ul>
-          {details.phrases.map((phrase, index) => (
-            <li key={`${phrase}-${index}`}>{phrase}</li>
-          ))}
-        </ul>
-      ) : (
-        <p className="empty-phrases">
-          {details.mode === VALUE_DOMAIN_MODE
-            ? "No phrases for this value."
-            : "No phrases in export."}
-        </p>
-      )}
-    </div>
-  );
-
-  return (
-    <section className="clique-card">
-      <div className="clique-card__header">
-        <div>
-          <p className="eyebrow">
-            {details.mode === VALUE_DOMAIN_MODE ? "domain value" : "clique"}
-          </p>
-          <h3>{cliqueTitle(clique)}</h3>
-        </div>
-        <span className="type-badge">{details.cliqueKind}</span>
-      </div>
-      <dl className="detail-grid detail-grid--compact">
-        <div>
-          <dt>{details.mode === VALUE_DOMAIN_MODE ? "Phrase count" : "Clique size"}</dt>
-          <dd>{details.cliqueSize}</dd>
-        </div>
-      </dl>
-      {collapsed ? (
-        <details className="clique-phrases">
-          <summary>Show phrases</summary>
-          {content}
-        </details>
-      ) : (
-        content
-      )}
-    </section>
-  );
-}
-
-function cliqueTitle(clique) {
-  return `${clique.details.cipher.toLowerCase()} ${clique.details.value}`;
-}
-
-function heatLocusTitle(locus) {
-  const place = locus.snappedPlace
-    ? `${locus.snappedPlace.name}, ${locus.snappedPlace.country}`
-    : locus.googleMapsCopy;
-  return `${locus.domainValueCount} values at ${place}`;
-}
-
-function visibleDomainCliques(cliques, selectedFeatureKey) {
-  const visible = cliques.filter((clique) => clique.details.hasPhrases);
-  if (
-    selectedFeatureKey &&
-    !visible.some((clique) => clique.featureKey === selectedFeatureKey)
-  ) {
-    const selected = cliques.find((clique) => clique.featureKey === selectedFeatureKey);
-    if (selected) {
-      return [selected, ...visible];
-    }
-  }
-
-  return visible;
-}
-
-function formatDistance(distanceKm) {
-  return `${new Intl.NumberFormat("en-US", {
-    maximumFractionDigits: 1,
-    minimumFractionDigits: 1,
-  }).format(distanceKm)} km`;
-}
-
-function formatSnapDistanceSummary(summary) {
-  if (summary.count <= 1 || summary.min === summary.max) {
-    return formatDistance(summary.average);
-  }
-
-  return `avg ${formatDistance(summary.average)} / max ${formatDistance(summary.max)}`;
 }
 
 createRoot(document.getElementById("root")).render(<App />);
