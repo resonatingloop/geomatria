@@ -102,7 +102,7 @@ select {
   z-index: 4;
   flex-shrink: 0;
   display: grid;
-  grid-template-columns: 1fr min(34rem, 40vw);
+  grid-template-columns: 1fr;
   align-items: start;
   gap: var(--space-3) var(--space-5);
   padding: var(--space-2) var(--space-5);
@@ -112,24 +112,6 @@ select {
   background-blend-mode: var(--header-texture-blend);
   box-shadow: var(--shadow-inset-light-soft);
   font-family: var(--font-header);
-}
-
-.projection-description {
-  max-width: 52ch;
-  margin: 0;
-  overflow: hidden;
-  color: var(--text-secondary);
-  font-size: 0.78rem;
-  line-height: 1.35;
-  text-align: right;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-}
-
-.projection-description--error {
-  color: var(--state-error);
-  font-weight: 800;
 }
 
 .atlas-header::after {
@@ -157,6 +139,14 @@ select {
   flex-direction: column;
   gap: var(--space-2);
   align-self: start;
+  min-width: 0;
+}
+
+.header-band {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-5);
   min-width: 0;
 }
 
@@ -214,69 +204,26 @@ h1 {
   color: var(--live-title-state);
 }
 
-.projection-description--live-unavailable {
-  color: var(--static-state);
-}
-
 .atlas-controls {
   display: grid;
   gap: var(--space-2);
   justify-items: start;
   min-width: 0;
-}
-
-.atlas-meta {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-self: stretch;
-  justify-self: end;
-  gap: var(--space-2);
   width: 100%;
-  max-width: min(34rem, 40vw);
-  min-width: 0;
-  padding: 9px 10px 10px;
-  border: 1px solid var(--border-hairline);
-  border-top-width: 2px;
-  border-radius: var(--radius);
-  background:
-    /* corner rivets — recessed screw heads matching the calibration card */
-    radial-gradient(circle 3.6px at 9px 8px, var(--dial-rivet-highlight) 0, var(--dial-rivet-highlight) 1px, var(--dial-rivet) 1.8px, var(--dial-rivet) 2.8px, transparent 3.6px),
-    radial-gradient(circle 3.6px at calc(100% - 9px) 8px, var(--dial-rivet-highlight) 0, var(--dial-rivet-highlight) 1px, var(--dial-rivet) 1.8px, var(--dial-rivet) 2.8px, transparent 3.6px),
-    radial-gradient(circle 3.6px at 9px calc(100% - 8px), var(--dial-rivet-highlight) 0, var(--dial-rivet-highlight) 1px, var(--dial-rivet) 1.8px, var(--dial-rivet) 2.8px, transparent 3.6px),
-    radial-gradient(circle 3.6px at calc(100% - 9px) calc(100% - 8px), var(--dial-rivet-highlight) 0, var(--dial-rivet-highlight) 1px, var(--dial-rivet) 1.8px, var(--dial-rivet) 2.8px, transparent 3.6px),
-    /* engraved top groove: dark cut + light lip */
-    linear-gradient(180deg, var(--dial-engrave) 0, var(--dial-engrave) 1.5px, var(--dial-engrave-highlight) 1.5px, var(--dial-engrave-highlight) 3px, transparent 3px),
-    linear-gradient(180deg, var(--wash-control-start), var(--wash-control-end)),
-    var(--wash-control-surface);
-  box-shadow:
-    var(--shadow-inset-light-soft),
-    0 1px 3px rgb(0 0 0 / 14%) inset;
 }
 
 .source-controls {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
   gap: var(--space-2);
-  width: 100%;
   min-width: 0;
 }
 
-.atlas-description-row {
-  display: flex;
+.header-source-controls {
+  flex: 0 0 auto;
   justify-content: flex-end;
-  width: 100%;
-}
-
-.atlas-description-row:empty {
-  display: none;
-}
-
-.atlas-stats-row {
-  display: flex;
-  justify-content: flex-end;
-  width: 100%;
+  margin-left: auto;
 }
 
 .source-toggle {
@@ -537,7 +484,7 @@ h1 {
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
   gap: var(--space-2);
   width: 100%;
   min-width: 0;
@@ -690,6 +637,15 @@ h1 {
 .map-overlay--error {
   border-color: var(--state-error);
   color: var(--state-error);
+}
+
+.map-status-cluster {
+  position: absolute;
+  left: var(--space-4);
+  bottom: var(--space-4);
+  z-index: 410;
+  width: max-content;
+  max-width: min(360px, calc(100% - 32px));
 }
 
 .atlas-marker {
@@ -1121,18 +1077,51 @@ h1 {
 
 .detail-grid dt {
   color: var(--text-secondary);
-  font-size: 0.7rem;
-  font-weight: 800;
-  letter-spacing: 0.06em;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  opacity: 0.78;
   text-transform: uppercase;
 }
 
 .detail-grid dd {
-  margin: 4px 0 0;
+  margin: 7px 0 0;
   overflow-wrap: anywhere;
   color: var(--text-primary);
   font-family: var(--font-mono);
-  font-size: 0.92rem;
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.detail-grid__coordinates dd {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.copy-glyph-button {
+  display: inline-grid;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: 1px solid var(--border-subtle);
+  border-radius: 50%;
+  background: var(--bg-surface-raised);
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  line-height: 1;
+  place-items: center;
+}
+
+.copy-glyph-button:hover,
+.copy-glyph-button:focus-visible {
+  border-color: var(--accent-warm);
+  color: var(--accent-warm);
+  outline: none;
 }
 
 /* quiet hairline section — not a box */
@@ -1189,16 +1178,14 @@ h1 {
   overflow: auto;
   overscroll-behavior: contain;
   list-style: none;
-  counter-reset: slip;
 }
 
 /* a ledger row: hairline-ruled inscription, not a button */
 .phrase-ledger li {
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: minmax(0, 1fr) auto;
   column-gap: 12px;
   align-items: baseline;
-  counter-increment: slip;
   padding: 5px 2px;
   border-bottom: 1px solid var(--ledger-rule);
   overflow-wrap: anywhere;
@@ -1210,14 +1197,18 @@ h1 {
   border-bottom: 0;
 }
 
-.phrase-ledger li::before {
-  content: counter(slip, decimal-leading-zero);
-  color: var(--tray-slip-label);
+.phrase-ledger__phrase {
+  min-width: 0;
+}
+
+.phrase-ledger__value {
+  min-width: 3ch;
+  color: var(--text-secondary);
   font-family: var(--font-mono);
-  font-size: 0.66rem;
-  font-weight: 700;
+  font-size: 0.82rem;
+  font-weight: 800;
   letter-spacing: 0.04em;
-  opacity: 0.7;
+  text-align: right;
 }
 
 /* collision/heat groups: quiet expandable value labels */
@@ -1315,6 +1306,8 @@ h1 {
    selected coordinate; position: relative anchors its rivets + clear button. */
 .locus-plate {
   position: relative;
+  display: grid;
+  gap: 9px;
   width: min(248px, 72vw);
   padding: 14px 16px 13px;
   border: 1px solid var(--plate-border);
@@ -1402,7 +1395,7 @@ h1 {
 }
 
 .locus-plate__label {
-  margin: 0 0 2px;
+  margin: 0;
   color: var(--plate-label);
   font-size: 0.6rem;
   font-weight: 800;
@@ -1416,7 +1409,7 @@ h1 {
   font-family: var(--font-mono);
   font-size: 1.42rem;
   font-weight: 800;
-  line-height: 1.04;
+  line-height: 1.14;
   letter-spacing: 0.01em;
 }
 
@@ -1424,15 +1417,17 @@ h1 {
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-top: 8px;
+  margin-top: 0;
 }
 
 .locus-plate__badge {
   padding: 2px 8px;
-  border: 1px solid var(--border-subtle);
+  border: 1px solid color-mix(in srgb, var(--plate-label) 46%, var(--border-subtle));
   border-radius: 999px;
-  background: var(--bg-type-badge);
-  color: var(--text-primary);
+  background:
+    linear-gradient(180deg, var(--wash-control-start), var(--wash-control-end)),
+    color-mix(in srgb, var(--plate-label) 18%, var(--bg-surface-raised));
+  color: var(--plate-label);
   font-size: 0.66rem;
   font-weight: 800;
   letter-spacing: 0.02em;
@@ -1445,17 +1440,11 @@ h1 {
   font-weight: 700;
 }
 
-.locus-plate__coords {
-  margin: 9px 0 11px;
-  color: var(--text-secondary);
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-}
-
 .locus-plate__open {
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  justify-self: start;
   padding: 6px 12px;
   border: 1px solid var(--plate-border);
   border-radius: var(--radius);
@@ -1464,7 +1453,6 @@ h1 {
   font-size: 0.72rem;
   font-weight: 800;
   letter-spacing: 0.06em;
-  text-transform: uppercase;
   cursor: pointer;
 }
 
@@ -1595,31 +1583,9 @@ h1 {
 }
 
 @media (max-width: 980px) {
-  .atlas-header {
-    grid-template-columns: 1fr;
-  }
-
   .brand-seal {
     width: clamp(76px, 18vw, 112px);
     height: clamp(76px, 18vw, 112px);
-  }
-
-  .atlas-meta {
-    align-self: auto;
-    justify-self: stretch;
-    max-width: 100%;
-  }
-
-  .source-controls,
-  .atlas-description-row,
-  .atlas-stats-row,
-  .status-strip {
-    justify-content: flex-start;
-  }
-
-  .projection-description {
-    max-width: 52ch;
-    text-align: left;
   }
 
   .control-card {

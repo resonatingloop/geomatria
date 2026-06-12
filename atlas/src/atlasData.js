@@ -215,10 +215,16 @@ export function normalizeDomainPhraseCount(rawSize, fallbackPhraseCount = 0) {
 }
 
 export function markerSize(cliqueSize) {
-  return Math.max(
-    MIN_MARKER_SIZE,
-    Math.min(MAX_MARKER_SIZE, 16 + Math.sqrt(normalizeCliqueSize(cliqueSize)) * 13)
-  );
+  const normalizedSize = normalizeCliqueSize(cliqueSize);
+  if (normalizedSize <= 0) {
+    return MIN_MARKER_SIZE;
+  }
+
+  if (normalizedSize <= 5) {
+    return 22 + (normalizedSize - 1) * 4.5;
+  }
+
+  return Math.min(MAX_MARKER_SIZE, 40 + (normalizedSize - 5) * 3.75);
 }
 
 export function atlasSummary(collection) {

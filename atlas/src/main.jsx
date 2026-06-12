@@ -90,17 +90,17 @@ function App() {
   // MapLibre writes element.style.opacity inline on every map move, which would
   // override any CSS opacity rule. Resting loci read as ghosts; a selection snaps
   // the chosen locus to full and pushes the rest to afterimages.
-  const GHOST_OPACITY = "0.4";
+  const GHOST_OPACITY_DARK = "0.4";
+  const GHOST_OPACITY_LIGHT = "0.56";
   // afterimages need more presence on the light/cream canvas than on dark navy
   const AFTERIMAGE_OPACITY_DARK = "0.12";
-  const AFTERIMAGE_OPACITY_LIGHT = "0.24";
+  const AFTERIMAGE_OPACITY_LIGHT = "0.38";
   function markerOpacityFor(locusKey) {
     const selected = selectedLocusKeyRef.current;
-    if (!selected) return GHOST_OPACITY;
+    const isDarkTheme = document.documentElement.dataset.theme === THEME_DARK;
+    if (!selected) return isDarkTheme ? GHOST_OPACITY_DARK : GHOST_OPACITY_LIGHT;
     if (locusKey === selected) return "1";
-    return document.documentElement.dataset.theme === THEME_DARK
-      ? AFTERIMAGE_OPACITY_DARK
-      : AFTERIMAGE_OPACITY_LIGHT;
+    return isDarkTheme ? AFTERIMAGE_OPACITY_DARK : AFTERIMAGE_OPACITY_LIGHT;
   }
   function applyMarkerOpacity(entry) {
     entry.marker.setOpacity(markerOpacityFor(entry.locusKey));
@@ -206,8 +206,6 @@ function App() {
     () => manifest.find((entry) => entry.file === selectedDatasetFile),
     [manifest, selectedDatasetFile]
   );
-  const isUnsupportedDataset =
-    activeManifestEntry && !isSelectableDataset(activeManifestEntry);
   const renderMode = activeManifestEntry?.render_mode ?? "";
   const searchKind = activeManifestEntry?.search_kind ?? "phrase";
   const isHeatmapMode = renderMode === HEATMAP_MODE;
@@ -489,6 +487,14 @@ function App() {
     () => getAvailableCiphers(manifest, selectedMode),
     [manifest, selectedMode]
   );
+  const cipherLabels = useMemo(() => {
+    const labels = new Map();
+    for (const option of cipherOptions) {
+      labels.set(option.id, option.label);
+      labels.set(option.id.toLowerCase(), option.label);
+    }
+    return labels;
+  }, [cipherOptions]);
   const transformFamilyOptions = useMemo(
     () => getAvailableTransformFamilies(manifest, selectedMode, selectedCipher),
     [manifest, selectedMode, selectedCipher]
@@ -550,22 +556,69 @@ function App() {
     <main className="atlas-shell">
       <header className={`atlas-header atlas-header--source-${selectedSource}`}>
         <div className="header-left">
-          <div className="brand-lockup">
-            <img
-              className="brand-seal"
-              src="/geogematria_seal.svg"
-              alt=""
-              aria-hidden="true"
-            />
-            <div className="brand-copy">
-              <p className="eyebrow">
-                {selectedSource === SOURCE_LIVE ? "live local instrument" : "static instrument"}
-              </p>
-              <h1>geomatria atlas</h1>
+          <div className="header-band">
+            <div className="brand-lockup">
+              <img
+                className="brand-seal"
+                src="/geogematria_seal.svg"
+                alt=""
+                aria-hidden="true"
+              />
+              <div className="brand-copy">
+                <p className="eyebrow">
+                  {selectedSource === SOURCE_LIVE ? "live local instrument" : "static instrument"}
+                </p>
+                <h1>geomatria atlas</h1>
+              </div>
+            </div>
+            <div className="source-controls header-source-controls" aria-label="Atlas source controls">
+              <div className="source-toggle">
+                <button
+                  type="button"
+                  className={selectedSource === SOURCE_STATIC ? "source-toggle__button source-toggle__button--active" : "source-toggle__button"}
+                  onClick={() => setSelectedSource(SOURCE_STATIC)}
+                >
+                  static
+                </button>
+                <button
+                  type="button"
+                  className={selectedSource === SOURCE_LIVE ? "source-toggle__button source-toggle__button--active" : "source-toggle__button"}
+                  onClick={() => setSelectedSource(SOURCE_LIVE)}
+                  disabled={liveManifest.length === 0}
+                  title={liveManifestError || "live local instrument"}
+                >
+                  live
+                </button>
+              </div>
+              <button
+                type="button"
+                className="refresh-button"
+                onClick={refreshAtlasSource}
+                disabled={loadState.status === "loading"}
+              >
+                recast
+              </button>
+              <div className="source-toggle">
+                <span>lamp</span>
+                <button
+                  type="button"
+                  className={theme === THEME_DAY ? "source-toggle__button source-toggle__button--active" : "source-toggle__button"}
+                  onClick={() => setTheme(THEME_DAY)}
+                >
+                  on
+                </button>
+                <button
+                  type="button"
+                  className={theme === THEME_DARK ? "source-toggle__button source-toggle__button--active" : "source-toggle__button"}
+                  onClick={() => setTheme(THEME_DARK)}
+                >
+                  off
+                </button>
+              </div>
             </div>
           </div>
           <div className="atlas-controls" aria-label="Atlas calibration register">
-          <div className="control-card">
+            <div className="control-card">
             <label
               className="field-control field-control--mode"
               style={{ "--view-tickpos": viewTickPos }}
@@ -666,95 +719,24 @@ function App() {
                 disabled={loadState.status !== "ready"}
               />
             </label>
-          </div>
-          <SearchResults
-            query={searchQuery}
-            matches={searchMatches}
-            searchKind={searchKind}
-            selectedLocusKey={selectedLocusKey}
-            locusByFeatureKey={locusByFeatureKey}
-            anchorRef={apertureRef}
-            onSelect={(match) => {
-              const locus = locusByFeatureKey.get(
-                getFeatureKey(match.feature, match.featureIndex)
-              );
-              selectProjectedLocus(locus, {
-                zoom: true,
-                featureKey: getFeatureKey(match.feature, match.featureIndex),
-              });
-            }}
-          />
-          </div>
-        </div>
-        <div className="atlas-meta">
-          <div className="source-controls" aria-label="Atlas source controls">
-            <div className="source-toggle">
-              <span>feed</span>
-              <button
-                type="button"
-                className={selectedSource === SOURCE_STATIC ? "source-toggle__button source-toggle__button--active" : "source-toggle__button"}
-                onClick={() => setSelectedSource(SOURCE_STATIC)}
-              >
-                static
-              </button>
-              <button
-                type="button"
-                className={selectedSource === SOURCE_LIVE ? "source-toggle__button source-toggle__button--active" : "source-toggle__button"}
-                onClick={() => setSelectedSource(SOURCE_LIVE)}
-                disabled={liveManifest.length === 0}
-                title={liveManifestError || "live local instrument"}
-              >
-                live
-              </button>
             </div>
-            <button
-              type="button"
-              className="refresh-button"
-              onClick={refreshAtlasSource}
-              disabled={loadState.status === "loading"}
-            >
-              recast
-            </button>
-            <div className="source-toggle">
-              <span>lamp</span>
-              <button
-                type="button"
-                className={theme === THEME_DAY ? "source-toggle__button source-toggle__button--active" : "source-toggle__button"}
-                onClick={() => setTheme(THEME_DAY)}
-              >
-                on
-              </button>
-              <button
-                type="button"
-                className={theme === THEME_DARK ? "source-toggle__button source-toggle__button--active" : "source-toggle__button"}
-                onClick={() => setTheme(THEME_DARK)}
-              >
-                off
-              </button>
-            </div>
-          </div>
-          <div className="atlas-description-row">
-            {liveManifestError && (
-              <p className="projection-description projection-description--error projection-description--live-unavailable">
-                live source unavailable
-              </p>
-            )}
-            {activeManifestEntry?.projection_description && (
-              <p className="projection-description">{activeManifestEntry.projection_description}</p>
-            )}
-            {isUnsupportedDataset && (
-              <p className="projection-description projection-description--error">
-                Unsupported dataset mode: {activeManifestEntry.mode}
-              </p>
-            )}
-          </div>
-          <div className="atlas-stats-row">
-            <div className="status-strip" aria-live="polite">
-              {!isHeatmapMode && (
-                <span><b>cliques</b>{summary.cliqueCount}</span>
-              )}
-              <span><b>phrases</b>{summary.phraseCount}</span>
-            </div>
+            <SearchResults
+              query={searchQuery}
+              matches={searchMatches}
+              searchKind={searchKind}
+              selectedLocusKey={selectedLocusKey}
+              locusByFeatureKey={locusByFeatureKey}
+              anchorRef={apertureRef}
+              onSelect={(match) => {
+                const locus = locusByFeatureKey.get(
+                  getFeatureKey(match.feature, match.featureIndex)
+                );
+                selectProjectedLocus(locus, {
+                  zoom: true,
+                  featureKey: getFeatureKey(match.feature, match.featureIndex),
+                });
+              }}
+            />
           </div>
         </div>
       </header>
@@ -768,6 +750,14 @@ function App() {
             </div>
           )}
           <div className="map-glass" />
+          <div className="map-status-cluster">
+            <div className="status-strip" aria-live="polite">
+              {!isHeatmapMode && (
+                <span><b>cliques</b>{summary.cliqueCount}</span>
+              )}
+              <span><b>phrases</b>{summary.phraseCount}</span>
+            </div>
+          </div>
         </div>
 
         {selectedLocus &&
@@ -775,6 +765,7 @@ function App() {
           createPortal(
             <LocusPlate
               locus={selectedLocus}
+              cipherLabels={cipherLabels}
               onOpenTray={() => setTrayOpen(true)}
               onClear={clearSelection}
             />,
@@ -785,6 +776,7 @@ function App() {
           locus={selectedLocus}
           selectedFeatureKey={selectedFeatureKey}
           projectionMethod={activeManifestEntry?.projection_method}
+          cipherLabels={cipherLabels}
           onClose={() => setTrayOpen(false)}
         />
       </section>

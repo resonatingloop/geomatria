@@ -5,12 +5,12 @@ import { cliqueTitle } from "./ProjectedLocusReadout.jsx";
 // Compact selected-locus reading token. Mounted bottom-left over the map only
 // while a locus is selected. A reading token, not the full dossier: the
 // ReadoutTray holds everything else.
-export function LocusPlate({ locus, onOpenTray, onClear }) {
+export function LocusPlate({ locus, cipherLabels, onOpenTray, onClear }) {
   if (!locus) {
     return null;
   }
 
-  const reading = plateReading(locus);
+  const reading = plateReading(locus, cipherLabels);
 
   return (
     <aside className="locus-plate" aria-label="Acquired locus reading">
@@ -37,8 +37,6 @@ export function LocusPlate({ locus, onOpenTray, onClear }) {
         <span className="locus-plate__count">{reading.count}</span>
       </div>
 
-      <p className="locus-plate__coords">{locus.googleMapsCopy}</p>
-
       <button type="button" className="locus-plate__open" onClick={onOpenTray}>
         open tray
       </button>
@@ -46,7 +44,7 @@ export function LocusPlate({ locus, onOpenTray, onClear }) {
   );
 }
 
-function plateReading(locus) {
+function plateReading(locus, cipherLabels) {
   const isValueDomainLocus = locus.cliques.some(
     (clique) => clique.details.mode === VALUE_DOMAIN_MODE
   );
@@ -73,7 +71,7 @@ function plateReading(locus) {
   const clique = locus.cliques[0];
   return {
     label: "projected locus",
-    readout: cliqueTitle(clique).toUpperCase(),
+    readout: cliqueTitle(clique, cipherLabels),
     badge: clique.details.cliqueKind,
     count: phraseCount(locus.totalPhraseCount),
   };

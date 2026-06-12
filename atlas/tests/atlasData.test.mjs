@@ -81,7 +81,11 @@ test("coordinate validation rejects likely swapped coordinate order", () => {
 
 test("marker size scales from clique size with fixed min and max", () => {
   assert.equal(markerSize(0), MIN_MARKER_SIZE);
-  assert(markerSize(4) > markerSize(1));
+  assert.equal(markerSize(1), 22);
+  assert.equal(markerSize(2), 26.5);
+  assert.equal(markerSize(3), 31);
+  assert.equal(markerSize(4), 35.5);
+  assert.equal(markerSize(5), 40);
   assert.equal(markerSize(10000), MAX_MARKER_SIZE);
 });
 

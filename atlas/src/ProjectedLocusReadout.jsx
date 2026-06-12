@@ -4,7 +4,12 @@ import { VALUE_DOMAIN_MODE } from "./atlasData.js";
 // Full projected-locus dossier. Shared content rendered inside the ReadoutTray
 // (and reusable elsewhere during migration). Moved here from main.jsx's former
 // LocusPanel so the tray and any future surface can share one source of truth.
-export function ProjectedLocusReadout({ locus, selectedFeatureKey, projectionMethod }) {
+export function ProjectedLocusReadout({
+  locus,
+  selectedFeatureKey,
+  projectionMethod,
+  cipherLabels,
+}) {
   if (!locus) {
     return null;
   }
@@ -31,7 +36,7 @@ export function ProjectedLocusReadout({ locus, selectedFeatureKey, projectionMet
               ? heatLocusTitle(locus)
               : visibleCollision
                 ? "multiple cliques"
-                : cliqueTitle(visibleCliques[0])}
+                : cliqueTitle(visibleCliques[0], cipherLabels)}
           </h2>
         </div>
         <span className="type-badge">
@@ -65,9 +70,20 @@ export function ProjectedLocusReadout({ locus, selectedFeatureKey, projectionMet
           <dt>Projection method</dt>
           <dd>{locus.projectionMethod}</dd>
         </div>
-        <div>
-          <dt>Google Maps</dt>
-          <dd>{locus.googleMapsCopy}</dd>
+        <div className="detail-grid__coordinates">
+          <dt>Coordinates</dt>
+          <dd>
+            <span>{locus.googleMapsCopy}</span>
+            <button
+              type="button"
+              className="copy-glyph-button"
+              onClick={() => copyText(locus.googleMapsCopy)}
+              aria-label="Copy coordinates"
+              title="Copy coordinates"
+            >
+              ⧉
+            </button>
+          </dd>
         </div>
         {locus.snappedPlace && (
           <div>
@@ -93,7 +109,7 @@ export function ProjectedLocusReadout({ locus, selectedFeatureKey, projectionMet
       )}
 
       <details className="debug-details">
-        <summary>Coordinate debug</summary>
+        <summary>Cast trace</summary>
         <dl className="detail-grid detail-grid--debug">
           <div>
             <dt>GeoJSON</dt>
@@ -128,20 +144,24 @@ export function ProjectedLocusReadout({ locus, selectedFeatureKey, projectionMet
         </p>
       )}
 
-      {/* Phrase content as a flat ledger inside the one plate. A single clique
-          renders its phrases directly (the value already reads in the plate
-          title); collisions/heat loci group phrases under quiet expandable
-          value labels, where the differing value is informative, not a repeat. */}
+      {/* Phrase content as a flat ledger inside the one plate. The right rail
+          repeats the clique value as the isopsephic receipt for each phrase. */}
       <section className="phrase-ledger-wrap">
         {visibleCollision ? (
           visibleCliques.map((clique) => (
             <details className="ledger-group" key={clique.featureKey}>
               <summary className="ledger-group__summary">
-                <span className="ledger-group__value">{cliqueTitle(clique)}</span>
+                <span className="ledger-group__value">
+                  {cliqueTitle(clique, cipherLabels)}
+                </span>
                 <span className="ledger-group__kind">{clique.details.cliqueKind}</span>
                 <span className="ledger-group__count">{clique.details.cliqueSize}</span>
               </summary>
-              <PhraseLedger phrases={clique.details.phrases} mode={clique.details.mode} />
+              <PhraseLedger
+                phrases={clique.details.phrases}
+                value={clique.details.value}
+                mode={clique.details.mode}
+              />
             </details>
           ))
         ) : (
@@ -154,6 +174,7 @@ export function ProjectedLocusReadout({ locus, selectedFeatureKey, projectionMet
             </div>
             <PhraseLedger
               phrases={soloClique ? soloClique.details.phrases : []}
+              value={soloClique ? soloClique.details.value : undefined}
               mode={soloClique ? soloClique.details.mode : undefined}
             />
           </>
@@ -163,7 +184,7 @@ export function ProjectedLocusReadout({ locus, selectedFeatureKey, projectionMet
   );
 }
 
-function PhraseLedger({ phrases, mode }) {
+function PhraseLedger({ phrases, value, mode }) {
   if (!phrases || phrases.length === 0) {
     return (
       <p className="empty-phrases">
@@ -174,16 +195,19 @@ function PhraseLedger({ phrases, mode }) {
     );
   }
   return (
-    <ol className="phrase-ledger">
+    <ul className="phrase-ledger">
       {phrases.map((phrase, index) => (
-        <li key={`${phrase}-${index}`}>{phrase}</li>
+        <li key={`${phrase}-${index}`}>
+          <span className="phrase-ledger__phrase">{phrase}</span>
+          <span className="phrase-ledger__value">{value}</span>
+        </li>
       ))}
-    </ol>
+    </ul>
   );
 }
 
-export function cliqueTitle(clique) {
-  return `${clique.details.cipher.toLowerCase()} ${clique.details.value}`;
+export function cliqueTitle(clique, cipherLabels) {
+  return `${cipherLabel(clique.details.cipher, cipherLabels)} ${clique.details.value}`;
 }
 
 export function heatLocusTitle(locus) {
@@ -221,4 +245,19 @@ export function formatSnapDistanceSummary(summary) {
   }
 
   return `avg ${formatDistance(summary.average)} / max ${formatDistance(summary.max)}`;
+}
+
+function cipherLabel(cipher, cipherLabels) {
+  const raw = String(cipher ?? "");
+  if (cipherLabels?.get) {
+    return cipherLabels.get(raw) ?? cipherLabels.get(raw.toLowerCase()) ?? raw;
+  }
+  return raw;
+}
+
+function copyText(value) {
+  if (!navigator.clipboard?.writeText) {
+    return;
+  }
+  navigator.clipboard.writeText(value).catch(() => {});
 }

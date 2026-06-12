@@ -5,7 +5,14 @@ import { ProjectedLocusReadout } from "./ProjectedLocusReadout.jsx";
 // scrim. Overlay only: the map does not reflow underneath. Mounted whenever a
 // locus is selected; the `open` flag drives the slide/scrim transition so
 // closing collapses back to the bare LocusPlate.
-export function ReadoutTray({ open, locus, selectedFeatureKey, projectionMethod, onClose }) {
+export function ReadoutTray({
+  open,
+  locus,
+  selectedFeatureKey,
+  projectionMethod,
+  cipherLabels,
+  onClose,
+}) {
   if (!locus) {
     return null;
   }
@@ -39,6 +46,7 @@ export function ReadoutTray({ open, locus, selectedFeatureKey, projectionMethod,
             locus={locus}
             selectedFeatureKey={selectedFeatureKey}
             projectionMethod={projectionMethod}
+            cipherLabels={cipherLabels}
           />
         </div>
       </aside>
