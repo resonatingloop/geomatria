@@ -1296,6 +1296,13 @@ h1 {
   box-shadow: var(--shadow-marker);
 }
 
+[data-theme='dark'] .maplibregl-ctrl-group button {
+  color: var(--text-primary);
+}
+[data-theme='dark'] .maplibregl-ctrl-group button span {
+  background-color: var(--text-primary);
+}
+
 /* ── Night mode: map vignette ────────────────────────────────────────── */
 /* Instrument-hood falloff: corners and edges recede, centre stays readable */
 
@@ -1319,6 +1326,40 @@ h1 {
 
 [data-theme='dark'] .atlas-marker:not(.atlas-marker--selected):not(:hover) .atlas-marker-shape {
   filter: var(--shadow-marker-shape-inactive);
+}
+
+/* ── Night mode: markers emit ────────────────────────────────────────── */
+/* Faint amber corona on all sigil markers; selected glow overrides via shadow-marker-selected */
+
+[data-theme='dark'] .atlas-marker-art {
+  filter: var(--shadow-marker-emit);
+}
+
+/* ── Night mode: popup signal/structure roles ─────────────────────────── */
+
+[data-theme='dark'] .locus-plate__readout {
+  color: var(--signal);
+}
+[data-theme='dark'] .locus-plate__count {
+  color: var(--signal);
+}
+
+/* ── Night mode: tray signal/structure roles ──────────────────────────── */
+
+[data-theme='dark'] .locus-card h2,
+[data-theme='dark'] .detail-grid dd,
+[data-theme='dark'] .ledger-head__count,
+[data-theme='dark'] .phrase-ledger__value {
+  color: var(--signal);
+}
+[data-theme='dark'] .ledger-group__value,
+[data-theme='dark'] .ledger-group__kind {
+  color: var(--signal);
+}
+[data-theme='dark'] .eyebrow,
+[data-theme='dark'] dt,
+[data-theme='dark'] .ledger-head__label {
+  color: var(--structure);
 }
 
 /* ── Locus plate: compact summoned reading, tethered beside the locus ─────── */

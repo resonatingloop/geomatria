@@ -42,7 +42,7 @@ const SOURCE_LIVE = "live";
 const THEME_DAY = "day";
 const THEME_DARK = "dark";
 const THEME_STORAGE_KEY = "geogematria-theme";
-const DARK_BASEMAP_STYLE_URL = "https://tiles.openfreemap.org/styles/dark";
+const DARK_BASEMAP_STYLE_URL = "/basemap-night.json";
 const DOMAIN_HEAT_SOURCE_ID = "value-domain-source";
 const DOMAIN_HEAT_LAYER_ID = "value-domain-heat";
 const DOMAIN_PHRASE_LAYER_ID = "value-domain-phrases";
@@ -90,15 +90,18 @@ function App() {
   // MapLibre writes element.style.opacity inline on every map move, which would
   // override any CSS opacity rule. Resting loci read as ghosts; a selection snaps
   // the chosen locus to full and pushes the rest to afterimages.
-  const GHOST_OPACITY_DARK = "0.4";
-  const GHOST_OPACITY_LIGHT = "0.56";
-  // afterimages need more presence on the light/cream canvas than on dark navy
+  // Day/night ghost opacity values live in --marker-ghost-opacity (tokens.css);
+  // we read the token at call time so theme changes take effect immediately.
   const AFTERIMAGE_OPACITY_DARK = "0.12";
   const AFTERIMAGE_OPACITY_LIGHT = "0.38";
   function markerOpacityFor(locusKey) {
     const selected = selectedLocusKeyRef.current;
     const isDarkTheme = document.documentElement.dataset.theme === THEME_DARK;
-    if (!selected) return isDarkTheme ? GHOST_OPACITY_DARK : GHOST_OPACITY_LIGHT;
+    if (!selected) {
+      const ghost = getComputedStyle(document.documentElement)
+        .getPropertyValue("--marker-ghost-opacity").trim();
+      return ghost || (isDarkTheme ? "0.5" : "0.56");
+    }
     if (locusKey === selected) return "1";
     return isDarkTheme ? AFTERIMAGE_OPACITY_DARK : AFTERIMAGE_OPACITY_LIGHT;
   }
