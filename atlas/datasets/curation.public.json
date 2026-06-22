@@ -1,0 +1,10 @@
+[
+  "standard.value_hash_v1.geojson",
+  "standard.webmercator_hash_v1.geojson",
+  "standard.modulo_grid_v1.geojson",
+  "standard.nearest_32_cities_hash_v1.geojson",
+  "standard.nearest_1000_towns_hash_v1.geojson",
+  "standard.nearest_10000_towns_hash_v1.geojson",
+  "standard.nearest_10000_towns_hash_v1.domain_1_2000.geojson",
+  "standard.nearest_50000_towns_hash_v1.geojson"
+]

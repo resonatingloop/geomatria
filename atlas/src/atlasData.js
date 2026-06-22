@@ -7,6 +7,15 @@ export const EMPTY_COLLECTION = {
   features: [],
 };
 
+// Resolve a served asset path against Vite's base URL so the atlas works both at
+// the domain root (dev / custom domain) and under a project-page subpath like
+// /geogematria/. Accepts paths with or without a leading slash. Falls back to
+// "/" outside Vite (e.g. node test runner, where import.meta.env is undefined).
+export function resolveAssetUrl(path) {
+  const base = import.meta.env?.BASE_URL ?? "/";
+  return base + String(path).replace(/^\//, "");
+}
+
 export const MIN_MARKER_SIZE = 18;
 export const MAX_MARKER_SIZE = 55;
 export const DEFAULT_COUNT = 1;

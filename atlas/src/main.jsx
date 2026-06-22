@@ -12,6 +12,7 @@ import {
   findValueMatches,
   getFeatureKey,
   markerSize,
+  resolveAssetUrl,
   validateAtlas,
   validateManifest,
 } from "./atlasData.js";
@@ -36,6 +37,9 @@ import { LocusPlate } from "./LocusPlate.jsx";
 import { ReadoutTray } from "./ReadoutTray.jsx";
 import "./styles.css";
 
+// Curated GitHub Pages build: hides in-progress features (the live local
+// source) so the public atlas ships only the static, polished slice.
+const PUBLIC_BUILD = import.meta.env.VITE_DEPLOY_TARGET === "public";
 const MANIFEST_URL = "/data/manifest.json";
 const SOURCE_STATIC = "static";
 const SOURCE_LIVE = "live";
@@ -148,7 +152,7 @@ function App() {
   useEffect(() => {
     let isMounted = true;
 
-    fetch(MANIFEST_URL)
+    fetch(resolveAssetUrl(MANIFEST_URL))
       .then((response) => {
         if (!response.ok) {
           throw new Error(`Manifest request failed: ${response.status}`);
@@ -179,6 +183,9 @@ function App() {
   }, [theme]);
 
   useEffect(() => {
+    if (PUBLIC_BUILD) {
+      return;
+    }
     let isMounted = true;
 
     loadLiveManifest()
@@ -282,7 +289,7 @@ function App() {
     setTrayOpen(false);
     setSearchQuery("");
 
-    fetch(entry.file)
+    fetch(resolveAssetUrl(entry.file))
       .then((response) => {
         if (!response.ok) {
           return responseErrorMessage(response, "GeoJSON request failed").then(
@@ -563,7 +570,7 @@ function App() {
             <div className="brand-lockup">
               <img
                 className="brand-seal"
-                src="/geogematria_seal.svg"
+                src={resolveAssetUrl("/geogematria_seal.svg")}
                 alt=""
                 aria-hidden="true"
               />
@@ -575,24 +582,26 @@ function App() {
               </div>
             </div>
             <div className="source-controls header-source-controls" aria-label="Atlas source controls">
-              <div className="source-toggle">
-                <button
-                  type="button"
-                  className={selectedSource === SOURCE_STATIC ? "source-toggle__button source-toggle__button--active" : "source-toggle__button"}
-                  onClick={() => setSelectedSource(SOURCE_STATIC)}
-                >
-                  static
-                </button>
-                <button
-                  type="button"
-                  className={selectedSource === SOURCE_LIVE ? "source-toggle__button source-toggle__button--active" : "source-toggle__button"}
-                  onClick={() => setSelectedSource(SOURCE_LIVE)}
-                  disabled={liveManifest.length === 0}
-                  title={liveManifestError || "live local instrument"}
-                >
-                  live
-                </button>
-              </div>
+              {!PUBLIC_BUILD && (
+                <div className="source-toggle">
+                  <button
+                    type="button"
+                    className={selectedSource === SOURCE_STATIC ? "source-toggle__button source-toggle__button--active" : "source-toggle__button"}
+                    onClick={() => setSelectedSource(SOURCE_STATIC)}
+                  >
+                    static
+                  </button>
+                  <button
+                    type="button"
+                    className={selectedSource === SOURCE_LIVE ? "source-toggle__button source-toggle__button--active" : "source-toggle__button"}
+                    onClick={() => setSelectedSource(SOURCE_LIVE)}
+                    disabled={liveManifest.length === 0}
+                    title={liveManifestError || "live local instrument"}
+                  >
+                    live
+                  </button>
+                </div>
+              )}
               <button
                 type="button"
                 className="refresh-button"
@@ -880,7 +889,9 @@ function removeDomainHeatmap(map) {
 }
 
 function baseMapStyle(theme) {
-  return theme === THEME_DARK ? DARK_BASEMAP_STYLE_URL : DAY_BASEMAP_STYLE;
+  return theme === THEME_DARK
+    ? resolveAssetUrl(DARK_BASEMAP_STYLE_URL)
+    : DAY_BASEMAP_STYLE;
 }
 
 function createMarkerArt({ isHeatmapMode, isDense }) {

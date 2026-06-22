@@ -1,0 +1,51 @@
+name: Deploy public atlas to Pages
+
+# Manual / tag-triggered so the public site only changes when you choose:
+#   - Actions tab -> "Deploy public atlas to Pages" -> Run workflow, or
+#   - push a tag:  git tag atlas-v1 && git push origin atlas-v1
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - "atlas-v*"
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Never run two deploys at once; let an in-progress one finish.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: atlas
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: atlas/package-lock.json
+      - run: npm ci
+      - run: npm run build:public
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          # path is resolved from the repo root, not the job working-directory.
+          path: atlas/dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
