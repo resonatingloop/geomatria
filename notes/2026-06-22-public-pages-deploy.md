@@ -154,6 +154,26 @@ does **not** redeploy.
 
 ---
 
+## Regenerating value-domain datasets
+
+The datasets in `atlas/datasets/` are static exports from glossololary via
+geogematria's public `export-domain` CLI. The adapter's default paths are stale
+(`~/Github/glossololary`), so pass explicit paths:
+
+```bash
+GL=~/.rituals/glossololary
+.venv/bin/python geogematria.py \
+  --glossololary-src $GL/src --db $GL/glossololary.db \
+  export-domain --cipher standard --projection value_hash_v1 \
+  --min 1 --max 2000 --format geojson \
+  > atlas/datasets/standard.value_hash_v1.domain_1_2000.geojson
+```
+
+Phrase occupancy in each file is a point-in-time snapshot of `glossololary.db`
+at generation time. The first public cut is the 16 value-domain heatmaps:
+`value_hash_v1` (deep / true hash) + `nearest_10000_towns_hash_v1` (town snap),
+across all 8 ciphers — see `atlas/datasets/curation.public.json`.
+
 ## Notes / gotchas
 
 - Vite copies everything in `public/` to `dist/` verbatim — that's why datasets

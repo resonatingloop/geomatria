@@ -118,6 +118,28 @@
     "dataset_label": "nearest 10000 towns hash v1 (experimental) · values 1-2000"
   },
   {
+    "mode": "value_domain",
+    "cipher": "AQ",
+    "label": "AQ",
+    "projection_method": "value_hash_v1",
+    "projection_label": "value hash v1",
+    "projection_description": "Static offline value-domain export for every integer value from 1 to 2000, projected through the full-range value hash.",
+    "min_value": 1,
+    "max_value": 2000,
+    "file": "/data/aq.value_hash_v1.domain_1_2000.geojson",
+    "mode_label": "value domain",
+    "render_mode": "heatmap",
+    "search_kind": "value",
+    "cipher_label": "AQ",
+    "transform_family": "hash",
+    "transform_family_label": "hash scatter",
+    "value_range": [
+      1,
+      2000
+    ],
+    "dataset_label": "value hash v1 · values 1-2000"
+  },
+  {
     "cipher": "AQ",
     "label": "AQ",
     "projection_method": "nearest_50000_towns_hash_v1",
@@ -250,6 +272,28 @@
       2000
     ],
     "dataset_label": "nearest 10000 towns hash v1 (experimental) · values 1-2000"
+  },
+  {
+    "mode": "value_domain",
+    "cipher": "Synx",
+    "label": "Synx",
+    "projection_method": "value_hash_v1",
+    "projection_label": "value hash v1",
+    "projection_description": "Static offline value-domain export for every integer value from 1 to 2000, projected through the full-range value hash.",
+    "min_value": 1,
+    "max_value": 2000,
+    "file": "/data/synx.value_hash_v1.domain_1_2000.geojson",
+    "mode_label": "value domain",
+    "render_mode": "heatmap",
+    "search_kind": "value",
+    "cipher_label": "Synx",
+    "transform_family": "hash",
+    "transform_family_label": "hash scatter",
+    "value_range": [
+      1,
+      2000
+    ],
+    "dataset_label": "value hash v1 · values 1-2000"
   },
   {
     "cipher": "Synx",
@@ -386,6 +430,28 @@
     "dataset_label": "nearest 10000 towns hash v1 (experimental) · values 1-2000"
   },
   {
+    "mode": "value_domain",
+    "cipher": "QWER",
+    "label": "QWER",
+    "projection_method": "value_hash_v1",
+    "projection_label": "value hash v1",
+    "projection_description": "Static offline value-domain export for every integer value from 1 to 2000, projected through the full-range value hash.",
+    "min_value": 1,
+    "max_value": 2000,
+    "file": "/data/qwer.value_hash_v1.domain_1_2000.geojson",
+    "mode_label": "value domain",
+    "render_mode": "heatmap",
+    "search_kind": "value",
+    "cipher_label": "QWER",
+    "transform_family": "hash",
+    "transform_family_label": "hash scatter",
+    "value_range": [
+      1,
+      2000
+    ],
+    "dataset_label": "value hash v1 · values 1-2000"
+  },
+  {
     "cipher": "QWER",
     "label": "QWER",
     "projection_method": "nearest_50000_towns_hash_v1",
@@ -518,6 +584,28 @@
       2000
     ],
     "dataset_label": "nearest 10000 towns hash v1 (experimental) · values 1-2000"
+  },
+  {
+    "mode": "value_domain",
+    "cipher": "nQWER",
+    "label": "nQWER",
+    "projection_method": "value_hash_v1",
+    "projection_label": "value hash v1",
+    "projection_description": "Static offline value-domain export for every integer value from 1 to 2000, projected through the full-range value hash.",
+    "min_value": 1,
+    "max_value": 2000,
+    "file": "/data/nqwer.value_hash_v1.domain_1_2000.geojson",
+    "mode_label": "value domain",
+    "render_mode": "heatmap",
+    "search_kind": "value",
+    "cipher_label": "nQWER",
+    "transform_family": "hash",
+    "transform_family_label": "hash scatter",
+    "value_range": [
+      1,
+      2000
+    ],
+    "dataset_label": "value hash v1 · values 1-2000"
   },
   {
     "cipher": "nQWER",
@@ -654,6 +742,28 @@
     "dataset_label": "nearest 10000 towns hash v1 (experimental) · values 1-2000"
   },
   {
+    "mode": "value_domain",
+    "cipher": "Ordinal",
+    "label": "Ordinal",
+    "projection_method": "value_hash_v1",
+    "projection_label": "value hash v1",
+    "projection_description": "Static offline value-domain export for every integer value from 1 to 2000, projected through the full-range value hash.",
+    "min_value": 1,
+    "max_value": 2000,
+    "file": "/data/ordinal.value_hash_v1.domain_1_2000.geojson",
+    "mode_label": "value domain",
+    "render_mode": "heatmap",
+    "search_kind": "value",
+    "cipher_label": "Ordinal",
+    "transform_family": "hash",
+    "transform_family_label": "hash scatter",
+    "value_range": [
+      1,
+      2000
+    ],
+    "dataset_label": "value hash v1 · values 1-2000"
+  },
+  {
     "cipher": "Ordinal",
     "label": "Ordinal",
     "projection_method": "nearest_50000_towns_hash_v1",
@@ -786,6 +896,28 @@
       2000
     ],
     "dataset_label": "nearest 10000 towns hash v1 (experimental) · values 1-2000"
+  },
+  {
+    "mode": "value_domain",
+    "cipher": "Reduced",
+    "label": "Reduced",
+    "projection_method": "value_hash_v1",
+    "projection_label": "value hash v1",
+    "projection_description": "Static offline value-domain export for every integer value from 1 to 2000, projected through the full-range value hash.",
+    "min_value": 1,
+    "max_value": 2000,
+    "file": "/data/reduced.value_hash_v1.domain_1_2000.geojson",
+    "mode_label": "value domain",
+    "render_mode": "heatmap",
+    "search_kind": "value",
+    "cipher_label": "Reduced",
+    "transform_family": "hash",
+    "transform_family_label": "hash scatter",
+    "value_range": [
+      1,
+      2000
+    ],
+    "dataset_label": "value hash v1 · values 1-2000"
   },
   {
     "cipher": "Reduced",
@@ -922,6 +1054,28 @@
     "dataset_label": "nearest 10000 towns hash v1 (experimental) · values 1-2000"
   },
   {
+    "mode": "value_domain",
+    "cipher": "Standard",
+    "label": "Standard",
+    "projection_method": "value_hash_v1",
+    "projection_label": "value hash v1",
+    "projection_description": "Static offline value-domain export for every integer value from 1 to 2000, projected through the full-range value hash.",
+    "min_value": 1,
+    "max_value": 2000,
+    "file": "/data/standard.value_hash_v1.domain_1_2000.geojson",
+    "mode_label": "value domain",
+    "render_mode": "heatmap",
+    "search_kind": "value",
+    "cipher_label": "Standard",
+    "transform_family": "hash",
+    "transform_family_label": "hash scatter",
+    "value_range": [
+      1,
+      2000
+    ],
+    "dataset_label": "value hash v1 · values 1-2000"
+  },
+  {
     "cipher": "Standard",
     "label": "Standard",
     "projection_method": "nearest_50000_towns_hash_v1",
@@ -1054,6 +1208,28 @@
       2000
     ],
     "dataset_label": "nearest 10000 towns hash v1 (experimental) · values 1-2000"
+  },
+  {
+    "mode": "value_domain",
+    "cipher": "Satanic",
+    "label": "Satanic",
+    "projection_method": "value_hash_v1",
+    "projection_label": "value hash v1",
+    "projection_description": "Static offline value-domain export for every integer value from 1 to 2000, projected through the full-range value hash.",
+    "min_value": 1,
+    "max_value": 2000,
+    "file": "/data/satanic.value_hash_v1.domain_1_2000.geojson",
+    "mode_label": "value domain",
+    "render_mode": "heatmap",
+    "search_kind": "value",
+    "cipher_label": "Satanic",
+    "transform_family": "hash",
+    "transform_family_label": "hash scatter",
+    "value_range": [
+      1,
+      2000
+    ],
+    "dataset_label": "value hash v1 · values 1-2000"
   },
   {
     "cipher": "Satanic",
