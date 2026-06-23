@@ -115,7 +115,29 @@
       1,
       2000
     ],
-    "dataset_label": "nearest 10000 towns hash v1 (experimental) · values 1-2000"
+    "dataset_label": "nearest 10000 towns hash v1 (experimental) \u00b7 values 1-2000"
+  },
+  {
+    "mode": "value_domain",
+    "cipher": "AQ",
+    "label": "AQ",
+    "projection_method": "webmercator_hash_v1",
+    "projection_label": "web mercator hash v1",
+    "projection_description": "Static offline value-domain export for every integer value from 1 to 2000, projected through Web Mercator constrained hashing.",
+    "min_value": 1,
+    "max_value": 2000,
+    "file": "/data/aq.webmercator_hash_v1.domain_1_2000.geojson",
+    "mode_label": "value domain",
+    "render_mode": "heatmap",
+    "search_kind": "value",
+    "cipher_label": "AQ",
+    "transform_family": "hash",
+    "transform_family_label": "hash scatter",
+    "value_range": [
+      1,
+      2000
+    ],
+    "dataset_label": "web mercator hash v1 \u00b7 values 1-2000"
   },
   {
     "mode": "value_domain",
@@ -137,7 +159,7 @@
       1,
       2000
     ],
-    "dataset_label": "value hash v1 · values 1-2000"
+    "dataset_label": "value hash v1 \u00b7 values 1-2000"
   },
   {
     "cipher": "AQ",
@@ -271,7 +293,29 @@
       1,
       2000
     ],
-    "dataset_label": "nearest 10000 towns hash v1 (experimental) · values 1-2000"
+    "dataset_label": "nearest 10000 towns hash v1 (experimental) \u00b7 values 1-2000"
+  },
+  {
+    "mode": "value_domain",
+    "cipher": "Synx",
+    "label": "Synx",
+    "projection_method": "webmercator_hash_v1",
+    "projection_label": "web mercator hash v1",
+    "projection_description": "Static offline value-domain export for every integer value from 1 to 2000, projected through Web Mercator constrained hashing.",
+    "min_value": 1,
+    "max_value": 2000,
+    "file": "/data/synx.webmercator_hash_v1.domain_1_2000.geojson",
+    "mode_label": "value domain",
+    "render_mode": "heatmap",
+    "search_kind": "value",
+    "cipher_label": "Synx",
+    "transform_family": "hash",
+    "transform_family_label": "hash scatter",
+    "value_range": [
+      1,
+      2000
+    ],
+    "dataset_label": "web mercator hash v1 \u00b7 values 1-2000"
   },
   {
     "mode": "value_domain",
@@ -293,7 +337,7 @@
       1,
       2000
     ],
-    "dataset_label": "value hash v1 · values 1-2000"
+    "dataset_label": "value hash v1 \u00b7 values 1-2000"
   },
   {
     "cipher": "Synx",
@@ -427,7 +471,29 @@
       1,
       2000
     ],
-    "dataset_label": "nearest 10000 towns hash v1 (experimental) · values 1-2000"
+    "dataset_label": "nearest 10000 towns hash v1 (experimental) \u00b7 values 1-2000"
+  },
+  {
+    "mode": "value_domain",
+    "cipher": "QWER",
+    "label": "QWER",
+    "projection_method": "webmercator_hash_v1",
+    "projection_label": "web mercator hash v1",
+    "projection_description": "Static offline value-domain export for every integer value from 1 to 2000, projected through Web Mercator constrained hashing.",
+    "min_value": 1,
+    "max_value": 2000,
+    "file": "/data/qwer.webmercator_hash_v1.domain_1_2000.geojson",
+    "mode_label": "value domain",
+    "render_mode": "heatmap",
+    "search_kind": "value",
+    "cipher_label": "QWER",
+    "transform_family": "hash",
+    "transform_family_label": "hash scatter",
+    "value_range": [
+      1,
+      2000
+    ],
+    "dataset_label": "web mercator hash v1 \u00b7 values 1-2000"
   },
   {
     "mode": "value_domain",
@@ -449,7 +515,7 @@
       1,
       2000
     ],
-    "dataset_label": "value hash v1 · values 1-2000"
+    "dataset_label": "value hash v1 \u00b7 values 1-2000"
   },
   {
     "cipher": "QWER",
@@ -583,7 +649,29 @@
       1,
       2000
     ],
-    "dataset_label": "nearest 10000 towns hash v1 (experimental) · values 1-2000"
+    "dataset_label": "nearest 10000 towns hash v1 (experimental) \u00b7 values 1-2000"
+  },
+  {
+    "mode": "value_domain",
+    "cipher": "nQWER",
+    "label": "nQWER",
+    "projection_method": "webmercator_hash_v1",
+    "projection_label": "web mercator hash v1",
+    "projection_description": "Static offline value-domain export for every integer value from 1 to 2000, projected through Web Mercator constrained hashing.",
+    "min_value": 1,
+    "max_value": 2000,
+    "file": "/data/nqwer.webmercator_hash_v1.domain_1_2000.geojson",
+    "mode_label": "value domain",
+    "render_mode": "heatmap",
+    "search_kind": "value",
+    "cipher_label": "nQWER",
+    "transform_family": "hash",
+    "transform_family_label": "hash scatter",
+    "value_range": [
+      1,
+      2000
+    ],
+    "dataset_label": "web mercator hash v1 \u00b7 values 1-2000"
   },
   {
     "mode": "value_domain",
@@ -605,7 +693,7 @@
       1,
       2000
     ],
-    "dataset_label": "value hash v1 · values 1-2000"
+    "dataset_label": "value hash v1 \u00b7 values 1-2000"
   },
   {
     "cipher": "nQWER",
@@ -739,7 +827,29 @@
       1,
       2000
     ],
-    "dataset_label": "nearest 10000 towns hash v1 (experimental) · values 1-2000"
+    "dataset_label": "nearest 10000 towns hash v1 (experimental) \u00b7 values 1-2000"
+  },
+  {
+    "mode": "value_domain",
+    "cipher": "Ordinal",
+    "label": "Ordinal",
+    "projection_method": "webmercator_hash_v1",
+    "projection_label": "web mercator hash v1",
+    "projection_description": "Static offline value-domain export for every integer value from 1 to 2000, projected through Web Mercator constrained hashing.",
+    "min_value": 1,
+    "max_value": 2000,
+    "file": "/data/ordinal.webmercator_hash_v1.domain_1_2000.geojson",
+    "mode_label": "value domain",
+    "render_mode": "heatmap",
+    "search_kind": "value",
+    "cipher_label": "Ordinal",
+    "transform_family": "hash",
+    "transform_family_label": "hash scatter",
+    "value_range": [
+      1,
+      2000
+    ],
+    "dataset_label": "web mercator hash v1 \u00b7 values 1-2000"
   },
   {
     "mode": "value_domain",
@@ -761,7 +871,7 @@
       1,
       2000
     ],
-    "dataset_label": "value hash v1 · values 1-2000"
+    "dataset_label": "value hash v1 \u00b7 values 1-2000"
   },
   {
     "cipher": "Ordinal",
@@ -895,7 +1005,29 @@
       1,
       2000
     ],
-    "dataset_label": "nearest 10000 towns hash v1 (experimental) · values 1-2000"
+    "dataset_label": "nearest 10000 towns hash v1 (experimental) \u00b7 values 1-2000"
+  },
+  {
+    "mode": "value_domain",
+    "cipher": "Reduced",
+    "label": "Reduced",
+    "projection_method": "webmercator_hash_v1",
+    "projection_label": "web mercator hash v1",
+    "projection_description": "Static offline value-domain export for every integer value from 1 to 2000, projected through Web Mercator constrained hashing.",
+    "min_value": 1,
+    "max_value": 2000,
+    "file": "/data/reduced.webmercator_hash_v1.domain_1_2000.geojson",
+    "mode_label": "value domain",
+    "render_mode": "heatmap",
+    "search_kind": "value",
+    "cipher_label": "Reduced",
+    "transform_family": "hash",
+    "transform_family_label": "hash scatter",
+    "value_range": [
+      1,
+      2000
+    ],
+    "dataset_label": "web mercator hash v1 \u00b7 values 1-2000"
   },
   {
     "mode": "value_domain",
@@ -917,7 +1049,7 @@
       1,
       2000
     ],
-    "dataset_label": "value hash v1 · values 1-2000"
+    "dataset_label": "value hash v1 \u00b7 values 1-2000"
   },
   {
     "cipher": "Reduced",
@@ -1051,7 +1183,29 @@
       1,
       2000
     ],
-    "dataset_label": "nearest 10000 towns hash v1 (experimental) · values 1-2000"
+    "dataset_label": "nearest 10000 towns hash v1 (experimental) \u00b7 values 1-2000"
+  },
+  {
+    "mode": "value_domain",
+    "cipher": "Standard",
+    "label": "Standard",
+    "projection_method": "webmercator_hash_v1",
+    "projection_label": "web mercator hash v1",
+    "projection_description": "Static offline value-domain export for every integer value from 1 to 2000, projected through Web Mercator constrained hashing.",
+    "min_value": 1,
+    "max_value": 2000,
+    "file": "/data/standard.webmercator_hash_v1.domain_1_2000.geojson",
+    "mode_label": "value domain",
+    "render_mode": "heatmap",
+    "search_kind": "value",
+    "cipher_label": "Standard",
+    "transform_family": "hash",
+    "transform_family_label": "hash scatter",
+    "value_range": [
+      1,
+      2000
+    ],
+    "dataset_label": "web mercator hash v1 \u00b7 values 1-2000"
   },
   {
     "mode": "value_domain",
@@ -1073,7 +1227,7 @@
       1,
       2000
     ],
-    "dataset_label": "value hash v1 · values 1-2000"
+    "dataset_label": "value hash v1 \u00b7 values 1-2000"
   },
   {
     "cipher": "Standard",
@@ -1207,7 +1361,29 @@
       1,
       2000
     ],
-    "dataset_label": "nearest 10000 towns hash v1 (experimental) · values 1-2000"
+    "dataset_label": "nearest 10000 towns hash v1 (experimental) \u00b7 values 1-2000"
+  },
+  {
+    "mode": "value_domain",
+    "cipher": "Satanic",
+    "label": "Satanic",
+    "projection_method": "webmercator_hash_v1",
+    "projection_label": "web mercator hash v1",
+    "projection_description": "Static offline value-domain export for every integer value from 1 to 2000, projected through Web Mercator constrained hashing.",
+    "min_value": 1,
+    "max_value": 2000,
+    "file": "/data/satanic.webmercator_hash_v1.domain_1_2000.geojson",
+    "mode_label": "value domain",
+    "render_mode": "heatmap",
+    "search_kind": "value",
+    "cipher_label": "Satanic",
+    "transform_family": "hash",
+    "transform_family_label": "hash scatter",
+    "value_range": [
+      1,
+      2000
+    ],
+    "dataset_label": "web mercator hash v1 \u00b7 values 1-2000"
   },
   {
     "mode": "value_domain",
@@ -1229,7 +1405,7 @@
       1,
       2000
     ],
-    "dataset_label": "value hash v1 · values 1-2000"
+    "dataset_label": "value hash v1 \u00b7 values 1-2000"
   },
   {
     "cipher": "Satanic",

@@ -50,6 +50,7 @@ const DARK_BASEMAP_STYLE_URL = "/basemap-night.json";
 const DOMAIN_HEAT_SOURCE_ID = "value-domain-source";
 const DOMAIN_HEAT_LAYER_ID = "value-domain-heat";
 const DOMAIN_PHRASE_LAYER_ID = "value-domain-phrases";
+const DOMAIN_SELECT_LAYER_ID = "value-domain-select";
 const SVG_NS = "http://www.w3.org/2000/svg";
 const TRI_PATH = "M50,20 L76,65 L24,65 Z";
 const TRI_PATH_DENSE = "M50,23 L73,63 L27,63 Z";
@@ -153,12 +154,7 @@ function App() {
     let isMounted = true;
 
     fetch(resolveAssetUrl(MANIFEST_URL))
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`Manifest request failed: ${response.status}`);
-        }
-        return response.json();
-      })
+      .then((response) => readJsonResponse(response, "Manifest request failed"))
       .then((data) => {
         validateManifest(data);
         if (isMounted) {
@@ -219,14 +215,17 @@ function App() {
   const renderMode = activeManifestEntry?.render_mode ?? "";
   const searchKind = activeManifestEntry?.search_kind ?? "phrase";
   const isHeatmapMode = renderMode === HEATMAP_MODE;
+  const occupancyPublic = activeManifestEntry?.occupancy_public !== false;
   const isValueSearch = searchKind === "value";
   const projectedLoci = useMemo(() => buildProjectedLoci(atlas), [atlas]);
   const markerLoci = useMemo(
     () =>
-      isHeatmapMode
+      isHeatmapMode && occupancyPublic
         ? projectedLoci.filter((locus) => locus.totalPhraseCount > 0)
+        : isHeatmapMode
+          ? []
         : projectedLoci,
-    [isHeatmapMode, projectedLoci]
+    [isHeatmapMode, occupancyPublic, projectedLoci]
   );
   const heatmapCollection = useMemo(
     () => (isHeatmapMode ? domainHeatmapCollection(atlas) : EMPTY_COLLECTION),
@@ -241,6 +240,10 @@ function App() {
     }
     return byFeatureKey;
   }, [projectedLoci]);
+  const locusByKey = useMemo(
+    () => new Map(projectedLoci.map((locus) => [locus.locusKey, locus])),
+    [projectedLoci]
+  );
 
   useEffect(() => {
     if (manifest.length === 0) {
@@ -290,16 +293,7 @@ function App() {
     setSearchQuery("");
 
     fetch(resolveAssetUrl(entry.file))
-      .then((response) => {
-        if (!response.ok) {
-          return responseErrorMessage(response, "GeoJSON request failed").then(
-            (message) => {
-              throw new Error(message);
-            }
-          );
-        }
-        return response.json();
-      })
+      .then((response) => readJsonResponse(response, "GeoJSON request failed"))
       .then((data) => {
         validateAtlas(data);
         if (isMounted) {
@@ -357,9 +351,15 @@ function App() {
       return;
     }
 
-    updateDomainHeatmap(map, heatmapCollection);
-    return () => removeDomainHeatmap(map);
-  }, [heatmapCollection, theme]);
+    return updateDomainHeatmap(map, heatmapCollection, {
+      onSelectLocus: (locusKey) => {
+        const locus = locusByKey.get(locusKey);
+        if (locus) {
+          selectProjectedLocus(locus);
+        }
+      },
+    });
+  }, [heatmapCollection, locusByKey]);
 
   useEffect(() => {
     const map = mapRef.current;
@@ -548,6 +548,11 @@ function App() {
     setTrayOpen(false);
   }
 
+  function openReadoutTray() {
+    setSearchQuery("");
+    setTrayOpen(true);
+  }
+
   function refreshAtlasSource() {
     setLiveManifestRefreshNonce((value) => value + 1);
     setRefreshNonce((value) => value + 1);
@@ -578,7 +583,6 @@ function App() {
                 <p className="eyebrow">
                   {selectedSource === SOURCE_LIVE ? "live local instrument" : "static instrument"}
                 </p>
-                <h1>geomatria atlas</h1>
               </div>
             </div>
             <div className="source-controls header-source-controls" aria-label="Atlas source controls">
@@ -732,23 +736,25 @@ function App() {
               />
             </label>
             </div>
-            <SearchResults
-              query={searchQuery}
-              matches={searchMatches}
-              searchKind={searchKind}
-              selectedLocusKey={selectedLocusKey}
-              locusByFeatureKey={locusByFeatureKey}
-              anchorRef={apertureRef}
-              onSelect={(match) => {
-                const locus = locusByFeatureKey.get(
-                  getFeatureKey(match.feature, match.featureIndex)
-                );
-                selectProjectedLocus(locus, {
-                  zoom: true,
-                  featureKey: getFeatureKey(match.feature, match.featureIndex),
-                });
-              }}
-            />
+            {!trayOpen && (
+              <SearchResults
+                query={searchQuery}
+                matches={searchMatches}
+                searchKind={searchKind}
+                selectedLocusKey={selectedLocusKey}
+                locusByFeatureKey={locusByFeatureKey}
+                anchorRef={apertureRef}
+                onSelect={(match) => {
+                  const locus = locusByFeatureKey.get(
+                    getFeatureKey(match.feature, match.featureIndex)
+                  );
+                  selectProjectedLocus(locus, {
+                    zoom: true,
+                    featureKey: getFeatureKey(match.feature, match.featureIndex),
+                  });
+                }}
+              />
+            )}
           </div>
         </div>
       </header>
@@ -767,7 +773,11 @@ function App() {
               {!isHeatmapMode && (
                 <span><b>cliques</b>{summary.cliqueCount}</span>
               )}
-              <span><b>phrases</b>{summary.phraseCount}</span>
+              {isHeatmapMode && !occupancyPublic ? (
+                <span><b>values</b>{summary.domainValueCount}</span>
+              ) : (
+                <span><b>phrases</b>{summary.phraseCount}</span>
+              )}
             </div>
           </div>
         </div>
@@ -778,7 +788,7 @@ function App() {
             <LocusPlate
               locus={selectedLocus}
               cipherLabels={cipherLabels}
-              onOpenTray={() => setTrayOpen(true)}
+              onOpenTray={openReadoutTray}
               onClear={clearSelection}
             />,
             plateContainerRef.current
@@ -796,67 +806,226 @@ function App() {
   );
 }
 
-function updateDomainHeatmap(map, collection) {
-  const render = () => {
-    const themeTokens = atlasThemeTokens();
+async function readJsonResponse(response, fallbackMessage) {
+  if (!response.ok) {
+    throw new Error(await responseErrorMessage(response, fallbackMessage));
+  }
 
-    removeDomainHeatmap(map);
+  const text = await response.text();
+  try {
+    return JSON.parse(text);
+  } catch (error) {
+    const preview = text.trimStart().slice(0, 72) || "<empty response>";
+    throw new Error(`${fallbackMessage}: expected JSON, received ${JSON.stringify(preview)}`);
+  }
+}
 
-    if (!collection.features.length) {
+function updateDomainHeatmap(map, collection, { onSelectLocus } = {}) {
+  let disposed = false;
+  let frameId = null;
+  let appliedTokenSignature = "";
+  let pointerActive = false;
+
+  const removeReadyListeners = () => {
+    map.off?.("load", scheduleRender);
+    map.off?.("style.load", scheduleRender);
+    map.off?.("styledata", scheduleRender);
+  };
+
+  const hitTestSelectableLocus = (point) => {
+    if (!map.getLayer?.(DOMAIN_SELECT_LAYER_ID)) {
+      return "";
+    }
+    try {
+      const features = map.queryRenderedFeatures(point, {
+        layers: [DOMAIN_SELECT_LAYER_ID],
+      });
+      return String(features[0]?.properties?.locus_key ?? "");
+    } catch (error) {
+      return "";
+    }
+  };
+
+  const handleMapClick = (event) => {
+    const locusKey = hitTestSelectableLocus(event.point);
+    if (locusKey) {
+      onSelectLocus?.(locusKey);
+    }
+  };
+
+  const handleMapMouseMove = (event) => {
+    const hasSelectableLocus = Boolean(hitTestSelectableLocus(event.point));
+    if (hasSelectableLocus === pointerActive) {
       return;
     }
+    pointerActive = hasSelectableLocus;
+    map.getCanvas().style.cursor = pointerActive ? "pointer" : "";
+  };
 
-    map.addSource(DOMAIN_HEAT_SOURCE_ID, {
-      type: "geojson",
-      data: collection,
-    });
-    map.addLayer({
-      id: DOMAIN_HEAT_LAYER_ID,
-      type: "heatmap",
-      source: DOMAIN_HEAT_SOURCE_ID,
-      maxzoom: 8,
-      paint: {
-        "heatmap-weight": ["interpolate", ["linear"], ["get", "heat_weight"], 0, 0, 1, 1],
-        "heatmap-intensity": ["interpolate", ["linear"], ["zoom"], 1, 0.85, 6, 1.9],
-        "heatmap-radius": ["interpolate", ["linear"], ["zoom"], 1, 18, 5, 30, 8, 46],
-        "heatmap-opacity": ["interpolate", ["linear"], ["zoom"], 1, 0.72, 8, 0.5],
-        "heatmap-color": [
-          "interpolate",
-          ["linear"],
-          ["heatmap-density"],
-          0,
-          themeTokens.mapHeatEmpty,
-          0.2,
-          themeTokens.mapHeatLow,
-          0.45,
-          themeTokens.mapHeatMid,
-          0.7,
-          themeTokens.mapHeatHigh,
-          1,
-          themeTokens.mapHeatPeak,
-        ],
-      },
-    });
-    map.addLayer({
-      id: DOMAIN_PHRASE_LAYER_ID,
-      type: "circle",
-      source: DOMAIN_HEAT_SOURCE_ID,
-      filter: [">", ["get", "phrase_weight"], 0],
-      paint: {
-        "circle-radius": ["interpolate", ["linear"], ["get", "phrase_weight"], 1, 2.5, 8, 7],
-        "circle-color": themeTokens.mapPhrasePoint,
-        "circle-opacity": 0.32,
-        "circle-stroke-color": themeTokens.mapPhraseStroke,
-        "circle-stroke-width": 0.8,
-        "circle-stroke-opacity": 0.55,
-      },
+  const handleMapMouseLeave = () => {
+    pointerActive = false;
+    map.getCanvas().style.cursor = "";
+  };
+
+  const scheduleRender = () => {
+    if (disposed || frameId !== null) {
+      return;
+    }
+    frameId = window.requestAnimationFrame(() => {
+      frameId = null;
+      render();
     });
   };
 
-  if (map.isStyleLoaded?.()) {
-    render();
-  } else {
-    map.once?.("style.load", render);
+  const render = () => {
+    if (disposed) {
+      return;
+    }
+
+    if (!collection.features.length) {
+      removeDomainHeatmap(map);
+      appliedTokenSignature = "";
+      return;
+    }
+
+    if (!map.getStyle?.()) {
+      scheduleRender();
+      return;
+    }
+
+    try {
+      const themeTokens = atlasThemeTokens();
+      const tokenSignature = heatmapTokenSignature(themeTokens);
+      const source = map.getSource?.(DOMAIN_HEAT_SOURCE_ID);
+      const hasHeatLayer = map.getLayer?.(DOMAIN_HEAT_LAYER_ID);
+      const hasPhraseLayer = map.getLayer?.(DOMAIN_PHRASE_LAYER_ID);
+      const hasSelectLayer = map.getLayer?.(DOMAIN_SELECT_LAYER_ID);
+
+      if (source && hasHeatLayer && hasPhraseLayer && hasSelectLayer) {
+        if (appliedTokenSignature !== tokenSignature) {
+          applyDomainHeatmapPaint(map, themeTokens);
+          appliedTokenSignature = tokenSignature;
+        }
+        return;
+      }
+
+      removeDomainHeatmap(map);
+      map.addSource(DOMAIN_HEAT_SOURCE_ID, {
+        type: "geojson",
+        data: collection,
+      });
+      map.addLayer({
+        id: DOMAIN_HEAT_LAYER_ID,
+        type: "heatmap",
+        source: DOMAIN_HEAT_SOURCE_ID,
+        maxzoom: 8,
+        paint: domainHeatmapPaint(themeTokens),
+      });
+      map.addLayer({
+        id: DOMAIN_PHRASE_LAYER_ID,
+        type: "circle",
+        source: DOMAIN_HEAT_SOURCE_ID,
+        filter: [">", ["get", "phrase_weight"], 0],
+        paint: domainPhrasePaint(themeTokens),
+      });
+      map.addLayer({
+        id: DOMAIN_SELECT_LAYER_ID,
+        type: "circle",
+        source: DOMAIN_HEAT_SOURCE_ID,
+        paint: domainSelectPaint(),
+      });
+      appliedTokenSignature = tokenSignature;
+    } catch (error) {
+      scheduleRender();
+    }
+  };
+
+  map.on?.("load", scheduleRender);
+  map.on?.("style.load", scheduleRender);
+  map.on?.("styledata", scheduleRender);
+  map.on?.("click", handleMapClick);
+  map.on?.("mousemove", handleMapMouseMove);
+  map.getCanvas().addEventListener("mouseleave", handleMapMouseLeave);
+  scheduleRender();
+
+  return () => {
+    disposed = true;
+    if (frameId !== null) {
+      window.cancelAnimationFrame(frameId);
+      frameId = null;
+    }
+    removeReadyListeners();
+    map.off?.("click", handleMapClick);
+    map.off?.("mousemove", handleMapMouseMove);
+    map.getCanvas().removeEventListener("mouseleave", handleMapMouseLeave);
+    if (pointerActive) {
+      map.getCanvas().style.cursor = "";
+    }
+    removeDomainHeatmap(map);
+  };
+}
+
+function heatmapTokenSignature(themeTokens) {
+  return [
+    themeTokens.mapHeatEmpty,
+    themeTokens.mapHeatLow,
+    themeTokens.mapHeatMid,
+    themeTokens.mapHeatHigh,
+    themeTokens.mapHeatPeak,
+    themeTokens.mapPhrasePoint,
+    themeTokens.mapPhraseStroke,
+  ].join("|");
+}
+
+function domainHeatmapPaint(themeTokens) {
+  return {
+    "heatmap-weight": ["interpolate", ["linear"], ["get", "heat_weight"], 0, 0, 1, 1],
+    "heatmap-intensity": ["interpolate", ["linear"], ["zoom"], 1, 0.85, 6, 1.9],
+    "heatmap-radius": ["interpolate", ["linear"], ["zoom"], 1, 18, 5, 30, 8, 46],
+    "heatmap-opacity": ["interpolate", ["linear"], ["zoom"], 1, 0.72, 8, 0.5],
+    "heatmap-color": [
+      "interpolate",
+      ["linear"],
+      ["heatmap-density"],
+      0,
+      themeTokens.mapHeatEmpty,
+      0.2,
+      themeTokens.mapHeatLow,
+      0.45,
+      themeTokens.mapHeatMid,
+      0.7,
+      themeTokens.mapHeatHigh,
+      1,
+      themeTokens.mapHeatPeak,
+    ],
+  };
+}
+
+function domainPhrasePaint(themeTokens) {
+  return {
+    "circle-radius": ["interpolate", ["linear"], ["get", "phrase_weight"], 1, 2.5, 8, 7],
+    "circle-color": themeTokens.mapPhrasePoint,
+    "circle-opacity": 0.32,
+    "circle-stroke-color": themeTokens.mapPhraseStroke,
+    "circle-stroke-width": 0.8,
+    "circle-stroke-opacity": 0.55,
+  };
+}
+
+function domainSelectPaint() {
+  return {
+    "circle-radius": ["interpolate", ["linear"], ["zoom"], 1, 20, 5, 32, 8, 48],
+    "circle-color": "rgba(255, 255, 255, 0)",
+    "circle-opacity": 1,
+  };
+}
+
+function applyDomainHeatmapPaint(map, themeTokens) {
+  for (const [name, value] of Object.entries(domainHeatmapPaint(themeTokens))) {
+    map.setPaintProperty(DOMAIN_HEAT_LAYER_ID, name, value);
+  }
+  for (const [name, value] of Object.entries(domainPhrasePaint(themeTokens))) {
+    map.setPaintProperty(DOMAIN_PHRASE_LAYER_ID, name, value);
   }
 }
 
@@ -878,7 +1047,7 @@ function cssToken(styles, name) {
 }
 
 function removeDomainHeatmap(map) {
-  for (const layerId of [DOMAIN_PHRASE_LAYER_ID, DOMAIN_HEAT_LAYER_ID]) {
+  for (const layerId of [DOMAIN_SELECT_LAYER_ID, DOMAIN_PHRASE_LAYER_ID, DOMAIN_HEAT_LAYER_ID]) {
     if (map.getLayer?.(layerId)) {
       map.removeLayer(layerId);
     }
@@ -1050,7 +1219,9 @@ function SearchResults({
                 <span className="match-phrase">{match.phrase}</span>
                 <span className="match-meta">
                   {isValueSearch
-                    ? `${match.details.cliqueKind} | ${match.details.cliqueSize} phrases`
+                    ? match.details.cliqueSize > 0
+                      ? `${match.details.cliqueKind} | ${match.details.cliqueSize} phrases`
+                      : `${match.details.cipher} ${match.details.value}`
                     : `${match.details.cipher} ${match.details.value} ${match.details.cliqueKind} | ${match.details.cliqueSize} phrases`}
                 </span>
               </button>

@@ -1,4 +1,4 @@
-# 2026-06-22 — Curated public GitHub Pages deploy
+# 2026-06-22 04:44AM — Curated public GitHub Pages deploy
 
 Step-by-step guide for shipping a **curated** public atlas to GitHub Pages while
 full development continues in the same public repo. Curation, not secrecy: source
@@ -76,7 +76,8 @@ to "full" for any other mode.
 2. Add `atlas/scripts/build-data.mjs` taking `--target=full|public`:
    - `full`: copy all datasets + full manifest into `atlas/public/data/`.
    - `public`: read `atlas/datasets/curation.public.json` allowlist, copy only
-     those files + write a filtered `manifest.json` into `atlas/public/data/`.
+     those files, strip private phrase/occupancy fields from generated GeoJSON,
+     and write a filtered `manifest.json` into `atlas/public/data/`.
 3. Add `atlas/datasets/curation.public.json` — the editable allowlist (seed with
    a small starter set).
 4. In `atlas/package.json` scripts:
@@ -93,6 +94,8 @@ Add `.github/workflows/pages.yml`:
 - Triggers: `workflow_dispatch` + `push: { tags: ["atlas-v*"] }`.
 - Permissions: `pages: write`, `id-token: write`, `contents: read`;
   `environment: github-pages`.
+- Guard step: fail manual deploys unless the ref is `main`, and fail tag deploys
+  unless the tagged commit is reachable from `origin/main`.
 - Steps: checkout → setup-node → `npm ci` (in `atlas/`) → `npm run build:public`
   → `actions/configure-pages` → `actions/upload-pages-artifact` (`path: atlas/dist`)
   → `actions/deploy-pages`.
@@ -124,6 +127,13 @@ ls dist/data/         # should contain ONLY allowlisted files
 npm test
 ```
 
+For a hot-reload public-mode local server instead of a built preview:
+
+```bash
+npm run dev:public -- --port 5175
+# open http://127.0.0.1:5175/geogematria/
+```
+
 ---
 
 ## Part C — Day-to-day, once it's live
@@ -143,11 +153,10 @@ Commit.
 The public site only changes when you do one of these — pushing to `main` alone
 does **not** redeploy.
 
-> **Deploy runs from `main`.** `workflow_dispatch` only shows in the Actions UI
-> for workflows on the default branch, and the `github-pages` environment is
-> branch-restricted to `main` by default. So "deploy" effectively means: merge
-> the curated state to `main`, then tag/Run-workflow there — not tag from a
-> `session-*` branch.
+> **Deploy runs from `main`.** The workflow now enforces this: manual deploys
+> fail unless run from `main`, and tag deploys fail unless the tagged commit is
+> reachable from `origin/main`. Merge the curated state to `main`, then tag or
+> run the workflow there — not from a `session-*` branch.
 
 **To switch to a custom domain later:** set `base: "/"` for the public mode in
 `vite.config.js` and add a `CNAME` file; the rest is unchanged.
@@ -169,16 +178,21 @@ GL=~/.rituals/glossololary
   > atlas/datasets/standard.value_hash_v1.domain_1_2000.geojson
 ```
 
-Phrase occupancy in each file is a point-in-time snapshot of `glossololary.db`
-at generation time. The first public cut is the 16 value-domain heatmaps:
-`value_hash_v1` (deep / true hash) + `nearest_10000_towns_hash_v1` (town snap),
-across all 8 ciphers — see `atlas/datasets/curation.public.json`.
+Phrase occupancy in private source exports is a point-in-time snapshot of
+`glossololary.db` at generation time; public builds strip that occupancy data
+before serving GeoJSON. The first public cut is the 16 value-domain heatmaps:
+`webmercator_hash_v1` (hash constrained to the map's usable latitude range) +
+`nearest_10000_towns_hash_v1` (town snap), across all 8 ciphers — see
+`atlas/datasets/curation.public.json`.
 
 ## Notes / gotchas
 
 - Vite copies everything in `public/` to `dist/` verbatim — that's why datasets
   must be excluded at the *file* level (Part A3), not just removed from the
   manifest.
+- The public build is not allowed to ship private phrase occupancy. It strips
+  `phrases`, `count`, `phrase_count`, and `has_phrases` from public GeoJSON and
+  marks public manifests with `occupancy_public: false`.
 - After A3, dev depends on the `predev` step regenerating `public/data/`.
 - If in-progress *source* (not just the running feature) ever needs to be hidden,
   that's the trigger to split into a private dev repo + public deploy repo — the

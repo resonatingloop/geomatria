@@ -26,6 +26,19 @@ const SRC_DIR = join(ATLAS_DIR, "datasets");
 const OUT_DIR = join(ATLAS_DIR, "public", "data");
 const MASTER_MANIFEST = join(SRC_DIR, "manifest.json");
 const CURATION_FILE = join(SRC_DIR, "curation.public.json");
+const PRIVATE_VALUE_DOMAIN_FIELDS = new Set([
+  "phrases",
+  "count",
+  "phrase_count",
+  "has_phrases",
+]);
+const PRIVATE_METADATA_FIELDS = new Set([
+  "phrases",
+  "phrase_count",
+  "has_phrases",
+  "values_with_phrases",
+  "values_without_phrases",
+]);
 
 function parseTarget(argv) {
   const arg = argv.find((value) => value.startsWith("--target="));
@@ -40,6 +53,57 @@ function parseTarget(argv) {
 // in datasets/ is just "foo.geojson".
 function datasetFilename(entryFile) {
   return entryFile.replace(/^\/?data\//, "");
+}
+
+function publicManifestEntry(entry) {
+  return {
+    ...entry,
+    public_dataset: true,
+    occupancy_public: false,
+  };
+}
+
+function publicDataset(collection) {
+  const metadata = {
+    ...publicMetadata(collection.metadata ?? {}),
+    public_dataset: true,
+    occupancy_public: false,
+  };
+
+  return {
+    ...collection,
+    metadata,
+    features: (collection.features ?? []).map(publicFeature),
+  };
+}
+
+function publicMetadata(value) {
+  if (Array.isArray(value)) {
+    return value.map(publicMetadata);
+  }
+  if (value && typeof value === "object") {
+    const sanitized = {};
+    for (const [key, childValue] of Object.entries(value)) {
+      if (!PRIVATE_METADATA_FIELDS.has(key)) {
+        sanitized[key] = publicMetadata(childValue);
+      }
+    }
+    return sanitized;
+  }
+  return value;
+}
+
+function publicFeature(feature) {
+  const properties = {};
+  for (const [key, value] of Object.entries(feature.properties ?? {})) {
+    if (!PRIVATE_VALUE_DOMAIN_FIELDS.has(key)) {
+      properties[key] = value;
+    }
+  }
+  return {
+    ...feature,
+    properties,
+  };
 }
 
 const target = parseTarget(process.argv.slice(2));
@@ -68,12 +132,19 @@ for (const entry of selected) {
   if (!existsSync(from)) {
     throw new Error(`Manifest references a missing dataset file: ${name}`);
   }
-  copyFileSync(from, join(OUT_DIR, name));
+  if (target === "public") {
+    writeFileSync(
+      join(OUT_DIR, name),
+      `${JSON.stringify(publicDataset(JSON.parse(readFileSync(from, "utf8"))), null, 2)}\n`
+    );
+  } else {
+    copyFileSync(from, join(OUT_DIR, name));
+  }
 }
 
 writeFileSync(
   join(OUT_DIR, "manifest.json"),
-  `${JSON.stringify(selected, null, 2)}\n`
+  `${JSON.stringify(target === "public" ? selected.map(publicManifestEntry) : selected, null, 2)}\n`
 );
 
 console.log(
