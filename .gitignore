@@ -228,3 +228,8 @@ __marimo__/
 
 # Claude Code local (personal) settings
 .claude/settings.local.json
+
+#Notes
+notes/
+specs/
+
