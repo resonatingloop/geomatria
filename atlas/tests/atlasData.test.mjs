@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
 import test from "node:test";
 import {
   MAX_MARKER_SIZE,
@@ -38,6 +39,9 @@ import {
   loadLiveManifest,
   responseErrorMessage,
 } from "../src/atlasLive.js";
+import { plateReading } from "../src/locusPlateReading.js";
+
+const WEBMERCATOR_MAX_LATITUDE = 85.051129;
 
 function feature({
   coordinates = [-111.25, 12.5],
@@ -208,6 +212,18 @@ test("manifest entries must point at static geojson data files", () => {
         projection_label: "value hash v1",
         projection_description: "Full-range deterministic hash projection.",
         file: "/data/qwer.value_hash_v1.geojson",
+      },
+    ])
+  );
+  assert.doesNotThrow(() =>
+    validateManifest([
+      {
+        cipher: "QWER",
+        label: "QWER",
+        projection_method: "value_hash_v1",
+        projection_label: "value hash v1",
+        projection_description: "Full-range deterministic hash projection.",
+        file: "data/qwer.value_hash_v1.geojson",
       },
     ])
   );
@@ -609,8 +625,207 @@ test("value-domain summaries separate domain values, projected loci, and phrases
   assert.equal(loci[0].valuesWithPhrases, 1);
   assert.equal(loci[0].totalPhraseCount, 3);
   assert.equal(heatmap.features.length, 3);
+  assert.equal(
+    heatmap.features[0].properties.locus_key,
+    "nearest_10000_towns_hash_v1:-111.25:12.5"
+  );
   assert.equal(heatmap.features[1].properties.heat_weight, 1);
   assert.equal(heatmap.features[1].properties.phrase_weight, 3);
+});
+
+test("value-domain locus plate identifies a single occupied value", () => {
+  const reading = plateReading({
+    domainValueCount: 1,
+    valuesWithPhrases: 1,
+    totalPhraseCount: 1,
+    cliques: [
+      {
+        details: {
+          mode: VALUE_DOMAIN_MODE,
+          cipher: "AQ",
+          value: 333,
+          hasPhrases: true,
+          cliqueSize: 1,
+        },
+      },
+    ],
+  });
+
+  assert.deepEqual(reading, {
+    label: "occupied value",
+    readout: "AQ 333",
+    badge: "1 phrase",
+    count: "heat: 1 value",
+  });
+});
+
+test("public value-domain locus plate does not imply private occupancy", () => {
+  const reading = plateReading({
+    domainValueCount: 1,
+    valuesWithPhrases: 0,
+    totalPhraseCount: 0,
+    occupancyPublic: false,
+    cliques: [
+      {
+        details: {
+          mode: VALUE_DOMAIN_MODE,
+          cipher: "AQ",
+          value: 333,
+          hasPhrases: false,
+          cliqueSize: 0,
+        },
+      },
+    ],
+  });
+
+  assert.deepEqual(reading, {
+    label: "domain value",
+    readout: "AQ 333",
+    badge: "",
+    count: "heat: 1 value",
+  });
+});
+
+test("value-domain locus plate separates heat density from occupied values", () => {
+  const reading = plateReading({
+    domainValueCount: 3,
+    valuesWithPhrases: 2,
+    totalPhraseCount: 5,
+    cliques: [
+      {
+        details: {
+          mode: VALUE_DOMAIN_MODE,
+          cipher: "AQ",
+          value: 12,
+          hasPhrases: true,
+          cliqueSize: 2,
+        },
+      },
+      {
+        details: {
+          mode: VALUE_DOMAIN_MODE,
+          cipher: "AQ",
+          value: 19,
+          hasPhrases: true,
+          cliqueSize: 3,
+        },
+      },
+      {
+        details: {
+          mode: VALUE_DOMAIN_MODE,
+          cipher: "AQ",
+          value: 27,
+          hasPhrases: false,
+          cliqueSize: 0,
+        },
+      },
+    ],
+  });
+
+  assert.deepEqual(reading, {
+    label: "heat locus",
+    readout: "3 values here",
+    badge: "2 occupied",
+    count: "5 phrases",
+  });
+});
+
+test("place-snapped value-domain locus plate names the selected public town", () => {
+  const reading = plateReading({
+    domainValueCount: 3,
+    valuesWithPhrases: 0,
+    totalPhraseCount: 0,
+    occupancyPublic: false,
+    snappedPlace: {
+      name: "Port Blair",
+      country: "IN",
+    },
+    cliques: [
+      {
+        details: {
+          mode: VALUE_DOMAIN_MODE,
+          cipher: "AQ",
+          value: 12,
+          hasPhrases: false,
+          cliqueSize: 0,
+        },
+      },
+      {
+        details: {
+          mode: VALUE_DOMAIN_MODE,
+          cipher: "AQ",
+          value: 19,
+          hasPhrases: false,
+          cliqueSize: 0,
+        },
+      },
+      {
+        details: {
+          mode: VALUE_DOMAIN_MODE,
+          cipher: "AQ",
+          value: 27,
+          hasPhrases: false,
+          cliqueSize: 0,
+        },
+      },
+    ],
+  });
+
+  assert.deepEqual(reading, {
+    label: "heat locus",
+    readout: "3 values at Port Blair, IN",
+    badge: "",
+    count: "",
+  });
+});
+
+test("public value-domain collections suppress private occupancy signals", () => {
+  const collection = {
+    type: "FeatureCollection",
+    metadata: {
+      mode: VALUE_DOMAIN_MODE,
+      occupancy_public: false,
+    },
+    features: [
+      feature({
+        properties: {
+          mode: VALUE_DOMAIN_MODE,
+          cipher: "AQ",
+          value: 333,
+          projection_method: "value_hash_v1",
+        },
+      }),
+    ],
+  };
+
+  const summary = atlasSummary(collection);
+  const loci = buildProjectedLoci(collection);
+  const heatmap = domainHeatmapCollection(collection);
+
+  assert.equal(summary.domainValueCount, 1);
+  assert.equal(summary.valuesWithPhrases, 0);
+  assert.equal(summary.phraseCount, 0);
+  assert.equal(loci[0].occupancyPublic, false);
+  assert.equal(heatmap.features[0].properties.heat_weight, 1);
+  assert.equal(heatmap.features[0].properties.phrase_weight, 0);
+});
+
+test("public curation uses web mercator hash for pole-safe value-domain search", () => {
+  const curation = JSON.parse(
+    readFileSync(new URL("../datasets/curation.public.json", import.meta.url), "utf8")
+  );
+  assert(curation.includes("aq.webmercator_hash_v1.domain_1_2000.geojson"));
+  assert(!curation.includes("aq.value_hash_v1.domain_1_2000.geojson"));
+
+  const collection = JSON.parse(
+    readFileSync(
+      new URL("../datasets/aq.webmercator_hash_v1.domain_1_2000.geojson", import.meta.url),
+      "utf8"
+    )
+  );
+  const value1111 = collection.features.find((feature) => feature.properties.value === 1111);
+  assert(value1111);
+  assert(Math.abs(value1111.geometry.coordinates[1]) <= WEBMERCATOR_MAX_LATITUDE);
 });
 
 test("value-domain search finds exact integer values including empty values", () => {

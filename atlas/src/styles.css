@@ -114,8 +114,16 @@ select {
   font-family: var(--font-header);
 }
 
+[data-theme='dark'] .atlas-header {
+  box-shadow:
+    0 1px 0 rgb(253 239 216 / 0.08) inset,
+    0 -18px 34px rgb(0 0 0 / 0.34) inset,
+    0 18px 44px rgb(0 0 0 / 0.26);
+}
+
 .atlas-header::after {
   position: absolute;
+  z-index: 2;
   right: var(--space-5);
   bottom: 6px;
   left: var(--space-5);
@@ -124,14 +132,26 @@ select {
   background: linear-gradient(90deg, transparent, var(--line-ink), transparent);
 }
 
-/* night header: deep-black centre falloff for instrument depth (behind content) */
+/* night header: layered ink wash for instrument depth */
 [data-theme='dark'] .atlas-header::before {
   position: absolute;
   inset: 0;
-  z-index: -1;
+  z-index: 0;
   pointer-events: none;
   content: "";
-  background: radial-gradient(ellipse 72% 130% at 50% 42%, rgb(0 0 0 / 0.78), transparent 62%);
+  background:
+    radial-gradient(ellipse 68% 135% at 50% 42%, rgb(0 0 0 / 0.62), transparent 58%),
+    radial-gradient(ellipse 42% 105% at 12% 50%, rgb(0 21 36 / 0.72), transparent 72%),
+    radial-gradient(ellipse 36% 95% at 88% 38%, rgb(0 6 12 / 0.76), transparent 70%),
+    linear-gradient(180deg, rgb(0 0 0 / 0.42), transparent 34%, rgb(0 0 0 / 0.5)),
+    repeating-linear-gradient(8deg, rgb(253 239 216 / 0.025) 0 1px, transparent 1px 9px),
+    repeating-linear-gradient(97deg, rgb(29 158 117 / 0.018) 0 1px, transparent 1px 11px);
+  mix-blend-mode: multiply;
+}
+
+.atlas-header > * {
+  position: relative;
+  z-index: 1;
 }
 
 .header-left {
@@ -1276,6 +1296,13 @@ h1 {
   box-shadow: var(--shadow-marker);
 }
 
+[data-theme='dark'] .maplibregl-ctrl-group button {
+  color: var(--text-primary);
+}
+[data-theme='dark'] .maplibregl-ctrl-group button span {
+  background-color: var(--text-primary);
+}
+
 /* ── Night mode: map vignette ────────────────────────────────────────── */
 /* Instrument-hood falloff: corners and edges recede, centre stays readable */
 
@@ -1299,6 +1326,40 @@ h1 {
 
 [data-theme='dark'] .atlas-marker:not(.atlas-marker--selected):not(:hover) .atlas-marker-shape {
   filter: var(--shadow-marker-shape-inactive);
+}
+
+/* ── Night mode: markers emit ────────────────────────────────────────── */
+/* Faint amber corona on all sigil markers; selected glow overrides via shadow-marker-selected */
+
+[data-theme='dark'] .atlas-marker-art {
+  filter: var(--shadow-marker-emit);
+}
+
+/* ── Night mode: popup signal/structure roles ─────────────────────────── */
+
+[data-theme='dark'] .locus-plate__readout {
+  color: var(--signal);
+}
+[data-theme='dark'] .locus-plate__count {
+  color: var(--signal);
+}
+
+/* ── Night mode: tray signal/structure roles ──────────────────────────── */
+
+[data-theme='dark'] .locus-card h2,
+[data-theme='dark'] .detail-grid dd,
+[data-theme='dark'] .ledger-head__count,
+[data-theme='dark'] .phrase-ledger__value {
+  color: var(--signal);
+}
+[data-theme='dark'] .ledger-group__value,
+[data-theme='dark'] .ledger-group__kind {
+  color: var(--signal);
+}
+[data-theme='dark'] .eyebrow,
+[data-theme='dark'] dt,
+[data-theme='dark'] .ledger-head__label {
+  color: var(--structure);
 }
 
 /* ── Locus plate: compact summoned reading, tethered beside the locus ─────── */
