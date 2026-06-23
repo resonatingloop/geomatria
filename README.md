@@ -39,8 +39,11 @@ uv run geogematria export --cipher aq --projection value_hash_v1 --format geojso
 uv run geogematria export-domain --cipher aq --projection nearest_10000_towns_hash_v1 --min 1 --max 2000 --format geojson
 ```
 
-Static atlas data lives in `atlas/public/data/` and is described by
-`atlas/public/data/manifest.json`.
+Static atlas source data lives in `atlas/datasets/` and is described by
+`atlas/datasets/manifest.json`. The atlas build step stages those files into the
+generated, ignored `atlas/public/data/` directory for Vite to serve. Public Pages
+builds use `atlas/datasets/curation.public.json` to copy only curated datasets
+and strip private phrase/occupancy fields from the generated public GeoJSON.
 
 ## local checks
 
@@ -56,6 +59,8 @@ Atlas checks:
 cd atlas
 npm test
 npm run build
+npm run build:public
+npm run dev:public -- --port 5175
 ```
 
 Run these from `atlas/` after installing npm dependencies.

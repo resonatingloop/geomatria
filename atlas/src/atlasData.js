@@ -7,6 +7,15 @@ export const EMPTY_COLLECTION = {
   features: [],
 };
 
+// Resolve a served asset path against Vite's base URL so the atlas works both at
+// the domain root (dev / custom domain) and under a project-page subpath like
+// /geogematria/. Accepts paths with or without a leading slash. Falls back to
+// "/" outside Vite (e.g. node test runner, where import.meta.env is undefined).
+export function resolveAssetUrl(path) {
+  const base = import.meta.env?.BASE_URL ?? "/";
+  return base + String(path).replace(/^\//, "");
+}
+
 export const MIN_MARKER_SIZE = 18;
 export const MAX_MARKER_SIZE = 55;
 export const DEFAULT_COUNT = 1;
@@ -34,7 +43,7 @@ export function validateManifest(data) {
         "Manifest entries require cipher, label, mode, render_mode, search_kind, transform_family, projection_method, projection_label, projection_description, and file strings."
       );
     }
-    if (!entry.file.startsWith("/data/") || !entry.file.endsWith(".geojson")) {
+    if (!/^\/?data\/.+\.geojson$/.test(entry.file)) {
       throw new Error(`Manifest file must point at static GeoJSON data: ${entry.file}`);
     }
     const isValueDomainEntry = entry.mode === VALUE_DOMAIN_MODE;
@@ -150,6 +159,7 @@ export function getProjectedLocusKey(feature) {
 
 export function buildProjectedLoci(collection) {
   const loci = new Map();
+  const occupancyPublic = collection?.metadata?.occupancy_public !== false;
 
   for (const [featureIndex, feature] of (collection?.features ?? []).entries()) {
     const details = getFeatureDetails(feature);
@@ -168,6 +178,7 @@ export function buildProjectedLoci(collection) {
       domainValueCount: 0,
       valuesWithPhrases: 0,
       totalPhraseCount: 0,
+      occupancyPublic,
     };
 
     existing.cliques.push({
@@ -233,6 +244,7 @@ export function atlasSummary(collection) {
   const isValueDomain =
     collection?.metadata?.mode === VALUE_DOMAIN_MODE ||
     features.some((feature) => feature?.properties?.mode === VALUE_DOMAIN_MODE);
+  const occupancyPublic = collection?.metadata?.occupancy_public !== false;
 
   if (isValueDomain) {
     const valuesWithPhrases = features.filter(
@@ -245,15 +257,19 @@ export function atlasSummary(collection) {
       projectedLocusCount:
         metadataSummary?.projected_locus_count ?? buildProjectedLoci(collection).length,
       valuesWithPhrases:
-        metadataSummary?.values_with_phrases ?? valuesWithPhrases,
+        occupancyPublic ? metadataSummary?.values_with_phrases ?? valuesWithPhrases : 0,
       valuesWithoutPhrases:
-        metadataSummary?.values_without_phrases ??
-        Math.max(0, features.length - valuesWithPhrases),
-      cliqueCount: valuesWithPhrases,
-      phraseCount: features.reduce(
-        (total, feature) => total + getFeatureDetails(feature).cliqueSize,
-        0
-      ),
+        occupancyPublic
+          ? metadataSummary?.values_without_phrases ??
+            Math.max(0, features.length - valuesWithPhrases)
+          : features.length,
+      cliqueCount: occupancyPublic ? valuesWithPhrases : 0,
+      phraseCount: occupancyPublic
+        ? features.reduce(
+            (total, feature) => total + getFeatureDetails(feature).cliqueSize,
+            0
+          )
+        : 0,
     };
   }
 
@@ -276,8 +292,12 @@ export function domainHeatmapCollection(collection) {
         ...feature,
         properties: {
           ...feature.properties,
+          locus_key: getProjectedLocusKey(feature),
           heat_weight: 1,
-          phrase_weight: normalizeDomainPhraseCount(feature.properties?.phrase_count),
+          phrase_weight:
+            collection?.metadata?.occupancy_public === false
+              ? 0
+              : normalizeDomainPhraseCount(feature.properties?.phrase_count),
         },
       })),
   };

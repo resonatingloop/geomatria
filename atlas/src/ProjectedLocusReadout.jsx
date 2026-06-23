@@ -18,6 +18,7 @@ export function ProjectedLocusReadout({
   const isValueDomainLocus = locus.cliques.some(
     (clique) => clique.details.mode === VALUE_DOMAIN_MODE
   );
+  const occupancyPublic = locus.occupancyPublic !== false;
   const visibleCliques = isValueDomainLocus
     ? visibleDomainCliques(locus.cliques, selectedFeatureKey)
     : locus.cliques;
@@ -39,13 +40,15 @@ export function ProjectedLocusReadout({
                 : cliqueTitle(visibleCliques[0], cipherLabels)}
           </h2>
         </div>
-        <span className="type-badge">
-          {isValueDomainLocus
-            ? `${locus.valuesWithPhrases} occupied`
-            : visibleCollision
-              ? `${visibleCliques.length} cliques`
-              : visibleCliques[0].details.cliqueKind}
-        </span>
+        {(!isValueDomainLocus || occupancyPublic) && (
+          <span className="type-badge">
+            {isValueDomainLocus
+              ? `${locus.valuesWithPhrases} occupied`
+              : visibleCollision
+                ? `${visibleCliques.length} cliques`
+                : visibleCliques[0].details.cliqueKind}
+          </span>
+        )}
       </div>
 
       <dl className="detail-grid">
@@ -55,10 +58,12 @@ export function ProjectedLocusReadout({
               <dt>Domain values here</dt>
               <dd>{locus.domainValueCount}</dd>
             </div>
-            <div>
-              <dt>Values with phrases</dt>
-              <dd>{locus.valuesWithPhrases}</dd>
-            </div>
+            {occupancyPublic && (
+              <div>
+                <dt>Values with phrases</dt>
+                <dd>{locus.valuesWithPhrases}</dd>
+              </div>
+            )}
           </>
         ) : (
           <div>

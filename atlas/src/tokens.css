@@ -120,6 +120,8 @@
   --map-phrase-point: #2f756d;
   --map-phrase-stroke: #fffbee;
 
+  --marker-ghost-opacity: 0.56;
+
   --shadow-panel: 0 14px 34px rgb(43 38 30 / 18%);
   --shadow-marker: 0 7px 18px rgb(43 38 30 / 32%);
   --shadow-inset-light: 0 1px 0 rgb(255 255 255 / 70%) inset;
@@ -205,17 +207,20 @@
   --live-title-state: #D9663A;
   --marker-domain: #1D9E75;
 
+  --structure: rgb(29 158 117 / 55%);
+  --signal: #F2A62D;
+
   /* locus plate + readout tray (progressive disclosure) */
   /* dark bronze instrument plate — aged, warm, matte */
   --plate-surface: linear-gradient(157deg, #342d1c 0%, #29220f 55%, #221b0e 100%);
   --plate-surface-soft: linear-gradient(157deg, #2c2618, #211b0f);
-  --plate-border: #6f5d34;
-  --plate-bevel-hi: rgb(217 190 122 / 0.22);
+  --plate-border: rgb(29 158 117 / 30%);
+  --plate-bevel-hi: rgb(29 158 117 / 12%);
   --plate-bevel-lo: rgb(0 0 0 / 0.52);
-  --plate-rim: rgb(201 162 74 / 42%);
+  --plate-rim: rgb(29 158 117 / 22%);
   --plate-rivet: rgb(0 0 0 / 46%);
   --plate-rivet-highlight: rgb(217 190 122 / 55%);
-  --plate-label: #C9A24A;
+  --plate-label: var(--structure);
   --plate-emboss: 0 1px 0 rgb(0 0 0 / 0.5);
   --plate-shadow: 0 10px 26px rgb(0 0 0 / 52%), 0 0 0 1px rgb(110 93 52 / 32%);
   --tray-surface: linear-gradient(180deg, rgb(10 20 29 / 0.06), rgb(5 12 19 / 0.10));
@@ -227,7 +232,7 @@
   --tray-blur: blur(9px);
   --tray-shadow: -22px 0 52px rgb(0 0 0 / 60%);
   --tray-scrim: rgb(0 6 10 / 46%);
-  --tray-slip-label: #C9A24A;
+  --tray-slip-label: var(--structure);
   --ledger-rule: rgb(29 158 117 / 18%);
 
   --line-ink: rgb(253 239 216 / 16%);
@@ -327,9 +332,10 @@
   --shadow-map-frame:
     0 0 0 1px rgb(253 239 216 / 8%) inset,
     0 18px 44px rgb(0 0 0 / 36%) inset;
-  --marker-inactive-opacity: 0.52;
+  --shadow-marker-emit: drop-shadow(0 0 4px rgb(242 166 45 / 0.22));
   --shadow-marker-halo: drop-shadow(0 4px 8px rgb(0 0 0 / 34%));
   --shadow-marker-halo-inactive: drop-shadow(0 2px 5px rgb(0 0 0 / 26%));
+  --marker-ghost-opacity: 0.5;
   --shadow-marker-shape:
     drop-shadow(0 0 1px rgb(0 21 36 / 80%))
     drop-shadow(0 7px 10px rgb(0 0 0 / 42%));

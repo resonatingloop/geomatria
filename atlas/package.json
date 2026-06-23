@@ -4,8 +4,12 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "predev": "node scripts/build-data.mjs --target=full",
     "dev": "vite --host 127.0.0.1",
+    "dev:public": "node scripts/build-data.mjs --target=public && vite --host 127.0.0.1 --mode public",
+    "prebuild": "node scripts/build-data.mjs --target=full",
     "build": "vite build",
+    "build:public": "node scripts/build-data.mjs --target=public && vite build --mode public",
     "preview": "vite preview --host 127.0.0.1",
     "test": "node --test"
   },
