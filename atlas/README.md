@@ -32,12 +32,14 @@ npm run dev:public -- --port 5175
 Open the public-mode path:
 
 ```text
-http://127.0.0.1:5175/geogematria/
+http://127.0.0.1:5175/
 ```
 
 This stages only `datasets/curation.public.json`, strips private phrase and
 occupancy fields from generated GeoJSON, hides the live source, and uses the
-same `/geogematria/` base as GitHub Pages.
+same relative asset base used by the Pages build. The same public artifact can
+be served from a custom-domain root or from a project path such as
+`/geogematria/`.
 For v0, public hash-scatter value-domain maps use `webmercator_hash_v1` so
 search results stay inside the Web Mercator map bounds.
 

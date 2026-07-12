@@ -45,7 +45,7 @@ to "full" for any other mode.
    full build, **1** for a public build (the live-button title is stripped; the
    eyebrow string remains).
 
-### A2. Base-aware asset URLs — work under `…github.io/geogematria/`
+### A2. Base-aware asset URLs — work under a custom-domain root or `…github.io/geogematria/`
 
 1. Add a helper (e.g. in `atlas/src/atlasData.js`):
    ```js
@@ -57,10 +57,12 @@ to "full" for any other mode.
    - manifest (`main.jsx:39` `MANIFEST_URL`),
    - basemap style (`main.jsx:45` `DARK_BASEMAP_STYLE_URL`),
    - each dataset GeoJSON (`entry.file`).
-3. In `atlas/vite.config.js`, make `base` mode-driven:
+3. In `atlas/vite.config.js`, make `base` mode-driven. Public builds use
+   relative URLs so the same artifact works at a custom-domain root and under a
+   GitHub Pages project path:
    ```js
    export default defineConfig(({ mode }) => ({
-     base: mode === "public" ? "/geogematria/" : "/",
+     base: mode === "public" ? "./" : "/",
      // ...existing plugins / server config
    }));
    ```
@@ -114,9 +116,9 @@ cd atlas
 # 1. Full dev still normal (live toggle present, all datasets load)
 npm run dev
 
-# 2. Public build + serve under the project subpath
+# 2. Public build + preview
 npm run build:public
-npx vite preview --base /geogematria/
+npx vite preview
 #   → live toggle / in-progress UI absent
 #   → only curated datasets appear; basemap + GeoJSON load (no 404s)
 
@@ -131,7 +133,7 @@ For a hot-reload public-mode local server instead of a built preview:
 
 ```bash
 npm run dev:public -- --port 5175
-# open http://127.0.0.1:5175/geogematria/
+# open http://127.0.0.1:5175/
 ```
 
 ---
@@ -158,8 +160,10 @@ does **not** redeploy.
 > reachable from `origin/main`. Merge the curated state to `main`, then tag or
 > run the workflow there — not from a `session-*` branch.
 
-**To switch to a custom domain later:** set `base: "/"` for the public mode in
-`vite.config.js` and add a `CNAME` file; the rest is unchanged.
+**Custom domain note:** the public build already uses relative asset URLs, so
+the same artifact can be served from a custom-domain root or from the repository
+project path. Add a `CNAME` file/settings entry when enabling the custom domain;
+no Vite base change is required.
 
 ---
 
