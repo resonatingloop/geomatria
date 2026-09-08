@@ -1,4 +1,11 @@
-# Geogematria Atlas
+# geogematria atlas
+
+role: operational/reference guide for frontend behavior and dataset semantics.
+start at the [repository readme](../README.md), use [status](../STATUS.md) for
+verified outcomes, and [development](../docs/DEVELOPMENT.md) for python setup,
+configuration, and recovery. runtime claims below describe the implementation;
+the live-selector flow is owner-confirmed in status. other rendered interactions
+and deployment have not been separately reverified.
 
 React/Vite atlas for geogematria static GeoJSON exports and v1c local live
 cliquemap layers.
@@ -6,8 +13,8 @@ cliquemap layers.
 ## Local Full Run
 
 ```bash
-npm install
-npm run dev -- --port 5173
+npm ci
+npm run dev -- --port 5173 --strictPort
 ```
 
 Open:
@@ -26,7 +33,7 @@ phrase occupancy fields.
 Use this to test the friend-facing public atlas locally:
 
 ```bash
-npm run dev:public -- --port 5175
+npm run dev:public -- --port 5175 --strictPort
 ```
 
 Open the public-mode path:
@@ -45,14 +52,19 @@ search results stay inside the Web Mercator map bounds.
 
 ## Live Run
 
-Start the local backend from the repo root:
+after the glossololary setup in [development](../docs/DEVELOPMENT.md), start
+the local backend from the repo root:
 
 ```bash
-export GEOGEMATRIA_GLOSSOLOLARY_DB=/path/to/glossololary.db
-uv run --extra backend uvicorn backend.app:app --host 127.0.0.1 --port 8000
+GEOGEMATRIA_GLOSSOLOLARY_DB="$HOME/.projects/glossololary/glossololary.db" \
+  uv run --locked --extra backend python -m uvicorn backend.app:app --host 127.0.0.1 --port 8000
 ```
 
-Then run the atlas dev server from `atlas/`:
+the launch command explicitly selects the migrated database so an inherited
+old path cannot override it. use another absolute path for a different location.
+the adapter opens it through glossololary's public read-only interface.
+
+then run the atlas dev server from `atlas/`:
 
 ```bash
 npm run dev -- --port 5173
@@ -95,16 +107,19 @@ Each manifest entry points to one exported cipher + projection method pair:
 }
 ```
 
-Regenerate a cipher/projection file from the v0 CLI:
+regenerate exports from the repository root after configuring glossololary.
+these commands replace the named source snapshots; review the result before
+staging or committing it. the cli takes explicit paths and does not use the
+backend's database environment variable.
 
 ```bash
-uv run geogematria export --cipher qwer --projection value_hash_v1 --format geojson > datasets/qwer.value_hash_v1.geojson
+uv run --locked python geogematria.py --db /absolute/path/to/glossololary.db --glossololary-src /absolute/path/to/glossololary/src export --cipher qwer --projection value_hash_v1 --format geojson > atlas/datasets/qwer.value_hash_v1.geojson
 ```
 
-Generate a static value-domain export independent of phrase occupancy:
+generate a static value-domain export with saved phrase occupancy overlaid:
 
 ```bash
-uv run geogematria export-domain --cipher satanic --projection nearest_10000_towns_hash_v1 --min 1 --max 2000 --format geojson > datasets/satanic.nearest_10000_towns_hash_v1.domain_1_2000.geojson
+uv run --locked python geogematria.py --db /absolute/path/to/glossololary.db --glossololary-src /absolute/path/to/glossololary/src export-domain --cipher satanic --projection nearest_10000_towns_hash_v1 --min 1 --max 2000 --format geojson > atlas/datasets/satanic.nearest_10000_towns_hash_v1.domain_1_2000.geojson
 ```
 
 Public GitHub Pages builds run `npm run build:public`, which excludes the local

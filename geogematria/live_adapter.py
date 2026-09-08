@@ -29,7 +29,7 @@ class GlossololaryLiveAdapter:
         except Exception as exc:  # pragma: no cover - exercised by backend error path
             raise RuntimeError("glossololary is not importable") from exc
 
-        self._db = GlossololaryDB(path=self.db_path)
+        self._db = GlossololaryDB(path=self.db_path, read_only=True)
 
     def iter_clusters(self, cipher: str) -> list[tuple[int, list[PhraseRecord]]]:
         rows = self._db.list_entries(cipher=cipher)

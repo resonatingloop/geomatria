@@ -4,6 +4,7 @@ import unittest
 from pathlib import Path
 
 from geogematria.adapter import DEFAULT_SRC_PATH, GlossololaryAdapter
+from geogematria.live_adapter import GlossololaryLiveAdapter
 
 
 def make_db(path):
@@ -36,6 +37,43 @@ def make_db(path):
 
 
 class AdapterTests(unittest.TestCase):
+    def test_missing_source_is_not_created_by_either_adapter(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            db_path = Path(tmpdir) / "missing.db"
+            for adapter_type in (GlossololaryAdapter, GlossololaryLiveAdapter):
+                with self.subTest(adapter=adapter_type.__name__):
+                    with self.assertRaises(FileNotFoundError):
+                        adapter_type(db_path=db_path)
+                    self.assertFalse(db_path.exists())
+
+    def test_source_database_rejects_writes_through_adapter(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            db_path = Path(tmpdir) / "glossololary.db"
+            make_db(db_path)
+            before = db_path.read_bytes()
+            adapter = GlossololaryAdapter(db_path=db_path, src_path=DEFAULT_SRC_PATH)
+
+            with self.assertRaisesRegex(sqlite3.OperationalError, "readonly"):
+                adapter.db.delete_entry_by_text("reverse oracle")
+
+            self.assertEqual(adapter.get_value("reverse oracle", "AQ").value, 177)
+            self.assertEqual(db_path.read_bytes(), before)
+
+    def test_live_adapter_reads_existing_source_without_mutating_it(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            db_path = Path(tmpdir) / "glossololary.db"
+            make_db(db_path)
+            before = db_path.read_bytes()
+
+            clusters = GlossololaryLiveAdapter(db_path=db_path).iter_clusters("aq")
+
+            self.assertEqual([value for value, _ in clusters], [50, 177])
+            self.assertEqual(
+                [phrase.text for phrase in clusters[1][1]],
+                ["other oracle", "reverse oracle"],
+            )
+            self.assertEqual(db_path.read_bytes(), before)
+
     def test_adapter_get_value_cluster_and_path(self):
         with tempfile.TemporaryDirectory() as tmpdir:
             db_path = Path(tmpdir) / "glossololary.db"

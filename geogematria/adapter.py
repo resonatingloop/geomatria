@@ -8,7 +8,7 @@ from typing import Any
 
 from geogematria.models import CipherRecord, CipherValue, PhraseRecord
 
-DEFAULT_GLOSSOLOLARY_ROOT = Path("/home/resonatingloop/Github/glossololary")
+DEFAULT_GLOSSOLOLARY_ROOT = Path.home() / ".projects" / "glossololary"
 DEFAULT_DB_PATH = DEFAULT_GLOSSOLOLARY_ROOT / "glossololary.db"
 DEFAULT_SRC_PATH = DEFAULT_GLOSSOLOLARY_ROOT / "src"
 
@@ -49,7 +49,7 @@ class GlossololaryAdapter:
         self._resolve_cipher = resolve_cipher
         self._get_active_ciphers = get_active_ciphers
         if self._db is None:
-            self._db = GlossololaryDB(path=self.db_path)
+            self._db = GlossololaryDB(path=self.db_path, read_only=True)
 
     @property
     def db(self):

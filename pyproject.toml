@@ -1,3 +1,7 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "geogematria"
 version = "0.1.0"
@@ -19,8 +23,8 @@ test = [
 geogematria = "geogematria.cli:main"
 
 [tool.setuptools]
-packages = ["geogematria"]
-include-package-data = true
+packages = ["geogematria", "backend"]
+include-package-data = false
 
 [tool.setuptools.package-data]
 geogematria = ["data/*.json", "data/*.md"]
