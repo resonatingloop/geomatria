@@ -1,5 +1,9 @@
 import React from "react";
 import { VALUE_DOMAIN_MODE } from "./atlasData.js";
+import { locusReadoutModel } from "./readoutModel.js";
+import { locusMarkdown } from "./markdownExport.js";
+import { MarkdownActions } from "./MarkdownActions.jsx";
+export { visibleDomainCliques } from "./readoutModel.js";
 
 // Full projected-locus dossier. Shared content rendered inside the ReadoutTray
 // (and reusable elsewhere during migration). Moved here from main.jsx's former
@@ -9,19 +13,17 @@ export function ProjectedLocusReadout({
   selectedFeatureKey,
   projectionMethod,
   cipherLabels,
+  source = "static snapshot",
 }) {
   if (!locus) {
     return null;
   }
 
   const hasCollision = locus.cliques.length > 1;
-  const isValueDomainLocus = locus.cliques.some(
-    (clique) => clique.details.mode === VALUE_DOMAIN_MODE
-  );
-  const occupancyPublic = locus.occupancyPublic !== false;
-  const visibleCliques = isValueDomainLocus
-    ? visibleDomainCliques(locus.cliques, selectedFeatureKey)
-    : locus.cliques;
+  const model = locusReadoutModel(locus, selectedFeatureKey);
+  const isValueDomainLocus = model.isValueDomain;
+  const occupancyPublic = model.occupancyAvailable;
+  const visibleCliques = model.cliques;
   const visibleCollision = visibleCliques.length > 1;
   const soloClique = visibleCliques.length === 1 ? visibleCliques[0] : null;
 
@@ -138,7 +140,9 @@ export function ProjectedLocusReadout({
       {isValueDomainLocus && (
         <p className="locus-note locus-note--domain">
           The heat layer counts every exported integer value at this coordinate.
-          The list below only shows values that have phrase occupancy.
+          {occupancyPublic
+            ? " The list includes phrase-bearing values and the explicitly selected value."
+            : " Saved phrase occupancy is not published in this view."}
         </p>
       )}
 
@@ -151,7 +155,7 @@ export function ProjectedLocusReadout({
 
       {/* Phrase content as a flat ledger inside the one plate. The right rail
           repeats the clique value as the isopsephic receipt for each phrase. */}
-      <section className="phrase-ledger-wrap">
+      {occupancyPublic ? <section className="phrase-ledger-wrap">
         {visibleCollision ? (
           visibleCliques.map((clique) => (
             <details className="ledger-group" key={clique.featureKey}>
@@ -167,6 +171,7 @@ export function ProjectedLocusReadout({
                 value={clique.details.value}
                 mode={clique.details.mode}
               />
+              <CliqueGeography details={clique.details} />
             </details>
           ))
         ) : (
@@ -182,11 +187,28 @@ export function ProjectedLocusReadout({
               value={soloClique ? soloClique.details.value : undefined}
               mode={soloClique ? soloClique.details.mode : undefined}
             />
+            {soloClique && <CliqueGeography details={soloClique.details} />}
           </>
         )}
-      </section>
+      </section> : <section className="public-value-reading" aria-label="selected domain values">
+        {visibleCliques.length ? visibleCliques.map((clique) => <div key={clique.featureKey}>
+          <p>{cliqueTitle(clique, cipherLabels)}</p>
+          <CliqueGeography details={clique.details} />
+        </div>) : <p>select an integer through the value aperture for its individual reading.</p>}
+      </section>}
+      <MarkdownActions text={locusMarkdown(locus, selectedFeatureKey, source)} scope="this locus"
+        filename={`geogematria-locus-${locus.latitude}-${locus.longitude}`} />
     </article>
   );
+}
+
+function CliqueGeography({ details }) {
+  if (!details.baseCoordinate) return null;
+  return <p className="constellation-trace">
+    original hash coordinate: {details.baseCoordinate.googleMapsCopy}<br />
+    {details.baseCoordinate.projectionMethod}
+    {Number.isFinite(details.snappedPlace?.distanceKm) && <><br />snap distance: {details.snappedPlace.distanceKm} km</>}
+  </p>;
 }
 
 function PhraseLedger({ phrases, value, mode }) {
@@ -220,21 +242,6 @@ export function heatLocusTitle(locus) {
     ? `${locus.snappedPlace.name}, ${locus.snappedPlace.country}`
     : locus.googleMapsCopy;
   return `${locus.domainValueCount} values at ${place}`;
-}
-
-export function visibleDomainCliques(cliques, selectedFeatureKey) {
-  const visible = cliques.filter((clique) => clique.details.hasPhrases);
-  if (
-    selectedFeatureKey &&
-    !visible.some((clique) => clique.featureKey === selectedFeatureKey)
-  ) {
-    const selected = cliques.find((clique) => clique.featureKey === selectedFeatureKey);
-    if (selected) {
-      return [selected, ...visible];
-    }
-  }
-
-  return visible;
 }
 
 function formatDistance(distanceKm) {

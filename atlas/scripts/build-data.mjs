@@ -17,7 +17,7 @@ import {
   rmSync,
   writeFileSync,
 } from "node:fs";
-import { dirname, join } from "node:path";
+import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const SCRIPT_DIR = dirname(fileURLToPath(import.meta.url));
@@ -55,7 +55,7 @@ function datasetFilename(entryFile) {
   return entryFile.replace(/^\/?data\//, "");
 }
 
-function publicManifestEntry(entry) {
+export function publicManifestEntry(entry) {
   return {
     ...entry,
     public_dataset: true,
@@ -63,7 +63,7 @@ function publicManifestEntry(entry) {
   };
 }
 
-function publicDataset(collection) {
+export function publicDataset(collection) {
   const metadata = {
     ...publicMetadata(collection.metadata ?? {}),
     public_dataset: true,
@@ -106,47 +106,52 @@ function publicFeature(feature) {
   };
 }
 
-const target = parseTarget(process.argv.slice(2));
-const manifest = JSON.parse(readFileSync(MASTER_MANIFEST, "utf8"));
+function stageData() {
+  const target = parseTarget(process.argv.slice(2));
+  const manifest = JSON.parse(readFileSync(MASTER_MANIFEST, "utf8"));
 
-let selected = manifest;
-if (target === "public") {
-  if (!existsSync(CURATION_FILE)) {
-    throw new Error(`Public build requires an allowlist at ${CURATION_FILE}`);
-  }
-  const allow = new Set(JSON.parse(readFileSync(CURATION_FILE, "utf8")));
-  selected = manifest.filter((entry) => allow.has(datasetFilename(entry.file)));
-  if (selected.length === 0) {
-    throw new Error(
-      "curation.public.json matched no manifest entries — nothing to publish."
-    );
-  }
-}
-
-rmSync(OUT_DIR, { recursive: true, force: true });
-mkdirSync(OUT_DIR, { recursive: true });
-
-for (const entry of selected) {
-  const name = datasetFilename(entry.file);
-  const from = join(SRC_DIR, name);
-  if (!existsSync(from)) {
-    throw new Error(`Manifest references a missing dataset file: ${name}`);
-  }
+  let selected = manifest;
   if (target === "public") {
-    writeFileSync(
-      join(OUT_DIR, name),
-      `${JSON.stringify(publicDataset(JSON.parse(readFileSync(from, "utf8"))), null, 2)}\n`
-    );
-  } else {
-    copyFileSync(from, join(OUT_DIR, name));
+    if (!existsSync(CURATION_FILE)) {
+      throw new Error(`Public build requires an allowlist at ${CURATION_FILE}`);
+    }
+    const allow = new Set(JSON.parse(readFileSync(CURATION_FILE, "utf8")));
+    selected = manifest.filter((entry) => allow.has(datasetFilename(entry.file)));
+    if (selected.length === 0) {
+      throw new Error(
+        "curation.public.json matched no manifest entries — nothing to publish."
+      );
+    }
   }
+
+  rmSync(OUT_DIR, { recursive: true, force: true });
+  mkdirSync(OUT_DIR, { recursive: true });
+
+  for (const entry of selected) {
+    const name = datasetFilename(entry.file);
+    const from = join(SRC_DIR, name);
+    if (!existsSync(from)) {
+      throw new Error(`Manifest references a missing dataset file: ${name}`);
+    }
+    if (target === "public") {
+      writeFileSync(
+        join(OUT_DIR, name),
+        `${JSON.stringify(publicDataset(JSON.parse(readFileSync(from, "utf8"))), null, 2)}\n`
+      );
+    } else {
+      copyFileSync(from, join(OUT_DIR, name));
+    }
+  }
+
+  writeFileSync(
+    join(OUT_DIR, "manifest.json"),
+    `${JSON.stringify(target === "public" ? selected.map(publicManifestEntry) : selected, null, 2)}\n`
+  );
+
+  console.log(
+    `[build-data] target=${target} datasets=${selected.length}/${manifest.length} -> public/data/`
+  );
 }
 
-writeFileSync(
-  join(OUT_DIR, "manifest.json"),
-  `${JSON.stringify(target === "public" ? selected.map(publicManifestEntry) : selected, null, 2)}\n`
-);
-
-console.log(
-  `[build-data] target=${target} datasets=${selected.length}/${manifest.length} -> public/data/`
-);
+// Importing the sanitizer for conformance tests must not restage a running app.
+if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) stageData();

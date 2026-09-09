@@ -50,6 +50,50 @@ be served from a custom-domain root or from a project path such as
 For v0, public hash-scatter value-domain maps use `webmercator_hash_v1` so
 search results stay inside the Web Mercator map bounds.
 
+## value constellation and markdown
+
+both editions have an `atlas / constellation` view switch. constellation reads
+the static snapshot manifest, even when ordinary local browsing was using the
+live source. it does not calculate phrases or access the source database.
+
+1. choose `constellation`, enter an integer from 1 to 2000, and press enter or
+   `cast`. choose hash scatter or nearest 10,000 towns before casting.
+2. read all eight cipher/value addresses. selecting a row highlights and
+   centers its landing; selecting a marker highlights its ledger entry. shared
+   locations retain all their entries under one labelled marker. `show all`
+   reframes the constellation; escape clears its highlight.
+3. use `copy markdown` or `download .md` for the whole constellation. the
+   export contains numeric/geographic details only in both editions.
+4. return to `atlas` to restore the previous browsing source, dataset,
+   selection, tray state, and camera position.
+
+the constellation uses a square, flat map aperture so a global spread can fit
+without repeating the world. the ledger sits beside it on wide screens and
+below it on narrow portrait screens. its temporary zoom-out limit is restored
+on return to ordinary browsing. day/night uses the existing theme.
+
+changing the input or projection clears the previous result and disables
+export until another successful cast. failed loads have a retry action, and
+late responses cannot replace a newer request. all eight matching datasets
+must be present and valid; a partial constellation is an error, not a reading.
+successful numeric indexes are cached in memory across visits to the view.
+first use loads eight files for the selected projection; there is no extra
+compact-index artifact or local-storage cache.
+
+ordinary locus trays also offer copy/download markdown for `this locus`.
+exports share the readout's visibility rules: local domain readings include
+phrase-bearing values plus an explicitly selected value, while local
+cliquemaps include their displayed cliques. public readings omit phrase and
+occupancy information, describing it as not published rather than zero.
+neither exporter serializes raw dataset objects. coordinates are explicitly
+latitude, longitude; per-entry base coordinates and snap details are included
+when available. clipboard failure is reported, with download as an alternative.
+
+the [accepted spec](../docs/value-constellation-spec.md) owns this slice's scope.
+automated data/export/build checks pass; new rendered interactions remain
+unverified because the browser runtime could not connect. see [status](../STATUS.md)
+for the remaining manual smoke gate.
+
 ## Live Run
 
 after the glossololary setup in [development](../docs/DEVELOPMENT.md), start
@@ -196,7 +240,8 @@ The atlas does not merge collided cliques. It does not implement visual map
 clustering, globe rendering, manual placement, public upload, guest lexicon
 generation, or live land/place lookup.
 
-The full local UI has two static dataset modes:
+ordinary local atlas browsing has two static dataset modes, alongside the
+independent constellation view:
 
 - clique exports render projected loci as selectable markers
 - value-domain exports render every exported integer value as a heatmap, with

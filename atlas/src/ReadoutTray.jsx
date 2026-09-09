@@ -11,6 +11,7 @@ export function ReadoutTray({
   selectedFeatureKey,
   projectionMethod,
   cipherLabels,
+  source,
   onClose,
 }) {
   if (!locus) {
@@ -28,6 +29,7 @@ export function ReadoutTray({
         className={`readout-tray${open ? " readout-tray--open" : ""}`}
         aria-label="Expanded locus readout"
         aria-hidden={open ? undefined : true}
+        inert={open ? undefined : ""}
       >
         <div className="readout-tray__head">
           <p className="eyebrow">readout tray</p>
@@ -47,6 +49,7 @@ export function ReadoutTray({
             selectedFeatureKey={selectedFeatureKey}
             projectionMethod={projectionMethod}
             cipherLabels={cipherLabels}
+            source={source}
           />
         </div>
       </aside>

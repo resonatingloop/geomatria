@@ -20,8 +20,10 @@ npm run dev:public -- --port 5175 --strictPort
 ```
 
 open <http://127.0.0.1:5175/>. staging should report
-`target=public datasets=16/80`; the atlas offers curated value-domain heatmaps
-and integer search. try `177`. this mode needs no phrase database or backend.
+`target=public datasets=16/80`; the atlas offers curated value-domain heatmaps,
+integer search, and a value constellation across eight ciphers. choose
+`constellation`, enter `177`, and press `cast`. its readout and ordinary locus
+readouts offer copy/download markdown. this mode needs no phrase database or backend.
 the basemap uses external map tiles, so a fully rendered map needs network
 access and a browser with webgl support.
 
@@ -72,8 +74,10 @@ fields from generated files; source datasets retain their contents.
 | [development](docs/DEVELOPMENT.md) | operational | setup, commands, configuration, generated state, and recovery |
 | [atlas guide](atlas/README.md) | operational/reference | implemented frontend behavior and dataset semantics |
 | [gazetteer notes](geogematria/data/README.md) | reference | offline input provenance |
+| [value constellation spec](docs/value-constellation-spec.md) | accepted transition | range, projections, export scope, and acceptance gates |
 
 local `specs/` and `notes/` contain earlier planning and historical material.
 both directories are git-ignored and absent from a fresh clone. their existence
-does not establish current approval or completion. no active accepted spec was
-established during this bootstrap; shared re-entry must work without them.
+does not establish current approval or completion. the value constellation slice
+was explicitly accepted on 2026-09-08 and is recorded in tracked documentation;
+shared re-entry does not depend on ignored historical specs.

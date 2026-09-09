@@ -41,6 +41,44 @@ these commands build locally. the [pages workflow](../.github/workflows/pages.ym
 deploys on manual dispatch or an `atlas-v*` tag, checks the ref's relationship
 to `main`, and builds in public mode. deployment state is unverified.
 
+## constellation smoke checks
+
+the accepted [value constellation slice](value-constellation-spec.md) is
+frontend-only. `npm test` covers domain lookup, canonical cipher ordering,
+cache/retry behavior, stale-result rejection, source/public coordinate parity,
+collisions, scoped markdown, and public privacy suppression. it also imports
+the staging sanitizer without restaging a running app.
+
+after `npm run build:public`, a public preview can run alongside the full dev
+server without staging collisions because preview reads `dist/`, not
+`public/data/`. from `atlas/`:
+
+```bash
+npm run preview -- --mode public --port 5175 --strictPort --base /geogematria/
+```
+
+open `http://127.0.0.1:5175/geogematria/` for the subpath check. the full dev
+server can then be restarted on 5173 using its usual command, which restores
+full staging in `public/data/` without changing the sanitized preview artifact.
+do not rebuild or run two staging commands simultaneously.
+
+rendered smoke in both editions:
+
+- cast 1, 177, and 2000 under both projections; compare eight labelled rows
+  and map landings. select a row and marker, then use show all and escape.
+- change values/projections rapidly; invalid input must not leave an old
+  reading or enabled export. test retry with an unavailable dataset.
+- check day/night, keyboard focus, narrow portrait/landscape layouts, and
+  return to an ordinary selected locus without losing its source or camera.
+- copy and download a constellation and an ordinary locus. compare text;
+  public output must not claim zero saved phrases or disclose occupancy.
+- test clipboard denial with download still available. check ordinary heatmap
+  integer search, local phrase search, live selection, and the public subpath.
+
+build and http checks are not rendered proof. the last browser connection was
+blocked before navigation; record owner/agent-rendered outcomes in status when
+available. no public deployment is performed by these commands.
+
 ## python setup
 
 python 3.11 or newer and uv are required; verification used python 3.12.

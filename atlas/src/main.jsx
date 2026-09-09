@@ -35,6 +35,7 @@ import {
 import { loadLiveManifest, responseErrorMessage } from "./atlasLive.js";
 import { LocusPlate } from "./LocusPlate.jsx";
 import { ReadoutTray } from "./ReadoutTray.jsx";
+import { ConstellationView } from "./ConstellationView.jsx";
 import "./styles.css";
 
 // Curated GitHub Pages build: hides in-progress features (the live local
@@ -80,6 +81,9 @@ function App() {
   const mapContainerRef = useRef(null);
   const mapRef = useRef(null);
   const markersRef = useRef([]);
+  const browseViewportRef = useRef(null);
+  const [view, setView] = useState("atlas");
+  const isConstellation = view === "constellation";
   const selectedLocusKeyRef = useRef("");
   const unlock2DMapRef = useRef(null);
   const apertureRef = useRef(null);
@@ -114,6 +118,8 @@ function App() {
     entry.marker.setOpacity(markerOpacityFor(entry.locusKey));
   }
   const [staticManifest, setStaticManifest] = useState([]);
+  const [staticManifestError, setStaticManifestError] = useState("");
+  const [staticManifestNonce, setStaticManifestNonce] = useState(0);
   const [liveManifest, setLiveManifest] = useState([]);
   const [liveManifestError, setLiveManifestError] = useState("");
   const [selectedSource, setSelectedSource] = useState(SOURCE_STATIC);
@@ -152,6 +158,7 @@ function App() {
 
   useEffect(() => {
     let isMounted = true;
+    setStaticManifestError("");
 
     fetch(resolveAssetUrl(MANIFEST_URL))
       .then((response) => readJsonResponse(response, "Manifest request failed"))
@@ -164,6 +171,7 @@ function App() {
       })
       .catch((error) => {
         if (isMounted) {
+          setStaticManifestError(error.message);
           setLoadState({ status: "error", message: error.message });
         }
       });
@@ -171,7 +179,7 @@ function App() {
     return () => {
       isMounted = false;
     };
-  }, []);
+  }, [staticManifestNonce]);
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
@@ -228,8 +236,8 @@ function App() {
     [isHeatmapMode, occupancyPublic, projectedLoci]
   );
   const heatmapCollection = useMemo(
-    () => (isHeatmapMode ? domainHeatmapCollection(atlas) : EMPTY_COLLECTION),
-    [atlas, isHeatmapMode]
+    () => (isHeatmapMode && !isConstellation ? domainHeatmapCollection(atlas) : EMPTY_COLLECTION),
+    [atlas, isHeatmapMode, isConstellation]
   );
   const locusByFeatureKey = useMemo(() => {
     const byFeatureKey = new Map();
@@ -297,7 +305,10 @@ function App() {
       .then((data) => {
         validateAtlas(data);
         if (isMounted) {
-          setAtlas(data);
+          setAtlas({ ...data, metadata: {
+            ...data.metadata,
+            occupancy_public: !PUBLIC_BUILD && entry.occupancy_public !== false && data.metadata?.occupancy_public !== false,
+          } });
           setLoadState({ status: "ready", message: "" });
         }
       })
@@ -369,6 +380,7 @@ function App() {
 
     markersRef.current.forEach((entry) => entry.marker.remove());
     markersRef.current = [];
+    if (isConstellation) return;
 
     const bounds = new maplibregl.LngLatBounds();
     let hasBounds = false;
@@ -416,7 +428,7 @@ function App() {
     if (hasBounds) {
       map.fitBounds(bounds, { padding: 80, maxZoom: 4, duration: 0, bearing: 0, pitch: 0 });
     }
-  }, [isHeatmapMode, markerLoci]);
+  }, [isHeatmapMode, markerLoci, isConstellation]);
 
   useEffect(() => {
     selectedLocusKeyRef.current = selectedLocusKey;
@@ -427,7 +439,7 @@ function App() {
       );
       applyMarkerOpacity(entry);
     }
-  }, [selectedLocusKey]);
+  }, [selectedLocusKey, isConstellation]);
 
   useEffect(() => {
     for (const entry of markersRef.current) {
@@ -437,7 +449,7 @@ function App() {
 
   // Esc is two-stage: collapse the tray first, then clear the selection.
   useEffect(() => {
-    if (!selectedLocus) {
+    if (!selectedLocus || isConstellation) {
       return;
     }
     function onKeyDown(event) {
@@ -452,7 +464,7 @@ function App() {
     }
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, [selectedLocus, trayOpen]);
+  }, [selectedLocus, trayOpen, isConstellation]);
 
   // Tether the LocusPlate popup to the selected coordinate. Create-once: the
   // popup is only removed when nothing is selected (below) or on unmount (next
@@ -462,7 +474,7 @@ function App() {
     if (!map) {
       return;
     }
-    const lngLat = getLocusLngLat(selectedLocus);
+    const lngLat = getLocusLngLat(isConstellation ? null : selectedLocus);
     if (!lngLat) {
       platePopupRef.current?.remove();
       platePopupRef.current = null;
@@ -482,7 +494,29 @@ function App() {
     if (!platePopupRef.current.isOpen()) {
       platePopupRef.current.addTo(map);
     }
-  }, [selectedLocus]);
+  }, [selectedLocus, isConstellation]);
+
+  useEffect(() => {
+    const frame = requestAnimationFrame(() => {
+      mapRef.current?.resize();
+      if (!isConstellation && browseViewportRef.current) {
+        mapRef.current?.jumpTo(browseViewportRef.current);
+        browseViewportRef.current = null;
+      }
+    });
+    return () => cancelAnimationFrame(frame);
+  }, [isConstellation]);
+
+  function changeView(next) {
+    if (next === view) return;
+    if (next === "constellation" && mapRef.current) {
+      mapRef.current.stop();
+      browseViewportRef.current = {
+        center: mapRef.current.getCenter(), zoom: mapRef.current.getZoom(), bearing: 0, pitch: 0,
+      };
+    }
+    setView(next);
+  }
 
   useEffect(
     () => () => {
@@ -581,12 +615,19 @@ function App() {
               />
               <div className="brand-copy">
                 <p className="eyebrow">
-                  {selectedSource === SOURCE_LIVE ? "live local instrument" : "static instrument"}
+                  {isConstellation ? "static constellation instrument" : selectedSource === SOURCE_LIVE ? "live local instrument" : "static instrument"}
                 </p>
               </div>
             </div>
             <div className="source-controls header-source-controls" aria-label="Atlas source controls">
-              {!PUBLIC_BUILD && (
+              <div className="source-toggle" aria-label="atlas view">
+                {["atlas", "constellation"].map((option) => (
+                  <button key={option} type="button" aria-pressed={view === option}
+                    className={view === option ? "source-toggle__button source-toggle__button--active" : "source-toggle__button"}
+                    onClick={() => changeView(option)}>{option}</button>
+                ))}
+              </div>
+              {!PUBLIC_BUILD && !isConstellation && (
                 <div className="source-toggle">
                   <button
                     type="button"
@@ -609,6 +650,7 @@ function App() {
               <button
                 type="button"
                 className="refresh-button"
+                hidden={isConstellation}
                 onClick={refreshAtlasSource}
                 disabled={loadState.status === "loading"}
               >
@@ -633,7 +675,7 @@ function App() {
               </div>
             </div>
           </div>
-          <div className="atlas-controls" aria-label="Atlas calibration register">
+          {!isConstellation && <div className="atlas-controls" aria-label="Atlas calibration register">
             <div className="control-card">
             <label
               className="field-control field-control--mode"
@@ -755,20 +797,20 @@ function App() {
                 }}
               />
             )}
-          </div>
+          </div>}
         </div>
       </header>
 
-      <section className="atlas-workspace">
+      <section className={`atlas-workspace${isConstellation ? " atlas-workspace--constellation" : ""}`}>
         <div className="map-panel">
           <div ref={mapContainerRef} className="map-canvas" />
-          {loadState.status !== "ready" && (
+          {!isConstellation && loadState.status !== "ready" && (
             <div className={`map-overlay map-overlay--${loadState.status}`}>
               {loadState.status === "loading" ? "Loading atlas data" : loadState.message}
             </div>
           )}
           <div className="map-glass" />
-          <div className="map-status-cluster">
+          {!isConstellation && <div className="map-status-cluster">
             <div className="status-strip" aria-live="polite">
               {!isHeatmapMode && (
                 <span><b>cliques</b>{summary.cliqueCount}</span>
@@ -779,10 +821,12 @@ function App() {
                 <span><b>phrases</b>{summary.phraseCount}</span>
               )}
             </div>
-          </div>
+          </div>}
         </div>
 
-        {selectedLocus &&
+        {isConstellation && <ConstellationView manifest={staticManifest} map={mapRef.current}
+          manifestError={staticManifestError} onRetryManifest={() => setStaticManifestNonce((value) => value + 1)} />}
+        {!isConstellation && selectedLocus &&
           plateContainerRef.current &&
           createPortal(
             <LocusPlate
@@ -793,14 +837,15 @@ function App() {
             />,
             plateContainerRef.current
           )}
-        <ReadoutTray
+        {!isConstellation && <ReadoutTray
           open={trayOpen}
           locus={selectedLocus}
           selectedFeatureKey={selectedFeatureKey}
           projectionMethod={activeManifestEntry?.projection_method}
           cipherLabels={cipherLabels}
+          source={selectedSource === SOURCE_LIVE ? "live local layer" : "static snapshot"}
           onClose={() => setTrayOpen(false)}
-        />
+        />}
       </section>
     </main>
   );

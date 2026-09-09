@@ -4,10 +4,54 @@ role: operational checkpoint. last verified: 2026-09-08.
 update at a meaningful stopping point; this file owns evidence and active work,
 not permanent intent or retrospective spec approval.
 
-## verified checkpoint
+## value constellation checkpoint
 
-the migration repair follows the documentation bootstrap over source revision
-`a57b897`. both slices remain uncommitted. the static atlas, installed cli, and
+the owner accepted the [value constellation and markdown slice](docs/value-constellation-spec.md)
+on 2026-09-08. implementation is present in the working tree over `8c692c8`
+(`bootstrap and repair`); no commit or deployment was made in this slice.
+the spec remains accepted, not retired: rendered verification is still open.
+
+implemented: an independent numeric constellation view in both editions,
+eight canonical ciphers, integers 1–2000, the two public-safe projections,
+cached static lookups, stale-request protection, shared-coordinate entries,
+and copy/download markdown for whole constellations and ordinary locus readouts.
+local locus exports retain their visible saved phrases; constellation exports
+are numeric-only, and public readouts/exports suppress private occupancy.
+the map/readout components reuse existing theme tokens and the existing map;
+no backend, source database, dependency, or projection algorithm changed.
+
+| check | result |
+|---|---|
+| `npm test` | 51 passed, including 17 new data/export/privacy/lifecycle tests |
+| complete python regression suite | 53 passed; required a task-local uv cache because the default cache remained read-only, including after escalation |
+| full frontend build | passed; 80/80 datasets staged |
+| public frontend build | passed; 16/80 datasets staged |
+| real snapshot parity | 1, 177, and 2000 match source geometry across all eight ciphers and both projections in local and sanitized data |
+| public artifact scan | exactly 16 geojson datasets; no phrase/count/occupancy fields found in their data or metadata |
+| public preview under `/geogematria/` | html, manifest, all 16 dataset requests, constellation lookup, and markdown serialization passed |
+| restored full dev server | html, 80-entry manifest, both constellation lookups and the existing eight-entry live manifest proxy passed |
+| public readout server-render smoke | selected value and export controls render; populated private fixture phrases and false zero-occupancy wording are absent |
+| automated browser retry | blocked before navigation by the same trusted-code-path rejection; no new rendered/browser interaction proof |
+| documentation checker | four inherited missing spec-status findings; see historical limits below |
+| `git diff --check` | passed |
+
+the public snapshot groups total about 6.1 mb (hash scatter) and 13.6 mb
+(town snapping) uncompressed. local gzip estimates are about 267 kb and 995 kb
+respectively; these are not measurements of deployed transfer compression or
+visitor latency. successful numeric indexes are cached after the first load.
+
+the full dev server is available on `http://127.0.0.1:5173/`; the sanitized
+production preview is available on `http://127.0.0.1:5175/geogematria/`.
+the preview reads `atlas/dist/`, independently of full dev staging in
+`atlas/public/data/`. the existing backend on port 8000 was left unchanged.
+see the [smoke checklist](docs/DEVELOPMENT.md#constellation-smoke-checks) for
+the outstanding rendered acceptance gate: both editions, day/night, narrow
+screens, selection/fitting/restoration, keyboard, clipboard and downloads.
+
+## migration checkpoint (prior slice)
+
+the migration repair followed the documentation bootstrap over source revision
+`a57b897`; the owner subsequently committed them as `8c692c8`. the static atlas, installed cli, and
 local live backend now work with the selected glossololary checkout at
 `/home/resonatingloop/.projects/glossololary`.
 
@@ -95,10 +139,13 @@ with read-only source access, packaging proof, and owner confirmation of the
 live-selector flow. this was a directly authorized repair; no historical spec
 was promoted to accepted or retired.
 
-the repair and its live-selector check are complete. no further feature slice
-has been selected. after a server restart, use the explicit database path in
+the repair and its live-selector check are complete. the accepted constellation
+slice is implemented with automated checks passing, but its rendered acceptance
+checks remain open. use `constellation` in either running edition and follow
+the smoke checklist above. no phrase calculator or deployment is authorized
+by this slice. after a backend restart, use the explicit database path in
 [development](docs/DEVELOPMENT.md); the inherited shell setting remains a known
-configuration issue outside this repair.
+configuration issue outside these changes.
 
 ## re-entry state
 
