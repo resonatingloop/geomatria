@@ -1767,9 +1767,11 @@ h1 {
   width: 6px; height: 6px; background: var(--accent-warm); transform: rotate(45deg);
 }
 .constellation-pin--selected { background: var(--accent-warm); color: var(--bg-surface); z-index: 4; }
-.markdown-actions { border-top: 1px solid var(--border-default); margin-top: 14px; padding-top: 12px; }
+.markdown-actions { border-bottom: 1px solid var(--border-default); margin: 0 0 12px; padding-bottom: 10px; }
+.markdown-actions > .eyebrow { margin: 0 0 6px; }
 .markdown-actions__buttons { display: flex; flex-wrap: wrap; gap: 8px; }
 .export-status { min-height: 1.5em; margin: 6px 0 0; }
+.export-status:empty { min-height: 0; margin: 0; }
 .public-value-reading { font-family: var(--font-mono); font-size: 0.85rem; }
 
 @media (max-width: 700px) {

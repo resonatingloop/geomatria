@@ -4,12 +4,32 @@ role: operational checkpoint. last verified: 2026-09-08.
 update at a meaningful stopping point; this file owns evidence and active work,
 not permanent intent or retrospective spec approval.
 
-## value constellation checkpoint
+## export placement follow-up
+
+the owner confirmed the original constellation appearance and markdown export,
+then requested more discoverable export controls. copy/download now sit directly
+below the heading in both constellation and ordinary locus readouts, in both
+editions. the shared control row has a compact divider; empty feedback no longer
+reserves a blank line. handlers, exported content, privacy rules, and data
+loading are unchanged. this is a bounded presentation follow-up over `f68eaf7`.
+
+verification: 53 frontend tests pass (including two placement guards), and a
+server-rendered markup check confirms control order, initial disabled states,
+and public phrase suppression. both builds pass. `git diff --check` passes;
+the documentation checker retains the same four historical spec-status findings.
+python was not rerun for this presentation-only pass; its previous 53-test
+result remains below. browser capture is still blocked before navigation, so
+the new placement awaits an owner-rendered comparison, especially on narrow screens.
+no commit, push, or deployment was performed for this follow-up.
+
+## original value constellation checkpoint
 
 the owner accepted the [value constellation and markdown slice](docs/value-constellation-spec.md)
-on 2026-09-08. implementation is present in the working tree over `8c692c8`
-(`bootstrap and repair`); no commit or deployment was made in this slice.
-the spec remains accepted, not retired: rendered verification is still open.
+on 2026-09-08. the original implementation was subsequently committed by the
+owner as `f68eaf7` and deployed through pages. a read-only check of workflow
+run `34293255055` found success and a live javascript bundle matching the local
+public build; the owner confirmed a hard refresh exposed the update. the spec
+remains accepted, not retired: the full rendered checklist is not yet complete.
 
 implemented: an independent numeric constellation view in both editions,
 eight canonical ciphers, integers 1–2000, the two public-safe projections,
@@ -44,9 +64,12 @@ the full dev server is available on `http://127.0.0.1:5173/`; the sanitized
 production preview is available on `http://127.0.0.1:5175/geogematria/`.
 the preview reads `atlas/dist/`, independently of full dev staging in
 `atlas/public/data/`. the existing backend on port 8000 was left unchanged.
-see the [smoke checklist](docs/DEVELOPMENT.md#constellation-smoke-checks) for
-the outstanding rendered acceptance gate: both editions, day/night, narrow
-screens, selection/fitting/restoration, keyboard, clipboard and downloads.
+the owner's screenshot establishes the original dark-theme 137 hash-scatter
+constellation appearance; markdown export is also owner-confirmed. see the
+[smoke checklist](docs/DEVELOPMENT.md#constellation-smoke-checks) for remaining
+coverage: both editions, other states/themes, narrow screens, fitting/restoration,
+keyboard, and individual clipboard/download failure paths. the newly relocated
+controls need a fresh visual check.
 
 ## migration checkpoint (prior slice)
 
@@ -126,8 +149,8 @@ explicit local install, outside geogematria's lockfile.
 - the inherited shell database override still points into the old `Github`
   checkout. the documented backend command corrects it per process; shell
   configuration was not inspected or changed.
-- the live-selector flow is owner-confirmed; other rendered interactions and
-  current pages deployment were not separately verified. automated browser setup
+- the live-selector flow and original constellation/export appearance have
+  owner confirmation; the complete rendered smoke matrix remains open. automated browser setup
   rejected its own `browser-service.mjs`
   with `Trusted RPC dependency must resolve within a configured trusted code path`.
   the runtime never initialized, so automated browser coverage remains unavailable.

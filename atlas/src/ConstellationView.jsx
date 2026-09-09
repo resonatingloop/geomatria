@@ -117,6 +117,8 @@ export function ConstellationView({ manifest, map, manifestError, onRetryManifes
         <h1>value constellation</h1>
         <p>one number, eight addresses.</p>
       </div>
+      <MarkdownActions text={markdown} scope="whole constellation"
+        filename={`geogematria-constellation-${state.result?.value ?? "reading"}-${projection}`} />
       <form className="constellation-form" onSubmit={cast} noValidate>
         <label className="field-control">
           <span>value · 1–2000</span>
@@ -165,8 +167,6 @@ export function ConstellationView({ manifest, map, manifestError, onRetryManifes
           <p className="constellation-note">coordinates: latitude, longitude. saved phrase occupancy is not included.</p>
         </>
       )}
-      <MarkdownActions text={markdown} scope="whole constellation"
-        filename={`geogematria-constellation-${state.result?.value ?? "reading"}-${projection}`} />
     </aside>
   );
 }

@@ -53,6 +53,9 @@ export function ProjectedLocusReadout({
         )}
       </div>
 
+      <MarkdownActions text={locusMarkdown(locus, selectedFeatureKey, source)} scope="this locus"
+        filename={`geogematria-locus-${locus.latitude}-${locus.longitude}`} />
+
       <dl className="detail-grid">
         {isValueDomainLocus ? (
           <>
@@ -196,8 +199,6 @@ export function ProjectedLocusReadout({
           <CliqueGeography details={clique.details} />
         </div>) : <p>select an integer through the value aperture for its individual reading.</p>}
       </section>}
-      <MarkdownActions text={locusMarkdown(locus, selectedFeatureKey, source)} scope="this locus"
-        filename={`geogematria-locus-${locus.latitude}-${locus.longitude}`} />
     </article>
   );
 }

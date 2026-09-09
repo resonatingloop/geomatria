@@ -39,7 +39,8 @@ npm run build:public
 the builds share `dist/`; the last command leaves the public artifact there.
 these commands build locally. the [pages workflow](../.github/workflows/pages.yml)
 deploys on manual dispatch or an `atlas-v*` tag, checks the ref's relationship
-to `main`, and builds in public mode. deployment state is unverified.
+to `main`, and builds in public mode. deployment evidence belongs in
+[status](../STATUS.md); a local build does not publish new changes.
 
 ## constellation smoke checks
 

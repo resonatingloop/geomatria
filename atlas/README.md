@@ -4,8 +4,8 @@ role: operational/reference guide for frontend behavior and dataset semantics.
 start at the [repository readme](../README.md), use [status](../STATUS.md) for
 verified outcomes, and [development](../docs/DEVELOPMENT.md) for python setup,
 configuration, and recovery. runtime claims below describe the implementation;
-the live-selector flow is owner-confirmed in status. other rendered interactions
-and deployment have not been separately reverified.
+owner-confirmed rendered outcomes and the deployment checkpoint are recorded
+in status. the relocated export controls still need a fresh visual check.
 
 React/Vite atlas for geogematria static GeoJSON exports and v1c local live
 cliquemap layers.
@@ -62,8 +62,8 @@ live source. it does not calculate phrases or access the source database.
    centers its landing; selecting a marker highlights its ledger entry. shared
    locations retain all their entries under one labelled marker. `show all`
    reframes the constellation; escape clears its highlight.
-3. use `copy markdown` or `download .md` for the whole constellation. the
-   export contains numeric/geographic details only in both editions.
+3. use `copy markdown` or `download .md` directly beneath the constellation
+   heading. the export contains numeric/geographic details only in both editions.
 4. return to `atlas` to restore the previous browsing source, dataset,
    selection, tray state, and camera position.
 
@@ -80,7 +80,8 @@ successful numeric indexes are cached in memory across visits to the view.
 first use loads eight files for the selected projection; there is no extra
 compact-index artifact or local-storage cache.
 
-ordinary locus trays also offer copy/download markdown for `this locus`.
+ordinary locus trays also offer copy/download markdown for `this locus`,
+directly beneath the locus heading and before the detailed reading.
 exports share the readout's visibility rules: local domain readings include
 phrase-bearing values plus an explicitly selected value, while local
 cliquemaps include their displayed cliques. public readings omit phrase and
@@ -90,9 +91,10 @@ latitude, longitude; per-entry base coordinates and snap details are included
 when available. clipboard failure is reported, with download as an alternative.
 
 the [accepted spec](../docs/value-constellation-spec.md) owns this slice's scope.
-automated data/export/build checks pass; new rendered interactions remain
-unverified because the browser runtime could not connect. see [status](../STATUS.md)
-for the remaining manual smoke gate.
+automated data/export/build checks pass. the owner has confirmed the original
+constellation appearance, public update, and markdown export; the relocated
+export controls still await visual confirmation because the browser runtime
+could not connect. see [status](../STATUS.md) for the remaining smoke gates.
 
 ## Live Run
 
