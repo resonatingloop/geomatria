@@ -4,7 +4,27 @@ role: operational checkpoint. last verified: 2026-09-08.
 update at a meaningful stopping point; this file owns evidence and active work,
 not permanent intent or retrospective spec approval.
 
-## export placement follow-up
+## export aesthetic follow-up
+
+the owner accepted the relocated controls, then requested that they match the
+atlas aesthetic. the shared copy/download pair now uses the existing plate
+metal, bevel, and day/night tokens, monospaced labels, and decorative etched
+glyphs. the controls stay beneath both readout headings in both editions.
+handlers, export content, privacy rules, and loading are unchanged; focus
+outlines and mobile 44px targets remain, with no new animation.
+
+verification: 53 frontend tests and both builds pass (full 80/80, public 16/80).
+a server-rendered markup check covers both scopes, enabled/disabled states,
+text labels, hidden decorative glyphs, and the feedback region. calculated
+enabled button-text contrast against the plate gradient stops is at least
+7.99:1 by day and 12.04:1 by night; this is not rendered accessibility proof.
+`git diff --check` passes; the documentation checker retains the four historical
+spec-status findings. python was not rerun for this markup/css-only follow-up.
+browser capture again failed before navigation with the trusted-code-path
+rejection. the new styling awaits owner-rendered comparison in both themes
+and on narrow screens. no commit, push, or deployment was performed in this pass.
+
+## export placement follow-up (prior pass)
 
 the owner confirmed the original constellation appearance and markdown export,
 then requested more discoverable export controls. copy/download now sit directly
@@ -18,9 +38,10 @@ server-rendered markup check confirms control order, initial disabled states,
 and public phrase suppression. both builds pass. `git diff --check` passes;
 the documentation checker retains the same four historical spec-status findings.
 python was not rerun for this presentation-only pass; its previous 53-test
-result remains below. browser capture is still blocked before navigation, so
-the new placement awaits an owner-rendered comparison, especially on narrow screens.
-no commit, push, or deployment was performed for this follow-up.
+result remains below. browser capture was blocked before navigation. the owner
+subsequently accepted the placement and committed it as `f9bf820`; a complete
+narrow-screen check was not established. no agent commit, push, or deployment
+was performed for that follow-up.
 
 ## original value constellation checkpoint
 
@@ -68,8 +89,8 @@ the owner's screenshot establishes the original dark-theme 137 hash-scatter
 constellation appearance; markdown export is also owner-confirmed. see the
 [smoke checklist](docs/DEVELOPMENT.md#constellation-smoke-checks) for remaining
 coverage: both editions, other states/themes, narrow screens, fitting/restoration,
-keyboard, and individual clipboard/download failure paths. the newly relocated
-controls need a fresh visual check.
+keyboard, and individual clipboard/download failure paths. the export placement
+is owner-accepted; the subsequent aesthetic pass needs a fresh visual check.
 
 ## migration checkpoint (prior slice)
 

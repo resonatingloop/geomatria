@@ -5,7 +5,7 @@ start at the [repository readme](../README.md), use [status](../STATUS.md) for
 verified outcomes, and [development](../docs/DEVELOPMENT.md) for python setup,
 configuration, and recovery. runtime claims below describe the implementation;
 owner-confirmed rendered outcomes and the deployment checkpoint are recorded
-in status. the relocated export controls still need a fresh visual check.
+in status. the export controls' new styling still needs a fresh visual check.
 
 React/Vite atlas for geogematria static GeoJSON exports and v1c local live
 cliquemap layers.
@@ -82,6 +82,8 @@ compact-index artifact or local-storage cache.
 
 ordinary locus trays also offer copy/download markdown for `this locus`,
 directly beneath the locus heading and before the detailed reading.
+both readouts share plate-metal export keys with engraved-style labels and
+decorative copy/download glyphs, using the existing day/night theme tokens.
 exports share the readout's visibility rules: local domain readings include
 phrase-bearing values plus an explicitly selected value, while local
 cliquemaps include their displayed cliques. public readings omit phrase and
@@ -92,9 +94,10 @@ when available. clipboard failure is reported, with download as an alternative.
 
 the [accepted spec](../docs/value-constellation-spec.md) owns this slice's scope.
 automated data/export/build checks pass. the owner has confirmed the original
-constellation appearance, public update, and markdown export; the relocated
-export controls still await visual confirmation because the browser runtime
-could not connect. see [status](../STATUS.md) for the remaining smoke gates.
+constellation appearance, public update, markdown export, and export placement.
+the subsequent export styling pass still awaits visual confirmation because
+the browser runtime could not connect. see [status](../STATUS.md) for the
+remaining smoke gates.
 
 ## Live Run
 
