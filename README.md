@@ -24,6 +24,9 @@ open <http://127.0.0.1:5175/>. staging should report
 integer search, and a value constellation across eight ciphers. choose
 `constellation`, enter `177`, and press `cast`. its readout and ordinary locus
 readouts offer copy/download markdown. this mode needs no phrase database or backend.
+`surface · globe` turns either view into a hand-turned, north-up globe; `flat`
+returns to the existing map. `whole globe` restores the overview. surface changes
+keep the reading and its export, including addresses on the far side.
 the basemap uses external map tiles, so a fully rendered map needs network
 access and a browser with webgl support.
 
@@ -75,6 +78,7 @@ fields from generated files; source datasets retain their contents.
 | [atlas guide](atlas/README.md) | operational/reference | implemented frontend behavior and dataset semantics |
 | [gazetteer notes](geogematria/data/README.md) | reference | offline input provenance |
 | [value constellation spec](docs/value-constellation-spec.md) | accepted transition | range, projections, export scope, and acceptance gates |
+| [mounted globe spec](docs/globe-view-spec.md) | accepted transition | surface behavior, camera/visibility rules, and rendered acceptance gates |
 
 local `specs/` and `notes/` contain earlier planning and historical material.
 both directories are git-ignored and absent from a fresh clone. their existence

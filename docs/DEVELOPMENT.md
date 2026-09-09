@@ -55,13 +55,16 @@ server without staging collisions because preview reads `dist/`, not
 `public/data/`. from `atlas/`:
 
 ```bash
-npm run preview -- --mode public --port 5175 --strictPort --base /geogematria/
+npm run preview -- --mode public --port 5175 --strictPort --base /geomatria/
 ```
 
-open `http://127.0.0.1:5175/geogematria/` for the subpath check. the full dev
+open `http://127.0.0.1:5175/geomatria/` for the subpath check. the full dev
 server can then be restarted on 5173 using its usual command, which restores
 full staging in `public/data/` without changing the sanitized preview artifact.
-do not rebuild or run two staging commands simultaneously.
+do not rebuild or run two staging commands simultaneously. stop the public
+preview before a full build: both builds overwrite `dist/`, and a preview must
+not accidentally serve the full phrase-bearing artifact. build public last,
+then restart the preview before restaging full dev data.
 
 rendered smoke in both editions:
 
@@ -79,6 +82,59 @@ rendered smoke in both editions:
 build and http checks are not rendered proof. the last browser connection was
 blocked before navigation; record owner/agent-rendered outcomes in status when
 available. no public deployment is performed by these commands.
+
+## globe smoke checks
+
+the [mounted globe contract](globe-view-spec.md) adds presentation-only state.
+`npm test` covers camera identity/invalidation, style generations, queued focus,
+reduced motion, visibility/focus handoff, cleanup, style validity, and unchanged
+exports. camera tests exercise the installed renderer's public `setMinZoom`
+guard, which rejects values below -2; permissive internal transforms alone do
+not prove public-api compatibility. test-only native maplibre transforms, using
+that supported bound, check known-coordinate front/rear,
+dateline, polar, coincident, and responsive silhouette fixtures. they do not
+test gematria transform quality or replace hermes's separate experiments.
+daylight relief tests check its radius against those native silhouettes, plus
+resize/lens behavior, inert placement, cleanup and the day/globe styling gate;
+they do not establish the rendered shadow's softness or stacking.
+
+render in both the full local and public-subpath editions:
+
+1. start flat. verify heatmap search, a local phrase/live selection, markers,
+   attached plates, and trays after the renderer upgrade.
+2. select `globe`; drag/touch, scroll, and zoom. check north-up, point attachment,
+   limb clipping, heatmap picking, and the absence of rear-side ghost controls.
+   tab through markers; turn a focused marker out of view and check its fallback.
+   first entry and `whole globe` must complete without a view-update warning.
+   check a small pole-facing overview and confirm returning to flat restores
+   its original lens as well as its center and zoom.
+3. cast 1, 177, and 2000 under both methods. choose near and far ledger entries;
+   each must face the camera. `whole globe` keeps facing and selection while
+   fitting the sphere. all eight entries remain exportable, even when hidden.
+4. select an ordinary locus, open its tray, and alternate workspaces/surfaces.
+   confirm source, dataset, selection, tray, current constellation, and each
+   camera return. editing/casting new data must invalidate old framing.
+5. rapidly alternate lamp and surface, including while the night style loads.
+   the latest choice wins, guide layers do not duplicate, and heatmaps return.
+   test a blocked basemap request and the visible recovery message.
+6. compare the same markdown before and after changing surface. verify public
+   occupancy suppression and local visible-phrase scope; globe occlusion must
+   not reduce either reading's export scope.
+7. inspect day/night at desktop, narrow portrait, and narrow landscape sizes;
+   check header wrapping, ledger scrolling, 44px mobile globe controls, sphere
+   margins, and basemap attribution. repeat programmatic focus with reduced
+   motion enabled. no auto-spin should occur.
+8. in daylight globe, inspect the warm cast below/right and subtle shaded rim.
+   turn, zoom, resize, select a distant locus, and use `whole globe`, including
+   a small pole-facing aperture. the effect must follow the limb without lag,
+   leave markers/labels readable and controls clickable, and disappear in flat
+   or night. repeat in constellation and both editions; check that no decorative
+   element enters keyboard focus. inspect softness against the owner's baseline
+   screenshots before calling this visual pass accepted.
+
+browser capture was unavailable at the implementation checkpoint. keep this
+rendered gate open until owner or working browser evidence covers it. do not
+retire the spec from builds or cpu geometry checks alone.
 
 ## python setup
 

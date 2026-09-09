@@ -1835,6 +1835,86 @@ h1 {
 .export-status:empty { min-height: 0; margin: 0; }
 .public-value-reading { font-family: var(--font-mono); font-size: 0.85rem; }
 
+/* A world mounted in the existing housing; geography turns, glass stays put. */
+.header-band { flex-wrap: wrap; }
+.header-source-controls { flex: 0 1 auto; max-width: 100%; flex-wrap: wrap; }
+.header-source-controls .source-toggle { flex-shrink: 0; }
+.surface-toggle .source-toggle__button { min-height: 40px; }
+.surface-toggle :focus-visible { outline: 2px solid var(--accent-warm); outline-offset: 3px; }
+.atlas-workspace--globe .map-panel,
+.atlas-workspace--globe .map-canvas { background: var(--globe-space); }
+.atlas-workspace--globe .map-canvas::before { display: none; }
+.atlas-workspace--globe .map-canvas::after { opacity: 0.4; }
+/* A small daylight umbra: below the cipher seals, never a sun-position claim.
+   No positive z-index: DOM markers later in the canvas container stay above it. */
+.globe-relief {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  pointer-events: none;
+  user-select: none;
+}
+[data-theme='day'] .atlas-workspace--globe .globe-relief:not([hidden]) {
+  display: block;
+  background: radial-gradient(circle at 34% 28%, transparent 48%, var(--globe-relief-rim) 100%);
+  box-shadow:
+    calc(var(--globe-relief-unit) * 0.7) calc(var(--globe-relief-unit) * 1.1)
+      calc(var(--globe-relief-unit) * 2) calc(var(--globe-relief-unit) * 0.15) var(--globe-relief-cast),
+    0 0 calc(var(--globe-relief-unit) * 0.45) var(--globe-relief-edge);
+}
+.globe-register {
+  position: absolute;
+  z-index: 3;
+  left: 18px;
+  bottom: 42px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  max-width: calc(100% - 36px);
+  font: 0.7rem/1.5 var(--font-mono);
+  color: var(--text-primary);
+}
+.globe-register span { padding: 4px 7px; background: var(--bg-surface); border-left: 2px solid var(--tray-rail); }
+.globe-register button, .surface-error button {
+  min-height: 40px;
+  padding: 8px 12px;
+  border: 1px solid var(--plate-border);
+  border-radius: var(--radius-small);
+  background: var(--plate-surface);
+  color: var(--text-primary);
+  font: 600 0.75rem var(--font-mono);
+  text-shadow: var(--plate-emboss);
+  box-shadow: inset 0 1px 0 var(--plate-bevel-hi), inset 0 -2px 0 var(--plate-bevel-lo);
+  cursor: pointer;
+}
+.globe-register button:hover, .surface-error button:hover { border-color: var(--accent-warm); }
+.globe-register button:focus-visible, .surface-error button:focus-visible { outline: 2px solid var(--accent-warm); outline-offset: 3px; }
+.surface-error {
+  position: absolute;
+  z-index: 30;
+  left: 12px;
+  top: 12px;
+  max-width: min(380px, calc(100% - 70px));
+  padding: 12px;
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  border-left: 3px solid var(--state-error);
+  font-size: 0.8rem;
+}
+.surface-error p { margin: 0 0 8px; }
+
+@media (max-width: 700px) {
+  .surface-toggle .source-toggle__button, .globe-register button, .surface-error button { min-height: 44px; }
+  .globe-register { left: 10px; bottom: 32px; max-width: calc(100% - 20px); font-size: 0.65rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .atlas-workspace--globe .readout-tray, .atlas-workspace--globe .readout-tray__scrim { transition: none; }
+}
+
 @media (max-width: 700px) {
   .atlas-workspace--constellation { grid-template-columns: minmax(0, 1fr); grid-template-rows: minmax(0, 1fr) minmax(0, 1fr); }
   .atlas-workspace--constellation .map-panel { grid-column: 1; grid-row: 1; }
@@ -1851,3 +1931,4 @@ h1 {
   .atlas-workspace--constellation .map-panel { grid-column: 2; grid-row: 1; }
   .constellation-panel { grid-row: 1; }
 }
+.constellation-panel[hidden] { display: none; }

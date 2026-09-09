@@ -7,11 +7,13 @@ import {
 } from "./constellationData.js";
 import { constellationMarkdown } from "./markdownExport.js";
 import { MarkdownActions } from "./MarkdownActions.jsx";
+import { FLAT, GLOBE, observeGlobeVisibility } from "./mapPresentation.js";
 
 // Cache numeric indexes across visits to this view; no phrase data is retained.
 const loadConstellation = createConstellationLoader();
 
-export function ConstellationView({ manifest, map, manifestError, onRetryManifest }) {
+export function ConstellationView({ manifest, map, manifestError, onRetryManifest,
+  presentation, surface = FLAT, focusFallback, active = true }) {
   const [input, setInput] = useState("");
   const [projection, setProjection] = useState(CONSTELLATION_PROJECTIONS[0].id);
   const [state, setState] = useState({ status: "idle", result: null, message: "" });
@@ -53,16 +55,12 @@ export function ConstellationView({ manifest, map, manifestError, onRetryManifes
   }
 
   useEffect(() => {
-    if (!map) return;
-    const previousMinZoom = map.getMinZoom();
-    // Global constellations need more room on a narrow screen than ordinary
-    // browsing. Restore its original bound when leaving this view.
-    map.setMinZoom(-2);
-    return () => { map.stop(); map.setMinZoom(previousMinZoom); };
-  }, [map]);
+    if (!active || !map || !presentation) return;
+    presentation.enter("constellation", state.result, { fitFlat: fitAll });
+  }, [active, map, presentation, state.result]);
 
   useEffect(() => {
-    if (!map) return;
+    if (!active || !map) return;
     for (const group of groups) {
       const button = document.createElement("button");
       button.type = "button";
@@ -70,48 +68,47 @@ export function ConstellationView({ manifest, map, manifestError, onRetryManifes
       button.textContent = group.entries.map((entry) => entry.cipher).join(" · ");
       button.setAttribute("aria-label", `${button.textContent}, value ${group.entries[0].value}${group.entries.length > 1 ? ", shared landing" : ""}`);
       button.addEventListener("click", () => setSelectedCipher(group.entries[0].cipher));
-      const marker = new maplibregl.Marker({ element: button, anchor: "bottom" })
+      const marker = new maplibregl.Marker({ element: button, anchor: "bottom", opacityWhenCovered: 0 })
         .setLngLat([group.longitude, group.latitude]).addTo(map);
       markers.current.push({ marker, button, group });
     }
-    // Resize after the readout has taken its final layout height.
-    const frame = requestAnimationFrame(fitAll);
+    const stopVisibility = observeGlobeVisibility(map, markers.current.map(({ button, group }) => ({
+      element: button, coordinate: () => [group.longitude, group.latitude],
+      fallback: () => rows.current.get(group.entries[0].cipher)?.querySelector("button") ?? focusFallback?.(),
+    })), () => presentation?.surface ?? FLAT, focusFallback);
     return () => {
-      cancelAnimationFrame(frame);
+      stopVisibility();
       markers.current.forEach(({ marker }) => marker.remove());
       markers.current = [];
     };
-  }, [map, groups]);
+  }, [active, map, groups, presentation]);
 
   useEffect(() => {
-    if (!map || !globalThis.ResizeObserver) return;
-    const observer = new ResizeObserver(() => fitAll());
-    observer.observe(map.getContainer());
-    return () => observer.disconnect();
-  }, [map, groups]);
-
-  useEffect(() => {
+    if (!active) return;
     for (const { button, group } of markers.current) {
       const selected = group.entries.some((entry) => entry.cipher === selectedCipher);
       button.classList.toggle("constellation-pin--selected", selected);
       button.setAttribute("aria-pressed", String(selected));
     }
     rows.current.get(selectedCipher)?.scrollIntoView({ block: "nearest", inline: "nearest" });
-  }, [selectedCipher, groups]);
+    const entry = state.result?.entries.find((item) => item.cipher === selectedCipher);
+    presentation?.setFocus(entry ? [entry.longitude, entry.latitude] : null);
+  }, [active, selectedCipher, groups, presentation]);
 
   useEffect(() => {
+    if (!active) return;
     function onKeyDown(event) { if (event.key === "Escape") setSelectedCipher(""); }
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, []);
+  }, [active]);
 
   function selectEntry(entry) {
     setSelectedCipher(entry.cipher);
-    map?.easeTo({ center: [entry.longitude, entry.latitude], zoom: Math.max(map.getZoom(), 3), duration: 0, bearing: 0, pitch: 0 });
+    presentation?.focus([entry.longitude, entry.latitude], { zoom: 3, duration: surface === GLOBE ? 450 : 0 });
   }
 
   return (
-    <aside className="constellation-panel" aria-label="value constellation">
+    <aside className="constellation-panel" aria-label="value constellation" hidden={!active}>
       <div className="constellation-heading">
         <p className="eyebrow">static snapshots · eight registers</p>
         <h1>value constellation</h1>
@@ -146,7 +143,10 @@ export function ConstellationView({ manifest, map, manifestError, onRetryManifes
           <div className="constellation-summary">
             <strong>{state.result.value}</strong>
             <span>8 addresses · {groups.length} landings</span>
-            <button type="button" onClick={() => { setSelectedCipher(""); fitAll(); }}>show all</button>
+            <button type="button" onClick={() => {
+              if (surface === FLAT) setSelectedCipher("");
+              presentation?.overview();
+            }}>{surface === GLOBE ? "whole globe" : "show all"}</button>
           </div>
           <ol className="constellation-ledger" aria-label="cipher addresses">
             {state.result.entries.map((entry) => (
@@ -165,6 +165,7 @@ export function ConstellationView({ manifest, map, manifestError, onRetryManifes
             ))}
           </ol>
           <p className="constellation-note">coordinates: latitude, longitude. saved phrase occupancy is not included.</p>
+          {surface === GLOBE && <p className="constellation-note">all eight addresses stay in this ledger and its export, including the far side.</p>}
         </>
       )}
     </aside>

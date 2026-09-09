@@ -36,6 +36,9 @@ import { loadLiveManifest, responseErrorMessage } from "./atlasLive.js";
 import { LocusPlate } from "./LocusPlate.jsx";
 import { ReadoutTray } from "./ReadoutTray.jsx";
 import { ConstellationView } from "./ConstellationView.jsx";
+import { FLAT, GLOBE, STYLE_THEME_KEY, createMapPresentation, locationVisible,
+  motionDuration, observeGlobeVisibility } from "./mapPresentation.js";
+import { observeGlobeRelief } from "./globeRelief.js";
 import "./styles.css";
 
 // Curated GitHub Pages build: hides in-progress features (the live local
@@ -81,7 +84,12 @@ function App() {
   const mapContainerRef = useRef(null);
   const mapRef = useRef(null);
   const markersRef = useRef([]);
-  const browseViewportRef = useRef(null);
+  const presentationRef = useRef(null);
+  const [presentation, setPresentation] = useState(null);
+  const [surface, setSurface] = useState(FLAT);
+  const [surfaceError, setSurfaceError] = useState("");
+  const [rendererError, setRendererError] = useState("");
+  const surfaceControlRef = useRef(null);
   const [view, setView] = useState("atlas");
   const isConstellation = view === "constellation";
   const selectedLocusKeyRef = useRef("");
@@ -329,9 +337,28 @@ function App() {
       return;
     }
 
-    mapRef.current = new maplibregl.Map(
-      create2DMapOptions(mapContainerRef.current, baseMapStyle(theme))
-    );
+    try {
+      mapRef.current = new maplibregl.Map(
+        create2DMapOptions(mapContainerRef.current, null)
+      );
+    } catch {
+      setRendererError("map rendering unavailable. check browser graphics support and reload to retry.");
+      return;
+    }
+    presentationRef.current = createMapPresentation(mapRef.current, {
+      onSurface: setSurface, onError: setSurfaceError,
+      palette: () => {
+        const styles = getComputedStyle(document.documentElement);
+        return { graticule: cssToken(styles, "--globe-graticule"), sky: cssToken(styles, "--globe-space"),
+          horizon: cssToken(styles, "--globe-limb") };
+      },
+    });
+    setPresentation(presentationRef.current);
+    const canvas = mapRef.current.getCanvas();
+    const contextLost = () => setRendererError("graphics context lost. reload to retry; the reading has not been cleared.");
+    const contextRestored = () => setRendererError("");
+    canvas.addEventListener("webglcontextlost", contextLost);
+    canvas.addEventListener("webglcontextrestored", contextRestored);
 
     unlock2DMapRef.current = lockMapTo2D(mapRef.current);
     mapRef.current.addControl(
@@ -340,6 +367,10 @@ function App() {
     );
 
     return () => {
+      canvas.removeEventListener("webglcontextlost", contextLost);
+      canvas.removeEventListener("webglcontextrestored", contextRestored);
+      presentationRef.current?.dispose();
+      presentationRef.current = null;
       unlock2DMapRef.current?.();
       unlock2DMapRef.current = null;
       mapRef.current?.remove();
@@ -353,8 +384,29 @@ function App() {
       return;
     }
 
-    map.setStyle(baseMapStyle(theme));
+    const token = presentationRef.current?.beginStyle(theme);
+    const abort = new AbortController();
+    async function applyStyle() {
+      const base = baseMapStyle(theme);
+      const style = typeof base === "string"
+        ? await fetch(base, { signal: abort.signal }).then((response) => readJsonResponse(response, "basemap unavailable"))
+        : base;
+      if (abort.signal.aborted) return;
+      // A complete style load has a definite readiness event, including a
+      // day -> night -> day race where an identical-style diff would be a no-op.
+      map.setStyle({ ...style, metadata: { ...style.metadata, [STYLE_THEME_KEY]: token } }, { diff: false });
+      setSurfaceError("");
+    }
+    applyStyle().catch(() => {
+      if (!abort.signal.aborted) setSurfaceError("basemap unavailable. switch the lamp or reload to retry; the reading is unchanged.");
+    });
+    return () => abort.abort();
   }, [theme]);
+
+  useEffect(() => {
+    if (theme !== THEME_DAY || surface !== GLOBE || !presentation || !mapRef.current) return;
+    return observeGlobeRelief(mapRef.current);
+  }, [presentation, surface, theme]);
 
   useEffect(() => {
     const map = mapRef.current;
@@ -410,7 +462,7 @@ function App() {
         selectProjectedLocus(locus);
       });
 
-      const marker = new maplibregl.Marker({ element: markerNode, anchor: "center" })
+      const marker = new maplibregl.Marker({ element: markerNode, anchor: "center", opacityWhenCovered: 0 })
         .setLngLat([locus.longitude, locus.latitude])
         .addTo(map);
 
@@ -425,10 +477,21 @@ function App() {
       hasBounds = true;
     }
 
-    if (hasBounds) {
-      map.fitBounds(bounds, { padding: 80, maxZoom: 4, duration: 0, bearing: 0, pitch: 0 });
-    }
-  }, [isHeatmapMode, markerLoci, isConstellation]);
+    presentationRef.current?.enter("atlas", atlas, {
+      fitFlat: () => { if (hasBounds) map.fitBounds(bounds, { padding: 80, maxZoom: 4, duration: 0, bearing: 0, pitch: 0 }); },
+      focus: getLocusLngLat(selectedLocus),
+    });
+    return observeGlobeVisibility(map, markersRef.current.map(({ markerNode, locusKey }) => ({
+      element: markerNode, coordinate: () => {
+        const locus = locusByKey.get(locusKey);
+        return [locus.longitude, locus.latitude];
+      },
+    })), () => presentationRef.current?.surface, () => surfaceControlRef.current);
+  }, [isHeatmapMode, markerLoci, isConstellation, presentation]);
+
+  useEffect(() => {
+    if (!isConstellation) presentationRef.current?.setFocus(getLocusLngLat(selectedLocus));
+  }, [selectedLocus, isConstellation]);
 
   useEffect(() => {
     selectedLocusKeyRef.current = selectedLocusKey;
@@ -488,33 +551,21 @@ function App() {
         offset: 16,
         maxWidth: "none",
         className: "locus-plate-popup",
+        locationOccludedOpacity: 0,
       }).setDOMContent(plateContainerRef.current);
     }
     platePopupRef.current.setLngLat(lngLat);
     if (!platePopupRef.current.isOpen()) {
       platePopupRef.current.addTo(map);
     }
-  }, [selectedLocus, isConstellation]);
-
-  useEffect(() => {
-    const frame = requestAnimationFrame(() => {
-      mapRef.current?.resize();
-      if (!isConstellation && browseViewportRef.current) {
-        mapRef.current?.jumpTo(browseViewportRef.current);
-        browseViewportRef.current = null;
-      }
-    });
-    return () => cancelAnimationFrame(frame);
-  }, [isConstellation]);
+    return observeGlobeVisibility(map, [{ element: platePopupRef.current.getElement(), coordinate: () => lngLat }],
+      () => presentationRef.current?.surface, () => surfaceControlRef.current);
+  }, [selectedLocus, isConstellation, presentation]);
 
   function changeView(next) {
     if (next === view) return;
-    if (next === "constellation" && mapRef.current) {
-      mapRef.current.stop();
-      browseViewportRef.current = {
-        center: mapRef.current.getCenter(), zoom: mapRef.current.getZoom(), bearing: 0, pitch: 0,
-      };
-    }
+    presentationRef.current?.save();
+    mapRef.current?.stop();
     setView(next);
   }
 
@@ -565,12 +616,17 @@ function App() {
     setSelectedFeatureKey(featureKey);
 
     if (zoom && mapRef.current && locus) {
+      if (presentationRef.current?.surface === GLOBE) {
+        presentationRef.current.focus([locus.longitude, locus.latitude], { zoom: MAP_SEARCH_ZOOM, duration: 650 });
+        return;
+      }
+      presentationRef.current?.markDetail();
       mapRef.current.flyTo({
         center: [locus.longitude, locus.latitude],
         zoom: Math.max(mapRef.current.getZoom(), MAP_SEARCH_ZOOM),
         bearing: 0,
         pitch: 0,
-        duration: 650,
+        duration: motionDuration(650),
       });
     }
   }
@@ -625,6 +681,16 @@ function App() {
                   <button key={option} type="button" aria-pressed={view === option}
                     className={view === option ? "source-toggle__button source-toggle__button--active" : "source-toggle__button"}
                     onClick={() => changeView(option)}>{option}</button>
+                ))}
+              </div>
+              <div className="source-toggle surface-toggle" aria-label="map surface">
+                <span>surface</span>
+                {[FLAT, GLOBE].map((option) => (
+                  <button key={option} type="button" aria-pressed={surface === option}
+                    ref={surface === option ? surfaceControlRef : undefined}
+                    disabled={!presentation || Boolean(rendererError)}
+                    className={surface === option ? "source-toggle__button source-toggle__button--active" : "source-toggle__button"}
+                    onClick={() => presentation?.setSurface(option)}>{option}</button>
                 ))}
               </div>
               {!PUBLIC_BUILD && !isConstellation && (
@@ -801,9 +867,17 @@ function App() {
         </div>
       </header>
 
-      <section className={`atlas-workspace${isConstellation ? " atlas-workspace--constellation" : ""}`}>
+      <section className={`atlas-workspace${isConstellation ? " atlas-workspace--constellation" : ""}${surface === GLOBE ? " atlas-workspace--globe" : ""}`}>
         <div className="map-panel">
           <div ref={mapContainerRef} className="map-canvas" />
+          {(rendererError || surfaceError) && <div className="surface-error" role="alert">
+            <p>{rendererError || surfaceError}</p>
+            {!rendererError && surface === GLOBE && <button type="button" onClick={() => presentation?.setSurface(FLAT)}>return to flat</button>}
+          </div>}
+          {surface === GLOBE && !rendererError && <div className="globe-register">
+            {!isConstellation && <button type="button" onClick={() => presentation?.overview()}>whole globe</button>}
+            <span>turn to reveal the far side · polar basemap detail is limited</span>
+          </div>}
           {!isConstellation && loadState.status !== "ready" && (
             <div className={`map-overlay map-overlay--${loadState.status}`}>
               {loadState.status === "loading" ? "Loading atlas data" : loadState.message}
@@ -824,8 +898,9 @@ function App() {
           </div>}
         </div>
 
-        {isConstellation && <ConstellationView manifest={staticManifest} map={mapRef.current}
-          manifestError={staticManifestError} onRetryManifest={() => setStaticManifestNonce((value) => value + 1)} />}
+        <ConstellationView active={isConstellation} manifest={staticManifest} map={mapRef.current}
+          presentation={presentation} surface={surface} focusFallback={() => surfaceControlRef.current}
+          manifestError={staticManifestError} onRetryManifest={() => setStaticManifestNonce((value) => value + 1)} />
         {!isConstellation && selectedLocus &&
           plateContainerRef.current &&
           createPortal(
@@ -885,7 +960,10 @@ function updateDomainHeatmap(map, collection, { onSelectLocus } = {}) {
       const features = map.queryRenderedFeatures(point, {
         layers: [DOMAIN_SELECT_LAYER_ID],
       });
-      return String(features[0]?.properties?.locus_key ?? "");
+      const surface = map.getProjection()?.type === "globe" ? GLOBE : FLAT;
+      const feature = features.find((item) => item.geometry?.type === "Point"
+        && locationVisible(map, item.geometry.coordinates, surface));
+      return String(feature?.properties?.locus_key ?? "");
     } catch (error) {
       return "";
     }

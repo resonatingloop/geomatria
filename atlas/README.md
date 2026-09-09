@@ -5,7 +5,9 @@ start at the [repository readme](../README.md), use [status](../STATUS.md) for
 verified outcomes, and [development](../docs/DEVELOPMENT.md) for python setup,
 configuration, and recovery. runtime claims below describe the implementation;
 owner-confirmed rendered outcomes and the deployment checkpoint are recorded
-in status. the export controls' new styling still needs a fresh visual check.
+in status. the owner accepted the export styling and globe appearance in both
+themes and confirmed the setup warning is gone. the daylight shadow follow-up
+and wider mobile/interaction matrix still need rendered verification.
 
 React/Vite atlas for geogematria static GeoJSON exports and v1c local live
 cliquemap layers.
@@ -46,7 +48,7 @@ This stages only `datasets/curation.public.json`, strips private phrase and
 occupancy fields from generated GeoJSON, hides the live source, and uses the
 same relative asset base used by the Pages build. The same public artifact can
 be served from a custom-domain root or from a project path such as
-`/geogematria/`.
+`/geomatria/` (the current pages repository path).
 For v0, public hash-scatter value-domain maps use `webmercator_hash_v1` so
 search results stay inside the Web Mercator map bounds.
 
@@ -67,7 +69,7 @@ live source. it does not calculate phrases or access the source database.
 4. return to `atlas` to restore the previous browsing source, dataset,
    selection, tray state, and camera position.
 
-the constellation uses a square, flat map aperture so a global spread can fit
+the flat constellation uses a square map aperture so a global spread can fit
 without repeating the world. the ledger sits beside it on wide screens and
 below it on narrow portrait screens. its temporary zoom-out limit is restored
 on return to ordinary browsing. day/night uses the existing theme.
@@ -76,7 +78,8 @@ changing the input or projection clears the previous result and disables
 export until another successful cast. failed loads have a retry action, and
 late responses cannot replace a newer request. all eight matching datasets
 must be present and valid; a partial constellation is an error, not a reading.
-successful numeric indexes are cached in memory across visits to the view.
+successful numeric indexes and the current reading are retained in memory across
+visits to the view; editing the input still invalidates that reading.
 first use loads eight files for the selected projection; there is no extra
 compact-index artifact or local-storage cache.
 
@@ -95,9 +98,44 @@ when available. clipboard failure is reported, with download as an alternative.
 the [accepted spec](../docs/value-constellation-spec.md) owns this slice's scope.
 automated data/export/build checks pass. the owner has confirmed the original
 constellation appearance, public update, markdown export, and export placement.
-the subsequent export styling pass still awaits visual confirmation because
-the browser runtime could not connect. see [status](../STATUS.md) for the
-remaining smoke gates.
+the owner also accepted the subsequent export styling with day/night screenshots.
+see [status](../STATUS.md) for the remaining smoke gates.
+
+## mounted globe
+
+`surface · flat / globe` is available in both editions and both workspaces.
+this changes how existing coordinates are displayed, not their projection
+method or data source. flat remains the startup default. surface and cameras
+are session-only; the lamp/theme remains the existing stored preference.
+
+- drag or touch to turn the globe; zoom buttons and scroll remain available.
+  north stays up, pitch/roll stay zero, and zoom is capped at 10.
+- `whole globe` restores a sphere-sized overview without clearing the reading
+  or changing the facing direction. constellation's flat `show all` keeps its
+  previous behavior. selecting a ledger row or search result faces its location.
+  small pole-facing overviews widen the lens when they reach the supported
+  minimum zoom of -2; returning to flat restores its separate lens/camera.
+- the rear hemisphere and offscreen map-attached controls are hidden and inert.
+  all eight addresses still appear in the constellation ledger and markdown;
+  an open ordinary readout remains independent of map visibility.
+- each workspace remembers separate flat and globe cameras. changing its data
+  discards obsolete camera framing. returning to a workspace restores its
+  reading; changing the lamp preserves the chosen surface.
+- the geographic grid is a separate display guide, not selectable value data.
+  existing basemaps have limited polar detail; a blank cap is not evidence of
+  missing cipher values. no new provider or terrain is added.
+- daylight globe adds a soft warm shadow below/right and a faint shaded rim,
+  following the sphere's screen size. this is decorative lighting, not a solar
+  model. it is non-interactive, sits below the markers, and is absent in flat
+  and night views. when the limb is fully offscreen, the decoration is removed.
+- programmatic globe focus respects reduced motion. a view-update failure offers
+  retry/flat recovery without claiming that a visible globe cannot render;
+  graphics-context failure is reported separately.
+
+maplibre is pinned to 5.24.0. the [accepted globe spec](../docs/globe-view-spec.md)
+owns the contract; [development](../docs/DEVELOPMENT.md#globe-smoke-checks) owns
+the rendered checklist. automated geometry tests exercise the pinned renderer's
+cpu transforms, not a real browser or gpu.
 
 ## Live Run
 

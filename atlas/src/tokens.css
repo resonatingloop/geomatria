@@ -6,6 +6,12 @@
   --bg-surface-sticky-mix: #d8dbc4;
   --bg-map-frame: #d4d0c2;
   --bg-map-canvas: #d9d5c4;
+  --globe-space: #ddd6c2;
+  --globe-limb: #b69b62;
+  --globe-graticule: #756241;
+  --globe-relief-cast: rgb(83 58 29 / 0.30);
+  --globe-relief-rim: rgb(67 45 20 / 0.16);
+  --globe-relief-edge: rgb(92 62 25 / 0.15);
   --bg-count-badge: #e0dfc9;
   --bg-type-badge: #ebe4ca;
   --text-primary: #17231f;
@@ -187,6 +193,9 @@
   --bg-surface-sticky-mix: #1f211f;
   --bg-map-frame: #001524;
   --bg-map-canvas: #2c2b26;
+  --globe-space: #000c14;
+  --globe-limb: #316854;
+  --globe-graticule: #85a18d;
   --bg-count-badge: #000C14;
   --bg-type-badge: #000C14;
   --text-primary: #FDEFD8;

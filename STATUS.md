@@ -4,7 +4,129 @@ role: operational checkpoint. last verified: 2026-09-08.
 update at a meaningful stopping point; this file owns evidence and active work,
 not permanent intent or retrospective spec approval.
 
-## export aesthetic follow-up
+## daylight globe relief
+
+the owner confirmed the misleading warning is gone and accepted the day/night
+globe appearance with screenshots, then approved a small daylight depth pass.
+the globe now has a warm cast shadow below/right and a faint shaded rim. this
+is decorative instrument lighting, not a sun-position or time-of-day model.
+
+`atlas/src/globeRelief.js` follows the public camera geometry on renderer frames,
+placing one inert, pointer-transparent circle directly after the canvas and
+before its markers. the daylight/globe gate covers both editions and workspaces;
+flat and night remove the decoration. offscreen limbs avoid oversized effects.
+the effect reads camera state without changing it. main wiring, stylesheet and
+daylight tokens complete the pass; data, exports, interactions, projection
+algorithms, dependencies, backend and hermes's files are unchanged.
+
+verification: all 74 frontend tests pass, including five new geometry/lifecycle
+and styling guards. the native renderer's responsive silhouette fixtures also
+check the decorative radius. full/public builds pass; public was built last.
+the public artifact contains exactly 16 curated datasets with 32,000 unchanged
+coordinates/cipher values, no scanned private fields and no live-manifest fetch.
+both edition urls below return html, javascript and their 80/16-entry manifests.
+the public preview uses `--mode public --base /geomatria/`; a first startup
+without the explicit subpath served fallback html for assets and was corrected.
+python was not rerun for this frontend-only decoration. the inherited chunk-size
+warning and four documentation findings remain; `git diff --check` passes.
+
+`shape-the-interface` keeps this to one visual hypothesis; `manage-project-docs`
+records the proof boundary. browser access was retried but rejected its own
+trusted-code path before navigation. shadow softness, stacking and motion still
+need an owner-rendered comparison; cpu geometry and source guards are not that
+proof. the wider globe interaction matrix also remains open, so the accepted
+spec is not retired. next: reload daylight globe, try `whole globe` and zoom,
+then share a screenshot. no commit, push or deployment was performed. full dev
+is restored at `http://127.0.0.1:5173/`, public preview at
+`http://127.0.0.1:5175/geomatria/`; the backend on 8000 was left untouched.
+
+## globe camera warning repair (prior pass)
+
+the owner's dark-theme full-atlas screenshot shows the globe, guide lines and
+loci rendering alongside `globe rendering unavailable`. this is partial
+rendered evidence, not full acceptance. the cause was reproduced without a
+browser: the installed maplibre public `Map.setMinZoom(-12)` throws because its
+lower bound is -2. surface setup succeeded before camera restoration hit that
+invalid call, leaving the globe visible but its overview/restoration incomplete.
+the catch-all then incorrectly described a renderer failure.
+
+the camera controller now uses -2, adjusts the lens for small pole-facing
+overviews within supported bounds, and remembers/restores the lens with each
+surface camera. failed updates no longer claim an unavailable renderer; a
+successful retry clears their warning. no data, export, projection algorithm,
+backend, dependency version, or hermes files changed in this follow-up.
+
+the prior test double and native transform fixtures allowed unsupported zoom
+limits. the lifecycle double now delegates to the installed public setter;
+the old implementation failed under that guard before the fix. native geometry
+fixtures now also use -2. all 69 frontend tests pass, including three new guards
+for public-api setup, lens restoration and truthful error/retry behavior.
+full/public builds pass; the rebuilt public artifact has 16 curated files,
+32,000 unchanged coordinates and no private fields in the scan. both running
+edition urls below return html, script and their 80/16-entry manifests.
+python was not rerun for this frontend-only repair; its previous 53-test result
+is unchanged. chunk-size warnings and the four inherited documentation findings
+remain; `git diff --check` passes.
+
+`manage-project-docs` records the correction and narrows the earlier proof claim:
+internal renderer geometry alone did not establish public-api compatibility.
+the globe contract remains accepted, not retired. next: reload either local
+edition, switch to globe, and try `whole globe`; confirm no warning, correct
+overview framing and flat/globe camera restoration. the corrected rendered flow
+is still unverified by the agent. no browser retry, commit, push or deployment
+was performed in this follow-up; the backend on 8000 was left untouched.
+
+## mounted globe implementation (prior pass)
+
+the owner accepted the [mounted globe slice](docs/globe-view-spec.md) on
+2026-09-08. implementation is in the working tree; rendered acceptance remains
+open. both editions now offer `surface · flat / globe` in atlas and
+constellation. flat stays the startup default. globe is north-up and manually
+turned, with a `whole globe` overview, separate workspace/surface cameras,
+day/night sky and geographic guide lines, rear-side control hiding, keyboard
+focus handoff, and a flat recovery action. the constellation is parked rather
+than unmounted when returning to atlas, retaining its reading and camera.
+
+maplibre is pinned to 5.24.0. the upgrade-only flat baseline passed the original
+53 frontend tests and both builds before globe work. an owner check of that
+temporary baseline was requested, but no rendered result was established in
+this turn. the final implementation uses one renderer; it does not modify
+coordinate algorithms, source snapshots, python tests, backend/glossololary
+code, or hermes's separate transform work. surface changes do not initiate a
+dataset fetch, and exports retain their reading scope rather than hemisphere
+scope. style requests are abortable and generation-tagged to prevent old
+responses from applying a newer scene's presentation.
+
+| check | result |
+|---|---|
+| frontend suite | 66 passed: original 53 plus 13 globe checks |
+| complete python regression | 53 passed; temporary fixtures/injected sources, no new owner-database integration run |
+| full and public production builds | passed; full 80/80, public 16/80; public built last |
+| native renderer cpu fixtures | front/rear, dateline, near-pole, coincident, zoom-boundary and responsive silhouette checks passed |
+| camera/lifecycle fixtures | four cameras, data invalidation, marker-free public framing, style races, queued focus, resize, reduced motion, cleanup and recovery passed |
+| style specification validation | globe projection, sky and graticule layer passed against the pinned renderer's style dependency |
+| public artifact scan | exactly 16 curated geojson files; 32,000 coordinates/cipher values match source; private fields and live-manifest fetch absent |
+| full and `/geomatria/` preview http checks | html/assets/night style, 80/16 manifests, all 16 constellation requests per edition, and 1/177/2000 under both methods passed |
+| markdown parity | six constellation readings match across full/public; unit checks preserve all eight addresses and public occupancy suppression across surfaces |
+| existing live proxy | eight-entry manifest returned successfully; backend was not restarted or changed |
+| documentation and whitespace | same four inherited spec-status findings; `git diff --check` passed |
+| rendered browser interaction | unavailable: runtime rejected its own trusted-code path before navigation; no gpu, touch, screenshot, or visual-performance proof |
+
+verification used node 26.7.0/npm 11.19.0 and python 3.12; the workflow's node 20
+runtime was not separately executed. installation used a task-local npm cache
+after the normal cache remained read-only even with escalation. no broad
+dependency upgrades or audit fixes were applied. the existing chunk-size and
+starlette/httpx warnings remain.
+
+the current full dev server is at `http://127.0.0.1:5173/`; the public production
+preview is at `http://127.0.0.1:5175/geomatria/`. the preview serves sanitized
+`atlas/dist/`; full dev staging restored all 80 files in `atlas/public/data/`.
+the existing backend on port 8000 was left alone. no commit, push, or deployment
+was performed. the globe spec remains accepted, not retired: next is the owner
+rendered check in [development](docs/DEVELOPMENT.md#globe-smoke-checks), beginning
+with flat compatibility and a day/night globe constellation.
+
+## export aesthetic follow-up (prior pass)
 
 the owner accepted the relocated controls, then requested that they match the
 atlas aesthetic. the shared copy/download pair now uses the existing plate
@@ -21,8 +143,9 @@ enabled button-text contrast against the plate gradient stops is at least
 `git diff --check` passes; the documentation checker retains the four historical
 spec-status findings. python was not rerun for this markup/css-only follow-up.
 browser capture again failed before navigation with the trusted-code-path
-rejection. the new styling awaits owner-rendered comparison in both themes
-and on narrow screens. no commit, push, or deployment was performed in this pass.
+rejection. the owner subsequently accepted the styling with day/night screenshots
+of the ordinary readout; a complete narrow-screen check remains unverified.
+no agent commit, push, or deployment was performed in that pass.
 
 ## export placement follow-up (prior pass)
 
@@ -90,7 +213,8 @@ constellation appearance; markdown export is also owner-confirmed. see the
 [smoke checklist](docs/DEVELOPMENT.md#constellation-smoke-checks) for remaining
 coverage: both editions, other states/themes, narrow screens, fitting/restoration,
 keyboard, and individual clipboard/download failure paths. the export placement
-is owner-accepted; the subsequent aesthetic pass needs a fresh visual check.
+and subsequent day/night aesthetic pass are owner-accepted; wider rendered
+coverage remains open.
 
 ## migration checkpoint (prior slice)
 
@@ -183,11 +307,13 @@ with read-only source access, packaging proof, and owner confirmation of the
 live-selector flow. this was a directly authorized repair; no historical spec
 was promoted to accepted or retired.
 
-the repair and its live-selector check are complete. the accepted constellation
-slice is implemented with automated checks passing, but its rendered acceptance
-checks remain open. use `constellation` in either running edition and follow
-the smoke checklist above. no phrase calculator or deployment is authorized
-by this slice. after a backend restart, use the explicit database path in
+the repair and its live-selector check are complete. the constellation and
+mounted globe slices are implemented with automated checks passing, but their
+complete rendered acceptance checks remain open. begin with the globe checklist
+and current preview addresses at the top of this checkpoint. the owner has
+accepted the original constellation and both export visual follow-ups. no
+phrase calculator or deployment is authorized by this slice. after a backend
+restart, use the explicit database path in
 [development](docs/DEVELOPMENT.md); the inherited shell setting remains a known
 configuration issue outside these changes.
 
