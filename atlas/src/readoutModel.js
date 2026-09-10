@@ -19,6 +19,13 @@ export function locusReadoutModel(locus, selectedFeatureKey = "") {
     ...clique,
     details: { ...clique.details, phrases: [], hasPhrases: false, cliqueSize: 0, cliqueKind: "domain value" },
   }));
-  const cliques = isValueDomain ? visibleDomainCliques(candidates, selectedFeatureKey) : candidates;
-  return { isValueDomain, occupancyAvailable, cliques };
+  // Numeric domain membership is public; phrase occupancy is not. Only the
+  // local phrase-bearing reading uses the selected-plus-occupied filter.
+  const cliques = isValueDomain && occupancyAvailable
+    ? visibleDomainCliques(candidates, selectedFeatureKey)
+    : isValueDomain
+      ? candidates.sort((a, b) => Number(a.details.value) - Number(b.details.value))
+      : candidates;
+  const selectedClique = cliques.find((clique) => clique.featureKey === selectedFeatureKey) ?? null;
+  return { isValueDomain, occupancyAvailable, cliques, selectedClique };
 }

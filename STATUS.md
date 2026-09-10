@@ -1,8 +1,80 @@
 # geogematria status
 
-role: operational checkpoint. last verified: 2026-09-08.
+role: operational checkpoint. last verified: 2026-09-09.
 update at a meaningful stopping point; this file owns evidence and active work,
 not permanent intent or retrospective spec approval.
+
+## public heat-locus value discovery repaired
+
+the owner reported a public santa maria heat locus labelled "3 values" with no
+way to discover those integers, then explicitly requested the fix. read-only
+reproduction found 43, 913 and 1677 in the sanitized snapshot, but zero entries
+in the readout model: public phrase suppression fed the local phrase-bearing
+visibility filter. markdown inherited that empty list.
+
+public domain readouts now retain every numeric member, sorted ascending,
+independently of phrase occupancy. selectable plate buttons appear directly
+below export controls. selection retains the complete list, fills the aperture
+and shows the selected value's geographic trace without closing the tray or
+requesting a camera move. loading disables selection; the handler rejects stale
+or other-locus keys. markdown includes all listed values before and after a
+selection, while phrase strings/counts remain suppressed. local phrase-bearing
+readouts retain their existing selected-plus-occupied scope.
+
+verification: all 79 frontend tests pass, including five new model/actual-jsx
+markup/callback checks. the old public-membership and export assertions failed
+before the repair. full/public builds pass with public last. the sanitized
+artifact still has 16 curated datasets and 32,000 unchanged coordinates/values;
+all 20,536 loci retain their full numeric membership, including 1,474 shared
+landings. santa maria's readout/markdown include all three integers. recursive
+private-field and compiled live-fetch scans pass. both running edition urls
+return html, javascript and their 80/16-entry manifests. python was not rerun
+for this frontend-only repair; the existing chunk-size warning remains.
+
+`frontend-design` reused the existing day/night plate-metal controls, with
+wrapping 44px value buttons and visible keyboard focus. `manage-project-docs`
+records the changed public readout/export scope and the regression smoke check.
+browser access was retried but rejected its trusted-code dependency before
+navigation; actual layout, focus, map/tray behavior and clipboard still need
+owner-rendered verification. documentation checking retains five missing-status
+findings in untouched ignored specs; whitespace checks pass.
+
+full dev is restored at `http://127.0.0.1:5173/`; public preview serves sanitized
+`atlas/dist/` at `http://127.0.0.1:5175/geomatria/`, while full dev staging has
+restored `atlas/public/data/`. no source dataset, projection algorithm, backend,
+dependency, database or research artifact changed. halton remains accepted but
+unimplemented; its existing documentation edits were preserved. no commit,
+push or pages deployment was performed. next: the public heat-locus smoke in
+[development](docs/DEVELOPMENT.md#constellation-smoke-checks).
+
+## halton equal-area spec accepted; implementation not started
+
+on 2026-09-08 the owner answered "yes" to accepting the bounded halton handoff
+as written. the governing [accepted spec](docs/halton-equal-area-spec.md) now
+lives in the non-ignored documentation tree, with links from the readme and an
+explicit later method-list amendment in the original constellation contract.
+the ignored handoff remains unchanged as historical provenance. pre-edit head
+was `0422103` (`add shadow to globe`) and the working tree was clean.
+
+accepted scope: `halton_equal_area_v1`, numeric-only static 1–2000 datasets for
+eight ciphers in local/public atlas and constellation, on flat/globe. equal
+integers share a landing without merging cipher identities. the new python
+method's range is exact positive integers through `9007199254740991`, not a
+larger interface range. preserve all existing methods/defaults, source privacy,
+exports and in-memory state; no live expansion, source database access, new
+dependencies, research, commit or deployment. polar disclosure/rendering is an
+explicit implementation acceptance gate.
+
+`manage-project-docs` records acceptance separately from implementation and
+retirement. this turn changes documentation only; no app code, datasets, tests,
+services or research artifacts changed. numerical fixtures and original handoff
+evidence are preserved, not newly executed. the documentation checker reports
+five missing-status findings in untouched ignored specs: the previous four plus
+`specs/RESEARCH_LAB_WORKFLOW.md`. none concerns the new accepted contract.
+whitespace checks pass; application tests/builds were not rerun for this
+documentation-only change.
+next: owner implementation go-ahead, then the spec's ordered implementation and
+verification gates. no unresolved scope decision remains.
 
 ## daylight globe relief
 

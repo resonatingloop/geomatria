@@ -1719,7 +1719,7 @@ h1 {
 .constellation-form input { font: 1.35rem var(--font-mono); padding: 6px 9px; }
 .constellation-form select { padding-right: 10px; appearance: auto; }
 .constellation-cast { grid-column: 2; grid-row: 1; align-self: end; }
-.constellation-panel button, .markdown-actions button {
+.constellation-panel button, .markdown-actions button, .public-value-list button {
   min-height: 36px;
   border: 1px solid var(--border-default);
   border-radius: var(--radius-small);
@@ -1729,8 +1729,8 @@ h1 {
   cursor: pointer;
 }
 .constellation-panel button:hover, .markdown-actions button:hover { border-color: var(--accent-warm); }
-.constellation-panel button:disabled, .markdown-actions button:disabled { opacity: 0.5; cursor: default; }
-.constellation-panel :focus-visible, .markdown-actions :focus-visible, .constellation-pin:focus-visible {
+.constellation-panel button:disabled, .markdown-actions button:disabled, .public-value-list button:disabled { opacity: 0.5; cursor: default; }
+.constellation-panel :focus-visible, .markdown-actions :focus-visible, .constellation-pin:focus-visible, .public-value-list button:focus-visible {
   outline: 2px solid var(--accent-warm);
   outline-offset: 3px;
 }
@@ -1789,7 +1789,7 @@ h1 {
   background: var(--accent-warm);
 }
 .markdown-actions__buttons { display: flex; flex-wrap: wrap; gap: 8px; }
-.markdown-actions button {
+.markdown-actions button, .public-value-list button {
   display: inline-flex;
   flex: 1 1 132px;
   align-items: center;
@@ -1820,20 +1820,28 @@ h1 {
   stroke-linejoin: round;
 }
 .markdown-actions button:enabled:hover,
-.markdown-actions button:focus-visible {
+.markdown-actions button:focus-visible,
+.public-value-list button:enabled:hover,
+.public-value-list button:focus-visible,
+.public-value-list button[aria-pressed='true'] {
   border-color: var(--accent-warm);
   box-shadow:
     inset 0 1px 0 var(--plate-bevel-hi),
     inset 0 -2px 0 var(--accent-warm),
     0 1px 1px var(--plate-bevel-lo);
 }
-.markdown-actions button:enabled:active {
+.markdown-actions button:enabled:active, .public-value-list button:enabled:active {
   box-shadow: inset 0 2px 3px var(--plate-bevel-lo);
 }
 .markdown-actions button:disabled { border-color: var(--plate-border); }
 .export-status { min-height: 1.5em; margin: 6px 0 0; }
 .export-status:empty { min-height: 0; margin: 0; }
 .public-value-reading { font-family: var(--font-mono); font-size: 0.85rem; }
+.public-value-list { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 8px 0 16px; }
+.public-value-list li { flex: 1 1 90px; min-width: 0; }
+.public-value-list button { width: 100%; min-height: 44px; }
+.public-value-list button[aria-pressed='true'] { outline: 1px solid var(--accent-warm); outline-offset: -4px; }
+.public-value-list button:focus-visible { outline: 2px solid var(--accent-warm); outline-offset: 3px; }
 
 /* A world mounted in the existing housing; geography turns, glass stays put. */
 .header-band { flex-wrap: wrap; }

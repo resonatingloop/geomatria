@@ -14,6 +14,8 @@ export function ProjectedLocusReadout({
   projectionMethod,
   cipherLabels,
   source = "static snapshot",
+  onSelectValue,
+  selectionDisabled = false,
 }) {
   if (!locus) {
     return null;
@@ -55,6 +57,24 @@ export function ProjectedLocusReadout({
 
       <MarkdownActions text={locusMarkdown(locus, selectedFeatureKey, source)} scope="this locus"
         filename={`geogematria-locus-${locus.latitude}-${locus.longitude}`} />
+
+      {isValueDomainLocus && !occupancyPublic && (
+        <section className="public-value-reading" aria-label="domain values at this locus">
+          <h3 className="eyebrow">values here</h3>
+          <ul className="public-value-list">
+            {visibleCliques.map((clique) => (
+              <li key={clique.featureKey}>
+                <button type="button"
+                  aria-pressed={clique.featureKey === selectedFeatureKey}
+                  disabled={selectionDisabled || !onSelectValue}
+                  onClick={() => onSelectValue?.(clique.featureKey)}>
+                  {cliqueTitle(clique, cipherLabels)}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       <dl className="detail-grid">
         {isValueDomainLocus ? (
@@ -193,11 +213,11 @@ export function ProjectedLocusReadout({
             {soloClique && <CliqueGeography details={soloClique.details} />}
           </>
         )}
-      </section> : <section className="public-value-reading" aria-label="selected domain values">
-        {visibleCliques.length ? visibleCliques.map((clique) => <div key={clique.featureKey}>
-          <p>{cliqueTitle(clique, cipherLabels)}</p>
-          <CliqueGeography details={clique.details} />
-        </div>) : <p>select an integer through the value aperture for its individual reading.</p>}
+      </section> : <section className="public-value-reading" aria-label="selected domain value" aria-live="polite">
+        {model.selectedClique ? <>
+          <h3 className="eyebrow">selected value · {cliqueTitle(model.selectedClique, cipherLabels)}</h3>
+          <CliqueGeography details={model.selectedClique.details} />
+        </> : <p>select a value above for its individual reading.</p>}
       </section>}
     </article>
   );

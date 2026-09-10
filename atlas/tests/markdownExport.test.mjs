@@ -41,8 +41,8 @@ test("public locus exports suppress populated private fields and never imply zer
   const locus = locusFixture(false);
   const selected = locus.cliques[1].featureKey;
   const model = locusReadoutModel(locus, selected);
-  assert.deepEqual(model.cliques.map(({ details }) => details.value), ["178"]);
-  assert.deepEqual(model.cliques[0].details.phrases, []);
+  assert.deepEqual(model.cliques.map(({ details }) => details.value), ["177", "178", "179"]);
+  assert(model.cliques.every(({ details }) => details.phrases.length === 0));
   const text = locusMarkdown(locus, selected);
   assert(text.includes("## AQ · 178"));
   assert(text.includes("occupancy is not published"));
@@ -50,9 +50,11 @@ test("public locus exports suppress populated private fields and never imply zer
   assert(!text.includes("phrase count:"));
   assert(!text.includes("values with phrases:"));
   assert(!text.includes("no phrases"));
+  assert(!text.includes("HIDDEN_SENTINEL"));
   const unselected = locusMarkdown(locus);
-  assert(unselected.includes("no individual values selected"));
-  assert(!unselected.includes("## AQ"));
+  assert(!unselected.includes("no individual values selected"));
+  for (const value of [177, 178, 179]) assert(unselected.includes(`## AQ · ${value}`));
+  assert.equal(unselected, text, "selecting a public value must not shrink the locus export");
 });
 
 test("local live cliquemap exports retain visible saved phrases and label their source", () => {

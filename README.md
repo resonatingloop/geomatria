@@ -79,9 +79,13 @@ fields from generated files; source datasets retain their contents.
 | [gazetteer notes](geogematria/data/README.md) | reference | offline input provenance |
 | [value constellation spec](docs/value-constellation-spec.md) | accepted transition | range, projections, export scope, and acceptance gates |
 | [mounted globe spec](docs/globe-view-spec.md) | accepted transition | surface behavior, camera/visibility rules, and rendered acceptance gates |
+| [halton equal-area spec](docs/halton-equal-area-spec.md) | accepted transition; not implemented | numeric-only method, shared landings, polar handling, and conformance gates |
 
 local `specs/` and `notes/` contain earlier planning and historical material.
 both directories are git-ignored and absent from a fresh clone. their existence
 does not establish current approval or completion. the value constellation slice
 was explicitly accepted on 2026-09-08 and is recorded in tracked documentation;
 shared re-entry does not depend on ignored historical specs.
+the halton equal-area handoff was accepted on 2026-09-08 and promoted into
+`docs/halton-equal-area-spec.md`; its ignored source remains historical provenance.
+that acceptance adds no runnable method yet and does not authorize research.

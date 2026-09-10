@@ -920,6 +920,16 @@ function App() {
           cipherLabels={cipherLabels}
           source={selectedSource === SOURCE_LIVE ? "live local layer" : "static snapshot"}
           onClose={() => setTrayOpen(false)}
+          selectionDisabled={loadState.status !== "ready"}
+          onSelectValue={(featureKey) => {
+            if (loadState.status !== "ready") return;
+            const locus = locusByFeatureKey.get(featureKey);
+            if (!locus || locus.locusKey !== selectedLocusKey || locus.occupancyPublic !== false) return;
+            const clique = locus.cliques.find((entry) => entry.featureKey === featureKey);
+            if (!clique) return;
+            selectProjectedLocus(locus, { featureKey });
+            setSearchQuery(String(clique.details.value));
+          }}
         />}
       </section>
     </main>

@@ -89,8 +89,13 @@ both readouts share plate-metal export keys with engraved-style labels and
 decorative copy/download glyphs, using the existing day/night theme tokens.
 exports share the readout's visibility rules: local domain readings include
 phrase-bearing values plus an explicitly selected value, while local
-cliquemaps include their displayed cliques. public readings omit phrase and
-occupancy information, describing it as not published rather than zero.
+cliquemaps include their displayed cliques. public value-domain readings list
+every integer at the selected locus in ascending order, with selectable plate
+buttons directly beneath the export controls. selecting a value fills the
+aperture and shows its individual geography without closing the tray or moving
+the map; the full numeric list remains visible and included in markdown.
+public readings omit phrase and occupancy information, describing it as not
+published rather than zero. numeric membership is not filtered by occupancy.
 neither exporter serializes raw dataset objects. coordinates are explicitly
 latitude, longitude; per-entry base coordinates and snap details are included
 when available. clipboard failure is reported, with download as an alternative.

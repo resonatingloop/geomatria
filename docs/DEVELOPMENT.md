@@ -1,6 +1,6 @@
 # geogematria development
 
-role: operational procedures. last verified: 2026-09-08.
+role: operational procedures. last verified: 2026-09-09.
 update when setup, validation, configuration, or generated-state handling changes.
 actual outcomes and unverified paths belong in [status](../STATUS.md).
 
@@ -78,6 +78,14 @@ rendered smoke in both editions:
   public output must not claim zero saved phrases or disclose occupancy.
 - test clipboard denial with download still available. check ordinary heatmap
   integer search, local phrase search, live selection, and the public subpath.
+- public heat-locus regression: select aq / nearest 10,000 towns, find 43 to
+  reach santa maria, then click the heat spot and open its tray. 43, 913 and
+  1677 must appear as selectable value buttons near the top, without needing
+  an aperture selection. selecting each retains all three, fills the aperture,
+  shows its own hash/snap trace, and does not close the tray or move the camera.
+  copy/download must include all three numeric entries and no phrase occupancy.
+  repeat a single-value hash locus, day/night, flat/globe, keyboard, narrow
+  layout, and dataset changes; old controls must not select a stale reading.
 
 build and http checks are not rendered proof. the last browser connection was
 blocked before navigation; record owner/agent-rendered outcomes in status when

@@ -13,6 +13,8 @@ export function ReadoutTray({
   cipherLabels,
   source,
   onClose,
+  onSelectValue,
+  selectionDisabled,
 }) {
   if (!locus) {
     return null;
@@ -50,6 +52,8 @@ export function ReadoutTray({
             projectionMethod={projectionMethod}
             cipherLabels={cipherLabels}
             source={source}
+            onSelectValue={onSelectValue}
+            selectionDisabled={selectionDisabled}
           />
         </div>
       </aside>

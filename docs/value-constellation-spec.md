@@ -8,6 +8,24 @@ owner: repository owner. accepted in conversation on 2026-09-08 with
 stored here because the legacy `specs/` directory is ignored; shared continuity
 must not depend on that local history.
 
+## subsequent accepted transition
+
+on 2026-09-08 the owner accepted the [halton equal-area slice](halton-equal-area-spec.md).
+it extends the original two-method list and new-projection exclusion below with
+`halton_equal_area_v1`; all other scope boundaries remain unchanged. this is a
+later accepted transition, not a rewrite of the original approval or a claim
+that the third method is implemented. its own spec owns the additional proof.
+
+## public heat-locus repair
+
+on 2026-09-09 the owner directly approved repairing undiscoverable public
+integers at a shared heat locus. every public domain value at that locus is
+visible and selectable regardless of private phrase occupancy; selecting one
+does not hide its siblings. locus markdown follows that complete numeric list.
+phrase/occupancy suppression and local selected-plus-phrase-bearing visibility
+remain unchanged. this repairs ordinary locus discovery, not constellation or
+projection mathematics; it does not start the accepted halton implementation.
+
 ## context and scope
 
 the atlas previously displayed one cipher dataset at a time. its static
