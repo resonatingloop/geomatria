@@ -1,8 +1,95 @@
 # geogematria status
 
-role: operational checkpoint. last verified: 2026-09-09.
+role: operational checkpoint. last verified: 2026-10-04 (Python baseline and deferred desktop gate).
 update at a meaningful stopping point; this file owns evidence and active work,
 not permanent intent or retrospective spec approval.
+
+## Verified checkpoint
+
+the owner accepted the [written spatial-relations spec](docs/spatial-relations-spec.md)
+and authorized implementation on 2026-10-03: "approved. cleared to implement".
+the readme/spec record that transition. a bounded Linux Tauri spike is now built
+and packaged under `desktop/`, with a frozen Python engine and numeric-only
+geographic staging. its first ordered gate is **not passed**; broader relation
+and study acceptance cannot be inferred from the partial native evidence.
+on 2026-10-04 the owner explicitly amended the gate order: "Proceed with
+Python-only relations and tests; defer desktop verification." Python numerical
+relations, direct exact clicks through injected/public-interface fixtures, and
+complete in-memory captures are now authorized ahead of the native gate.
+that implementation is in progress, not verified complete. native workspace,
+study persistence, and real owner-source checks remain deferred.
+
+recorded native evidence: a mapped 1180×736 WebKitGTK window on the actual user
+display, a rendered flat/day WebGL2 map with 2,000 values, and packaged engine
+readiness after relocation without Vite, a manual backend, or the project venv.
+ready-close, initialization-timeout failure/close, and close during startup were
+exercised with no owned engine orphans. the parent inspected the native screenshot
+and reports, verified the archive fingerprint/executable, reran the engine and
+fixture suites, and found no gate/engine processes still running.
+
+the initial Retry input denial was not bypassed. the owner later explicitly
+reauthorized clicks. `desktop/evidence/native-resumed.log` recorded a new ready
+engine generation after GUI Retry, with the prior owned engine absent. selected
+readout bounds exceeded the native viewport; the in-flight CSS change and new
+layout test were reverted at the owner's stop/undo request.
+
+interaction coincided with loss of screen visibility. the owner reported recovery
+after the session-owned app, engine, and cua-driver helper were stopped. neither
+the screenshots nor cleanup isolate the cause; screen-capture feedback remains
+a hypothesis. native automation and app launches are paused. a fresh process
+check on 2026-10-04 found no cua-driver or gate app. no COSMIC desktop process
+was intentionally restarted or terminated. renewed native authorization and an
+agreed isolation/cleanup protocol are required before relaunch; no broad pkill
+or unrelated process termination. Python-only work does not close this gate.
+
+the executable is
+`desktop/artifacts/geogematria-desktop-gate/bin/geogematria-desktop-gate`;
+the portable archive is
+`desktop/artifacts/geogematria-desktop-gate-linux-x86_64.tar.gz` (SHA-256
+`62581e3afcdee4af413dfda67defa49c8bf7de0e028616de64fd5b5cd876eab0`).
+retain the ignored `desktop/evidence/gate-summary.json`, native screenshot and
+lifecycle/test reports as this partial checkpoint's evidence. artifacts are
+debug-profile native builds with production frontend assets; the deb was built,
+not installed. [desktop guide](desktop/README.md) owns exact build/launch commands
+and limitations. OSM basemap tiles still require network access; neither source
+phrases nor studies are packaged.
+
+setup verified on Pop!_OS 24.04: the required GTK/WebKit development packages,
+libxdo/appindicator/rsvg and patchelf were installed through the system's native
+authentication path, without handling credentials in chat. pkg-config reports
+WebKitGTK 2.52.6 and GTK 3.24.41. official user-local Rust minimal installation
+reports rustc/cargo 1.99.0; shell startup files were not modified. use
+`$HOME/.cargo/bin/cargo` or add that directory to the build session's PATH.
+
+parent verification: `uv run --locked --extra backend --extra test python -m
+unittest discover -s tests` passes 57 tests (including four new gate tests).
+the four gate tests also pass against the frozen executable. seven Rust lifecycle
+and bridge tests, two desktop selection-model tests, all 79 unchanged atlas tests,
+and `cargo fmt --check` pass. staging verifies 24 complete numeric domains with
+48,000 coordinates unchanged from source. the audit confirms package contents
+and the original flat-only renderer evidence; its hard-coded denial blocker
+predates the resumed interaction and must be treated as historical, not current
+acceptance or a diagnosis. the complete 57-test Python baseline was freshly
+rerun after native automation was stopped and before numerical implementation.
+the inherited
+starlette/httpx warning remains. these fixtures do not establish owner-source
+connectivity or the missing native gestures. full/public atlas builds were not
+rerun for this isolated gate; their generated outputs were not restaged. docset
+checking retains five ignored-spec missing-status errors and thirteen historical
+checkpoint-heading warnings; old approval is not changed to satisfy them.
+
+pre-implementation checkout was `main`, HEAD `9e2e192`, with only the preceding
+three documentation changes. the gate writer created new `desktop/` files
+and `tests/test_desktop_gate.py`; governing docs were reconciled by the parent. no relation
+endpoint, study library, source DB integration check, launcher edit, commit, or
+deployment is complete. no owner source DB has been opened for this work.
+
+the prior checkpoints/service URLs below are historical evidence, not proof of
+currently running services. existing constellation/globe rendered acceptance and
+the separate accepted, unimplemented Halton slice remain open. next authorized
+transition: finish and independently verify the Python-only relation/capture
+stage with injected sources. native acceptance, persistence, private UI, and
+final packaged/real-source regression/privacy work remain pending.
 
 ## public heat-locus value discovery repaired
 
@@ -373,6 +460,14 @@ explicit local install, outside geogematria's lockfile.
   the runtime never initialized, so automated browser coverage remains unavailable.
 
 ## active work and next useful action
+
+current implementation focus: the first renderer/lifecycle gate in the
+[accepted private spatial relations spec](docs/spatial-relations-spec.md).
+implementation is explicitly authorized; the gate is blocked on native input
+reauthorization after a denied click. the partial packaged artifact and proof are
+recorded above. no relation/study work may advance on flat-only evidence.
+the retained repair/globe/constellation checkpoint below records earlier work,
+not the new slice's completion or authorization for unrelated Halton work.
 
 completed slice: repair the migrated python integration and console entry point,
 with read-only source access, packaging proof, and owner confirmation of the

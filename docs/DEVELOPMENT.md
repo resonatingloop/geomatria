@@ -1,6 +1,6 @@
 # geogematria development
 
-role: operational procedures. last verified: 2026-09-09.
+role: operational procedures. last verified: 2026-10-04 (desktop gate commands).
 update when setup, validation, configuration, or generated-state handling changes.
 actual outcomes and unverified paths belong in [status](../STATUS.md).
 
@@ -143,6 +143,53 @@ render in both the full local and public-subpath editions:
 browser capture was unavailable at the implementation checkpoint. keep this
 rendered gate open until owner or working browser evidence covers it. do not
 retire the spec from builds or cpu geometry checks alone.
+
+## desktop engineering gate
+
+the [accepted spatial-relations spec](spatial-relations-spec.md) requires native
+renderer and owned-sidecar proof before the Relations workspace is built.
+`desktop/` currently implements only that bounded spike; no source DB is opened,
+no relation operation is advertised, and no study library is implemented.
+the gate remains open. initial input denial was later explicitly reauthorized,
+but interaction coincided with loss of desktop visibility. the owner recovered
+after the session-owned app, engine, and automation helper were stopped; the
+cause is unconfirmed. native automation and app launches are paused. the launch
+commands below and in the desktop guide describe historical proof, not permission
+to resume. require renewed owner authorization and an agreed isolation/cleanup
+protocol before any native test; never terminate unrelated desktop processes.
+
+the owner's 2026-10-04 gate-order amendment permits Python-only relation logic,
+in-memory capture validation, and injected-source tests before native acceptance.
+do not open the owner database, wire native operations, or implement study
+persistence under this amendment. the Python-only stage does not pass either
+desktop gate. use the root unittest command for that stage; native commands below
+are deferred and are not required to continue its injected-source tests.
+
+use the [desktop guide](../desktop/README.md) for the exercised Linux dependency,
+build, packaging, relocation, and native close commands. the gate has its own
+frontend staging/build output and a frozen Python engine; do not restage
+`atlas/public/data/` or depend on Vite or a manual backend to test its package.
+run these focused checks from the repository root after building the gate:
+
+```bash
+DESKTOP_GATE_ENGINE="$PWD/desktop/artifacts/geogematria-desktop-gate/lib/Geogematria Desktop Gate/engine/geogematria-engine" \
+  .venv/bin/python -m unittest discover -s tests -p test_desktop_gate.py -v
+~/.cargo/bin/cargo test --target-dir "$TMPDIR/geogematria-lifecycle-tests" \
+  --manifest-path desktop/src-tauri/Cargo.toml --lib --no-default-features
+~/.cargo/bin/cargo fmt --manifest-path desktop/src-tauri/Cargo.toml --check
+node --test desktop/frontend/gate-model.test.mjs
+.venv/bin/python desktop/audit_gate.py
+```
+
+the frozen tests prove actual public imports, offline gazetteers and projection
+readiness, not database connectivity. Rust lifecycle tests use injected fixtures;
+they do not substitute for packaged GUI retry. the audit aggregates existing
+native evidence and explicitly retains unverified gestures. current partial proof
+and artifacts are recorded in [status](../STATUS.md); native flat/globe, theme,
+selection/readout and retry acceptance must not be inferred from a compile.
+this spike uses external OSM basemap tiles in both themes, not the browser atlas's
+night vector basemap. its portable artifact needs system GTK/WebKit runtime
+libraries. do not install the deb or change a launcher without authorization.
 
 ## python setup
 
@@ -291,7 +338,7 @@ git diff --check
 ```
 
 the checker is agent tooling outside this repository. it scans ignored markdown
-too, so this workspace's four old specs produce missing status-line errors.
+too, so this workspace's five old specs produce missing status-line errors.
 [status](../STATUS.md) records that inherited gap. preserve approval provenance;
 do not assign `accepted` or `retired` just to pass a check. new specs should
 declare a lifecycle, and shared continuity must not depend on ignored files.

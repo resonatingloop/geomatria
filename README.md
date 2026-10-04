@@ -41,6 +41,9 @@ one before switching modes.
   cli invocation, local backend, validation, and recovery.
 - [atlas guide](atlas/README.md): dataset modes, manifest and feature shapes,
   projection semantics, and frontend interaction.
+- [desktop gate guide](desktop/README.md): the packaged Linux Tauri spike,
+  build/launch commands, partial native proof, and blocked interaction checks.
+  it is not yet a Relations workspace and does not open the source database.
 
 the installed cli is `uv run --locked geogematria`; the checkout wrapper
 `uv run --locked python geogematria.py` also works. follow the development
@@ -54,6 +57,7 @@ including `list-projections`.
 ```text
 backend/          local live-layer http endpoints
 atlas/            react/vite frontend, dataset sources, and staging script
+desktop/          bounded private Tauri renderer/owned-engine gate
 geogematria/      projection library, geojson builders, and public-api adapters
 geogematria/data/ committed offline gazetteers
 tests/            python validation
@@ -76,10 +80,12 @@ fields from generated files; source datasets retain their contents.
 | [claude entry point](CLAUDE.md) | routing | directs claude to the same agent guide |
 | [development](docs/DEVELOPMENT.md) | operational | setup, commands, configuration, generated state, and recovery |
 | [atlas guide](atlas/README.md) | operational/reference | implemented frontend behavior and dataset semantics |
+| [desktop gate guide](desktop/README.md) | operational | spike build/package/launch, observed native proof, and open gate |
 | [gazetteer notes](geogematria/data/README.md) | reference | offline input provenance |
 | [value constellation spec](docs/value-constellation-spec.md) | accepted transition | range, projections, export scope, and acceptance gates |
 | [mounted globe spec](docs/globe-view-spec.md) | accepted transition | surface behavior, camera/visibility rules, and rendered acceptance gates |
 | [halton equal-area spec](docs/halton-equal-area-spec.md) | accepted transition; not implemented | numeric-only method, shared landings, polar handling, and conformance gates |
+| [private spatial relations spec](docs/spatial-relations-spec.md) | accepted transition; implementation authorized, desktop gates open | distance values, domain-based chambers, direct clicks, private study revisions, and desktop gates |
 
 local `specs/` and `notes/` contain earlier planning and historical material.
 both directories are git-ignored and absent from a fresh clone. their existence
@@ -89,3 +95,13 @@ shared re-entry does not depend on ignored historical specs.
 the halton equal-area handoff was accepted on 2026-09-08 and promoted into
 `docs/halton-equal-area-spec.md`; its ignored source remains historical provenance.
 that acceptance adds no runnable method yet and does not authorize research.
+the owner accepted the written spatial relations spec on 2026-10-03 with
+"approved. cleared to implement". a bounded desktop spike is packaged with native
+flat WebGL2 and owned-engine startup/close evidence; the native interaction gate
+remains open. reauthorized interaction later coincided with loss of desktop
+visibility; native automation is now paused and the cause is unconfirmed.
+on 2026-10-04 the owner explicitly deferred desktop verification and authorized
+Python-only relation logic, in-memory captures, and injected-source tests ahead
+of that gate. this does not authorize native integration or study persistence,
+and no real-source connectivity is claimed. see the spec's gate-order amendment
+and status for the current verified implementation checkpoint.

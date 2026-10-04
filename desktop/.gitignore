@@ -1,0 +1,13 @@
+build-env/
+node_modules/
+frontend/public/
+frontend/dist/
+sidecar/build/
+sidecar/dist/
+sidecar/*.spec
+src-tauri/target/
+src-tauri/gen/
+artifacts/
+evidence/
+__pycache__/
+*.log
